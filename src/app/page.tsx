@@ -49,6 +49,12 @@ import { CommunicationGuideSimulator } from '../components/CommunicationGuideSim
 import { DiagnosticHub } from '../components/DiagnosticHub';
 import { CustomMockGenerator } from '../components/CustomMockGenerator';
 import { BehavioralSjtSimulator } from '../components/BehavioralSjtSimulator';
+import { 
+  generateFullMock, 
+  generateTechnicalEliminationMock, 
+  generateSectionalDrill, 
+  sampleQuestions 
+} from '../lib/mockGenerator';
 import { Question } from '../types';
 
 export default function CoursePortal() {
@@ -66,15 +72,30 @@ export default function CoursePortal() {
 
   const handleLaunchItem = (item: CourseItem) => {
     if (item.type === 'quiz') {
-      let filtered = ACCENTURE_QUESTIONS;
-      if (item.sectionId) {
-        filtered = ACCENTURE_QUESTIONS.filter((q) => q.sectionId === item.sectionId);
+      let generatedTest;
+      if (item.id === 'mock-1' || item.id === 'mock-2' || item.id === 'mock-pyq-2025') {
+        generatedTest = generateFullMock(item.title);
+      } else if (item.id === 'mock-technical-elimination') {
+        generatedTest = generateTechnicalEliminationMock(item.title);
+      } else if (item.sectionId) {
+        generatedTest = generateSectionalDrill(
+          item.sectionId,
+          item.questionCount || 15,
+          item.title,
+          item.durationMinutes
+        );
+      } else {
+        generatedTest = {
+          questions: sampleQuestions(ACCENTURE_QUESTIONS, item.questionCount || 30),
+          title: item.title,
+          durationMinutes: item.durationMinutes || 45,
+        };
       }
       setActiveLaunch({
         type: 'quiz',
-        title: item.title,
-        questions: filtered.length > 0 ? filtered : ACCENTURE_QUESTIONS,
-        durationMinutes: item.durationMinutes,
+        title: generatedTest.title,
+        questions: generatedTest.questions,
+        durationMinutes: generatedTest.durationMinutes,
       });
     } else if (item.type === 'coding') {
       setActiveLaunch({
