@@ -2,8 +2,10 @@ export type SectionId =
   | 'english'
   | 'critical'
   | 'abstract'
+  | 'quantitative'
   | 'ms_office'
   | 'pseudocode'
+  | 'core_cs_dsa'
   | 'networking_cloud'
   | 'coding'
   | 'game_assessment';

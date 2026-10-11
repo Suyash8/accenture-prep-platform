@@ -23,14 +23,16 @@ export function sampleQuestions(pool: Question[], count: number): Question[] {
 
 /**
  * Generates an authentic 90-Question Full Length Accenture Mock Test
- * Breakdown strictly calibrated to HirePro / CoCubes specifications:
- * - Critical Reasoning: 18 Qs
- * - Abstract Reasoning: 15 Qs
- * - English Ability: 17 Qs
- * - Pseudocode: 18 Qs
- * - MS Office & Applications: 12 Qs
- * - Network Security & Cloud: 10 Qs
- * Total = 90 Questions
+ * Comprehensive coverage across Cognitive, Technical, Core CS & Quantitative:
+ * - Critical Reasoning: 15 Qs
+ * - Quantitative Aptitude & Maths: 15 Qs
+ * - Abstract Reasoning: 12 Qs
+ * - English Ability: 15 Qs
+ * - Pseudocode Execution: 15 Qs
+ * - Core CS, OOP & Data Structures: 10 Qs
+ * - MS Office & Applications: 5 Qs
+ * - Network Security & Cloud: 3 Qs
+ * Total = 90 Questions (90 Minutes)
  */
 export function generateFullMock(title: string = 'Accenture Full Mock Simulation'): {
   questions: Question[];
@@ -39,34 +41,44 @@ export function generateFullMock(title: string = 'Accenture Full Mock Simulation
 } {
   const critical = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'critical'),
-    18
+    15
+  );
+  const quantitative = sampleQuestions(
+    ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'quantitative'),
+    15
   );
   const abstract = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'abstract'),
-    15
+    12
   );
   const english = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'english'),
-    17
+    15
   );
   const pseudocode = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'pseudocode'),
-    18
+    15
+  );
+  const coreCs = sampleQuestions(
+    ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'core_cs_dsa'),
+    10
   );
   const msOffice = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'ms_office'),
-    12
+    5
   );
   const netCloud = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'networking_cloud'),
-    10
+    3
   );
 
   const combined = shuffleArray([
     ...critical,
+    ...quantitative,
     ...abstract,
     ...english,
     ...pseudocode,
+    ...coreCs,
     ...msOffice,
     ...netCloud,
   ]);
@@ -81,9 +93,10 @@ export function generateFullMock(title: string = 'Accenture Full Mock Simulation
 /**
  * Generates an authentic 45-Question Technical & Pseudocode Elimination Mock
  * Breakdown:
- * - Pseudocode: 18 Qs
- * - MS Office: 15 Qs
- * - Network Security & Cloud: 12 Qs
+ * - Pseudocode Execution: 15 Qs
+ * - Core CS, OOP & Data Structures: 15 Qs
+ * - MS Office & Common Applications: 8 Qs
+ * - Network Security & Cloud: 7 Qs
  * Total = 45 Questions (45 Minutes)
  */
 export function generateTechnicalEliminationMock(title: string = 'Stage 3 Elimination Mock'): {
@@ -93,18 +106,22 @@ export function generateTechnicalEliminationMock(title: string = 'Stage 3 Elimin
 } {
   const pseudocode = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'pseudocode'),
-    18
+    15
+  );
+  const coreCs = sampleQuestions(
+    ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'core_cs_dsa'),
+    15
   );
   const msOffice = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'ms_office'),
-    15
+    8
   );
   const netCloud = sampleQuestions(
     ACCENTURE_QUESTIONS.filter((q) => q.sectionId === 'networking_cloud'),
-    12
+    7
   );
 
-  const combined = shuffleArray([...pseudocode, ...msOffice, ...netCloud]);
+  const combined = shuffleArray([...pseudocode, ...coreCs, ...msOffice, ...netCloud]);
 
   return {
     questions: combined,

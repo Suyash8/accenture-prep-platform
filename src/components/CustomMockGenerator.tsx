@@ -25,9 +25,11 @@ export const CustomMockGenerator: React.FC<CustomMockGeneratorProps> = ({ onBack
   const [selectedDifficulty, setSelectedDifficulty] = useState<'All' | 'Easy' | 'Medium' | 'Hard'>('All');
   const [selectedSections, setSelectedSections] = useState<string[]>([
     'pseudocode',
+    'core_cs_dsa',
     'ms_office',
     'networking_cloud',
     'critical',
+    'quantitative',
     'abstract',
     'english',
   ]);
@@ -60,11 +62,13 @@ export const CustomMockGenerator: React.FC<CustomMockGeneratorProps> = ({ onBack
 
   const availableSections = [
     { id: 'pseudocode', name: 'Pseudocode Execution', color: 'text-purple-400' },
-    { id: 'ms_office', name: 'Common Apps & MS Office', color: 'text-emerald-400' },
-    { id: 'networking_cloud', name: 'Networking & Cloud', color: 'text-blue-400' },
+    { id: 'core_cs_dsa', name: 'Core CS, OOP & DSA', color: 'text-teal-400' },
+    { id: 'quantitative', name: 'Quantitative Aptitude & Maths', color: 'text-yellow-400' },
     { id: 'critical', name: 'Critical Reasoning', color: 'text-amber-400' },
     { id: 'abstract', name: 'Abstract Reasoning', color: 'text-pink-400' },
     { id: 'english', name: 'English Ability', color: 'text-indigo-400' },
+    { id: 'ms_office', name: 'Common Apps & MS Office', color: 'text-emerald-400' },
+    { id: 'networking_cloud', name: 'Networking & Cloud', color: 'text-blue-400' },
   ];
 
   return (

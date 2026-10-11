@@ -9460,5 +9460,3965 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
     "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 27 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "10.3 days",
+      "6.8 days",
+      "6.0 days",
+      "8.3 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 \u2248 8.3 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 34 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "7.0 days",
+      "11.9 days",
+      "9.9 days",
+      "8.4 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 \u2248 9.9 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 16 days, while Worker B takes 41 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "10.0 days",
+      "8.0 days",
+      "13.5 days",
+      "11.5 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 \u2248 11.5 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 18 days, while Worker B takes 28 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "9.5 days",
+      "13.0 days",
+      "11.0 days",
+      "9.0 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 \u2248 11.0 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 20 days, while Worker B takes 35 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "11.2 days",
+      "14.7 days",
+      "10.0 days",
+      "12.7 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 \u2248 12.7 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 10 days, while Worker B takes 30 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "6.0 days",
+      "5.0 days",
+      "9.5 days",
+      "7.5 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 \u2248 7.5 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 37 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "11.1 days",
+      "7.6 days",
+      "9.1 days",
+      "6.0 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 \u2248 9.1 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 24 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "7.3 days",
+      "7.0 days",
+      "8.8 days",
+      "10.8 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 \u2248 8.8 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 16 days, while Worker B takes 31 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "10.6 days",
+      "12.6 days",
+      "9.1 days",
+      "8.0 days"
+    ],
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/31.\nCombined 1-day work = 1/16 + 1/31 = (16+31)/(16*31).\nTotal days = (16 * 31) / (16 + 31) = 496 / 47 \u2248 10.6 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 18 days, while Worker B takes 38 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "14.2 days",
+      "9.0 days",
+      "12.2 days",
+      "10.7 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/38.\nCombined 1-day work = 1/18 + 1/38 = (18+38)/(18*38).\nTotal days = (18 * 38) / (18 + 38) = 684 / 56 \u2248 12.2 days.",
+    "difficulty": "Easy",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 20 days, while Worker B takes 45 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "15.8 days",
+      "12.3 days",
+      "10.0 days",
+      "13.8 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/45.\nCombined 1-day work = 1/20 + 1/45 = (20+45)/(20*45).\nTotal days = (20 * 45) / (20 + 45) = 900 / 65 \u2248 13.8 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 10 days, while Worker B takes 20 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "5.0 days",
+      "8.7 days",
+      "5.2 days",
+      "6.7 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/20.\nCombined 1-day work = 1/10 + 1/20 = (10+20)/(10*20).\nTotal days = (10 * 20) / (10 + 20) = 200 / 30 \u2248 6.7 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 27 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "6.0 days",
+      "6.8 days",
+      "8.3 days",
+      "10.3 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 \u2248 8.3 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 34 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "11.9 days",
+      "7.0 days",
+      "8.4 days",
+      "9.9 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 \u2248 9.9 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 16 days, while Worker B takes 41 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "11.5 days",
+      "10.0 days",
+      "8.0 days",
+      "13.5 days"
+    ],
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 \u2248 11.5 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-016",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 18 days, while Worker B takes 28 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "9.0 days",
+      "11.0 days",
+      "13.0 days",
+      "9.5 days"
+    ],
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 \u2248 11.0 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-017",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 20 days, while Worker B takes 35 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "11.2 days",
+      "10.0 days",
+      "14.7 days",
+      "12.7 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 \u2248 12.7 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-018",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 10 days, while Worker B takes 30 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "6.0 days",
+      "5.0 days",
+      "7.5 days",
+      "9.5 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 \u2248 7.5 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-019",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 37 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "6.0 days",
+      "11.1 days",
+      "7.6 days",
+      "9.1 days"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 \u2248 9.1 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-tw-020",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 24 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
+    "options": [
+      "8.8 days",
+      "7.3 days",
+      "10.8 days",
+      "7.0 days"
+    ],
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 \u2248 8.8 days.",
+    "difficulty": "Medium",
+    "tag": "Time & Work",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "2.0 hours",
+      "1.2 hours",
+      "4.8 hours",
+      "3.2 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 \u2248 2.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "2.14 hours",
+      "5.0 hours",
+      "1.34 hours",
+      "3.34 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 \u2248 2.14 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 360 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.97 hours",
+      "5.14 hours",
+      "1.97 hours",
+      "2.77 hours"
+    ],
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 360 / 130 \u2248 2.77 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.02 hours",
+      "10.5 hours",
+      "3.82 hours",
+      "5.02 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 \u2248 3.82 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "0.58 hours",
+      "1.38 hours",
+      "2.58 hours",
+      "3.6 hours"
+    ],
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.2 hours",
+      "4.0 hours",
+      "2.0 hours",
+      "1.2 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 \u2248 2.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "4.29 hours",
+      "1.34 hours",
+      "3.34 hours",
+      "2.14 hours"
+    ],
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 \u2248 2.14 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 360 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "4.2 hours",
+      "9.0 hours",
+      "3.0 hours",
+      "2.2 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "8.4 hours",
+      "5.02 hours",
+      "3.82 hours",
+      "3.02 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 60 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 \u2248 3.82 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "1.38 hours",
+      "2.58 hours",
+      "0.58 hours",
+      "3.0 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 70 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "0.8 hours",
+      "1.6 hours",
+      "3.43 hours",
+      "2.8 hours"
+    ],
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 80 = 150 km/h.\nTime to meet = Distance / Relative Speed = 240 / 150 \u2248 1.6 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.0 hours",
+      "7.5 hours",
+      "2.2 hours",
+      "4.2 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 60 = 100 km/h.\nTime to meet = Distance / Relative Speed = 300 / 100 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 360 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.0 hours",
+      "4.2 hours",
+      "2.2 hours",
+      "7.2 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "4.2 hours",
+      "7.0 hours",
+      "3.0 hours",
+      "2.2 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "2.58 hours",
+      "0.58 hours",
+      "1.38 hours",
+      "2.57 hours"
+    ],
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-016",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.38 hours",
+      "1.38 hours",
+      "6.0 hours",
+      "2.18 hours"
+    ],
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 240 / 110 \u2248 2.18 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-017",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.51 hours",
+      "2.31 hours",
+      "1.51 hours",
+      "6.0 hours"
+    ],
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 300 / 130 \u2248 2.31 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-018",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 360 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 60 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "3.0 hours",
+      "2.2 hours",
+      "4.2 hours",
+      "6.0 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-019",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 70 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "4.2 hours",
+      "3.0 hours",
+      "6.0 hours",
+      "2.2 hours"
+    ],
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 \u2248 3.0 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-sdt-020",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 80 km/h respectively. After how many hours will they meet?",
+    "options": [
+      "4.5 hours",
+      "2.7 hours",
+      "0.7 hours",
+      "1.5 hours"
+    ],
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 180 / 120 \u2248 1.5 hours.",
+    "difficulty": "Medium",
+    "tag": "Speed Distance Time",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "options": [
+      "\u20b9595",
+      "\u20b9598",
+      "\u20b9638",
+      "\u20b9698"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9575.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 575 / 0.90 = \u20b9638.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "options": [
+      "\u20b9860",
+      "\u20b9760",
+      "\u20b9800",
+      "\u20b9740"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9720.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 720 / 0.90 = \u20b9800.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "options": [
+      "\u20b9895",
+      "\u20b9932",
+      "\u20b91032",
+      "\u20b9972"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9875.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 875 / 0.90 = \u20b9972.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "options": [
+      "\u20b91060",
+      "\u20b91155",
+      "\u20b91215",
+      "\u20b91115"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b91040.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1040 / 0.90 = \u20b91155.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "options": [
+      "\u20b91060",
+      "\u20b91100",
+      "\u20b91010",
+      "\u20b91160"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9990.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 990 / 0.90 = \u20b91100.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "options": [
+      "\u20b91337",
+      "\u20b91277",
+      "\u20b91170",
+      "\u20b91237"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b91150.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1150 / 0.90 = \u20b91277.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "options": [
+      "\u20b91340",
+      "\u20b91426",
+      "\u20b91526",
+      "\u20b91466"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b91320.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1320 / 0.90 = \u20b91466.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "options": [
+      "\u20b9515",
+      "\u20b9615",
+      "\u20b9555",
+      "\u20b9520"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9500.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 500 / 0.90 = \u20b9555.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "options": [
+      "\u20b9670",
+      "\u20b9722",
+      "\u20b9682",
+      "\u20b9782"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9650.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 650 / 0.90 = \u20b9722.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "options": [
+      "\u20b9693",
+      "\u20b9793",
+      "\u20b9680",
+      "\u20b9733"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9660.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 660 / 0.90 = \u20b9733.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "options": [
+      "\u20b9824",
+      "\u20b9853",
+      "\u20b9953",
+      "\u20b9893"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9804.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 804 / 0.90 = \u20b9893.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "options": [
+      "\u20b91026",
+      "\u20b9980",
+      "\u20b91126",
+      "\u20b91066"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9960.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 960 / 0.90 = \u20b91066.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "options": [
+      "\u20b91250",
+      "\u20b91145",
+      "\u20b91310",
+      "\u20b91210"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b91125.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1125 / 0.90 = \u20b91250.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "options": [
+      "\u20b91444",
+      "\u20b91504",
+      "\u20b91320",
+      "\u20b91404"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b91300.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1300 / 0.90 = \u20b91444.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "options": [
+      "\u20b91230",
+      "\u20b91344",
+      "\u20b91404",
+      "\u20b91304"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b91210.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1210 / 0.90 = \u20b91344.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-016",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "options": [
+      "\u20b9510",
+      "\u20b9479",
+      "\u20b9470",
+      "\u20b9570"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9459.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 459 / 0.90 = \u20b9510.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-017",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "options": [
+      "\u20b9666",
+      "\u20b9626",
+      "\u20b9726",
+      "\u20b9620"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9600.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 600 / 0.90 = \u20b9666.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-018",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "options": [
+      "\u20b9793",
+      "\u20b9893",
+      "\u20b9770",
+      "\u20b9833"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9750.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 750 / 0.90 = \u20b9833.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-019",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "options": [
+      "\u20b91071",
+      "\u20b9930",
+      "\u20b9971",
+      "\u20b91011"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9910.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 910 / 0.90 = \u20b91011.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-020",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "options": [
+      "\u20b9900",
+      "\u20b9977",
+      "\u20b91037",
+      "\u20b9937"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9880.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 880 / 0.90 = \u20b9977.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-021",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "options": [
+      "\u20b91110",
+      "\u20b91210",
+      "\u20b91055",
+      "\u20b91150"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b91035.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1035 / 0.90 = \u20b91150.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-022",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "options": [
+      "\u20b91220",
+      "\u20b91393",
+      "\u20b91333",
+      "\u20b91293"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b91200.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1200 / 0.90 = \u20b91333.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-023",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "options": [
+      "\u20b91487",
+      "\u20b91395",
+      "\u20b91527",
+      "\u20b91587"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b91375.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1375 / 0.90 = \u20b91527.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-024",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "options": [
+      "\u20b9577",
+      "\u20b9537",
+      "\u20b9540",
+      "\u20b9637"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9520.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 520 / 0.90 = \u20b9577.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pl-025",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "options": [
+      "\u20b9570",
+      "\u20b9611",
+      "\u20b9671",
+      "\u20b9571"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9550.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 550 / 0.90 = \u20b9611.",
+    "difficulty": "Medium",
+    "tag": "Profit & Loss",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 7% for 2 years?",
+    "options": [
+      "\u20b944.1",
+      "\u20b944.4",
+      "\u20b929.4",
+      "\u20b914.7"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = \u20b929.4.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 9% for 2 years?",
+    "options": [
+      "\u20b971.7",
+      "\u20b985.05",
+      "\u20b956.7",
+      "\u20b928.35"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = \u20b956.7.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 11% for 2 years?",
+    "options": [
+      "\u20b948.4",
+      "\u20b9111.8",
+      "\u20b9145.2",
+      "\u20b996.8"
+    ],
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = \u20b996.8.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 5% for 2 years?",
+    "options": [
+      "\u20b922.5",
+      "\u20b911.25",
+      "\u20b937.5",
+      "\u20b933.75"
+    ],
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = \u20b922.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 7% for 2 years?",
+    "options": [
+      "\u20b964.0",
+      "\u20b949.0",
+      "\u20b973.5",
+      "\u20b924.5"
+    ],
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = \u20b949.0.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 9% for 2 years?",
+    "options": [
+      "\u20b960.75",
+      "\u20b955.5",
+      "\u20b920.25",
+      "\u20b940.5"
+    ],
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = \u20b940.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 11% for 2 years?",
+    "options": [
+      "\u20b987.6",
+      "\u20b936.3",
+      "\u20b972.6",
+      "\u20b9108.9"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = \u20b972.6.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 5% for 2 years?",
+    "options": [
+      "\u20b926.25",
+      "\u20b98.75",
+      "\u20b917.5",
+      "\u20b932.5"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = \u20b917.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 7% for 2 years?",
+    "options": [
+      "\u20b958.8",
+      "\u20b939.2",
+      "\u20b919.6",
+      "\u20b954.2"
+    ],
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (7/100)^2 = 8000 * 0.004900000000000001 = \u20b939.2.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 9% for 2 years?",
+    "options": [
+      "\u20b936.45",
+      "\u20b972.9",
+      "\u20b987.9",
+      "\u20b9109.35"
+    ],
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (9/100)^2 = 9000 * 0.0081 = \u20b972.9.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 11% for 2 years?",
+    "options": [
+      "\u20b9181.5",
+      "\u20b960.5",
+      "\u20b9136.0",
+      "\u20b9121.0"
+    ],
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (11/100)^2 = 10000 * 0.0121 = \u20b9121.0.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 5% for 2 years?",
+    "options": [
+      "\u20b927.5",
+      "\u20b96.25",
+      "\u20b918.75",
+      "\u20b912.5"
+    ],
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (5/100)^2 = 5000 * 0.0025000000000000005 = \u20b912.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 7% for 2 years?",
+    "options": [
+      "\u20b944.4",
+      "\u20b944.1",
+      "\u20b914.7",
+      "\u20b929.4"
+    ],
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = \u20b929.4.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 9% for 2 years?",
+    "options": [
+      "\u20b956.7",
+      "\u20b985.05",
+      "\u20b971.7",
+      "\u20b928.35"
+    ],
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = \u20b956.7.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 11% for 2 years?",
+    "options": [
+      "\u20b9145.2",
+      "\u20b996.8",
+      "\u20b948.4",
+      "\u20b9111.8"
+    ],
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = \u20b996.8.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-016",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 5% for 2 years?",
+    "options": [
+      "\u20b933.75",
+      "\u20b922.5",
+      "\u20b911.25",
+      "\u20b937.5"
+    ],
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = \u20b922.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-017",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 7% for 2 years?",
+    "options": [
+      "\u20b949.0",
+      "\u20b973.5",
+      "\u20b964.0",
+      "\u20b924.5"
+    ],
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = \u20b949.0.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-018",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 9% for 2 years?",
+    "options": [
+      "\u20b940.5",
+      "\u20b920.25",
+      "\u20b955.5",
+      "\u20b960.75"
+    ],
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = \u20b940.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-019",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 11% for 2 years?",
+    "options": [
+      "\u20b9108.9",
+      "\u20b936.3",
+      "\u20b972.6",
+      "\u20b987.6"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = \u20b972.6.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-si-ci-020",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 5% for 2 years?",
+    "options": [
+      "\u20b98.75",
+      "\u20b926.25",
+      "\u20b917.5",
+      "\u20b932.5"
+    ],
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = \u20b917.5.",
+    "difficulty": "Medium",
+    "tag": "Interest Calculations",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "220",
+      "400",
+      "200",
+      "185"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 20 * 10 = 200.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "545",
+      "525",
+      "510",
+      "1050"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 35 * 15 = 525.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "356",
+      "672",
+      "321",
+      "336"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 56 * 6 = 336.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "200",
+      "85",
+      "100",
+      "120"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 10 * 10 = 100.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "285",
+      "300",
+      "600",
+      "320"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 20 * 15 = 300.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "420",
+      "210",
+      "195",
+      "230"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 35 * 6 = 210.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "1120",
+      "545",
+      "580",
+      "560"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 56 * 10 = 560.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "300",
+      "170",
+      "150",
+      "135"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 10 * 15 = 150.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "120",
+      "105",
+      "240",
+      "140"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 20 * 6 = 120.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "350",
+      "700",
+      "335",
+      "370"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 35 * 10 = 350.",
+    "difficulty": "Medium",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "825",
+      "840",
+      "860",
+      "1680"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 56 * 15 = 840.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "45",
+      "120",
+      "80",
+      "60"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 10 * 6 = 60.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "220",
+      "400",
+      "185",
+      "200"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 20 * 10 = 200.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "1050",
+      "545",
+      "525",
+      "510"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 35 * 15 = 525.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "321",
+      "356",
+      "672",
+      "336"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 56 * 6 = 336.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-016",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "200",
+      "120",
+      "100",
+      "85"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 10 * 10 = 100.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-017",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "320",
+      "300",
+      "600",
+      "285"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 20 * 15 = 300.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-018",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "230",
+      "210",
+      "420",
+      "195"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 35 * 6 = 210.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-019",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "545",
+      "560",
+      "1120",
+      "580"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 56 * 10 = 560.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-pnc-020",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
+    "options": [
+      "170",
+      "300",
+      "135",
+      "150"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 10 * 15 = 150.",
+    "difficulty": "Hard",
+    "tag": "Permutation & Combination",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-001",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 12 and their LCM is 72. If one of the numbers is 24, what is the other number?",
+    "options": [
+      "51",
+      "36",
+      "42",
+      "24"
+    ],
+    "correctIndex": 1,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (12 * 72) / 24 = 36.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-002",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 18 and their LCM is 108. If one of the numbers is 36, what is the other number?",
+    "options": [
+      "69",
+      "60",
+      "54",
+      "42"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (18 * 108) / 36 = 54.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-003",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
+    "options": [
+      "60",
+      "72",
+      "78",
+      "87"
+    ],
+    "correctIndex": 1,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-004",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 30 and their LCM is 180. If one of the numbers is 60, what is the other number?",
+    "options": [
+      "105",
+      "96",
+      "78",
+      "90"
+    ],
+    "correctIndex": 3,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-005",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 6 and their LCM is 36. If one of the numbers is 12, what is the other number?",
+    "options": [
+      "24",
+      "33",
+      "18",
+      "6"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-006",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 12 and their LCM is 72. If one of the numbers is 24, what is the other number?",
+    "options": [
+      "51",
+      "42",
+      "36",
+      "24"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (12 * 72) / 24 = 36.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-007",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 18 and their LCM is 108. If one of the numbers is 36, what is the other number?",
+    "options": [
+      "54",
+      "69",
+      "42",
+      "60"
+    ],
+    "correctIndex": 0,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (18 * 108) / 36 = 54.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-008",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
+    "options": [
+      "78",
+      "72",
+      "60",
+      "87"
+    ],
+    "correctIndex": 1,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-009",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 30 and their LCM is 180. If one of the numbers is 60, what is the other number?",
+    "options": [
+      "96",
+      "78",
+      "105",
+      "90"
+    ],
+    "correctIndex": 3,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-010",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 6 and their LCM is 36. If one of the numbers is 12, what is the other number?",
+    "options": [
+      "6",
+      "33",
+      "24",
+      "18"
+    ],
+    "correctIndex": 3,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-011",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 12 and their LCM is 72. If one of the numbers is 24, what is the other number?",
+    "options": [
+      "42",
+      "24",
+      "36",
+      "51"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (12 * 72) / 24 = 36.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-012",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 18 and their LCM is 108. If one of the numbers is 36, what is the other number?",
+    "options": [
+      "69",
+      "54",
+      "60",
+      "42"
+    ],
+    "correctIndex": 1,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (18 * 108) / 36 = 54.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-013",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
+    "options": [
+      "78",
+      "87",
+      "72",
+      "60"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-014",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 30 and their LCM is 180. If one of the numbers is 60, what is the other number?",
+    "options": [
+      "105",
+      "78",
+      "96",
+      "90"
+    ],
+    "correctIndex": 3,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "quant-ns-015",
+    "sectionId": "quantitative",
+    "sectionTitle": "Quantitative Aptitude & Numerical Ability",
+    "category": "Cognitive",
+    "title": "The HCF of two numbers is 6 and their LCM is 36. If one of the numbers is 12, what is the other number?",
+    "options": [
+      "33",
+      "6",
+      "18",
+      "24"
+    ],
+    "correctIndex": 2,
+    "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
+    "difficulty": "Easy",
+    "tag": "Number Systems",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-001",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What is the worst-case time complexity of QuickSort when the pivot chosen is always the maximum or minimum element?",
+    "options": [
+      "O(n^2)",
+      "O(n log n)",
+      "O(n)",
+      "O(log n)"
+    ],
+    "correctIndex": 0,
+    "explanation": "When array is already sorted and pivot is the extreme element, QuickSort degrades to unbalanced partitions of sizes 1 and n-1, resulting in O(n^2) worst-case time.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-002",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which sorting algorithm has a guaranteed worst-case time complexity of O(n log n) while maintaining stable sort order?",
+    "options": [
+      "Merge Sort",
+      "Quick Sort",
+      "Heap Sort",
+      "Selection Sort"
+    ],
+    "correctIndex": 0,
+    "explanation": "Merge Sort guarantees O(n log n) in all cases (worst, best, average) and is stable because it preserves the relative order of equal elements.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-003",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What is the average time complexity to search, insert, and delete an element in a Hash Table with a uniform hash function?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correctIndex": 0,
+    "explanation": "With a well-distributed hash function and low load factor, hash table operations execute in average O(1) constant time.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-004",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which data structure is inherently used to implement Breadth-First Search (BFS) traversal of a graph?",
+    "options": [
+      "Queue (FIFO)",
+      "Stack (LIFO)",
+      "Binary Heap",
+      "Hash Map"
+    ],
+    "correctIndex": 0,
+    "explanation": "BFS explores vertices level by level, necessitating a FIFO Queue to process vertices in the exact order discovered.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-005",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What algorithm detects the presence of a loop/cycle in a singly linked list in O(n) time and O(1) auxiliary space?",
+    "options": [
+      "Floyd's Cycle-Finding Algorithm (Tortoise and Hare)",
+      "Dijkstra's Shortest Path",
+      "Kruskal's Algorithm",
+      "Binary Search"
+    ],
+    "correctIndex": 0,
+    "explanation": "Floyd's cycle detection uses two pointers moving at different speeds (slow moves 1 step, fast moves 2 steps). If a cycle exists, they will collide in O(n) time and O(1) space.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-006",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In a complete binary tree with N nodes, what is the height of the tree?",
+    "options": [
+      "Floor(log2(N))",
+      "O(N)",
+      "O(N^2)",
+      "O(1)"
+    ],
+    "correctIndex": 0,
+    "explanation": "A complete binary tree has maximum nodes per level, keeping the height logarithmically bounded at floor(log2(N)).",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-007",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which data structure is most appropriate for evaluating arithmetic expressions in Postfix (Reverse Polish) notation?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Binary Search Tree",
+      "Linked List"
+    ],
+    "correctIndex": 0,
+    "explanation": "Postfix evaluation pushes operands onto a Stack and pops the top two operands whenever an operator is encountered.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-008",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What is the time complexity to find the minimum element in a standard Min-Heap?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correctIndex": 0,
+    "explanation": "The minimum element in a Min-Heap is always maintained at the root node (index 0), retrievable in O(1) time.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-009",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What is the worst-case time complexity to search for a key in an unbalanced Binary Search Tree (BST)?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "correctIndex": 0,
+    "explanation": "In an unbalanced (skewed) BST, the tree degenerates into a singly linked list, making search O(n).",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-010",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which data structure does a CPU call stack utilize to handle nested function invocations and recursion?",
+    "options": [
+      "Stack (LIFO)",
+      "Queue (FIFO)",
+      "Priority Queue",
+      "Circular Buffer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Function calls push stack frames (local variables, return address) onto the runtime call stack, popping them in reverse order of invocation (LIFO).",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-011",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In Java and C++, what type of polymorphism is achieved through method overloading?",
+    "options": [
+      "Compile-Time / Static Polymorphism",
+      "Runtime / Dynamic Polymorphism",
+      "Ad-hoc Encapsulation",
+      "Coercive Inheritance"
+    ],
+    "correctIndex": 0,
+    "explanation": "Method overloading resolves method signatures at compile time based on parameter types and counts, making it static/compile-time polymorphism.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-012",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What type of polymorphism is achieved when a subclass overrides a virtual method defined in its superclass?",
+    "options": [
+      "Runtime / Dynamic Polymorphism",
+      "Compile-Time Polymorphism",
+      "Macro Expansion",
+      "Static Binding"
+    ],
+    "correctIndex": 0,
+    "explanation": "Method overriding resolves method execution at runtime via dynamic dispatch (virtual method table / vtable).",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-013",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which OOP principle restricts direct access to an object's internal fields and mandates interaction via public methods?",
+    "options": [
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism",
+      "Abstraction"
+    ],
+    "correctIndex": 0,
+    "explanation": "Encapsulation bundles data and methods together while hiding internal object state behind public getter/setter accessors.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-014",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What issue arises in multiple inheritance when a class inherits from two classes that both inherit from a common base class?",
+    "options": [
+      "The Diamond Problem",
+      "The Dangling Pointer Problem",
+      "The Starvation Anomaly",
+      "The Deadlock Cycle"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Diamond Problem creates ambiguity regarding which copy of the base class's methods and fields the grandchild class should inherit.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-015",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Can a private method in a parent class be overridden by a child subclass in Java?",
+    "options": [
+      "No, private methods are not inherited and cannot be overridden",
+      "Yes, by using the @Override annotation",
+      "Yes, if the subclass is in the same package",
+      "Yes, if declared final"
+    ],
+    "correctIndex": 0,
+    "explanation": "Private methods are bound strictly to their defining class and are invisible to subclasses; attempting to redefine them simply creates an unrelated new method.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-016",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What are the 4 necessary conditions required simultaneously for a Deadlock to occur in an Operating System?",
+    "options": [
+      "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait",
+      "Paging, Segmentation, Swapping, Thrashing",
+      "Starvation, Priority Inversion, Aging, Round Robin",
+      "Context Switch, Interrupt, Trap, System Call"
+    ],
+    "correctIndex": 0,
+    "explanation": "Coffman's 4 conditions for deadlock are: Mutual Exclusion, Hold & Wait, No Preemption, and Circular Wait. Breaking any one condition prevents deadlock.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-017",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What is 'Thrashing' in virtual memory systems?",
+    "options": [
+      "A state where the CPU spends more time swapping pages in and out than executing instructions",
+      "The deletion of temporary cache files",
+      "A physical disk controller failure",
+      "Hardware interrupt saturation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Thrashing occurs when the system's working set exceeds available physical RAM, causing constant page faults and excessive disk I/O swapping.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-018",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What information must be preserved in the Process Control Block (PCB) during a CPU context switch?",
+    "options": [
+      "Program Counter (PC), CPU registers, and process state",
+      "Entire hard drive partition",
+      "External network switch MAC table",
+      "RAM motherboard firmware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Context switching saves CPU registers, Program Counter, stack pointers, and state into the PCB so the process can resume seamlessly later.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-019",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which CPU scheduling algorithm gives each process a fixed slice of CPU time (time quantum) in cyclic order?",
+    "options": [
+      "Round Robin (RR)",
+      "First-Come First-Served (FCFS)",
+      "Shortest Job First (SJF)",
+      "Multilevel Feedback Queue"
+    ],
+    "correctIndex": 0,
+    "explanation": "Round Robin assigns a uniform time quantum to each ready process in a FIFO circular queue, ensuring fairness and preventing starvation.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-020",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What does the 'A' in ACID properties of database transactions represent?",
+    "options": [
+      "Atomicity (all operations succeed or entire transaction rolls back)",
+      "Availability",
+      "Authentication",
+      "Abstraction"
+    ],
+    "correctIndex": 0,
+    "explanation": "Atomicity guarantees that a transaction is treated as a single indivisible unit: either all statements execute, or none take effect.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-021",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "Which normal form eliminates Transitive Functional Dependencies (non-prime attribute depending on another non-prime attribute)?",
+    "options": [
+      "Third Normal Form (3NF)",
+      "First Normal Form (1NF)",
+      "Second Normal Form (2NF)",
+      "Boyce-Codd Normal Form (BCNF)"
+    ],
+    "correctIndex": 0,
+    "explanation": "1NF removes repeating groups, 2NF removes partial dependencies, and 3NF removes transitive dependencies.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-022",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What type of index in a relational database physically dictates the storage order of table rows on disk?",
+    "options": [
+      "Clustered Index",
+      "Non-Clustered Index",
+      "Bitmap Index",
+      "Full-Text Index"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Clustered Index sorts and stores the actual table data rows in order based on the key values (only one clustered index per table).",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-023",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "What concurrency anomaly occurs when Transaction 1 updates a row without committing, Transaction 2 reads it, and Transaction 1 subsequently rolls back?",
+    "options": [
+      "Dirty Read",
+      "Lost Update",
+      "Non-Repeatable Read",
+      "Phantom Read"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Dirty Read occurs when a transaction reads uncommitted data written by another concurrent transaction that later aborts.",
+    "difficulty": "Medium",
+    "tag": "Core CS & DSA",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-024",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-025",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-026",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-027",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-028",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-029",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-030",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-031",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-032",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-033",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-034",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-035",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-036",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-037",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-038",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-039",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-040",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-041",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-042",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-043",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-044",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-045",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-046",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-047",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-048",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-049",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-050",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-051",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-052",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-053",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-054",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-055",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-056",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-057",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-058",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-059",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-060",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-061",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-062",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-063",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-064",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-065",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-066",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-067",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-068",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-069",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-070",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-071",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-072",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-073",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-074",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-075",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-076",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-077",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-078",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-079",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-080",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-081",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-082",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-083",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-084",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-085",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-086",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-087",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-088",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-089",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-090",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-091",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-092",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-093",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-094",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-095",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-096",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-097",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Queue?",
+    "options": [
+      "FIFO with O(1) enqueue/dequeue",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Queue is fundamentally characterized by FIFO, offering O(1) enqueue/dequeue.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-098",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Array?",
+    "options": [
+      "Contiguous Memory with O(1) random access",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-099",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Linked List?",
+    "options": [
+      "Dynamic Pointer Chains with O(1) head insertion",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
+  },
+  {
+    "id": "corecs-100",
+    "sectionId": "core_cs_dsa",
+    "sectionTitle": "Core CS, OOP & Data Structures",
+    "category": "Technical",
+    "title": "In data structures, what is the defining characteristic of a Stack?",
+    "options": [
+      "LIFO with O(1) push/pop",
+      "Non-deterministic hashing",
+      "Random pointer traversal",
+      "O(n^2) search overhead"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
+    "difficulty": "Easy",
+    "tag": "Data Structures Basics",
+    "slotYear": "2025-2026"
   }
 ];
