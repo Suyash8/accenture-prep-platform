@@ -301,8 +301,26 @@ const INSTRUCTION_SLIDES = [
 export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [matrixSize, setMatrixSize] = useState<number>(3); // 3 (9x9), 4 (12x12), 5 (15x15)
 
-  // Generate dynamic procedurally randomized path puzzle
-  const [puzzle, setPuzzle] = useState<PathPuzzle>(() => generateProceduralPathPuzzle(3));
+  // Deterministic fallback puzzle for SSR prerendering
+  const [puzzle, setPuzzle] = useState<PathPuzzle>({
+    id: 'puzzle_3x3_initial',
+    gridSize: 9,
+    blocks: [
+      buildBlock(0, 0, 'straight', 0, 0),
+      buildBlock(0, 1, 'straight', 0, 0),
+      buildBlock(0, 2, 'straight', 0, 0),
+      buildBlock(1, 0, 'straight', 0, 0),
+      buildBlock(1, 1, 'straight', 0, 0),
+      buildBlock(1, 2, 'straight', 0, 0),
+      buildBlock(2, 0, 'straight', 0, 0),
+      buildBlock(2, 1, 'straight', 0, 0),
+      buildBlock(2, 2, 'straight', 0, 0),
+    ],
+    startCell: { row: 1, col: 0 },
+    endCell: { row: 1, col: 8 },
+    timeLimit: 240,
+    minMoves: 12,
+  });
 
   const [gameState, setGameState] = useState<'instructions' | 'playing' | 'results'>('instructions');
   const [instructionSlide, setInstructionSlide] = useState(0);
@@ -324,6 +342,11 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
     setPathHighlight([]);
     setShake(false);
   }, []);
+
+  // Client-side initial randomization
+  useEffect(() => {
+    handleRegeneratePuzzle(3);
+  }, [handleRegeneratePuzzle]);
 
   const handleSwitchMatrix = (size: number) => {
     setMatrixSize(size);
@@ -380,14 +403,14 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
   const boardSizePx = puzzle.gridSize * cellPx;
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-neutral-900 font-sans p-4 sm:p-8 flex flex-col">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 text-xs font-semibold text-neutral-700 shadow-xs cursor-pointer transition-colors"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs cursor-pointer transition-colors"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> Back to Assessment Hub
+          <ArrowLeft className="w-3.5 h-3.5" /> Back to Games
         </button>
 
         {/* Practice Variant Tabs + Randomizer */}
@@ -405,8 +428,8 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                 onClick={() => handleSwitchMatrix(tab.size)}
                 className={`rounded-full border px-4 py-1.5 text-xs font-bold transition-all cursor-pointer ${
                   isActive
-                    ? 'border-neutral-900 bg-neutral-900 text-white shadow-xs'
-                    : 'border-neutral-300 bg-white text-neutral-600 hover:border-neutral-500 hover:text-neutral-900'
+                    ? 'border-slate-900 dark:border-purple-500 bg-slate-900 dark:bg-purple-600 text-white shadow-xs'
+                    : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600'
                 }`}
               >
                 {tab.label}
@@ -416,15 +439,15 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
 
           <button
             onClick={() => handleRegeneratePuzzle(matrixSize)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 text-xs font-bold text-neutral-800 shadow-xs cursor-pointer transition-all ml-1"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs cursor-pointer transition-all ml-1"
           >
-            <Shuffle className="w-3.5 h-3.5 text-cyan-600" /> Randomize
+            <Shuffle className="w-3.5 h-3.5 text-amber-500" /> Randomize
           </button>
         </div>
       </div>
 
       {/* Main Game Stage Container */}
-      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-neutral-300 bg-white shadow-lg overflow-hidden relative min-h-[540px]">
+      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative min-h-[540px]">
         {/* Instruction Slide Modal */}
         {gameState === 'instructions' && (
           <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/25 p-4">

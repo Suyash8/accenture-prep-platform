@@ -136,10 +136,13 @@ function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; t
 
 export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [questionCount] = useState(25);
-  // Procedurally generated set of 25 questions
-  const [questions, setQuestions] = useState<MathQuestion[]>(() => {
-    return Array.from({ length: 25 }, (_, i) => generateRandomQuestion(i + 1));
-  });
+  // Initial fallback questions for deterministic SSR prerendering
+  const [questions, setQuestions] = useState<MathQuestion[]>([
+    {
+      id: 1,
+      bubbles: ['12+8', '5×3', '30-6'],
+    },
+  ]);
 
   const [currentIdx, setCurrentIdx] = useState(0);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
@@ -167,8 +170,13 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
     setWrong(0);
     setFeedbackType(null);
     setLayoutVariant(Math.floor(Math.random() * BUBBLE_LAYOUT_VARIATIONS.length));
-    setState('ready');
+    setState('playing');
   }, [questionCount]);
+
+  // Generate randomized questions on mount (client-only)
+  useEffect(() => {
+    regenerateQuestions();
+  }, [regenerateQuestions]);
 
   const currentQ = questions[currentIdx] || questions[0];
 
@@ -179,9 +187,18 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
       originalIndex,
       val: evaluateExpression(expr),
     }));
-    // deterministic shuffle based on current question id
-    return items.sort(() => 0.5 - Math.random());
-  }, [currentQ]);
+    // deterministic permutation using question id & currentIdx to avoid Math.random() in render phase
+    const permPatterns = [
+      [1, 0, 2],
+      [2, 0, 1],
+      [0, 2, 1],
+      [1, 2, 0],
+      [2, 1, 0],
+      [0, 1, 2],
+    ];
+    const pattern = permPatterns[(currentQ.id + currentIdx) % permPatterns.length];
+    return pattern.map((idx) => items[idx % items.length]);
+  }, [currentQ, currentIdx]);
 
   const handleResult = useCallback((isCorrect: boolean) => {
     if (stateRef.current !== 'playing') return;
@@ -246,28 +263,28 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
   const currentPositions = BUBBLE_LAYOUT_VARIATIONS[layoutVariant];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-neutral-900 font-sans p-4 sm:p-8 flex flex-col">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex items-center justify-between pb-4">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 text-xs font-semibold text-neutral-700 shadow-xs cursor-pointer transition-colors"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs cursor-pointer transition-colors"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> Back to Assessment Hub
+          <ArrowLeft className="w-3.5 h-3.5" /> Back to Games
         </button>
 
         <button
           onClick={regenerateQuestions}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-neutral-300 bg-white hover:bg-neutral-50 text-xs font-bold text-neutral-800 shadow-xs cursor-pointer transition-all"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs cursor-pointer transition-all"
         >
-          <Shuffle className="w-3.5 h-3.5 text-indigo-600" /> Randomize New Set
+          <Shuffle className="w-3.5 h-3.5 text-indigo-500" /> Randomize New Set
         </button>
       </div>
 
       {/* Main Game Stage Container */}
-      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-neutral-300 bg-white shadow-lg overflow-hidden relative">
+      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative">
         {/* Helper Note Banner */}
-        <div className="rounded-t-xl border-b border-neutral-200 bg-neutral-50 px-4 py-3 text-center text-xs leading-relaxed text-neutral-600">
+        <div className="rounded-t-xl border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 px-4 py-3 text-center text-xs leading-relaxed text-slate-600 dark:text-slate-300">
           You can deselect a bubble by clicking on it again. However, you will automatically advance to the next question after the third bubble is selected.
         </div>
 

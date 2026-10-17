@@ -26,8 +26,48 @@ export const PseudocodeTracer: React.FC = () => {
   const [bitwiseHelperValA, setBitwiseHelperValA] = useState<number>(7);
   const [bitwiseHelperValB, setBitwiseHelperValB] = useState<number>(3);
 
-  const currentQ: Question = pseudocodeQuestions[selectedQIndex] || pseudocodeQuestions[0];
-  const steps = currentQ.traceSteps || [];
+  const DEFAULT_PSEUDOCODE_QUESTION: Question = {
+    id: 'pseudo-default-1',
+    sectionId: 'pseudocode',
+    sectionTitle: 'Pseudocode Execution',
+    category: 'Technical',
+    title: 'Bitwise Logic Tracing',
+    codeSnippet: 'Integer a, b, c\nSet a = 4, b = 7\nc = (a & b) + (a ^ b)\nPrint c',
+    options: ['7', '11', '8', '3'],
+    correctIndex: 0,
+    explanation: 'a = 4 (0100), b = 7 (0111). (a & b) = 4. (a ^ b) = 3. 4 + 3 = 7.',
+    difficulty: 'Easy',
+    tag: 'Bitwise',
+    traceSteps: [
+      {
+        step: 1,
+        line: 1,
+        description: 'Integer a, b, c: Declares variables a, b, and c in memory.',
+        variables: { a: 'undefined', b: 'undefined', c: 'undefined' },
+      },
+      {
+        step: 2,
+        line: 2,
+        description: 'Set a = 4, b = 7: Assigns 4 (0100_2) to a and 7 (0111_2) to b.',
+        variables: { a: 4, b: 7, c: 'undefined' },
+      },
+      {
+        step: 3,
+        line: 3,
+        description: 'c = (a & b) + (a ^ b): Bitwise AND (4 & 7 = 4), XOR (4 ^ 7 = 3). Sum = 7.',
+        variables: { a: 4, b: 7, c: 7 },
+      },
+      {
+        step: 4,
+        line: 4,
+        description: 'Print c: Outputs final value 7.',
+        variables: { a: 4, b: 7, c: 7 },
+      },
+    ],
+  };
+
+  const currentQ: Question = pseudocodeQuestions[selectedQIndex] || DEFAULT_PSEUDOCODE_QUESTION;
+  const steps = currentQ?.traceSteps || DEFAULT_PSEUDOCODE_QUESTION.traceSteps || [];
   const activeStep = steps[currentStepIndex] || steps[0];
 
   const handleNextStep = () => {

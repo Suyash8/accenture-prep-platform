@@ -182,15 +182,22 @@ function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; t
 export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [variant, setVariant] = useState<'3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1'>('3x3-1');
 
-  // Generate fresh random maze level whenever variant changes or user clicks randomize
-  const [levelConfig, setLevelConfig] = useState<MazeLevelDef>(() => {
-    return generateRandomMaze(3, 1);
+  // Deterministic fallback maze definition for SSR prerendering
+  const [levelConfig, setLevelConfig] = useState<MazeLevelDef>({
+    gridSize: 3,
+    startPos: [0, 0],
+    doorPos: [2, 2],
+    keyPositions: [[0, 2]],
+    walls: [
+      [0, 1, 1, 1],
+      [1, 1, 2, 1],
+    ],
   });
 
   const [gameState, setGameState] = useState<'instructions' | 'playing' | 'finished'>('instructions');
   const [instructionSlide, setInstructionSlide] = useState(0);
 
-  const [playerPos, setPlayerPos] = useState<[number, number]>(levelConfig.startPos);
+  const [playerPos, setPlayerPos] = useState<[number, number]>([0, 0]);
   const [collectedKeys, setCollectedKeys] = useState<Set<string>>(new Set());
   const [attempts, setAttempts] = useState(0);
   const [timeLeft, setTimeLeft] = useState(240);
@@ -213,6 +220,11 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
     setTimeTaken(0);
     setGameState(toPlaying ? 'playing' : 'instructions');
   }, []);
+
+  // Client-side initial randomization
+  useEffect(() => {
+    regenerateMaze(3, 1, false);
+  }, [regenerateMaze]);
 
   const handleVariantSwitch = (v: '3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1') => {
     setVariant(v);
@@ -305,14 +317,14 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   const cellSize = levelConfig.gridSize >= 5 ? 'minmax(58px, 11vmin)' : levelConfig.gridSize >= 4 ? 'minmax(72px, 15vmin)' : 'minmax(100px, 22vmin)';
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-neutral-900 font-sans p-4 sm:p-8 flex flex-col">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 text-xs font-semibold text-neutral-700 shadow-xs cursor-pointer transition-colors"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs cursor-pointer transition-colors"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> Back to Assessment Hub
+          <ArrowLeft className="w-3.5 h-3.5" /> Back to Games
         </button>
 
         {/* Practice Variant Tabs + Randomizer */}
@@ -332,8 +344,8 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                 onClick={() => handleVariantSwitch(v.id as any)}
                 className={`rounded-full border px-4 py-1.5 text-xs font-bold transition-all cursor-pointer ${
                   isActive
-                    ? 'border-neutral-900 bg-neutral-900 text-white shadow-xs'
-                    : 'border-neutral-300 bg-white text-neutral-600 hover:border-neutral-500 hover:text-neutral-900'
+                    ? 'border-slate-900 dark:border-purple-500 bg-slate-900 dark:bg-purple-600 text-white shadow-xs'
+                    : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-600'
                 }`}
               >
                 {v.label}
@@ -347,15 +359,15 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
               const keys = variant.endsWith('-2') ? 2 : 1;
               regenerateMaze(size, keys, true);
             }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 text-xs font-bold text-neutral-800 shadow-xs cursor-pointer transition-all ml-1"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs cursor-pointer transition-all ml-1"
           >
-            <Shuffle className="w-3.5 h-3.5 text-emerald-600" /> Randomize
+            <Shuffle className="w-3.5 h-3.5 text-emerald-500" /> Randomize
           </button>
         </div>
       </div>
 
       {/* Main Container */}
-      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-neutral-300 bg-white shadow-lg overflow-hidden relative min-h-[520px]">
+      <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative min-h-[520px]">
         {/* Instruction Modal Overlay */}
         {gameState === 'instructions' && (
           <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/25 p-4">
