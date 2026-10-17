@@ -107,7 +107,7 @@ export const SECTIONS_META: SectionMeta[] = [
     questionCount: 3,
     recommendedMinutes: 15,
     cutoffScore: 70,
-    description: 'Math Bubbles, Grid Path Finder & Spatial working memory simulations used in screening rounds.',
+    description: 'Quick-Fire Math, Grid Path Builder & Spatial working memory simulations used in screening rounds.',
     iconName: 'Gamepad2',
     color: 'from-yellow-400 to-amber-600',
   },

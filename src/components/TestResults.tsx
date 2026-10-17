@@ -15,7 +15,7 @@ import {
   Bookmark
 } from 'lucide-react';
 import { Question } from '../types';
-import { saveMistake, resolveMistake, saveExamAttempt, toggleBookmark, getBookmarks } from '../lib/storage';
+import { recordResult, resolveMistake, saveExamAttempt, toggleBookmark, getBookmarks } from '../lib/storage';
 
 interface TestResultsProps {
   questions: Question[];
@@ -67,12 +67,12 @@ export const TestResults: React.FC<TestResultsProps> = ({
       sectionPerformance[q.sectionTitle].correct += 1;
       if (q.category === 'Cognitive') cognitiveCorrect += 1;
       if (q.category === 'Technical') technicalCorrect += 1;
-      // Mark as resolved if previously in mistake tracker
-      resolveMistake(q.id);
+      // Record correct answer (increments streak, resolves after 2 consecutive correct)
+      recordResult(q.id, q.sectionId, true);
     } else {
       wrongCount += 1;
-      // Automatically log into user mistake vault
-      saveMistake(q.id, chosen);
+      // Record incorrect answer (increments misses, resets streak, marks unresolved)
+      recordResult(q.id, q.sectionId, false);
     }
   });
 

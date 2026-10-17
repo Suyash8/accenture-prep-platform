@@ -2,65 +2,13 @@
 
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { ArrowLeft, Shuffle } from 'lucide-react';
-
-export interface MathQuestion {
-  id: number;
-  bubbles: string[];
-}
-
-// Procedural dynamic math question generator creating realistic Accenture-style expressions
-function generateRandomQuestion(tier: number): MathQuestion {
-  // Types of operations calibrated by tier difficulty
-  const operations = [
-    // Simple Addition/Subtraction
-    () => {
-      const a = Math.floor(Math.random() * 15) + 2;
-      const b = Math.floor(Math.random() * 12) + 1;
-      return Math.random() > 0.5 ? `${a}+${b}` : `${a + b}-${b}`;
-    },
-    // Multiplication
-    () => {
-      const a = Math.floor(Math.random() * 9) + 2;
-      const b = Math.floor(Math.random() * 8) + 2;
-      return `${a}×${b}`;
-    },
-    // Exact integer division
-    () => {
-      const divisor = Math.floor(Math.random() * 8) + 2;
-      const quotient = Math.floor(Math.random() * 12) + 2;
-      return `${divisor * quotient}÷${divisor}`;
-    },
-    // Exponent / Powers
-    () => {
-      const base = Math.floor(Math.random() * 5) + 2; // 2, 3, 4, 5, 6
-      const exp = base <= 3 ? Math.floor(Math.random() * 3) + 2 : 2; // up to 3^4 or 6^2
-      return `${base}^${exp}`;
-    },
-    // Single number
-    () => {
-      return `${Math.floor(Math.random() * 25) + 2}`;
-    },
-  ];
-
-  const expressions: string[] = [];
-  const values: number[] = [];
-
-  while (expressions.length < 3) {
-    const op = operations[Math.floor(Math.random() * operations.length)];
-    const expr = op();
-    const val = evaluateExpression(expr);
-    // ensure no identical numerical values to avoid ambiguous sort ties
-    if (!values.includes(val)) {
-      expressions.push(expr);
-      values.push(val);
-    }
-  }
-
-  return {
-    id: tier,
-    bubbles: expressions,
-  };
-}
+import {
+  generateMathQuestion,
+  isOrderLowestToHighest,
+  makeRational,
+  MathQuestion,
+} from '@/lib/games/mathOrder';
+import { saveGameScore } from '@/lib/storage';
 
 // 3 Triplet position layout variations (randomized per question)
 const BUBBLE_LAYOUT_VARIATIONS = [
@@ -84,24 +32,6 @@ const BUBBLE_LAYOUT_VARIATIONS = [
   ],
 ];
 
-function evaluateExpression(expr: string): number {
-  let clean = expr
-    .trim()
-    .replace(/×/g, '*')
-    .replace(/÷/g, '/')
-    .replace(/−/g, '-');
-  clean = clean.replace(/(\d+(?:\.\d+)?)\^(\d+(?:\.\d+)?)/g, (_, base, exp) =>
-    String(Math.pow(Number(base), Number(exp)))
-  );
-  if (!/^[\d+\-*/().\s]+$/.test(clean)) return 0;
-  try {
-    const val = Function(`"use strict"; return (${clean})`)();
-    return Number.isFinite(val) ? val : 0;
-  } catch {
-    return 0;
-  }
-}
-
 function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; totalSeconds: number; onExpire: () => void }) {
   const isUrgent = seconds <= 5;
   const pct = totalSeconds > 0 ? (seconds / totalSeconds) * 100 : 0;
@@ -114,35 +44,37 @@ function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; t
   return (
     <div className="relative flex size-14 shrink-0 items-center justify-center">
       <svg width="56" height="56" className="-rotate-90" aria-hidden="true">
-        <circle cx="28" cy="28" r={22} fill="none" stroke="#e5e5e5" strokeWidth="4" />
+        <circle cx="28" cy="28" r={22} fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-700" strokeWidth="4" />
         <circle
           cx="28"
           cy="28"
           r={22}
           fill="none"
-          stroke={isUrgent ? "#dc2626" : "#525252"}
+          stroke={isUrgent ? '#dc2626' : 'currentColor'}
+          className={isUrgent ? 'text-red-600' : 'text-slate-700 dark:text-slate-300'}
           strokeWidth="4"
           strokeDasharray={circumference}
           strokeDashoffset={circumference - (pct / 100) * circumference}
           strokeLinecap="round"
         />
       </svg>
-      <span className={`absolute inset-0 flex items-center justify-center text-lg font-semibold tabular-nums ${isUrgent ? 'text-red-600' : 'text-neutral-800'}`}>
+      <span className={`absolute inset-0 flex items-center justify-center text-lg font-semibold tabular-nums ${isUrgent ? 'text-red-600' : 'text-slate-800 dark:text-slate-200'}`}>
         {seconds}
       </span>
     </div>
   );
 }
 
+const INITIAL_FALLBACK_QUESTION: MathQuestion = {
+  id: 1,
+  bubbles: ['12+8', '5×3', '30-6'],
+  values: [makeRational(20), makeRational(15), makeRational(24)],
+};
+
 export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [questionCount] = useState(25);
   // Initial fallback questions for deterministic SSR prerendering
-  const [questions, setQuestions] = useState<MathQuestion[]>([
-    {
-      id: 1,
-      bubbles: ['12+8', '5×3', '30-6'],
-    },
-  ]);
+  const [questions, setQuestions] = useState<MathQuestion[]>([INITIAL_FALLBACK_QUESTION]);
 
   const [currentIdx, setCurrentIdx] = useState(0);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
@@ -161,7 +93,7 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
 
   const regenerateQuestions = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    const newQs = Array.from({ length: questionCount }, (_, i) => generateRandomQuestion(i + 1));
+    const newQs = Array.from({ length: questionCount }, (_, i) => generateMathQuestion(i + 1));
     setQuestions(newQs);
     setCurrentIdx(0);
     setSelectedIndices([]);
@@ -182,10 +114,10 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
 
   // Shuffle bubble order when displaying so lowest is never guaranteed to be at any fixed slot
   const shuffledBubbles = useMemo(() => {
-    const items = currentQ.bubbles.map((expr, originalIndex) => ({
+    const items = currentQ.bubbles.map((expr: string, originalIndex: number) => ({
       expr,
       originalIndex,
-      val: evaluateExpression(expr),
+      val: currentQ.values[originalIndex],
     }));
     // deterministic permutation using question id & currentIdx to avoid Math.random() in render phase
     const permPatterns = [
@@ -204,8 +136,10 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
     if (stateRef.current !== 'playing') return;
     setState('feedback');
     setFeedbackType(isCorrect ? 'correct' : 'wrong');
-    if (isCorrect) setCorrect((c) => c + 1);
-    else setWrong((w) => w + 1);
+    const newCorrect = isCorrect ? correct + 1 : correct;
+    const newWrong = isCorrect ? wrong : wrong + 1;
+    if (isCorrect) setCorrect(newCorrect);
+    else setWrong(newWrong);
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
@@ -215,12 +149,13 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
       setLayoutVariant(Math.floor(Math.random() * BUBBLE_LAYOUT_VARIATIONS.length));
       if (currentIdx >= questions.length - 1) {
         setState('finished');
+        saveGameScore('math-order', newCorrect, questions.length);
       } else {
         setCurrentIdx((i) => i + 1);
         setState('playing');
       }
-    }, 900);
-  }, [currentIdx, questions.length]);
+    }, 850);
+  }, [correct, wrong, currentIdx, questions.length]);
 
   const handleTimeout = useCallback(() => {
     handleResult(false);
@@ -236,8 +171,11 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
 
   const handleBubbleClick = (slotIdx: number) => {
     if (state !== 'playing') return;
+    
+    // Deselect if already selected: deselect this bubble and any later selections
     if (selectedIndices.includes(slotIdx)) {
-      setSelectedIndices((prev) => prev.filter((i) => i !== slotIdx));
+      const idx = selectedIndices.indexOf(slotIdx);
+      setSelectedIndices(selectedIndices.slice(0, idx));
       return;
     }
     if (selectedIndices.length >= 3) return;
@@ -246,8 +184,11 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
     setSelectedIndices(nextSelected);
 
     if (nextSelected.length === 3) {
-      const vals = nextSelected.map((i) => shuffledBubbles[i].val);
-      handleResult(vals[0] <= vals[1] && vals[1] <= vals[2]);
+      const v0 = shuffledBubbles[nextSelected[0]].val;
+      const v1 = shuffledBubbles[nextSelected[1]].val;
+      const v2 = shuffledBubbles[nextSelected[2]].val;
+      const isCorrectOrder = isOrderLowestToHighest(v0, v1, v2);
+      handleResult(isCorrectOrder);
     }
   };
 
@@ -256,14 +197,14 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
       ? 'border-[#22c55e] border-4'
       : feedbackType === 'wrong'
       ? 'border-[#ef4444] border-4'
-      : 'border-2 border-white';
+      : 'border-2 border-white dark:border-slate-600';
 
   const total = questions.length;
   const scorePct = total > 0 ? Math.round((correct / total) * 100) : 0;
   const currentPositions = BUBBLE_LAYOUT_VARIATIONS[layoutVariant];
 
   return (
-    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors min-h-screen">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex items-center justify-between pb-4">
         <button
@@ -285,26 +226,26 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
       <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative">
         {/* Helper Note Banner */}
         <div className="rounded-t-xl border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 px-4 py-3 text-center text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-          You can deselect a bubble by clicking on it again. However, you will automatically advance to the next question after the third bubble is selected.
+          Click a bubble to select it. Clicking a selected bubble deselects it and any subsequent selections. Evaluate order automatically after the third bubble.
         </div>
 
         {/* Ready Screen */}
         {state === 'ready' && (
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-neutral-900">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
               Quick-Fire Math — Randomized Dynamic Assessment
             </h2>
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-slate-600 dark:text-slate-400">
               {total} questions • 15 seconds each
             </p>
-            <p className="text-sm text-neutral-700 max-w-md font-medium">
-              Select the bubbles in order from the <strong>LOWEST</strong> to the <strong>HIGHEST</strong> value.
+            <p className="text-sm text-slate-700 dark:text-slate-300 max-w-md font-medium">
+              Select the bubbles in order from the <strong>LOWEST</strong> to the <strong>HIGHEST</strong> numerical value.
             </p>
             <button
               onClick={() => setState('playing')}
-              className="mt-6 px-10 py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider shadow-md cursor-pointer transition-colors"
+              className="mt-6 px-10 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider shadow-md cursor-pointer transition-colors"
             >
-              Start
+              Start Assessment
             </button>
           </div>
         )}
@@ -312,8 +253,8 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
         {/* Playing or Feedback Screen */}
         {(state === 'playing' || state === 'feedback') && (
           <div className="flex-1 flex flex-col p-4 sm:p-6 relative min-h-[460px]">
-            {/* Inner Gray Canvas */}
-            <div className="relative flex-1 min-h-[380px] rounded-xl border-2 border-neutral-600 bg-[#f0f0f0] overflow-hidden">
+            {/* Inner Canvas with .game-surface */}
+            <div className="game-surface relative flex-1 min-h-[380px] rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
               {shuffledBubbles.map((item, slotIdx) => {
                 const orderIdx = selectedIndices.indexOf(slotIdx);
                 const isSelected = orderIdx >= 0;
@@ -328,10 +269,10 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
                     onClick={() => handleBubbleClick(slotIdx)}
                     className={`absolute flex size-[clamp(140px,min(24vw,26vh),210px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-center text-lg sm:text-xl font-medium transition-all cursor-pointer select-none shadow-md ${
                       isFeedback
-                        ? `bg-[#d0d0d0] text-neutral-800 ${borderClass}`
+                        ? `bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white ${borderClass}`
                         : isSelected
-                        ? 'border-2 border-white bg-[#333333] text-white scale-105'
-                        : 'border-2 border-white bg-[#d0d0d0] text-neutral-800 hover:bg-[#bdbdbd]'
+                        ? 'border-2 border-indigo-500 bg-slate-900 dark:bg-indigo-900/80 text-white scale-105 shadow-lg'
+                        : 'border-2 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700'
                     }`}
                     style={{ top: pos.top, left: pos.left }}
                   >
@@ -343,7 +284,7 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
                     </span>
 
                     {isSelected && !isFeedback && (
-                      <span className="absolute -right-1 -top-1 flex size-7 items-center justify-center rounded-full bg-white text-sm font-bold text-neutral-900 shadow">
+                      <span className="absolute -right-1 -top-1 flex size-7 items-center justify-center rounded-full bg-indigo-600 text-white text-sm font-bold shadow">
                         {orderIdx + 1}
                       </span>
                     )}
@@ -353,19 +294,19 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
             </div>
 
             {/* Bottom Progress & Timer Row */}
-            <div className="mt-4 flex items-center justify-between border-t border-neutral-200 pt-4 px-2">
+            <div className="mt-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-700 pt-4 px-2">
               <CircularTimer seconds={timeLeft} totalSeconds={15} onExpire={handleTimeout} />
 
               <div className="text-center">
-                <span className="text-xs uppercase font-bold text-neutral-400 block tracking-wider">Progress</span>
-                <span className="text-sm font-bold text-neutral-800">
+                <span className="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 block tracking-wider">Progress</span>
+                <span className="text-sm font-bold text-slate-800 dark:text-slate-200">
                   Question {currentIdx + 1} of {total}
                 </span>
               </div>
 
               <div className="text-right">
-                <span className="text-xs uppercase font-bold text-neutral-400 block tracking-wider">Score</span>
-                <span className="text-sm font-bold text-emerald-600">
+                <span className="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 block tracking-wider">Score</span>
+                <span className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
                   {correct} Correct
                 </span>
               </div>
@@ -376,27 +317,27 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
         {/* Finished Results Screen */}
         {state === 'finished' && (
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
-            <div className="w-full max-w-sm rounded-xl border border-neutral-200 bg-white p-8 text-center shadow-lg space-y-4">
-              <h3 className="text-2xl font-bold text-neutral-900">Results</h3>
+            <div className="w-full max-w-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 text-center shadow-lg space-y-4">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Results</h3>
 
-              <div className="space-y-2 text-left text-neutral-700 text-sm border-y border-neutral-100 py-4">
+              <div className="space-y-2 text-left text-slate-700 dark:text-slate-300 text-sm border-y border-slate-100 dark:border-slate-700 py-4">
                 <p className="flex justify-between">
                   <span>Correct:</span>
-                  <strong className="text-neutral-900">{correct} / {total}</strong>
+                  <strong className="text-slate-900 dark:text-white">{correct} / {total}</strong>
                 </p>
                 <p className="flex justify-between">
                   <span>Wrong:</span>
-                  <strong className="text-neutral-900">{wrong} / {total}</strong>
+                  <strong className="text-slate-900 dark:text-white">{wrong} / {total}</strong>
                 </p>
                 <p className="flex justify-between text-base pt-1">
                   <span>Score:</span>
-                  <strong className="text-neutral-900 font-extrabold">{scorePct}%</strong>
+                  <strong className="text-slate-900 dark:text-white font-extrabold">{scorePct}%</strong>
                 </p>
               </div>
 
               <button
                 onClick={regenerateQuestions}
-                className="w-full py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
+                className="w-full py-3 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
               >
                 Try Again With New Random Set
               </button>

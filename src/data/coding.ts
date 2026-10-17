@@ -32,6 +32,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "hello world\npython programming",
         "expected": "NONE"
       }
+    ,
+      {
+        "input": "quick\nthe quick brown fox",
+        "expected": "quick",
+        "hidden": true
+      },
+      {
+        "input": "sun moon\nearth mars",
+        "expected": "NONE",
+        "hidden": true
+      }
     ]
   },
   {
@@ -64,6 +75,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "aabb",
         "expected": "0"
+      }
+    ,
+      {
+        "input": "p",
+        "expected": "0",
+        "hidden": true
+      },
+      {
+        "input": "aabbccc",
+        "expected": "1",
+        "hidden": true
       }
     ]
   },
@@ -98,6 +120,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "123",
         "expected": "UNSAFE"
       }
+    ,
+      {
+        "input": "1",
+        "expected": "SAFE",
+        "hidden": true
+      },
+      {
+        "input": "9474",
+        "expected": "SAFE",
+        "hidden": true
+      }
     ]
   },
   {
@@ -130,6 +163,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "1 2 3",
         "expected": "0"
+      }
+    ,
+      {
+        "input": "4 1 8 5 2 9",
+        "expected": "9",
+        "hidden": true
+      },
+      {
+        "input": "10 20",
+        "expected": "0",
+        "hidden": true
       }
     ]
   },
@@ -164,6 +208,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "2\n5 6 7",
         "expected": "0"
       }
+    ,
+      {
+        "input": "10\n1 2 3",
+        "expected": "2",
+        "hidden": true
+      },
+      {
+        "input": "3\n4 3 2",
+        "expected": "0",
+        "hidden": true
+      }
     ]
   },
   {
@@ -192,6 +247,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "3\n10",
         "expected": "19"
+      }
+    ,
+      {
+        "input": "5\n10",
+        "expected": "25",
+        "hidden": true
+      },
+      {
+        "input": "2\n6",
+        "expected": "-3",
+        "hidden": true
       }
     ]
   },
@@ -222,6 +288,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "String-Without-Hyphen",
         "expected": "--StringWithoutHyphen"
       }
+    ,
+      {
+        "input": "a-b-c-d",
+        "expected": "---abcd",
+        "hidden": true
+      },
+      {
+        "input": "nohyphen",
+        "expected": "nohyphen",
+        "hidden": true
+      }
     ]
   },
   {
@@ -250,6 +327,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "23\n563",
         "expected": "0"
+      }
+    ,
+      {
+        "input": "999\n1",
+        "expected": "3",
+        "hidden": true
+      },
+      {
+        "input": "123\n456",
+        "expected": "0",
+        "hidden": true
       }
     ]
   },
@@ -284,6 +372,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "16",
         "expected": "Not Automorphic Number"
       }
+    ,
+      {
+        "input": "5",
+        "expected": "Automorphic Number",
+        "hidden": true
+      },
+      {
+        "input": "10",
+        "expected": "Not Automorphic Number",
+        "hidden": true
+      }
     ]
   },
   {
@@ -313,6 +412,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "100 20 30",
         "expected": "100\n0"
       }
+    ,
+      {
+        "input": "42",
+        "expected": "42\n0",
+        "hidden": true
+      },
+      {
+        "input": "-5 -1 -10",
+        "expected": "-1\n1",
+        "hidden": true
+      }
     ]
   },
   {
@@ -341,6 +451,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "1 2 3 4 5",
         "expected": "1"
+      }
+    ,
+      {
+        "input": "5 4 3 2 1",
+        "expected": "5",
+        "hidden": true
+      },
+      {
+        "input": "10",
+        "expected": "1",
+        "hidden": true
       }
     ]
   },
@@ -375,6 +496,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "a9",
         "expected": "0"
       }
+    ,
+      {
+        "input": "a/bC12",
+        "expected": "0",
+        "hidden": true
+      },
+      {
+        "input": "ValidPass1",
+        "expected": "1",
+        "hidden": true
+      }
     ]
   },
   {
@@ -403,6 +535,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "2 2 1",
         "expected": "1"
+      }
+    ,
+      {
+        "input": "7",
+        "expected": "7",
+        "hidden": true
+      },
+      {
+        "input": "9 3 9 5 5",
+        "expected": "3",
+        "hidden": true
       }
     ]
   },
@@ -437,6 +580,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "5 4 -1 7 8",
         "expected": "23"
       }
+    ,
+      {
+        "input": "-1 -2 -3",
+        "expected": "-1",
+        "hidden": true
+      },
+      {
+        "input": "10 20 -5 30",
+        "expected": "55",
+        "hidden": true
+      }
     ]
   },
   {
@@ -465,6 +619,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "3 2 3",
         "expected": "3"
+      }
+    ,
+      {
+        "input": "5",
+        "expected": "5",
+        "hidden": true
+      },
+      {
+        "input": "1 1 1 2 3 1",
+        "expected": "1",
+        "hidden": true
       }
     ]
   },
@@ -495,6 +660,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "  hello world  ",
         "expected": "world hello"
       }
+    ,
+      {
+        "input": "a",
+        "expected": "a",
+        "hidden": true
+      },
+      {
+        "input": "apple   banana  cherry",
+        "expected": "cherry banana apple",
+        "hidden": true
+      }
     ]
   },
   {
@@ -523,6 +699,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "10\n10\n5 5 5",
         "expected": "0"
+      }
+    ,
+      {
+        "input": "2\n5\n10",
+        "expected": "1",
+        "hidden": true
+      },
+      {
+        "input": "5\n10\n1 2 3",
+        "expected": "0",
+        "hidden": true
       }
     ]
   },
@@ -553,6 +740,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "0C1A1B1C1",
         "expected": "0"
       }
+    ,
+      {
+        "input": "1",
+        "expected": "1",
+        "hidden": true
+      },
+      {
+        "input": "1A0B1C1",
+        "expected": "0",
+        "hidden": true
+      }
     ]
   },
   {
@@ -582,6 +780,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "input": "1 2 3",
         "expected": "-1"
       }
+    ,
+      {
+        "input": "1",
+        "expected": "0",
+        "hidden": true
+      },
+      {
+        "input": "1 2 3 4 6",
+        "expected": "3",
+        "hidden": true
+      }
     ]
   },
   {
@@ -610,6 +819,17 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "14\n2 7 11 15",
         "expected": "NO"
+      }
+    ,
+      {
+        "input": "10\n5 5 1",
+        "expected": "YES",
+        "hidden": true
+      },
+      {
+        "input": "20\n1 2 3 4 5",
+        "expected": "NO",
+        "hidden": true
       }
     ]
   }

@@ -2,104 +2,13 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowLeft, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, Shuffle } from 'lucide-react';
-
-interface MazeLevelDef {
-  gridSize: number;
-  startPos: [number, number];
-  keyPositions: [number, number][];
-  doorPos: [number, number];
-  walls: [number, number, number, number][];
-}
-
-// Procedural Maze Generator guaranteeing solvable path while placing invisible walls and keys
-function generateRandomMaze(gridSize: number, keyCount: number = 1): MazeLevelDef {
-  const allCells: [number, number][] = [];
-  for (let r = 0; r < gridSize; r++) {
-    for (let c = 0; c < gridSize; c++) {
-      allCells.push([r, c]);
-    }
-  }
-
-  // Shuffle cells to pick Start and Door at opposing quadrants
-  const startPos: [number, number] = [
-    Math.random() > 0.5 ? 0 : gridSize - 1,
-    Math.random() > 0.5 ? 0 : gridSize - 1,
-  ];
-
-  let doorPos: [number, number] = [
-    gridSize - 1 - startPos[0],
-    gridSize - 1 - startPos[1],
-  ];
-
-  // Pick Keys positions at distinct cells away from start & door
-  const availableForKey = allCells.filter(
-    ([r, c]) =>
-      !(r === startPos[0] && c === startPos[1]) &&
-      !(r === doorPos[0] && c === doorPos[1])
-  );
-
-  availableForKey.sort(() => 0.5 - Math.random());
-  const keyPositions = availableForKey.slice(0, keyCount);
-
-  // Generate a guaranteed clear path: Start -> Key 1 (-> Key 2) -> Door
-  const waypoints = [startPos, ...keyPositions, doorPos];
-  const clearEdges = new Set<string>();
-
-  for (let i = 0; i < waypoints.length - 1; i++) {
-    let [currR, currC] = waypoints[i];
-    const [targetR, targetC] = waypoints[i + 1];
-
-    while (currR !== targetR || currC !== targetC) {
-      const moveVertical = currR !== targetR && (currC === targetC || Math.random() > 0.5);
-      const nextR = moveVertical ? (targetR > currR ? currR + 1 : currR - 1) : currR;
-      const nextC = !moveVertical ? (targetC > currC ? currC + 1 : currC - 1) : currC;
-
-      const edgeKey1 = `${currR},${currC}-${nextR},${nextC}`;
-      const edgeKey2 = `${nextR},${nextC}-${currR},${currC}`;
-      clearEdges.add(edgeKey1);
-      clearEdges.add(edgeKey2);
-
-      currR = nextR;
-      currC = nextC;
-    }
-  }
-
-  // Generate candidate walls between adjacent cells that DO NOT cut the guaranteed clear path
-  const walls: [number, number, number, number][] = [];
-  const targetWallCount = gridSize === 3 ? 3 : gridSize === 4 ? 7 : 11;
-
-  for (let r = 0; r < gridSize; r++) {
-    for (let c = 0; c < gridSize; c++) {
-      // Horizontal wall: (r, c) to (r+1, c)
-      if (r + 1 < gridSize) {
-        const edge1 = `${r},${c}-${r + 1},${c}`;
-        const edge2 = `${r + 1},${c}-${r},${c}`;
-        if (!clearEdges.has(edge1) && !clearEdges.has(edge2) && Math.random() < 0.45) {
-          walls.push([r, c, r + 1, c]);
-        }
-      }
-      // Vertical wall: (r, c) to (r, c+1)
-      if (c + 1 < gridSize) {
-        const edge1 = `${r},${c}-${r},${c + 1}`;
-        const edge2 = `${r},${c + 1}-${r},${c}`;
-        if (!clearEdges.has(edge1) && !clearEdges.has(edge2) && Math.random() < 0.45) {
-          walls.push([r, c, r, c + 1]);
-        }
-      }
-    }
-  }
-
-  walls.sort(() => 0.5 - Math.random());
-  const selectedWalls = walls.slice(0, targetWallCount);
-
-  return {
-    gridSize,
-    startPos,
-    keyPositions,
-    doorPos,
-    walls: selectedWalls,
-  };
-}
+import {
+  generateMazeLevel,
+  MazeLevelConfig,
+  Wall,
+  isAdjacent,
+} from '@/lib/games/memoryMaze';
+import { saveGameScore } from '@/lib/storage';
 
 const INSTRUCTION_SLIDES = [
   "In this exercise, you must move between boxes in a grid that contains a maze of invisible walls. You can navigate up, down, left or right, but NOT diagonally. You can also navigate back over the path you have taken.",
@@ -109,11 +18,7 @@ const INSTRUCTION_SLIDES = [
   "The practice exercise will have 1 maze. Press the START button to begin.",
 ];
 
-function isAdjacent(r1: number, c1: number, r2: number, c2: number) {
-  return (Math.abs(r1 - r2) === 1 && c1 === c2) || (Math.abs(c1 - c2) === 1 && r1 === r2);
-}
-
-function WallLine({ wall, gridSize }: { wall: [number, number, number, number]; gridSize: number }) {
+function WallLine({ wall, gridSize }: { wall: Wall; gridSize: number }) {
   const [r1, c1, r2, c2] = wall;
   const isHorizontal = r1 !== r2;
   const maxR = isHorizontal ? Math.max(r1, r2) : r1;
@@ -121,7 +26,7 @@ function WallLine({ wall, gridSize }: { wall: [number, number, number, number]; 
 
   return (
     <div
-      className="pointer-events-none absolute z-30 bg-red-500 shadow-md"
+      className="pointer-events-none absolute z-30 bg-red-500 shadow-md transition-opacity"
       style={
         isHorizontal
           ? {
@@ -159,20 +64,21 @@ function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; t
   return (
     <div className="relative flex size-14 shrink-0 items-center justify-center">
       <svg width="56" height="56" className="-rotate-90" aria-hidden="true">
-        <circle cx="28" cy="28" r={22} fill="none" stroke="#e5e5e5" strokeWidth="4" />
+        <circle cx="28" cy="28" r={22} fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-700" strokeWidth="4" />
         <circle
           cx="28"
           cy="28"
           r={22}
           fill="none"
-          stroke={isUrgent ? "#dc2626" : "#525252"}
+          stroke={isUrgent ? '#dc2626' : 'currentColor'}
+          className={isUrgent ? 'text-red-600' : 'text-slate-700 dark:text-slate-300'}
           strokeWidth="4"
           strokeDasharray={circumference}
           strokeDashoffset={circumference - (pct / 100) * circumference}
           strokeLinecap="round"
         />
       </svg>
-      <span className={`absolute inset-0 flex items-center justify-center text-xs font-semibold tabular-nums ${isUrgent ? 'text-red-600' : 'text-neutral-800'}`}>
+      <span className={`absolute inset-0 flex items-center justify-center text-xs font-semibold tabular-nums ${isUrgent ? 'text-red-600' : 'text-slate-800 dark:text-slate-200'}`}>
         {formatted}
       </span>
     </div>
@@ -183,7 +89,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   const [variant, setVariant] = useState<'3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1'>('3x3-1');
 
   // Deterministic fallback maze definition for SSR prerendering
-  const [levelConfig, setLevelConfig] = useState<MazeLevelDef>({
+  const [levelConfig, setLevelConfig] = useState<MazeLevelConfig>({
     gridSize: 3,
     startPos: [0, 0],
     doorPos: [2, 2],
@@ -201,7 +107,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   const [collectedKeys, setCollectedKeys] = useState<Set<string>>(new Set());
   const [attempts, setAttempts] = useState(0);
   const [timeLeft, setTimeLeft] = useState(240);
-  const [hitWall, setHitWall] = useState<[number, number, number, number] | null>(null);
+  const [hitWall, setHitWall] = useState<Wall | null>(null);
   const [isWin, setIsWin] = useState(false);
   const [timeTaken, setTimeTaken] = useState(0);
 
@@ -209,7 +115,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
 
   const regenerateMaze = useCallback((size: number, keys: number, toPlaying: boolean = false) => {
     if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
-    const newLvl = generateRandomMaze(size, keys);
+    const newLvl = generateMazeLevel(size, keys);
     setLevelConfig(newLvl);
     setPlayerPos(newLvl.startPos);
     setCollectedKeys(new Set());
@@ -224,6 +130,9 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   // Client-side initial randomization
   useEffect(() => {
     regenerateMaze(3, 1, false);
+    return () => {
+      if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
+    };
   }, [regenerateMaze]);
 
   const handleVariantSwitch = (v: '3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1') => {
@@ -298,11 +207,13 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
 
     // Check Win
     if (isDoor && updatedKeys.size >= levelConfig.keyPositions.length) {
-      setTimeTaken(240 - timeLeft);
+      const duration = 240 - timeLeft;
+      setTimeTaken(duration);
       setIsWin(true);
       setGameState('finished');
+      saveGameScore('memory-maze', Math.max(10, 100 - attempts * 5), 100);
     }
-  }, [gameState, playerPos, levelConfig, collectedKeys, timeLeft]);
+  }, [gameState, playerPos, levelConfig, collectedKeys, timeLeft, attempts]);
 
   const requiredKeysCount = levelConfig.keyPositions.length;
   const keysLabel = requiredKeysCount === 1 ? '1 KEY' : `${requiredKeysCount} KEYS`;
@@ -317,7 +228,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   const cellSize = levelConfig.gridSize >= 5 ? 'minmax(58px, 11vmin)' : levelConfig.gridSize >= 4 ? 'minmax(72px, 15vmin)' : 'minmax(100px, 22vmin)';
 
   return (
-    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors min-h-screen">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4">
         <button
@@ -370,13 +281,13 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
       <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative min-h-[520px]">
         {/* Instruction Modal Overlay */}
         {gameState === 'instructions' && (
-          <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/25 p-4">
-            <div className="relative w-full max-w-lg rounded-xl border border-gray-300 bg-white p-8 shadow-2xl">
+          <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4">
+            <div className="relative w-full max-w-lg rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-2xl">
               {instructionSlide > 0 && (
                 <button
                   type="button"
                   onClick={() => setInstructionSlide((s) => s - 1)}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded p-2 text-gray-400 hover:bg-gray-100 cursor-pointer"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded p-2 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
                 >
                   <ChevronLeft className="size-6" />
                 </button>
@@ -386,13 +297,13 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                 <button
                   type="button"
                   onClick={() => setInstructionSlide((s) => s + 1)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-2 text-gray-400 hover:bg-gray-100 cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-2 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
                 >
                   <ChevronRight className="size-6" />
                 </button>
               )}
 
-              <p className="px-8 text-center text-sm leading-relaxed text-neutral-800 min-h-[72px] flex items-center justify-center">
+              <p className="px-8 text-center text-sm leading-relaxed text-slate-800 dark:text-slate-200 min-h-[72px] flex items-center justify-center">
                 {INSTRUCTION_SLIDES[instructionSlide]}
               </p>
 
@@ -400,8 +311,8 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                 {INSTRUCTION_SLIDES.map((_, idx) => (
                   <span
                     key={idx}
-                    className={`size-2 rounded-full border border-neutral-400 transition-colors ${
-                      idx === instructionSlide ? 'bg-neutral-800' : 'bg-transparent'
+                    className={`size-2 rounded-full border border-slate-400 transition-colors ${
+                      idx === instructionSlide ? 'bg-slate-900 dark:bg-white' : 'bg-transparent'
                     }`}
                   />
                 ))}
@@ -412,9 +323,9 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                   <button
                     type="button"
                     onClick={() => setGameState('playing')}
-                    className="rounded-lg bg-neutral-900 px-10 py-2.5 text-xs font-semibold uppercase tracking-wide text-white hover:bg-neutral-700 cursor-pointer transition-colors"
+                    className="rounded-lg bg-slate-900 dark:bg-indigo-600 px-10 py-2.5 text-xs font-semibold uppercase tracking-wide text-white hover:bg-slate-800 dark:hover:bg-indigo-500 cursor-pointer transition-colors"
                   >
-                    Start
+                    Start Game
                   </button>
                 </div>
               )}
@@ -425,19 +336,19 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
         {/* Finished Modal Screen */}
         {gameState === 'finished' && (
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
-            <div className="w-full max-w-sm rounded-xl border border-neutral-200 bg-white p-8 text-center shadow-lg space-y-4">
-              <h3 className="text-2xl font-bold text-neutral-900">
-                {isWin ? "Maze Solved!" : "Time's Up!"}
+            <div className="w-full max-w-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 text-center shadow-lg space-y-4">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                {isWin ? 'Maze Solved!' : "Time's Up!"}
               </h3>
 
-              <div className="space-y-2 text-left text-neutral-700 text-sm border-y border-neutral-100 py-4">
+              <div className="space-y-2 text-left text-slate-700 dark:text-slate-300 text-sm border-y border-slate-100 dark:border-slate-700 py-4">
                 <p className="flex justify-between">
                   <span>Attempts:</span>
-                  <strong className="text-neutral-900 font-bold">{attempts}</strong>
+                  <strong className="text-slate-900 dark:text-white font-bold">{attempts}</strong>
                 </p>
                 <p className="flex justify-between">
                   <span>Time taken:</span>
-                  <strong className="text-neutral-900 font-mono font-bold">
+                  <strong className="text-slate-900 dark:text-white font-mono font-bold">
                     {Math.floor(timeTaken / 60)}:{(timeTaken % 60).toString().padStart(2, '0')}
                   </strong>
                 </p>
@@ -449,7 +360,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                   const keys = variant.endsWith('-2') ? 2 : 1;
                   regenerateMaze(size, keys, true);
                 }}
-                className="w-full py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
+                className="w-full py-3 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
               >
                 Play New Random Maze
               </button>
@@ -461,8 +372,8 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
         {gameState === 'playing' && (
           <div className="flex-1 flex flex-col items-center justify-center p-6">
             <div className="relative">
-              {/* Outer Board Box */}
-              <div className="relative overflow-hidden rounded-xl border-2 border-neutral-600 bg-white shadow-xl">
+              {/* Outer Board Box with game-surface */}
+              <div className="game-surface relative overflow-hidden rounded-xl border-2 border-slate-400 dark:border-slate-600 shadow-xl">
                 <div
                   className="relative grid"
                   style={{
@@ -486,15 +397,15 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                         key={`${r}-${c}`}
                         role={isMovable ? 'button' : undefined}
                         onClick={() => isMovable && handleStep(r, c)}
-                        className={`relative flex items-center justify-center border border-neutral-300 text-3xl transition-colors select-none ${
+                        className={`relative flex items-center justify-center border border-slate-200 dark:border-slate-700/80 text-3xl transition-colors select-none ${
                           isPlayer
-                            ? 'bg-neutral-800 text-white'
+                            ? 'bg-slate-900 dark:bg-indigo-900 text-white'
                             : isDoor
                             ? allKeys
-                              ? 'bg-neutral-50 hover:bg-neutral-100'
-                              : 'bg-neutral-200 text-neutral-400'
-                            : 'bg-neutral-50 hover:bg-neutral-100'
-                        } ${isMovable ? 'cursor-pointer ring-2 ring-inset ring-transparent hover:ring-neutral-400' : ''}`}
+                              ? 'bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60'
+                              : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
+                            : 'bg-white dark:bg-slate-900/60 hover:bg-slate-50 dark:hover:bg-slate-800/80'
+                        } ${isMovable ? 'cursor-pointer ring-2 ring-inset ring-transparent hover:ring-indigo-400' : ''}`}
                       >
                         {hasKey && (
                           <span className="text-4xl sm:text-5xl" aria-hidden="true">
@@ -514,7 +425,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                               🚶
                             </span>
 
-                            {/* Floating direction arrow pads anchored to player */}
+                            {/* Direction arrow pads */}
                             {dpadDirections.map((d) => {
                               const targetR = r + d.dr;
                               const targetC = c + d.dc;
@@ -535,7 +446,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                                     e.stopPropagation();
                                     handleStep(targetR, targetC);
                                   }}
-                                  className={`absolute z-10 flex size-8 items-center justify-center rounded-md border border-neutral-500/60 bg-neutral-700 text-neutral-300 shadow-md transition-colors hover:border-neutral-400 hover:bg-neutral-600 hover:text-white cursor-pointer ${d.offset}`}
+                                  className={`absolute z-10 flex size-8 items-center justify-center rounded-md border border-slate-400 dark:border-slate-600 bg-slate-800 dark:bg-slate-700 text-slate-200 shadow-md transition-colors hover:bg-slate-700 dark:hover:bg-slate-600 hover:text-white cursor-pointer ${d.offset}`}
                                 >
                                   <Icon className="size-5 stroke-[2.5]" />
                                 </button>
@@ -555,7 +466,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
 
             {/* Keys Status Feedback */}
             {collectedKeys.size > 0 && (
-              <p className="mt-4 text-xs font-semibold text-emerald-700">
+              <p className="mt-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                 {collectedKeys.size >= requiredKeysCount
                   ? requiredKeysCount === 1
                     ? 'Key collected ✓'
@@ -565,16 +476,16 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
             )}
 
             {/* Bottom Progress Bar & Timer */}
-            <div className="mt-6 flex w-full max-w-xl flex-wrap items-center justify-between gap-4 border-t border-neutral-300 pt-4 px-2">
+            <div className="mt-6 flex w-full max-w-xl flex-wrap items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-700 pt-4 px-2">
               <CircularTimer seconds={timeLeft} totalSeconds={240} onExpire={handleExpire} />
 
-              <p className="text-center text-xs font-medium text-neutral-600">
-                Collect <strong className="text-neutral-900">{keysLabel}</strong> then get to the{' '}
-                <strong className="text-neutral-900">DOOR</strong>
+              <p className="text-center text-xs font-medium text-slate-600 dark:text-slate-400">
+                Collect <strong className="text-slate-900 dark:text-white">{keysLabel}</strong> then get to the{' '}
+                <strong className="text-slate-900 dark:text-white">DOOR</strong>
               </p>
 
-              <p className="text-xs font-semibold text-neutral-700">
-                Attempts: <span className="tabular-nums font-bold text-neutral-900">{attempts}</span>
+              <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                Attempts: <span className="tabular-nums font-bold text-slate-900 dark:text-white">{attempts}</span>
               </p>
             </div>
           </div>

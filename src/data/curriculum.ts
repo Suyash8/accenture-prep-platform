@@ -39,7 +39,7 @@ export const ACCENTURE_CURRICULUM: CourseFolder[] = [
     badge: 'Elimination Round',
     description: 'Mental calculation speed, vector pipeline orientation & working memory retention',
     items: [
-      { id: 'game-math-order', title: 'Game 3: Math Bubbles (Rapid Mental Sorting: Lowest to Highest)', type: 'game', durationMinutes: 10, stageBadge: 'Stage 2' },
+      { id: 'game-math-order', title: 'Game 3: Quick-Fire Math (Rapid Mental Sorting: Lowest to Highest)', type: 'game', durationMinutes: 10, stageBadge: 'Stage 2' },
       { id: 'game-path-builder', title: 'Game 1: Space Path (Vector Grid / Pipeline Routing 4x4 to 6x6)', type: 'game', durationMinutes: 15, stageBadge: 'Stage 2' },
       { id: 'game-lock-key', title: 'Game 2: Lock & Key / The Hidden Path (Directional Doors Fog-of-War)', type: 'game', durationMinutes: 12, stageBadge: 'Stage 2' },
     ],

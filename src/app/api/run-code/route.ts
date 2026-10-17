@@ -1,182 +1,306 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { exec } from 'child_process';
+import { spawn, ChildProcessWithoutNullStreams } from 'node:child_process';
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
 
-export async function POST(req: NextRequest) {
-  try {
-    const { language, code, testCases } = await req.json();
+const MAX_OUTPUT_BYTES = 65536; // 64 KB
+const MAX_INPUT_BYTES = 65536;  // 64 KB
+const EXEC_TIMEOUT_MS = 4000;
+const COMPILE_TIMEOUT_MS = 6000;
+const MAX_CONCURRENT_RUNS = 2;
 
-    if (!code || !language) {
-      return NextResponse.json({ error: 'Code and language are required' }, { status: 400 });
-    }
+let activeExecutions = 0;
 
-    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'accenture-code-'));
-
-    try {
-      if (language === 'python') {
-        const filePath = path.join(tmpDir, 'solution.py');
-        await fs.writeFile(filePath, code);
-
-        const results = [];
-        let allPassed = true;
-
-        for (const tc of testCases || []) {
-          const runResult = await runProcess('python3', [filePath], tc.input, 4000);
-          const actualOutput = runResult.stdout.trim();
-          const expectedOutput = String(tc.expected).trim();
-          const passed = actualOutput === expectedOutput;
-          if (!passed) allPassed = false;
-
-          results.push({
-            input: tc.input,
-            expected: expectedOutput,
-            actual: runResult.error ? `Error: ${runResult.error}` : actualOutput,
-            pass: passed && !runResult.error,
-          });
-        }
-
-        return NextResponse.json({
-          success: true,
-          allPassed,
-          results,
-          output: allPassed ? `All test cases passed successfully in Python 3.14 runtime!` : `Some test cases failed or had errors.`,
-        });
-      }
-
-      if (language === 'java') {
-        // Java requires public class Main
-        const filePath = path.join(tmpDir, 'Main.java');
-        // If user defined public class Other, replace it with Main for execution
-        const sanitizedCode = code.replace(/public\s+class\s+\w+/, 'public class Main');
-        await fs.writeFile(filePath, sanitizedCode);
-
-        // Compile
-        const compileRes = await runProcess('javac', [filePath], '', 5000);
-        if (compileRes.error || compileRes.stderr) {
-          return NextResponse.json({
-            success: false,
-            allPassed: false,
-            results: (testCases || []).map((tc: any) => ({
-              input: tc.input,
-              expected: tc.expected,
-              actual: compileRes.stderr || compileRes.error,
-              pass: false,
-            })),
-            output: `Compilation Error:\n${compileRes.stderr || compileRes.error}`,
-          });
-        }
-
-        const results = [];
-        let allPassed = true;
-
-        for (const tc of testCases || []) {
-          const runResult = await runProcess('java', ['-cp', tmpDir, 'Main'], tc.input, 4000);
-          const actualOutput = runResult.stdout.trim();
-          const expectedOutput = String(tc.expected).trim();
-          const passed = actualOutput === expectedOutput;
-          if (!passed) allPassed = false;
-
-          results.push({
-            input: tc.input,
-            expected: expectedOutput,
-            actual: runResult.error ? `Runtime Error: ${runResult.error}` : actualOutput,
-            pass: passed && !runResult.error,
-          });
-        }
-
-        return NextResponse.json({
-          success: true,
-          allPassed,
-          results,
-          output: allPassed ? `All test cases passed in OpenJDK Java 21 runtime!` : `Test failures detected.`,
-        });
-      }
-
-      if (language === 'cpp') {
-        const filePath = path.join(tmpDir, 'solution.cpp');
-        const binPath = path.join(tmpDir, 'solution.out');
-        await fs.writeFile(filePath, code);
-
-        const compileRes = await runProcess('g++', ['-O2', filePath, '-o', binPath], '', 5000);
-        if (compileRes.error || compileRes.stderr) {
-          return NextResponse.json({
-            success: false,
-            allPassed: false,
-            results: (testCases || []).map((tc: any) => ({
-              input: tc.input,
-              expected: tc.expected,
-              actual: compileRes.stderr || compileRes.error,
-              pass: false,
-            })),
-            output: `C++ Compilation Error:\n${compileRes.stderr || compileRes.error}`,
-          });
-        }
-
-        const results = [];
-        let allPassed = true;
-
-        for (const tc of testCases || []) {
-          const runResult = await runProcess(binPath, [], tc.input, 4000);
-          const actualOutput = runResult.stdout.trim();
-          const expectedOutput = String(tc.expected).trim();
-          const passed = actualOutput === expectedOutput;
-          if (!passed) allPassed = false;
-
-          results.push({
-            input: tc.input,
-            expected: expectedOutput,
-            actual: runResult.error ? `Runtime Error: ${runResult.error}` : actualOutput,
-            pass: passed && !runResult.error,
-          });
-        }
-
-        return NextResponse.json({
-          success: true,
-          allPassed,
-          results,
-          output: allPassed ? `All test cases passed in C++ (GCC) runtime!` : `Test failures detected.`,
-        });
-      }
-
-      // Default / C# client fallback simulated execution
-      return NextResponse.json({
-        success: true,
-        allPassed: true,
-        results: (testCases || []).map((tc: any) => ({
-          input: tc.input,
-          expected: tc.expected,
-          actual: tc.expected,
-          pass: true,
-        })),
-        output: `[Accenture Engine Validation]\nSyntactically verified against target constraints.\nAll test cases passed.`,
-      });
-    } finally {
-      // Clean temp dir
-      await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => {});
-    }
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Server execution error' }, { status: 500 });
-  }
+interface ProcessResult {
+  stdout: string;
+  stderr: string;
+  code: number | null;
+  timedOut: boolean;
+  error?: string;
 }
 
-function runProcess(cmd: string, args: string[], stdinData: string, timeoutMs: number): Promise<{ stdout: string; stderr: string; error?: string }> {
+function runSpawn(
+  cmd: string,
+  args: string[],
+  stdin: string,
+  timeoutMs: number,
+  cwd: string
+): Promise<ProcessResult> {
   return new Promise((resolve) => {
-    const fullCmd = `${cmd} ${args.map(a => `"${a}"`).join(' ')}`;
-    const proc = exec(fullCmd, { timeout: timeoutMs }, (error, stdout, stderr) => {
-      if (error) {
-        resolve({ stdout, stderr, error: error.message });
-      } else {
-        resolve({ stdout, stderr });
+    let timedOut = false;
+    let stdout = '';
+    let stderr = '';
+
+    const proc = spawn(cmd, args, {
+      cwd,
+      env: { ...process.env, LANG: 'en_US.UTF-8' },
+      stdio: 'pipe',
+    }) as ChildProcessWithoutNullStreams;
+
+    const timer = setTimeout(() => {
+      timedOut = true;
+      try {
+        proc.kill('SIGKILL');
+      } catch {
+        // Process might already be dead
+      }
+    }, timeoutMs);
+
+    proc.stdout.on('data', (chunk: Buffer | string) => {
+      if (stdout.length < MAX_OUTPUT_BYTES) {
+        stdout += chunk.toString();
+        if (stdout.length > MAX_OUTPUT_BYTES) {
+          stdout = stdout.slice(0, MAX_OUTPUT_BYTES) + '\n[Output truncated at 64 KB limit]';
+        }
       }
     });
 
-    if (proc.stdin) {
-      if (stdinData) {
-        proc.stdin.write(stdinData + '\n');
+    proc.stderr.on('data', (chunk: Buffer | string) => {
+      if (stderr.length < MAX_OUTPUT_BYTES) {
+        stderr += chunk.toString();
+        if (stderr.length > MAX_OUTPUT_BYTES) {
+          stderr = stderr.slice(0, MAX_OUTPUT_BYTES) + '\n[Stderr truncated at 64 KB limit]';
+        }
       }
-      proc.stdin.end();
-    }
+    });
+
+    proc.on('error', (err: Error) => {
+      clearTimeout(timer);
+      resolve({
+        stdout,
+        stderr,
+        code: null,
+        timedOut: false,
+        error: err.message,
+      });
+    });
+
+    proc.on('close', (code: number | null) => {
+      clearTimeout(timer);
+      resolve({
+        stdout,
+        stderr,
+        code,
+        timedOut,
+      });
+    });
+
+    proc.stdin.on('error', () => {
+      // Ignore broken pipe errors if process exited quickly
+    });
+
+    const safeStdin = stdin.length > MAX_INPUT_BYTES ? stdin.slice(0, MAX_INPUT_BYTES) : stdin;
+    proc.stdin.end(safeStdin.endsWith('\n') ? safeStdin : safeStdin + '\n');
   });
+}
+
+function normalize(s: string): string {
+  return s
+    .replace(/\r\n/g, '\n')
+    .split('\n')
+    .map((l) => l.trimEnd())
+    .join('\n')
+    .trim();
+}
+
+interface LangDefinition {
+  fileName: string;
+  prepareCode?: (code: string) => string;
+  compile?: (dir: string, file: string) => { cmd: string; args: string[] };
+  getRunCmd: (dir: string, file: string) => { cmd: string; args: string[] };
+  versionCmd: { cmd: string; args: string[] };
+}
+
+const LANGS: Record<string, LangDefinition> = {
+  python: {
+    fileName: 'solution.py',
+    getRunCmd: (_dir, file) => ({ cmd: 'python3', args: [file] }),
+    versionCmd: { cmd: 'python3', args: ['--version'] },
+  },
+  java: {
+    fileName: 'Main.java',
+    prepareCode: (code: string) => {
+      // Replace any public class <Name> with public class Main
+      return code.replace(/public\s+class\s+\w+/, 'public class Main');
+    },
+    compile: (_dir, file) => ({ cmd: 'javac', args: [file] }),
+    getRunCmd: (dir) => ({ cmd: 'java', args: ['-cp', dir, 'Main'] }),
+    versionCmd: { cmd: 'java', args: ['--version'] },
+  },
+  cpp: {
+    fileName: 'solution.cpp',
+    compile: (dir, file) => ({
+      cmd: 'g++',
+      args: ['-O2', file, '-o', path.join(dir, 'solution.out')],
+    }),
+    getRunCmd: (dir) => ({ cmd: path.join(dir, 'solution.out'), args: [] }),
+    versionCmd: { cmd: 'g++', args: ['--version'] },
+  },
+};
+
+const versionCache: Record<string, string> = {};
+
+async function getRuntimeVersion(langKey: string, def: LangDefinition): Promise<string> {
+  if (versionCache[langKey]) return versionCache[langKey];
+  try {
+    const res = await runSpawn(def.versionCmd.cmd, def.versionCmd.args, '', 2000, os.tmpdir());
+    const firstLine = (res.stdout || res.stderr).split('\n')[0].trim();
+    versionCache[langKey] = firstLine || langKey;
+    return versionCache[langKey];
+  } catch {
+    return langKey;
+  }
+}
+
+export async function POST(req: NextRequest) {
+  if (activeExecutions >= MAX_CONCURRENT_RUNS) {
+    return NextResponse.json(
+      { error: 'Server busy: execution capacity reached. Please retry in a few seconds.' },
+      { status: 429 }
+    );
+  }
+
+  activeExecutions++;
+  let tmpDir: string | null = null;
+
+  try {
+    const body = await req.json();
+    const { language, code, testCases } = body;
+
+    if (!code || typeof code !== 'string' || !language) {
+      return NextResponse.json({ error: 'Valid code and language are required' }, { status: 400 });
+    }
+
+    if (language === 'csharp') {
+      return NextResponse.json(
+        { error: 'C# compilation runtime is not available on this server. Please choose Python, Java, or C++.' },
+        { status: 501 }
+      );
+    }
+
+    const langDef = LANGS[language];
+    if (!langDef) {
+      return NextResponse.json(
+        { error: `Unsupported execution runtime: "${language}". Supported: python, java, cpp.` },
+        { status: 400 }
+      );
+    }
+
+    tmpDir = await fs.mkdtemp(path.join(/*turbopackIgnore: true*/ os.tmpdir(), 'accenture-code-'));
+    const sourceFilePath = path.join(/*turbopackIgnore: true*/ tmpDir, langDef.fileName);
+    const finalCode = langDef.prepareCode ? langDef.prepareCode(code) : code;
+    await fs.writeFile(sourceFilePath, finalCode, 'utf8');
+
+    // Compilation step (if applicable)
+    if (langDef.compile) {
+      const compileConfig = langDef.compile(tmpDir, sourceFilePath);
+      const compileRes = await runSpawn(
+        compileConfig.cmd,
+        compileConfig.args,
+        '',
+        COMPILE_TIMEOUT_MS,
+        tmpDir
+      );
+
+      // A compilation error only occurs if exit code !== 0 or timeout/process error
+      if (compileRes.timedOut || (compileRes.code !== null && compileRes.code !== 0) || compileRes.error) {
+        const errorDetails = compileRes.timedOut
+          ? 'Compilation timed out after 6 seconds.'
+          : compileRes.error || compileRes.stderr || 'Compilation failed with non-zero exit code.';
+
+        return NextResponse.json({
+          success: false,
+          allPassed: false,
+          compilationError: true,
+          results: (testCases || []).map((tc: { input: string; expected: string; hidden?: boolean }) => ({
+            input: tc.hidden ? '[Hidden Test Case]' : tc.input,
+            expected: tc.hidden ? '[Hidden]' : tc.expected,
+            actual: 'Compilation Failed',
+            pass: false,
+            hidden: Boolean(tc.hidden),
+          })),
+          output: `Compilation Error:\n${errorDetails}`,
+        });
+      }
+    }
+
+    const runtimeVersion = await getRuntimeVersion(language, langDef);
+    const runConfig = langDef.getRunCmd(tmpDir, sourceFilePath);
+
+    const results = [];
+    let allPassed = true;
+    let samplePassed = 0;
+    let sampleTotal = 0;
+    let hiddenPassed = 0;
+    let hiddenTotal = 0;
+
+    for (const tc of testCases || []) {
+      const isHidden = Boolean(tc.hidden);
+      if (isHidden) hiddenTotal++;
+      else sampleTotal++;
+
+      const runRes = await runSpawn(runConfig.cmd, runConfig.args, tc.input || '', EXEC_TIMEOUT_MS, tmpDir);
+
+      let actualOutput = runRes.stdout;
+      const expectedNormalized = normalize(String(tc.expected ?? ''));
+      const actualNormalized = normalize(actualOutput);
+
+      let passed = false;
+      let displayActual = '';
+
+      if (runRes.timedOut) {
+        displayActual = `Time Limit Exceeded (${EXEC_TIMEOUT_MS}ms)`;
+      } else if (runRes.error) {
+        displayActual = `Runtime Process Error: ${runRes.error}`;
+      } else if (runRes.code !== 0) {
+        displayActual = `Runtime Error (exit code ${runRes.code}):\n${runRes.stderr || runRes.stdout}`;
+      } else {
+        passed = actualNormalized === expectedNormalized;
+        displayActual = actualOutput.trim();
+      }
+
+      if (passed) {
+        if (isHidden) hiddenPassed++;
+        else samplePassed++;
+      } else {
+        allPassed = false;
+      }
+
+      results.push({
+        input: isHidden ? '[Hidden]' : tc.input,
+        expected: isHidden ? '[Hidden]' : tc.expected,
+        actual: isHidden ? (passed ? '[Passed]' : '[Failed]') : displayActual,
+        pass: passed,
+        hidden: isHidden,
+      });
+    }
+
+    const summaryParts: string[] = [];
+    if (sampleTotal > 0) {
+      summaryParts.push(`Sample Cases: ${samplePassed}/${sampleTotal} passed`);
+    }
+    if (hiddenTotal > 0) {
+      summaryParts.push(`Hidden Cases: ${hiddenPassed}/${hiddenTotal} passed`);
+    }
+
+    const outputBanner = allPassed
+      ? `All ${results.length} test cases passed successfully!\nRuntime: ${runtimeVersion}\n${summaryParts.join(' • ')}`
+      : `Test run finished with failures.\nRuntime: ${runtimeVersion}\n${summaryParts.join(' • ')}`;
+
+    return NextResponse.json({
+      success: true,
+      allPassed,
+      results,
+      output: outputBanner,
+    });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Internal execution service error';
+    return NextResponse.json({ error: message }, { status: 500 });
+  } finally {
+    activeExecutions = Math.max(0, activeExecutions - 1);
+    if (tmpDir) {
+      await fs.rm(tmpDir, { recursive: true, force: true }).catch(() => {});
+    }
+  }
 }

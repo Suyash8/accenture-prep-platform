@@ -1,219 +1,435 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { 
   Briefcase, 
   CheckCircle2, 
   AlertTriangle, 
   RotateCcw, 
   ArrowLeft, 
-  Award, 
   TrendingUp, 
-  Users, 
-  ShieldCheck, 
-  Zap, 
-  Target, 
   ChevronRight,
-  Sparkles
+  ChevronLeft,
+  Clock,
+  Filter,
+  Check,
+  AlertCircle
 } from 'lucide-react';
-import { ACCENTURE_SJT_QUESTIONS, SjtQuestion } from '../data/sjtQuestions';
+import { ACCENTURE_SJT_ITEMS, Competency, SjtItem } from '../data/sjtQuestions';
+import { 
+  getSjtState, 
+  saveSjtState, 
+  clearSjtState, 
+  saveExamAttempt 
+} from '../lib/storage';
 
-export const BehavioralSjtSimulator: React.FC<{ onBack: () => void }> = ({ onBack }) => {
+function seededShuffle<T>(arr: T[], seed: string): T[] {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) {
+    h = (Math.imul(31, h) + seed.charCodeAt(i)) | 0;
+  }
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    h = (Math.imul(48271, h) + 1) | 0;
+    const j = Math.abs(h) % (i + 1);
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+interface BehavioralSjtSimulatorProps {
+  onBack: () => void;
+}
+
+export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ onBack }) => {
+  const [attemptId, setAttemptId] = useState<string>('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number>>({});
   const [isCompleted, setIsCompleted] = useState(false);
+  const [showIncompleteWarning, setShowIncompleteWarning] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState<'All' | Competency>('All');
+  const [sortLowestFirst, setSortLowestFirst] = useState(false);
+  const [timeSpent, setTimeSpent] = useState(0);
 
-  const currentQ = ACCENTURE_SJT_QUESTIONS[currentIndex];
+  // Load active session from versioned storage
+  useEffect(() => {
+    const saved = getSjtState();
+    if (saved && saved.answers && !saved.completed) {
+      setAttemptId(saved.attemptId);
+      setSelectedAnswers(saved.answers);
+      setCurrentIndex(saved.lastActiveIndex ?? 0);
+      const elapsed = Math.floor((Date.now() - saved.startedAt) / 1000);
+      setTimeSpent(elapsed > 0 ? elapsed : 0);
+    } else {
+      const newId = `sjt_${Date.now()}`;
+      setAttemptId(newId);
+      saveSjtState({
+        attemptId: newId,
+        answers: {},
+        startedAt: Date.now(),
+        lastActiveIndex: 0,
+        completed: false,
+      });
+    }
+  }, []);
+
+  // Timer ticker
+  useEffect(() => {
+    if (isCompleted) return;
+    const interval = setInterval(() => {
+      setTimeSpent((prev) => prev + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isCompleted]);
+
+  const items = ACCENTURE_SJT_ITEMS;
+  const totalQuestions = items.length;
+  const currentQ = items[currentIndex];
+
+  // Seeded shuffled options for current question
+  const displayedOptions = useMemo(() => {
+    if (!currentQ || !attemptId) return currentQ?.options || [];
+    return seededShuffle(currentQ.options, `${attemptId}:${currentQ.id}`);
+  }, [currentQ, attemptId]);
 
   const handleSelectOption = (score: number) => {
-    setSelectedAnswers((prev) => ({
-      ...prev,
+    const updated = {
+      ...selectedAnswers,
       [currentQ.id]: score,
-    }));
+    };
+    setSelectedAnswers(updated);
+    saveSjtState({
+      attemptId,
+      answers: updated,
+      startedAt: Date.now() - timeSpent * 1000,
+      lastActiveIndex: currentIndex,
+      completed: false,
+    });
   };
 
   const handleNext = () => {
-    if (currentIndex < ACCENTURE_SJT_QUESTIONS.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
+    if (currentIndex < totalQuestions - 1) {
+      const nextIdx = currentIndex + 1;
+      setCurrentIndex(nextIdx);
+      saveSjtState({
+        attemptId,
+        answers: selectedAnswers,
+        startedAt: Date.now() - timeSpent * 1000,
+        lastActiveIndex: nextIdx,
+        completed: false,
+      });
     } else {
-      setIsCompleted(true);
+      checkFinish();
     }
+  };
+
+  const checkFinish = () => {
+    const answeredCount = Object.keys(selectedAnswers).length;
+    if (answeredCount < totalQuestions) {
+      setShowIncompleteWarning(true);
+    } else {
+      finalizeAssessment();
+    }
+  };
+
+  const finalizeAssessment = () => {
+    setIsCompleted(true);
+    setShowIncompleteWarning(false);
+    saveSjtState({
+      attemptId,
+      answers: selectedAnswers,
+      startedAt: Date.now() - timeSpent * 1000,
+      lastActiveIndex: currentIndex,
+      completed: true,
+    });
+
+    // Record attempt
+    const rawScore = Object.values(selectedAnswers).reduce((a, b) => a + b, 0);
+    const maxScore = totalQuestions * 4;
+    const pct = Math.round((rawScore / maxScore) * 100);
+
+    saveExamAttempt({
+      id: attemptId,
+      timestamp: Date.now(),
+      title: 'Stage 1: Behavioral Situational Judgement Test',
+      totalQuestions,
+      score: rawScore,
+      percent: pct,
+      timeSpentSeconds: timeSpent,
+      isPassed: pct >= 65,
+      cognitiveScore: pct,
+      technicalScore: 0,
+      sectionScores: {
+        'Behavioral SJT': {
+          correct: Math.round(rawScore / 4),
+          total: totalQuestions,
+        },
+      },
+    });
   };
 
   const handleRestart = () => {
+    clearSjtState();
+    const newId = `sjt_${Date.now()}`;
+    setAttemptId(newId);
     setSelectedAnswers({});
     setCurrentIndex(0);
     setIsCompleted(false);
+    setTimeSpent(0);
   };
 
-  // Metrics computation
-  const totalQuestions = ACCENTURE_SJT_QUESTIONS.length;
-  const answeredCount = Object.keys(selectedAnswers).length;
+  // ==========================================
+  // CONSISTENCY ALGORITHM (Section 3.3 Spec)
+  // ==========================================
+  const consistencyStats = useMemo(() => {
+    const seen = new Set<string>();
+    let answered = 0;
+    let consistent = 0;
 
-  // Calculate consistency score
-  // Check pairs: if answer A has high score and pair B also has high score (because options are scored positively for good behavior),
-  // they are consistent.
-  let consistencyMatches = 0;
-  let totalPairs = 0;
+    for (const q of items) {
+      if (!q.pair) continue;
+      const key = [q.id, q.pair.id].sort().join('|');
+      if (seen.has(key)) continue;
+      seen.add(key);
 
-  ACCENTURE_SJT_QUESTIONS.forEach((q) => {
-    if (q.consistencyPairId && selectedAnswers[q.id] !== undefined && selectedAnswers[q.consistencyPairId] !== undefined) {
-      totalPairs += 0.5; // Each pair counted once
-      const scoreA = selectedAnswers[q.id];
-      const scoreB = selectedAnswers[q.consistencyPairId];
-      // Both high (>=3) or both low (<=2) means consistent stance
-      if ((scoreA >= 3 && scoreB >= 3) || (scoreA <= 2 && scoreB <= 2)) {
-        consistencyMatches += 0.5;
+      const a = selectedAnswers[q.id];
+      const b = selectedAnswers[q.pair.id];
+      if (a === undefined || b === undefined) continue;
+
+      answered++;
+      // Score represents desirability on both (inverted pair asks if refusal/blame is acceptable, option scores reflect desirability)
+      if (Math.abs(a - b) <= 1) {
+        consistent++;
       }
     }
-  });
 
-  const consistencyRate = totalPairs > 0 ? Math.round((consistencyMatches / totalPairs) * 100) : 100;
+    const rate = answered === 0 ? null : Math.round((consistent / answered) * 100);
+    return { answered, consistent, rate };
+  }, [items, selectedAnswers]);
 
   // Competency breakdown
-  const competencies: Record<string, { total: number; max: number }> = {
-    'Collaboration': { total: 0, max: 0 },
-    'Client Centricity': { total: 0, max: 0 },
-    'Agility & Growth': { total: 0, max: 0 },
-    'Integrity & Ownership': { total: 0, max: 0 },
-  };
+  const competencyBreakdown = useMemo(() => {
+    const map: Record<Competency, { total: number; max: number; count: number }> = {
+      'Collaboration': { total: 0, max: 0, count: 0 },
+      'Client Centricity': { total: 0, max: 0, count: 0 },
+      'Agility & Growth': { total: 0, max: 0, count: 0 },
+      'Integrity & Ownership': { total: 0, max: 0, count: 0 },
+    };
 
-  ACCENTURE_SJT_QUESTIONS.forEach((q) => {
-    competencies[q.competency].max += 4;
-    if (selectedAnswers[q.id] !== undefined) {
-      competencies[q.competency].total += selectedAnswers[q.id];
-    }
-  });
+    items.forEach((q) => {
+      map[q.competency].count += 1;
+      map[q.competency].max += 4;
+      if (selectedAnswers[q.id] !== undefined) {
+        map[q.competency].total += selectedAnswers[q.id];
+      }
+    });
 
+    return map;
+  }, [items, selectedAnswers]);
+
+  const answeredCount = Object.keys(selectedAnswers).length;
   const overallScore = Object.values(selectedAnswers).reduce((a, b) => a + b, 0);
   const maxPossibleScore = totalQuestions * 4;
   const percentage = Math.round((overallScore / maxPossibleScore) * 100);
 
+  // Review list filtering and sorting
+  const reviewItems = useMemo(() => {
+    let list = items.map((q, originalIndex) => ({
+      ...q,
+      originalIndex,
+      userScore: selectedAnswers[q.id],
+    }));
+
+    if (reviewFilter !== 'All') {
+      list = list.filter((q) => q.competency === reviewFilter);
+    }
+
+    if (sortLowestFirst) {
+      list.sort((a, b) => (a.userScore ?? -1) - (b.userScore ?? -1));
+    }
+
+    return list;
+  }, [items, selectedAnswers, reviewFilter, sortLowestFirst]);
+
+  const formatTime = (secs: number) => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
+  if (!currentQ) return null;
+
+  // COMPLETED REVIEW SCREEN
   if (isCompleted) {
     return (
-      <div className="max-w-5xl mx-auto p-6 space-y-8 text-slate-100 font-sans">
+      <div className="space-y-6">
         {/* Top Header */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700/80 pb-4">
           <button
             onClick={onBack}
-            className="flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-semibold border border-white/10 transition-colors"
+            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold cursor-pointer transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Dashboard
           </button>
           <div className="flex items-center gap-2">
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
-              Stage 1: Complete
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-semibold">
+              Stage 1: Completed ({formatTime(timeSpent)})
             </span>
             <button
               onClick={handleRestart}
-              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border border-purple-500/30 font-semibold transition-colors"
+              className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold cursor-pointer transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" /> Retake SJT
             </button>
           </div>
         </div>
 
-        {/* Hero Score Banner */}
-        <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-950/80 via-purple-950/40 to-black border border-purple-500/30 shadow-2xl relative overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-            <div className="space-y-2 text-center md:text-left">
-              <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
-                Accenture Behavioral Profile Diagnostic
-              </span>
-              <h2 className="text-3xl font-black text-white tracking-tight">
-                Situational Judgment Index: {percentage}%
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                {consistencyRate >= 80
-                  ? 'Strong Behavioral Consistency Verified. You demonstrated steady alignment with Accenture Core Values across both direct and inverted workplace dilemmas.'
-                  : 'Noticeable Inconsistencies Detected. Some answers showed conflicting stances across paired scenarios. HirePro algorithms flag variance above 25%.'}
-              </p>
-            </div>
+        {/* Score Card Banner */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-6 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center space-y-1">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+              Overall Desirability Score
+            </span>
+            <span className="text-3xl font-black text-purple-600 dark:text-purple-400">
+              {percentage}%
+            </span>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              {overallScore} / {maxPossibleScore} Points ({answeredCount}/{totalQuestions} Answered)
+            </p>
+          </div>
 
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="p-5 rounded-2xl bg-black/60 border border-white/10 text-center">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Consistency Matrix</span>
-                <span className={`text-2xl font-black ${consistencyRate >= 80 ? 'text-emerald-400' : 'text-amber-400'}`}>
-                  {consistencyRate}%
-                </span>
-                <span className="text-[10px] text-slate-500 block">HirePro Target &gt; 75%</span>
-              </div>
-              <div className="p-5 rounded-2xl bg-black/60 border border-white/10 text-center">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Overall Fit</span>
-                <span className="text-2xl font-black text-purple-400">
-                  {percentage >= 70 ? 'Tier 1' : 'Calibrating'}
-                </span>
-                <span className="text-[10px] text-slate-500 block">Culture Ready</span>
-              </div>
-            </div>
+          <div className="p-6 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center space-y-1">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+              Behavioral Consistency Check
+            </span>
+            <span className="text-3xl font-black text-indigo-600 dark:text-indigo-400">
+              {consistencyStats.rate !== null ? `${consistencyStats.rate}%` : 'N/A'}
+            </span>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              {consistencyStats.rate !== null
+                ? `${consistencyStats.consistent} of ${consistencyStats.answered} Pairs Aligned`
+                : 'Need at least 1 paired set answered'}
+            </p>
+          </div>
+
+          <div className="p-6 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center space-y-1">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+              Accenture Benchmark Status
+            </span>
+            <span className={`text-2xl font-bold mt-1 block ${
+              percentage >= 75 && (consistencyStats.rate === null || consistencyStats.rate >= 80)
+                ? 'text-emerald-600 dark:text-emerald-400'
+                : 'text-amber-600 dark:text-amber-400'
+            }`}>
+              {percentage >= 75 && (consistencyStats.rate === null || consistencyStats.rate >= 80)
+                ? 'Ready for Stage 2'
+                : 'Review Low-Score Traits'}
+            </span>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Target: &gt;75% Desirability & &gt;80% Consistency
+            </p>
           </div>
         </div>
 
-        {/* Competency 4-Pillar Breakdown */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {Object.entries(competencies).map(([name, data]) => {
-            const pct = Math.round((data.total / data.max) * 100);
-            return (
-              <div key={name} className="p-5 rounded-2xl bg-[#0e111a] border border-white/10 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-300">{name}</span>
-                  <span className="text-xs font-mono font-bold text-purple-400">{pct}%</span>
+        {/* Competencies Breakdown */}
+        <div className="p-5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Competency Performance Breakdown
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {(Object.entries(competencyBreakdown) as [Competency, { total: number; max: number; count: number }][]).map(([name, data]) => {
+              const pct = data.max > 0 ? Math.round((data.total / data.max) * 100) : 0;
+              return (
+                <div key={name} className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/60 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">{name}</span>
+                    <span className="font-mono font-bold text-purple-600 dark:text-purple-400">{pct}%</span>
+                  </div>
+                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                    <div className="h-full bg-purple-600 rounded-full" style={{ width: `${pct}%` }} />
+                  </div>
+                  <div className="text-[10px] text-slate-400">
+                    {data.total} / {data.max} pts ({data.count} items)
+                  </div>
                 </div>
-                <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-                <p className="text-[11px] text-slate-400">
-                  {pct >= 75 ? 'Optimal alignment with client delivery.' : 'Review escalation protocols & feedback loops.'}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
-        {/* Question by Question Review */}
+        {/* Question Review List with Filters */}
         <div className="space-y-4">
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-            <Briefcase className="w-4 h-4 text-purple-400" /> Scenario-by-Scenario Evaluation & Rationale
-          </h3>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-700 pb-3">
+            <div>
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                Comprehensive Scenario Review ({reviewItems.length} Scenarios)
+              </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Full review of all 50 questions with official Accenture leadership rationales.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 flex-wrap text-xs">
+              <select
+                value={reviewFilter}
+                onChange={(e) => setReviewFilter(e.target.value as 'All' | Competency)}
+                className="px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+              >
+                <option value="All">All Competencies</option>
+                <option value="Client Centricity">Client Centricity</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Agility & Growth">Agility & Growth</option>
+                <option value="Integrity & Ownership">Integrity & Ownership</option>
+              </select>
+
+              <button
+                onClick={() => setSortLowestFirst((prev) => !prev)}
+                className={`px-3 py-1.5 rounded-lg border font-semibold transition-colors cursor-pointer ${
+                  sortLowestFirst
+                    ? 'bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-800'
+                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
+                }`}
+              >
+                {sortLowestFirst ? 'Lowest Score First' : 'Default Order'}
+              </button>
+            </div>
+          </div>
+
           <div className="space-y-3">
-            {ACCENTURE_SJT_QUESTIONS.map((q, idx) => {
-              const userScore = selectedAnswers[q.id] ?? 0;
-              const isGood = userScore >= 3;
+            {reviewItems.map((q) => {
+              const userScore = q.userScore;
+              const hasAnswered = userScore !== undefined;
+              const isGood = (userScore ?? 0) >= 3;
 
               return (
                 <div
                   key={q.id}
-                  className="p-5 rounded-2xl bg-[#0e111a] border border-white/10 space-y-3 text-xs"
+                  className="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-2 text-xs"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">
-                          {q.competency}
-                        </span>
-                        {q.consistencyPairId && (
-                          <span className="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 font-semibold">
-                            Paired Consistency Check
-                          </span>
-                        )}
-                      </div>
-                      <p className="font-semibold text-slate-200 text-sm">
-                        Q{idx + 1}. {q.scenario}
-                      </p>
+                    <div>
+                      <span className="font-bold text-slate-900 dark:text-white block text-sm">
+                        Scenario {q.originalIndex + 1}: {q.scenario}
+                      </span>
+                      <span className="text-slate-500 text-[11px] mt-0.5 block">
+                        Competency: {q.competency} {q.pair && '• Paired Item'}
+                      </span>
                     </div>
-                    <span className={`px-2.5 py-1 rounded-lg text-xs font-bold shrink-0 ${
-                      isGood ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                    <span className={`px-2.5 py-1 rounded text-xs font-bold shrink-0 ${
+                      !hasAnswered
+                        ? 'bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700'
+                        : isGood
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
+                        : 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800'
                     }`}>
-                      Score: {userScore}/4
+                      {hasAnswered ? `${userScore}/4 Points` : 'Skipped'}
                     </span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 text-slate-300 leading-relaxed">
-                    <span className="font-bold text-purple-300 block mb-1">Accenture Strategy Rationale:</span>
-                    {q.explanation}
-                  </div>
+
+                  <p className="text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-100 dark:border-slate-700/60 leading-relaxed">
+                    <strong className="text-purple-700 dark:text-purple-400">Accenture Rationale: </strong>
+                    {q.rationale}
+                  </p>
                 </div>
               );
             })}
@@ -223,105 +439,147 @@ export const BehavioralSjtSimulator: React.FC<{ onBack: () => void }> = ({ onBac
     );
   }
 
-  // Active Questionnaire Screen
-  return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6 text-slate-100 font-sans min-h-[calc(100vh-100px)] flex flex-col justify-between">
-      {/* Top Bar */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <button
-            onClick={onBack}
-            className="flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-semibold border border-white/10"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Dashboard
-          </button>
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-slate-400">
-              Scenario {currentIndex + 1} of {totalQuestions}
-            </span>
-            <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
-              Stage 1: Behavioral SJT
-            </span>
-          </div>
-        </div>
+  // ACTIVE QUESTION SCREEN
+  const currentAnswer = selectedAnswers[currentQ.id];
 
-        {/* Progress Bar */}
-        <div className="w-full h-1.5 rounded-full bg-white/5 overflow-hidden">
+  return (
+    <div className="space-y-6">
+      {/* Top Header Bar */}
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700/80 pb-3">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold cursor-pointer transition-colors"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" /> Back
+        </button>
+
+        <div className="flex items-center gap-3 text-xs">
+          <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
+            <Clock className="w-3.5 h-3.5" /> {formatTime(timeSpent)}
+          </span>
+          <span className="font-semibold text-slate-700 dark:text-slate-200">
+            {answeredCount} / {totalQuestions} answered
+          </span>
+          <button
+            onClick={checkFinish}
+            className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold transition-colors cursor-pointer text-xs"
+          >
+            Review & Finish
+          </button>
+        </div>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs font-medium text-slate-500 dark:text-slate-400">
+          <span>Question {currentIndex + 1} of {totalQuestions}</span>
+          <span>{Math.round(((currentIndex + 1) / totalQuestions) * 100)}%</span>
+        </div>
+        <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full transition-all duration-300"
+            className="h-full bg-purple-600 rounded-full transition-all duration-200"
             style={{ width: `${((currentIndex + 1) / totalQuestions) * 100}%` }}
           />
         </div>
       </div>
 
-      {/* Main Scenario Card */}
-      <div className="flex-1 flex flex-col justify-center space-y-6">
-        <div className="p-6 sm:p-8 rounded-3xl bg-[#0e111a] border border-white/10 shadow-xl space-y-4">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-              Competency: {currentQ.competency}
-            </span>
-            {currentQ.consistencyPairId && (
-              <span className="text-[10px] text-slate-400 italic">
-                * Evaluates consistency with paired situational dilemmas
-              </span>
-            )}
+      {/* Incomplete Warning Modal */}
+      {showIncompleteWarning && (
+        <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 flex items-start justify-between gap-3 text-xs text-amber-900 dark:text-amber-200">
+          <div className="flex items-start gap-2">
+            <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold">You have {totalQuestions - answeredCount} unanswered scenarios.</p>
+              <p className="mt-0.5 text-amber-800 dark:text-amber-300">
+                In the real Accenture assessment, every item is evaluated for persona consistency. Are you sure you want to finalize now?
+              </p>
+            </div>
           </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => setShowIncompleteWarning(false)}
+              className="px-3 py-1 rounded-md border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-800 font-semibold cursor-pointer"
+            >
+              Resume
+            </button>
+            <button
+              onClick={finalizeAssessment}
+              className="px-3 py-1 rounded-md bg-amber-600 hover:bg-amber-700 text-white font-bold cursor-pointer"
+            >
+              Finish Anyway
+            </button>
+          </div>
+        </div>
+      )}
 
-          <h3 className="text-base sm:text-lg font-bold text-white leading-relaxed">
-            {currentQ.scenario}
-          </h3>
+      {/* Main Scenario Card */}
+      <div className="p-6 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-4 shadow-xs">
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-bold px-2.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            {currentQ.competency}
+          </span>
+          {currentQ.pair && (
+            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+              Consistency Assessment Item
+            </span>
+          )}
         </div>
 
-        {/* Options List */}
-        <div className="space-y-3">
-          {currentQ.options.map((opt, idx) => {
-            const isSelected = selectedAnswers[currentQ.id] === opt.score;
+        <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
+          {currentQ.scenario}
+        </h2>
+
+        {/* Options List (Seeded Shuffled so not best-first) */}
+        <div className="space-y-2.5 pt-2">
+          {displayedOptions.map((opt, oIdx) => {
+            const isSelected = currentAnswer === opt.score;
             return (
               <button
-                key={idx}
+                key={opt.id || oIdx}
+                type="button"
                 onClick={() => handleSelectOption(opt.score)}
-                className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-4 ${
+                className={`w-full p-4 rounded-xl border text-left text-xs sm:text-sm font-medium transition-all cursor-pointer flex items-center justify-between gap-3 ${
                   isSelected
-                    ? 'bg-purple-600/20 border-purple-500 text-white shadow-lg shadow-purple-600/10'
-                    : 'bg-[#0e111a]/80 border-white/10 text-slate-300 hover:bg-white/5 hover:border-white/20'
+                    ? 'border-purple-600 bg-purple-50/70 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 ring-1 ring-purple-600'
+                    : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200'
                 }`}
               >
-                <div className="flex items-start gap-3">
-                  <span className={`w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 ${
-                    isSelected ? 'bg-purple-500 text-white' : 'bg-white/10 text-slate-400'
-                  }`}>
-                    {String.fromCharCode(65 + idx)}
-                  </span>
-                  <span className="text-xs sm:text-sm leading-relaxed">{opt.label}</span>
-                </div>
-                {isSelected && <CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" />}
+                <span>{opt.label}</span>
+                {isSelected && (
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                )}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Bottom Action Footer */}
-      <div className="flex items-center justify-between border-t border-white/10 pt-4">
-        <span className="text-xs text-slate-500">
-          Answer honestly to demonstrate workplace decision-making and consistency.
-        </span>
+      {/* Navigation Buttons */}
+      <div className="flex items-center justify-between pt-2">
         <button
-          onClick={handleNext}
-          disabled={selectedAnswers[currentQ.id] === undefined}
-          className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-purple-600/30 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+          onClick={() => setCurrentIndex((idx) => Math.max(0, idx - 1))}
+          disabled={currentIndex === 0}
+          className="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed transition-colors"
         >
-          {currentIndex < totalQuestions - 1 ? (
-            <>
-              Next Scenario <ChevronRight className="w-4 h-4" />
-            </>
-          ) : (
-            <>
-              Complete SJT Assessment <Award className="w-4 h-4" />
-            </>
-          )}
+          Previous Scenario
         </button>
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setCurrentIndex((idx) => Math.min(totalQuestions - 1, idx + 1))}
+            disabled={currentIndex === totalQuestions - 1}
+            className="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            Skip
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="px-6 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold cursor-pointer transition-colors shadow-xs"
+          >
+            {currentIndex === totalQuestions - 1 ? 'Finish Assessment' : 'Next Scenario'}
+          </button>
+        </div>
       </div>
     </div>
   );

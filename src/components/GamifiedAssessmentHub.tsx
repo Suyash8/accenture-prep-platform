@@ -106,7 +106,7 @@ export const GamifiedAssessmentHub: React.FC<GamifiedHubProps> = ({ onPlayGame }
                 <span className="text-indigo-400 font-mono">3 Sets (75 Qs)</span>
               </div>
               <h3 className="text-xl font-black text-white mt-1 group-hover:text-indigo-300 transition-colors">
-                Quick-Fire Math (Bubble Math)
+                Quick-Fire Math (Order Challenge)
               </h3>
               <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                 Click 3 floating bubbles in strict numerical order from <strong>LOWEST to HIGHEST</strong> value before the 15-second timer runs out. Deselect by clicking again.

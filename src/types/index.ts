@@ -79,6 +79,16 @@ export interface SectionMeta {
   color: string;
 }
 
+export interface MistakeRecord {
+  qId: string;
+  sectionId: string;
+  firstMissed: number;
+  lastMissed: number;
+  misses: number;
+  streakCorrect: number;
+  resolved: boolean;
+}
+
 export interface UserMistake {
   questionId: string;
   timestamp: number;

@@ -1,297 +1,22 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, RefreshCw, Repeat, Check, ChevronLeft, ChevronRight, Shuffle } from 'lucide-react';
-
-export type ArrowDir =
-  | 'up'
-  | 'down'
-  | 'left'
-  | 'right'
-  | 'upright'
-  | 'downright'
-  | 'downleft'
-  | 'upleft'
-  | null;
-
-export type ShapeType = 'straight' | 'lshape' | 'tshape' | 'plus';
-
-export interface BlockCell {
-  row: number;
-  col: number;
-  isDark: boolean;
-  arrow: ArrowDir;
-}
-
-export interface Block {
-  id: string;
-  blockRow: number;
-  blockCol: number;
-  shapeType: ShapeType;
-  rotateState: number;
-  flipState: number;
-  cells: BlockCell[];
-}
-
-export interface PathPuzzle {
-  id: string;
-  gridSize: number;
-  blocks: Block[];
-  startCell: { row: number; col: number };
-  endCell: { row: number; col: number };
-  timeLimit: number;
-  minMoves: number;
-}
-
-// Direction rotations and vectors (BuildUForward exact)
-const ROTATION_MAP: Record<string, ArrowDir> = {
-  right: 'down',
-  down: 'left',
-  left: 'up',
-  up: 'right',
-  upright: 'downright',
-  downright: 'downleft',
-  downleft: 'upleft',
-  upleft: 'upright',
-};
-
-const DIR_VECTORS: Record<string, [number, number]> = {
-  right: [0, 1],
-  left: [0, -1],
-  up: [-1, 0],
-  down: [1, 0],
-};
-
-const CORNER_REDIRECT: Record<string, Record<string, ArrowDir>> = {
-  downright: { right: 'down', down: 'right' },
-  upright: { right: 'up', up: 'right' },
-  downleft: { left: 'down', down: 'left' },
-  upleft: { left: 'up', up: 'left' },
-};
-
-function rotateDir(dir: ArrowDir, count: number): ArrowDir {
-  if (!dir) return null;
-  let curr = dir;
-  const turns = ((count % 4) + 4) % 4;
-  for (let i = 0; i < turns; i++) {
-    curr = ROTATION_MAP[curr] || curr;
-  }
-  return curr;
-}
-
-function rotateLocalPos(r: number, c: number, count: number) {
-  let row = r;
-  let col = c;
-  const turns = ((count % 4) + 4) % 4;
-  for (let i = 0; i < turns; i++) {
-    const nextR = col;
-    const nextC = 2 - row;
-    row = nextR;
-    col = nextC;
-  }
-  return { localRow: row, localCol: col };
-}
-
-// Shape Catalog
-const SHAPES: Record<ShapeType, { cells: { localRow: number; localCol: number; arrow: ArrowDir }[] }[]> = {
-  straight: [
-    { cells: [{ localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'right' }, { localRow: 1, localCol: 2, arrow: 'right' }] },
-    { cells: [{ localRow: 1, localCol: 0, arrow: 'left' }, { localRow: 1, localCol: 1, arrow: 'left' }, { localRow: 1, localCol: 2, arrow: 'left' }] },
-  ],
-  lshape: [
-    { cells: [{ localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'downright' }, { localRow: 2, localCol: 1, arrow: 'down' }] },
-    { cells: [{ localRow: 1, localCol: 0, arrow: 'left' }, { localRow: 1, localCol: 1, arrow: 'upleft' }, { localRow: 2, localCol: 1, arrow: 'up' }] },
-  ],
-  tshape: [
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'up' }, { localRow: 1, localCol: 0, arrow: null }, { localRow: 1, localCol: 1, arrow: 'upleft' }, { localRow: 1, localCol: 2, arrow: 'left' }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'up' }, { localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'upright' }, { localRow: 1, localCol: 2, arrow: null }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: null }, { localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'right' }, { localRow: 1, localCol: 2, arrow: 'right' }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'down' }, { localRow: 1, localCol: 0, arrow: null }, { localRow: 1, localCol: 1, arrow: 'downright' }, { localRow: 1, localCol: 2, arrow: 'right' }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'down' }, { localRow: 1, localCol: 0, arrow: 'left' }, { localRow: 1, localCol: 1, arrow: 'downleft' }, { localRow: 1, localCol: 2, arrow: null }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: null }, { localRow: 1, localCol: 0, arrow: 'left' }, { localRow: 1, localCol: 1, arrow: 'left' }, { localRow: 1, localCol: 2, arrow: 'left' }] },
-  ],
-  plus: [
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'up' }, { localRow: 1, localCol: 0, arrow: null }, { localRow: 1, localCol: 1, arrow: 'up' }, { localRow: 1, localCol: 2, arrow: null }, { localRow: 2, localCol: 1, arrow: 'up' }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: 'up' }, { localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'upright' }, { localRow: 1, localCol: 2, arrow: null }, { localRow: 2, localCol: 1, arrow: null }] },
-    { cells: [{ localRow: 0, localCol: 1, arrow: null }, { localRow: 1, localCol: 0, arrow: 'right' }, { localRow: 1, localCol: 1, arrow: 'right' }, { localRow: 1, localCol: 2, arrow: 'right' }, { localRow: 2, localCol: 1, arrow: null }] },
-  ],
-};
-
-function buildBlock(
-  blockRow: number,
-  blockCol: number,
-  shapeType: ShapeType,
-  rotateState: number = 0,
-  flipState: number = 0
-): Block {
-  const variants = SHAPES[shapeType];
-  const safeFlip = ((flipState % variants.length) + variants.length) % variants.length;
-  const baseVariant = variants[safeFlip];
-
-  const transformedCells = baseVariant.cells.map(({ localRow, localCol, arrow }) => {
-    const pos = rotateLocalPos(localRow, localCol, rotateState);
-    return {
-      localRow: pos.localRow,
-      localCol: pos.localCol,
-      arrow: rotateDir(arrow, rotateState),
-    };
-  });
-
-  const cellMap = new Map(transformedCells.map((c) => [`${c.localRow},${c.localCol}`, c.arrow]));
-  const fullCells: BlockCell[] = [];
-
-  for (let r = 0; r < 3; r++) {
-    for (let c = 0; c < 3; c++) {
-      const isDark = cellMap.has(`${r},${c}`);
-      fullCells.push({
-        row: blockRow * 3 + r,
-        col: blockCol * 3 + c,
-        isDark,
-        arrow: isDark ? cellMap.get(`${r},${c}`) || null : null,
-      });
-    }
-  }
-
-  return {
-    id: `block_${blockRow}_${blockCol}`,
-    blockRow,
-    blockCol,
-    shapeType,
-    rotateState: ((rotateState % 4) + 4) % 4,
-    flipState: safeFlip,
-    cells: fullCells,
-  };
-}
-
-// Procedural dynamic puzzle generator ensuring guaranteed solvability with randomized starting rotations & entry/exit points
-function generateProceduralPathPuzzle(matrixBlocksCount: number): PathPuzzle {
-  const shapes: ShapeType[] = ['straight', 'lshape', 'tshape', 'plus'];
-  const blocks: Block[] = [];
-
-  // Randomize start block row along the leftmost column (col 0) and end block row along the rightmost column
-  const startBlockRow = Math.floor(Math.random() * matrixBlocksCount);
-  const endBlockRow = Math.floor(Math.random() * matrixBlocksCount);
-
-  // The Rocket and Earth enter/exit directly through the center row of their 3x3 block:
-  // For block at blockRow, localRow = 1 -> row = blockRow * 3 + 1
-  const startCell = { row: startBlockRow * 3 + 1, col: 0 };
-  const endCell = { row: endBlockRow * 3 + 1, col: matrixBlocksCount * 3 - 1 };
-
-  // First create a clean solved configuration along a random continuous route from start block to end block
-  const pathBlocks = new Set<string>();
-  let curBR = startBlockRow;
-  let curBC = 0;
-  pathBlocks.add(`${curBR},${curBC}`);
-
-  while (curBC < matrixBlocksCount - 1 || curBR !== endBlockRow) {
-    if (curBC === matrixBlocksCount - 1) {
-      curBR += curBR < endBlockRow ? 1 : -1;
-    } else if (curBR === endBlockRow) {
-      curBC += 1;
-    } else {
-      if (Math.random() > 0.4) curBC += 1;
-      else curBR += curBR < endBlockRow ? 1 : -1;
-    }
-    pathBlocks.add(`${curBR},${curBC}`);
-  }
-
-  // Populate blocks with randomized shape variants and scramble initial rotation (0, 1, 2, 3) & flip states
-  for (let r = 0; r < matrixBlocksCount; r++) {
-    for (let c = 0; c < matrixBlocksCount; c++) {
-      const isPath = pathBlocks.has(`${r},${c}`);
-      const shape = isPath
-        ? shapes[Math.floor(Math.random() * shapes.length)]
-        : shapes[(r + c) % shapes.length];
-
-      // Scramble starting rotation & flip to challenge the candidate
-      const scrambledRotate = Math.floor(Math.random() * 4);
-      const scrambledFlip = Math.floor(Math.random() * 3);
-
-      blocks.push(buildBlock(r, c, shape, scrambledRotate, scrambledFlip));
-    }
-  }
-
-  return {
-    id: `puzzle_${matrixBlocksCount}x${matrixBlocksCount}_${Date.now()}`,
-    gridSize: matrixBlocksCount * 3,
-    blocks,
-    startCell,
-    endCell,
-    timeLimit: 240,
-    minMoves: matrixBlocksCount * 4,
-  };
-}
-
-// Validator algorithm (Exact from BuildUForward 88529)
-function validatePath(puzzle: PathPuzzle, blocks: Block[]) {
-  const cellMap = new Map<string, BlockCell>();
-  for (const b of blocks) {
-    for (const c of b.cells) {
-      cellMap.set(`${c.row},${c.col}`, c);
-    }
-  }
-
-  const { gridSize, startCell, endCell } = puzzle;
-  const path: { row: number; col: number }[] = [];
-  const visited = new Set<string>();
-
-  // Center entry of the starting block
-  let curr = { ...startCell };
-  let dir: ArrowDir = 'right';
-  const maxSteps = gridSize * gridSize + 4;
-
-  for (let step = 0; step < maxSteps; step++) {
-    const key = `${curr.row},${curr.col}`;
-    if (visited.has(key)) break;
-    visited.add(key);
-    path.push({ ...curr });
-
-    // Reached the center cell of the destination block (endCell)
-    if (curr.row === endCell.row && curr.col === endCell.col) {
-      return { valid: true, path };
-    }
-
-    const cell = cellMap.get(key);
-    if (!cell?.isDark || !cell.arrow) break;
-
-    const cardinal = new Set(['up', 'down', 'left', 'right']);
-    let nextDir: ArrowDir = null;
-
-    if (cardinal.has(cell.arrow)) {
-      nextDir = cell.arrow;
-    } else if (CORNER_REDIRECT[cell.arrow] && dir && CORNER_REDIRECT[cell.arrow][dir]) {
-      nextDir = CORNER_REDIRECT[cell.arrow][dir];
-    } else {
-      break;
-    }
-
-    dir = nextDir;
-    if (!nextDir) break;
-    const vec = DIR_VECTORS[nextDir];
-    if (!vec) break;
-
-    const nextPos = { row: curr.row + vec[0], col: curr.col + vec[1] };
-    if (nextPos.row < 0 || nextPos.row >= gridSize || nextPos.col < 0 || nextPos.col >= gridSize) {
-      // Reached past the right edge exiting directly at the destination block center row
-      if (nextPos.col === gridSize && nextPos.row === endCell.row) {
-        path.push(endCell);
-        return { valid: true, path };
-      }
-      break;
-    }
-
-    curr = nextPos;
-  }
-
-  return { valid: false, path };
-}
+import {
+  generatePathPuzzle,
+  validatePath,
+  buildBlock,
+  Block,
+  PathPuzzle,
+} from '@/lib/games/pathFinder';
+import { saveGameScore } from '@/lib/storage';
 
 const INSTRUCTION_SLIDES = [
   "This practice exercise will provide you with instructions and practice items for a task designed to measure Image rotation ability.\n\nPlease take the time to read the instructions carefully and use the practice items to familiarize yourself with the task.",
   "Your goal is to create a path from the icon on the left to the icon on the right by rotating the tiles and changing the arrow directions. You should try to generate a path in the least number of moves.",
   "Tap/click on a tile to select it.",
   "Tap/click ↻ to rotate the tile clockwise.",
-  "Tap/click ⇄ to change the direction of route.",
+  "Tap/click ⇄ to change the direction of route (flip).",
   "Arrow directions can point left, right, up, down, and around any angles of the tile path.",
   "Once the route is complete, select ✓. If you have successfully created a path, the task is complete. If you have not successfully created a path, you will be able to try again.",
   "Your goal is to create a valid path in the least number of moves. You do not need to rush. However, if you have been unable to find a valid path within the time limit, you will progress automatically to the next question.\n\nA timer is located at the bottom of the screen to indicate time remaining.",
@@ -305,6 +30,7 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
   const [puzzle, setPuzzle] = useState<PathPuzzle>({
     id: 'puzzle_3x3_initial',
     gridSize: 9,
+    blocksCount: 3,
     blocks: [
       buildBlock(0, 0, 'straight', 0, 0),
       buildBlock(0, 1, 'straight', 0, 0),
@@ -316,6 +42,7 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
       buildBlock(2, 1, 'straight', 0, 0),
       buildBlock(2, 2, 'straight', 0, 0),
     ],
+    solutionState: {},
     startCell: { row: 1, col: 0 },
     endCell: { row: 1, col: 8 },
     timeLimit: 240,
@@ -333,7 +60,7 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
   const [shake, setShake] = useState(false);
 
   const handleRegeneratePuzzle = useCallback((size: number) => {
-    const newPuz = generateProceduralPathPuzzle(size);
+    const newPuz = generatePathPuzzle(size);
     setPuzzle(newPuz);
     setBlocks(newPuz.blocks);
     setSelectedBlockId(newPuz.blocks[0]?.id || 'block_0_0');
@@ -389,21 +116,22 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
     const result = validatePath(puzzle, blocks);
     setPathHighlight(result.path);
 
-    if (result.valid) {
+    if (result.success) {
       setTimeout(() => {
         setGameState('results');
+        saveGameScore('grid-path', Math.max(10, 100 - moves * 2), 100);
       }, 700);
     } else {
       setShake(true);
       setTimeout(() => setShake(false), 500);
     }
-  }, [puzzle, blocks, gameState]);
+  }, [puzzle, blocks, gameState, moves]);
 
   const cellPx = puzzle.gridSize === 9 ? 44 : puzzle.gridSize === 12 ? 34 : 28;
   const boardSizePx = puzzle.gridSize * cellPx;
 
   return (
-    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors">
+    <div className="w-full bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 font-sans p-4 sm:p-6 flex flex-col transition-colors min-h-screen">
       {/* Top Header & Variant Selector Bar */}
       <div className="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4">
         <button
@@ -448,15 +176,15 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
 
       {/* Main Game Stage Container */}
       <div className="max-w-4xl w-full mx-auto flex-1 flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden relative min-h-[540px]">
-        {/* Instruction Slide Modal */}
+        {/* Instruction Modal Overlay */}
         {gameState === 'instructions' && (
-          <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/25 p-4">
-            <div className="relative w-full max-w-lg rounded-xl border border-gray-300 bg-white p-8 shadow-2xl">
+          <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4">
+            <div className="relative w-full max-w-lg rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-2xl">
               {instructionSlide > 0 && (
                 <button
                   type="button"
                   onClick={() => setInstructionSlide((s) => s - 1)}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded p-2 text-gray-400 hover:bg-gray-100 cursor-pointer"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded p-2 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
                 >
                   <ChevronLeft className="size-6" />
                 </button>
@@ -466,13 +194,13 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                 <button
                   type="button"
                   onClick={() => setInstructionSlide((s) => s + 1)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-2 text-gray-400 hover:bg-gray-100 cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-2 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
                 >
                   <ChevronRight className="size-6" />
                 </button>
               )}
 
-              <p className="px-8 text-center text-sm leading-relaxed text-neutral-800 min-h-[72px] flex items-center justify-center whitespace-pre-line">
+              <p className="whitespace-pre-line px-8 text-center text-sm leading-relaxed text-slate-800 dark:text-slate-200 min-h-[110px] flex items-center justify-center">
                 {INSTRUCTION_SLIDES[instructionSlide]}
               </p>
 
@@ -480,8 +208,8 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                 {INSTRUCTION_SLIDES.map((_, idx) => (
                   <span
                     key={idx}
-                    className={`size-2 rounded-full border border-neutral-400 transition-colors ${
-                      idx === instructionSlide ? 'bg-neutral-800' : 'bg-transparent'
+                    className={`size-2 rounded-full border border-slate-400 transition-colors ${
+                      idx === instructionSlide ? 'bg-slate-900 dark:bg-white' : 'bg-transparent'
                     }`}
                   />
                 ))}
@@ -492,9 +220,9 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                   <button
                     type="button"
                     onClick={() => setGameState('playing')}
-                    className="rounded-lg bg-neutral-900 px-10 py-2.5 text-xs font-semibold uppercase tracking-wide text-white hover:bg-neutral-700 cursor-pointer transition-colors"
+                    className="rounded-lg bg-slate-900 dark:bg-indigo-600 px-10 py-2.5 text-xs font-semibold uppercase tracking-wide text-white hover:bg-slate-800 dark:hover:bg-indigo-500 cursor-pointer transition-colors"
                   >
-                    Start
+                    Start Game
                   </button>
                 </div>
               )}
@@ -505,18 +233,18 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
         {/* Results Screen */}
         {gameState === 'results' && (
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
-            <div className="w-full max-w-sm rounded-xl border border-neutral-200 bg-white p-8 text-center shadow-lg space-y-4">
-              <h3 className="text-2xl font-bold text-neutral-900">Well done!</h3>
-              <p className="text-sm text-neutral-600">You completed the path finder assessment.</p>
+            <div className="w-full max-w-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 text-center shadow-lg space-y-4">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Well done!</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">You completed the path finder assessment.</p>
 
-              <div className="space-y-2 text-left text-neutral-700 text-sm border-y border-neutral-100 py-4">
+              <div className="space-y-2 text-left text-slate-700 dark:text-slate-300 text-sm border-y border-slate-100 dark:border-slate-700 py-4">
                 <p className="flex justify-between">
                   <span>Total moves:</span>
-                  <strong className="text-neutral-900 font-bold">{moves}</strong>
+                  <strong className="text-slate-900 dark:text-white font-bold">{moves}</strong>
                 </p>
                 <p className="flex justify-between">
                   <span>Time remaining:</span>
-                  <strong className="text-neutral-900 font-mono font-bold">{timeLeft}s</strong>
+                  <strong className="text-slate-900 dark:text-white font-mono font-bold">{timeLeft}s</strong>
                 </p>
               </div>
 
@@ -525,7 +253,7 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                   handleRegeneratePuzzle(matrixSize);
                   setGameState('playing');
                 }}
-                className="w-full py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
+                className="w-full py-3 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-colors"
               >
                 Play New Random Puzzle
               </button>
@@ -548,9 +276,9 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                 🚀
               </div>
 
-              {/* Grid Box */}
+              {/* Grid Box with .game-surface */}
               <div
-                className="overflow-hidden rounded-xl border-[3px] border-neutral-700 bg-white shadow-xl relative"
+                className="game-surface overflow-hidden rounded-xl border-2 border-slate-400 dark:border-slate-600 shadow-xl relative"
                 style={{ width: boardSizePx, height: boardSizePx }}
               >
                 <div
@@ -582,12 +310,12 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
                         key={`${r}-${c}`}
                         type="button"
                         onClick={() => setSelectedBlockId(blockId)}
-                        className={`flex items-center justify-center border border-gray-300 transition-colors select-none ${
-                          isDark ? 'bg-[#757575] text-white' : 'bg-white'
-                        } ${isHighlighted ? 'bg-[#9e9e9e]' : ''} ${
-                          isSelected && isDark ? 'ring-2 ring-inset ring-yellow-400' : ''
-                        } ${isRightBlockEdge ? 'border-r-2 border-r-gray-500' : ''} ${
-                          isBottomBlockEdge ? 'border-b-2 border-b-gray-500' : ''
+                        className={`flex items-center justify-center border border-slate-200 dark:border-slate-700/60 transition-colors select-none ${
+                          isDark ? 'bg-slate-600 dark:bg-slate-700 text-white' : 'bg-white dark:bg-slate-900/60'
+                        } ${isHighlighted ? 'bg-indigo-600 dark:bg-indigo-500 text-white' : ''} ${
+                          isSelected && isDark ? 'ring-2 ring-inset ring-amber-400' : ''
+                        } ${isRightBlockEdge ? 'border-r-2 border-r-slate-400 dark:border-r-slate-500' : ''} ${
+                          isBottomBlockEdge ? 'border-b-2 border-b-slate-400 dark:border-b-slate-500' : ''
                         }`}
                         style={{ width: cellPx, height: cellPx }}
                       >
@@ -634,64 +362,65 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
               </div>
             </div>
 
-            {/* Exact BuildUForward Control Buttons Bar */}
+            {/* Controls Bar */}
             <div className="mt-8 flex w-full max-w-md items-center justify-center gap-4">
               {/* Circular Timer */}
               <div className="relative flex size-12 shrink-0 items-center justify-center">
                 <svg width="48" height="48" className="-rotate-90">
-                  <circle cx="24" cy="24" r={18} fill="none" stroke="#e5e5e5" strokeWidth="3" />
+                  <circle cx="24" cy="24" r={18} fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-700" strokeWidth="3" />
                   <circle
                     cx="24"
                     cy="24"
                     r={18}
                     fill="none"
-                    stroke={timeLeft <= 60 ? "#dc2626" : "#525252"}
+                    stroke={timeLeft <= 60 ? '#dc2626' : 'currentColor'}
+                    className={timeLeft <= 60 ? 'text-red-600' : 'text-slate-700 dark:text-slate-300'}
                     strokeWidth="3"
                     strokeDasharray={2 * Math.PI * 18}
-                    strokeDashoffset={2 * Math.PI * 18 - (timeLeft / 240) * 2 * Math.PI * 18}
+                    strokeDashoffset={2 * Math.PI * 18 - (timeLeft / 240) * (2 * Math.PI * 18)}
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold tabular-nums">
-                  {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                <span className={`absolute inset-0 flex items-center justify-center text-xs font-semibold tabular-nums ${timeLeft <= 60 ? 'text-red-600' : 'text-slate-800 dark:text-slate-200'}`}>
+                  {timeLeft}
                 </span>
               </div>
 
-              {/* Rotate ↻ Button */}
+              {/* Rotate Button */}
               <button
                 type="button"
                 onClick={handleRotate}
                 disabled={!selectedBlockId}
-                className="flex size-12 items-center justify-center rounded-xl bg-[#333] text-white hover:bg-[#555] active:scale-95 transition-all shadow-md cursor-pointer disabled:opacity-40"
-                title="Rotate block clockwise"
+                className="flex size-14 items-center justify-center rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-md transition-all hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 disabled:opacity-40 cursor-pointer"
+                title="Rotate Clockwise (↻)"
               >
-                <RefreshCw className="size-5" />
+                <RefreshCw className="size-6 text-slate-700 dark:text-slate-200" />
               </button>
 
-              {/* Flip ⇄ Button */}
+              {/* Flip Button */}
               <button
                 type="button"
                 onClick={handleFlip}
                 disabled={!selectedBlockId}
-                className="flex size-12 items-center justify-center rounded-xl bg-[#333] text-white hover:bg-[#555] active:scale-95 transition-all shadow-md cursor-pointer disabled:opacity-40"
-                title="Change route direction"
+                className="flex size-14 items-center justify-center rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-md transition-all hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-95 disabled:opacity-40 cursor-pointer"
+                title="Change Route Direction (⇄)"
               >
-                <Repeat className="size-5" />
+                <Repeat className="size-6 text-slate-700 dark:text-slate-200" />
               </button>
 
-              {/* Submit ✓ Button */}
+              {/* Submit Button */}
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="flex size-12 items-center justify-center rounded-xl bg-[#333] text-white hover:bg-[#555] active:scale-95 transition-all shadow-md cursor-pointer"
-                title="Submit path"
+                className="flex size-14 items-center justify-center rounded-xl border-2 border-emerald-600 bg-emerald-600 text-white shadow-md transition-all hover:bg-emerald-700 active:scale-95 cursor-pointer"
+                title="Submit & Validate Path (✓)"
               >
-                <Check className="size-5" />
+                <Check className="size-7 stroke-[3]" />
               </button>
             </div>
 
-            <p className="mt-4 text-xs font-semibold text-neutral-500">
-              Total Moves: <strong className="text-neutral-900">{moves}</strong>
+            <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+              Moves: <span className="font-semibold text-slate-800 dark:text-slate-200">{moves}</span> • Target: ≤{puzzle.minMoves} moves
             </p>
           </div>
         )}

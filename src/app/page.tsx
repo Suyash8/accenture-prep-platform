@@ -70,7 +70,7 @@ export default function HomePage() {
 
   const roundBreakdown = [
     { round: 'Stage 1', name: 'Behavioral SJT', details: 'Situational Judgement assessment', href: '/sjt' },
-    { round: 'Stage 2', name: 'Cognitive Games', details: 'Memory Maze, Math Bubbles, Path Finder', href: '/games' },
+    { round: 'Stage 2', name: 'Cognitive Games', details: 'Memory Maze, Quick-Fire Math, Path Finder', href: '/games' },
     { round: 'Stage 3', name: 'Technical & Pseudocode', details: '45 Qs • Logic, Network & Security, MS Office', href: '/pseudocode' },
     { round: 'Stage 4', name: 'Coding Assessment', details: '2 Programming Problems • 45 Minutes', href: '/coding' },
     { round: 'Stage 5', name: 'Communication', details: 'Reading, Listening & Story Retelling', href: '/communication' },

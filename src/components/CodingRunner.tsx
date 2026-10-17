@@ -1,41 +1,83 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import { 
   Play, 
   RotateCcw, 
-  Check, 
-  Copy, 
-  Code, 
   Terminal, 
   CheckCircle2, 
   XCircle, 
   Clock, 
-  HelpCircle,
-  Sparkles,
-  Maximize2
+  ArrowLeft,
+  EyeOff,
+  Check,
+  AlertCircle
 } from 'lucide-react';
 import { CodingProblem } from '../types';
+import { 
+  getCodingSession, 
+  resetCodingSession, 
+  getCodingDraft, 
+  saveCodingDraft 
+} from '../lib/storage';
 
 interface CodingRunnerProps {
   problem: CodingProblem;
   onBack: () => void;
 }
 
+interface TestCaseResult {
+  pass: boolean;
+  input: string;
+  expected: string;
+  actual: string;
+  hidden?: boolean;
+}
+
 export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) => {
-  const [language, setLanguage] = useState<'python' | 'java' | 'csharp' | 'cpp'>('python');
-  const [userCode, setUserCode] = useState(problem.starterCode.python);
+  const [language, setLanguage] = useState<'python' | 'java' | 'cpp'>('python');
+  const [userCode, setUserCode] = useState(() => {
+    const saved = getCodingDraft(problem.id, 'python');
+    return saved || problem.starterCode.python;
+  });
   const [output, setOutput] = useState<string | null>(null);
   const [isRunning, setIsRunning] = useState(false);
   const [activeTab, setActiveTab] = useState<'description' | 'testcases'>('description');
-  const [testResults, setTestResults] = useState<{ pass: boolean; input: string; expected: string; actual: string }[] | null>(null);
+  const [testResults, setTestResults] = useState<TestCaseResult[] | null>(null);
+  const [timeRemainingSeconds, setTimeRemainingSeconds] = useState(45 * 60);
 
-  const monacoLanguage = language === 'cpp' ? 'cpp' : language === 'csharp' ? 'csharp' : language;
+  // Shared Stage 4 45-minute countdown session
+  useEffect(() => {
+    const session = getCodingSession();
+    const elapsed = Math.floor((Date.now() - session.startedAt) / 1000);
+    const remaining = Math.max(0, session.durationSeconds - elapsed);
+    setTimeRemainingSeconds(remaining);
 
-  const handleLanguageChange = (lang: 'python' | 'java' | 'csharp' | 'cpp') => {
+    const interval = setInterval(() => {
+      setTimeRemainingSeconds((prev) => Math.max(0, prev - 1));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleLanguageChange = (lang: 'python' | 'java' | 'cpp') => {
     setLanguage(lang);
-    setUserCode(problem.starterCode[lang] || problem.starterCode.python);
+    const saved = getCodingDraft(problem.id, lang);
+    setUserCode(saved || problem.starterCode[lang] || problem.starterCode.python);
+    setOutput(null);
+    setTestResults(null);
+  };
+
+  const handleCodeChange = (val: string | undefined) => {
+    const code = val || '';
+    setUserCode(code);
+    saveCodingDraft(problem.id, language, code);
+  };
+
+  const handleResetToStarter = () => {
+    const starter = problem.starterCode[language] || problem.starterCode.python;
+    setUserCode(starter);
+    saveCodingDraft(problem.id, language, starter);
     setOutput(null);
     setTestResults(null);
   };
@@ -55,6 +97,15 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
         }),
       });
 
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ error: 'Execution request failed' }));
+        setIsRunning(false);
+        setTestResults(null);
+        setOutput(`Execution Error (Status ${res.status}):\n${errorData.error || 'Execution failed.'}`);
+        setActiveTab('testcases');
+        return;
+      }
+
       const data = await res.json();
       setIsRunning(false);
 
@@ -65,31 +116,30 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
         setOutput(data.error || 'Execution encountered an unexpected issue.');
       }
       setActiveTab('testcases');
-    } catch (err: any) {
+    } catch {
       setIsRunning(false);
-      // Fallback evaluation
-      const results = problem.testCases.map((tc) => ({
-        pass: true,
-        input: tc.input,
-        expected: tc.expected,
-        actual: tc.expected,
-      }));
-      setTestResults(results);
-      setOutput(`[Local Engine Validation]\nExecution complete.\nAll test cases verified.`);
+      setTestResults(null);
+      setOutput('Could not reach the execution service. Nothing was evaluated.');
       setActiveTab('testcases');
     }
   };
 
+  const minutes = Math.floor(timeRemainingSeconds / 60);
+  const seconds = timeRemainingSeconds % 60;
+  const timerFormatted = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+  const monacoLanguage = language === 'cpp' ? 'cpp' : language;
+
   return (
-    <div className="flex flex-col h-[calc(100vh-70px)] text-slate-100 bg-[#090a0f] font-sans">
-      {/* Top Bar */}
-      <div className="flex items-center justify-between px-6 py-3 bg-[#0d1017] border-b border-white/10 backdrop-blur-md">
+    <div className="flex flex-col h-[calc(100vh-70px)] text-slate-100 bg-slate-950 font-sans">
+      {/* Top Header Bar */}
+      <div className="flex flex-wrap items-center justify-between px-6 py-3 bg-slate-900 border-b border-slate-800 gap-3">
         <div className="flex items-center gap-3">
           <button
             onClick={onBack}
-            className="text-xs px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-semibold border border-white/10 transition-colors"
+            className="text-xs px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold cursor-pointer transition-colors"
           >
-            ← Back to Problems
+            <ArrowLeft className="w-3.5 h-3.5 inline mr-1" /> Problems
           </button>
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-purple-400" />
@@ -97,43 +147,54 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
               {problem.title}
             </h2>
           </div>
-          <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+          <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             {problem.difficulty}
-          </span>
-          <span className="text-[11px] px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 font-semibold hidden sm:inline">
-            Accenture Strict Runtime
           </span>
         </div>
 
+        {/* Stage 4 Shared 45-Min Timer & Controls */}
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono font-bold text-amber-400">
+            <Clock className="w-3.5 h-3.5" />
+            <span>Stage 4 Session: {timerFormatted}</span>
+          </div>
+
           {/* Language Selector */}
-          <div className="flex bg-black/60 p-1 rounded-xl border border-white/10">
-            {(['python', 'java', 'csharp', 'cpp'] as const).map((lang) => (
+          <div className="flex bg-slate-800 p-1 rounded-lg border border-slate-700">
+            {(['python', 'java', 'cpp'] as const).map((lang) => (
               <button
                 key={lang}
                 onClick={() => handleLanguageChange(lang)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize transition-all ${
+                className={`px-3 py-1 rounded text-xs font-semibold uppercase transition-colors cursor-pointer ${
                   language === lang
-                    ? 'bg-purple-600 text-white shadow-md shadow-purple-600/30'
+                    ? 'bg-purple-600 text-white shadow-xs'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
-                {lang === 'csharp' ? 'C#' : lang === 'cpp' ? 'C++' : lang}
+                {lang === 'cpp' ? 'C++' : lang}
               </button>
             ))}
           </div>
 
           <button
+            onClick={handleResetToStarter}
+            title="Reset code to initial boilerplate"
+            className="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 cursor-pointer"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+          </button>
+
+          <button
             onClick={handleRunCode}
             disabled={isRunning}
-            className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-purple-600/30 disabled:opacity-50 active:scale-98 cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors cursor-pointer disabled:opacity-50 shadow-xs"
           >
             {isRunning ? (
               <RotateCcw className="w-3.5 h-3.5 animate-spin" />
             ) : (
               <Play className="w-3.5 h-3.5 fill-current" />
             )}
-            {isRunning ? 'Compiling & Running...' : 'Run Test Harness'}
+            {isRunning ? 'Compiling & Running...' : 'Run Test Cases'}
           </button>
         </div>
       </div>
@@ -141,11 +202,11 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
       {/* Split View */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
         {/* Left Side: Problem Description / Tests */}
-        <div className="lg:col-span-5 flex flex-col h-full bg-[#0c0e14] border-r border-white/10 overflow-y-auto p-6 space-y-6">
-          <div className="flex gap-4 border-b border-white/10 pb-3">
+        <div className="lg:col-span-5 flex flex-col h-full bg-slate-900 border-r border-slate-800 overflow-y-auto p-5 space-y-5">
+          <div className="flex gap-4 border-b border-slate-800 pb-2.5">
             <button
               onClick={() => setActiveTab('description')}
-              className={`text-xs font-bold pb-2 transition-all border-b-2 ${
+              className={`text-xs font-bold pb-1.5 transition-colors border-b-2 cursor-pointer ${
                 activeTab === 'description'
                   ? 'border-purple-500 text-white'
                   : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -155,148 +216,182 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
             </button>
             <button
               onClick={() => setActiveTab('testcases')}
-              className={`text-xs font-bold pb-2 transition-all border-b-2 flex items-center gap-1.5 ${
+              className={`text-xs font-bold pb-1.5 transition-colors border-b-2 flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'testcases'
                   ? 'border-purple-500 text-white'
                   : 'border-transparent text-slate-400 hover:text-slate-200'
               }`}
             >
-              Test Cases Result {testResults && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
+              Test Results {testResults && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
             </button>
           </div>
 
           {activeTab === 'description' ? (
-            <div className="space-y-6 text-xs text-slate-300 leading-relaxed">
-              <div className="whitespace-pre-line text-slate-200 font-medium bg-white/5 p-4 rounded-2xl border border-white/5">
+            <div className="space-y-5 text-xs text-slate-300 leading-relaxed">
+              <div className="whitespace-pre-line text-slate-200 font-medium bg-slate-950 p-4 rounded-xl border border-slate-800">
                 {problem.description}
               </div>
 
-              <div className="space-y-2">
-                <h4 className="font-bold text-white text-xs uppercase tracking-wider text-purple-400">
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-slate-400 text-xs uppercase tracking-wider">
                   Input Format
                 </h4>
-                <div className="p-3 bg-black/40 rounded-xl border border-white/5 font-mono text-[11px] text-slate-300 whitespace-pre">
+                <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 whitespace-pre">
                   {problem.inputFormat}
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <h4 className="font-bold text-white text-xs uppercase tracking-wider text-purple-400">
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-slate-400 text-xs uppercase tracking-wider">
                   Output Format
                 </h4>
-                <div className="p-3 bg-black/40 rounded-xl border border-white/5 font-mono text-[11px] text-slate-300 whitespace-pre">
+                <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 whitespace-pre">
                   {problem.outputFormat}
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <h4 className="font-bold text-white text-xs uppercase tracking-wider text-purple-400">
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-slate-400 text-xs uppercase tracking-wider">
                   Constraints
                 </h4>
-                <div className="p-3 bg-black/40 rounded-xl border border-white/5 font-mono text-[11px] text-slate-300 whitespace-pre">
+                <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 whitespace-pre">
                   {problem.constraints}
                 </div>
               </div>
 
               <div className="space-y-3">
-                <h4 className="font-bold text-white text-xs uppercase tracking-wider text-purple-400">
-                  Sample Case
+                <h4 className="font-bold text-slate-400 text-xs uppercase tracking-wider">
+                  Sample Test Case
                 </h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3 bg-black/40 rounded-xl border border-white/5 font-mono text-[11px]">
-                    <span className="text-[10px] text-slate-500 block mb-1">Input:</span>
-                    <pre className="text-slate-300">{problem.sampleInput}</pre>
+                <div className="space-y-2">
+                  <div>
+                    <span className="text-[11px] text-slate-500 font-bold block mb-1">Input</span>
+                    <pre className="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-slate-200 overflow-x-auto">
+                      {problem.sampleInput}
+                    </pre>
                   </div>
-                  <div className="p-3 bg-black/40 rounded-xl border border-white/5 font-mono text-[11px]">
-                    <span className="text-[10px] text-slate-500 block mb-1">Output:</span>
-                    <pre className="text-emerald-400">{problem.sampleOutput}</pre>
+                  <div>
+                    <span className="text-[11px] text-slate-500 font-bold block mb-1">Expected Output</span>
+                    <pre className="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto">
+                      {problem.sampleOutput}
+                    </pre>
                   </div>
+                  {problem.explanation && (
+                    <p className="p-3 bg-slate-950/60 rounded-lg border border-slate-800/80 text-slate-400 text-xs">
+                      <strong>Explanation:</strong> {problem.explanation}
+                    </p>
+                  )}
                 </div>
-                <p className="text-xs text-slate-400 italic">
-                  Explanation: {problem.explanation}
-                </p>
               </div>
             </div>
           ) : (
             <div className="space-y-4">
-              <h4 className="font-bold text-white text-sm">Evaluation Test Results</h4>
-              {testResults ? (
-                <div className="space-y-3">
-                  {testResults.map((tr, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-xl bg-black/40 border border-white/10 space-y-2 text-xs font-mono"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-slate-300">Test Case #{idx + 1}</span>
-                        <span className={`px-2 py-0.5 rounded text-[11px] font-bold border ${
-                          tr.pass
-                            ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                            : 'bg-rose-500/10 text-rose-400 border-rose-500/20'
-                        }`}>
-                          {tr.pass ? 'Passed' : 'Failed'}
-                        </span>
-                      </div>
-                      <div className="text-slate-400">Input: <span className="text-slate-200">{tr.input}</span></div>
-                      <div className="text-slate-400">Expected: <span className="text-emerald-400">{tr.expected}</span></div>
-                      <div className="text-slate-400">Actual: <span className={tr.pass ? 'text-emerald-400' : 'text-rose-400'}>{tr.actual}</span></div>
-                    </div>
-                  ))}
+              {output && (
+                <div className="space-y-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    Execution Output
+                  </span>
+                  <pre className="p-3 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs text-slate-200 whitespace-pre-wrap leading-relaxed">
+                    {output}
+                  </pre>
                 </div>
-              ) : (
-                <div className="text-slate-500 text-xs italic p-8 text-center bg-black/40 rounded-2xl border border-white/5">
-                  Click "Run Test Harness" to compile and execute against real test cases.
+              )}
+
+              {testResults && (
+                <div className="space-y-3 pt-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                    Detailed Test Results ({testResults.filter((r) => r.pass).length}/{testResults.length} Passed)
+                  </span>
+
+                  <div className="space-y-2.5">
+                    {testResults.map((tc, idx) => (
+                      <div
+                        key={idx}
+                        className={`p-3.5 rounded-xl border space-y-2 ${
+                          tc.pass
+                            ? 'bg-emerald-950/20 border-emerald-800/60'
+                            : 'bg-rose-950/20 border-rose-800/60'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-xs flex items-center gap-1.5 text-white">
+                            {tc.hidden ? (
+                              <EyeOff className="w-3.5 h-3.5 text-slate-400" />
+                            ) : null}
+                            Test Case {idx + 1} {tc.hidden ? '(Hidden)' : '(Sample)'}
+                          </span>
+                          <span
+                            className={`text-xs font-bold flex items-center gap-1 ${
+                              tc.pass ? 'text-emerald-400' : 'text-rose-400'
+                            }`}
+                          >
+                            {tc.pass ? (
+                              <>
+                                <CheckCircle2 className="w-3.5 h-3.5" /> Passed
+                              </>
+                            ) : (
+                              <>
+                                <XCircle className="w-3.5 h-3.5" /> Failed
+                              </>
+                            )}
+                          </span>
+                        </div>
+
+                        {!tc.hidden ? (
+                          <div className="grid grid-cols-2 gap-2 text-xs font-mono pt-1">
+                            <div>
+                              <span className="text-[10px] text-slate-500 uppercase block">Input</span>
+                              <div className="p-1.5 rounded bg-slate-950 border border-slate-800 text-slate-300 text-xs whitespace-pre overflow-x-auto">
+                                {tc.input}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="text-[10px] text-slate-500 uppercase block">Expected</span>
+                              <div className="p-1.5 rounded bg-slate-950 border border-slate-800 text-emerald-400 text-xs whitespace-pre overflow-x-auto">
+                                {tc.expected}
+                              </div>
+                            </div>
+                            <div className="col-span-2">
+                              <span className="text-[10px] text-slate-500 uppercase block">Your Output</span>
+                              <div className="p-1.5 rounded bg-slate-950 border border-slate-800 text-slate-200 text-xs whitespace-pre overflow-x-auto">
+                                {tc.actual}
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <p className="text-xs text-slate-400 italic">
+                            Hidden test cases evaluate edge conditions (e.g. boundaries, empty inputs, large scales).
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           )}
         </div>
 
-        {/* Right Side: Monaco Code Editor & Terminal Output */}
-        <div className="lg:col-span-7 flex flex-col h-full bg-[#0a0c10]">
-          {/* Editor Header Bar */}
-          <div className="flex items-center justify-between px-4 py-2 border-b border-white/10 text-xs text-slate-400 font-mono bg-[#0e1118]">
-            <span className="text-purple-300 font-semibold flex items-center gap-1.5">
-              <Code className="w-3.5 h-3.5" />
-              Solution.{language === 'python' ? 'py' : language === 'cpp' ? 'cpp' : language === 'csharp' ? 'cs' : 'java'}
-            </span>
-            <span className="text-[11px] text-slate-500">VS Code Monaco Engine • UTF-8</span>
-          </div>
-
-          {/* Monaco Editor Container */}
-          <div className="flex-1 w-full overflow-hidden">
+        {/* Right Side: Monaco Code Editor */}
+        <div className="lg:col-span-7 flex flex-col h-full bg-slate-950 overflow-hidden">
+          <div className="flex-1 w-full h-full">
             <Editor
               height="100%"
               language={monacoLanguage}
               theme="vs-dark"
               value={userCode}
-              onChange={(value) => setUserCode(value || '')}
+              onChange={handleCodeChange}
               options={{
                 minimap: { enabled: false },
                 fontSize: 13,
-                fontFamily: 'monospace',
+                fontFamily: 'var(--font-mono), monospace',
                 scrollBeyondLastLine: false,
-                smoothScrolling: true,
-                cursorBlinking: 'smooth',
-                lineNumbers: 'on',
-                renderWhitespace: 'selection',
+                automaticLayout: true,
                 tabSize: 4,
-                padding: { top: 12, bottom: 12 },
+                lineNumbers: 'on',
+                renderWhitespace: 'none',
               }}
             />
-          </div>
-
-          {/* Bottom Output Terminal */}
-          <div className="h-44 border-t border-white/10 bg-[#08090d] p-4 overflow-y-auto font-mono text-xs text-slate-300">
-            <div className="flex items-center justify-between pb-2 text-[11px] text-slate-400 uppercase tracking-wider font-bold">
-              <span className="flex items-center gap-1.5 text-purple-400">
-                <Terminal className="w-3.5 h-3.5" /> Terminal Execution Output
-              </span>
-              {output && <span className="text-emerald-400 font-semibold">Exit Code 0</span>}
-            </div>
-            <pre className="whitespace-pre-line text-slate-300 font-mono text-xs">
-              {output || 'Waiting for execution run...'}
-            </pre>
           </div>
         </div>
       </div>

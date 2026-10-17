@@ -60,6 +60,22 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
             } catch(e) {
               console.error(e);
             }
+
+            window.addEventListener('message', function(e) {
+              if (e.data && e.data.type === 'EXECUTE_TEST_CHECKS') {
+                var checks = e.data.checks || [];
+                var results = checks.map(function(tc) {
+                  try {
+                    var fn = new Function('doc', 'return (' + tc.testFnString + ')(doc)');
+                    var pass = Boolean(fn(document));
+                    return { name: tc.name, pass: pass, description: tc.description };
+                  } catch(err) {
+                    return { name: tc.name, pass: false, description: tc.description + ' (Error: ' + err.message + ')' };
+                  }
+                });
+                window.parent.postMessage({ type: 'TEST_CHECKS_RESPONSE', results: results }, '*');
+              }
+            });
           </script>
         </body>
       </html>
@@ -73,32 +89,24 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
     renderPreview();
   }, [htmlCode, cssCode, jsCode]);
 
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data && e.data.type === 'TEST_CHECKS_RESPONSE' && Array.isArray(e.data.results)) {
+        setTestResults(e.data.results);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   const handleRunTests = () => {
     renderPreview();
     setTimeout(() => {
-      const doc = iframeRef.current?.contentDocument || iframeRef.current?.contentWindow?.document;
-      if (!doc) return;
-
-      const results = currentSim.testChecks.map((tc) => {
-        try {
-          // eslint-disable-next-line no-eval
-          const fn = eval(tc.testFnString);
-          const passed = Boolean(fn(doc));
-          return {
-            name: tc.name,
-            pass: passed,
-            description: tc.description,
-          };
-        } catch (err) {
-          return {
-            name: tc.name,
-            pass: false,
-            description: `${tc.description} (Error: ${err})`,
-          };
-        }
-      });
-      setTestResults(results);
-    }, 300);
+      iframeRef.current?.contentWindow?.postMessage(
+        { type: 'EXECUTE_TEST_CHECKS', checks: currentSim.testChecks },
+        '*'
+      );
+    }, 250);
   };
 
   const handleReset = () => {

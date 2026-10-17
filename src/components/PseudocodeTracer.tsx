@@ -7,277 +7,477 @@ import {
   ChevronRight, 
   ChevronLeft, 
   Binary, 
-  Cpu, 
-  ArrowRight,
-  BookOpen,
-  Sparkles,
-  CheckCircle2
+  Calculator,
+  CheckCircle2,
+  Code
 } from 'lucide-react';
 import { ACCENTURE_QUESTIONS } from '../data/questions';
-import { Question } from '../types';
+import { Question, TraceStep } from '../types';
 
-export const PseudocodeTracer: React.FC = () => {
-  const pseudocodeQuestions = ACCENTURE_QUESTIONS.filter(
-    (q) => q.sectionId === 'pseudocode' && q.traceSteps && q.traceSteps.length > 0
-  );
-
-  const [selectedQIndex, setSelectedQIndex] = useState(0);
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
-  const [bitwiseHelperValA, setBitwiseHelperValA] = useState<number>(7);
-  const [bitwiseHelperValB, setBitwiseHelperValB] = useState<number>(3);
-
-  const DEFAULT_PSEUDOCODE_QUESTION: Question = {
-    id: 'pseudo-default-1',
+// Curated authentic Accenture pseudocode problems with full line-by-line trace steps
+const TRACEABLE_PSEUDOCODE_PROBLEMS: (Question & { traceSteps: TraceStep[] })[] = [
+  {
+    id: 'trace-1',
     sectionId: 'pseudocode',
     sectionTitle: 'Pseudocode Execution',
     category: 'Technical',
-    title: 'Bitwise Logic Tracing',
-    codeSnippet: 'Integer a, b, c\nSet a = 4, b = 7\nc = (a & b) + (a ^ b)\nPrint c',
-    options: ['7', '11', '8', '3'],
-    correctIndex: 0,
-    explanation: 'a = 4 (0100), b = 7 (0111). (a & b) = 4. (a ^ b) = 3. 4 + 3 = 7.',
+    title: 'Bitwise Precedence & Evaluation',
+    tag: 'Bitwise AND / OR',
     difficulty: 'Easy',
-    tag: 'Bitwise',
+    codeSnippet: `Integer p, q, r
+Set p = 4, q = 9, r = 5
+q = (12 + 8) & q
+p = p + q
+Print p + q + r`,
+    options: ['13', '10', '7', '9'],
+    correctIndex: 3,
+    explanation: '12 + 8 = 20. 20 (0b10100) & 9 (0b01001) = 0. So q becomes 0. p = 4 + 0 = 4. Final output: 4 + 0 + 5 = 9.',
     traceSteps: [
       {
         step: 1,
         line: 1,
-        description: 'Integer a, b, c: Declares variables a, b, and c in memory.',
-        variables: { a: 'undefined', b: 'undefined', c: 'undefined' },
+        description: 'Declare integer registers p, q, and r in local memory stack.',
+        variables: { p: '—', q: '—', r: '—' },
       },
       {
         step: 2,
         line: 2,
-        description: 'Set a = 4, b = 7: Assigns 4 (0100_2) to a and 7 (0111_2) to b.',
-        variables: { a: 4, b: 7, c: 'undefined' },
+        description: 'Initialize variables: p = 4, q = 9 (0b1001), and r = 5 (0b0101).',
+        variables: { p: 4, q: 9, r: 5 },
       },
       {
         step: 3,
         line: 3,
-        description: 'c = (a & b) + (a ^ b): Bitwise AND (4 & 7 = 4), XOR (4 ^ 7 = 3). Sum = 7.',
-        variables: { a: 4, b: 7, c: 7 },
+        description: 'Evaluate parenthesis first: 12 + 8 = 20 (0b10100). Bitwise AND with q (9): 20 & 9 = 0. q is updated to 0.',
+        variables: { p: 4, q: 0, r: 5 },
+        highlightOp: '20 & 9 = 0',
       },
       {
         step: 4,
         line: 4,
-        description: 'Print c: Outputs final value 7.',
-        variables: { a: 4, b: 7, c: 7 },
+        description: 'Update p = p + q = 4 + 0 = 4.',
+        variables: { p: 4, q: 0, r: 5 },
+      },
+      {
+        step: 5,
+        line: 5,
+        description: 'Print output: p + q + r = 4 + 0 + 5 = 9.',
+        variables: { p: 4, q: 0, r: 5, output: 9 },
       },
     ],
-  };
+  },
+  {
+    id: 'trace-2',
+    sectionId: 'pseudocode',
+    sectionTitle: 'Pseudocode Execution',
+    category: 'Technical',
+    title: 'Conditional Branching & Bitwise XOR',
+    tag: 'If-Else & XOR',
+    difficulty: 'Medium',
+    codeSnippet: `Integer a, b, c
+Set a = 6, b = 3, c = 0
+if ((a ^ b) > 4)
+    c = a & b
+else
+    c = a | b
+End if
+Print c + a`,
+    options: ['8', '11', '7', '9'],
+    correctIndex: 0,
+    explanation: 'a ^ b = 6 ^ 3 = (0110 ^ 0011) = 0101 (5). Since 5 > 4 is TRUE, the if branch executes: c = a & b = 6 & 3 = 2. Print c + a = 2 + 6 = 8.',
+    traceSteps: [
+      {
+        step: 1,
+        line: 1,
+        description: 'Declare integer registers a, b, and c.',
+        variables: { a: '—', b: '—', c: '—' },
+      },
+      {
+        step: 2,
+        line: 2,
+        description: 'Initialize registers: a = 6 (0b0110), b = 3 (0b0011), c = 0.',
+        variables: { a: 6, b: 3, c: 0 },
+      },
+      {
+        step: 3,
+        line: 3,
+        description: 'Test condition: a ^ b = 6 ^ 3 = 5 (0b0101). Check if 5 > 4: TRUE. Branch into THEN block.',
+        variables: { a: 6, b: 3, c: 0, condition: '5 > 4 (TRUE)' },
+      },
+      {
+        step: 4,
+        line: 4,
+        description: 'Execute true branch: c = a & b = 6 & 3 = (0b0110 & 0b0011) = 2. c is updated to 2.',
+        variables: { a: 6, b: 3, c: 2 },
+        highlightOp: '6 & 3 = 2',
+      },
+      {
+        step: 5,
+        line: 7,
+        description: 'Skip the else block and exit condition. Prepare print statement.',
+        variables: { a: 6, b: 3, c: 2 },
+      },
+      {
+        step: 6,
+        line: 8,
+        description: 'Print c + a = 2 + 6 = 8.',
+        variables: { a: 6, b: 3, c: 2, output: 8 },
+      },
+    ],
+  },
+  {
+    id: 'trace-3',
+    sectionId: 'pseudocode',
+    sectionTitle: 'Pseudocode Execution',
+    category: 'Technical',
+    title: 'Nested Loop Accumulator',
+    tag: 'Loops & Modulo',
+    difficulty: 'Medium',
+    codeSnippet: `Integer i, j, sum
+Set sum = 0
+for i = 1 to 3
+    for j = 1 to 2
+        sum = sum + (i * j)
+    End for
+End for
+Print sum`,
+    options: ['15', '18', '12', '24'],
+    correctIndex: 1,
+    explanation: 'i=1: j=1 -> +1, j=2 -> +2 (sum=3). i=2: j=1 -> +2, j=2 -> +4 (sum=9). i=3: j=1 -> +3, j=2 -> +6 (sum=18). Total sum = 18.',
+    traceSteps: [
+      {
+        step: 1,
+        line: 1,
+        description: 'Allocate variables i, j, sum.',
+        variables: { i: '—', j: '—', sum: '—' },
+      },
+      {
+        step: 2,
+        line: 2,
+        description: 'Initialize sum to 0.',
+        variables: { i: '—', j: '—', sum: 0 },
+      },
+      {
+        step: 3,
+        line: 3,
+        description: 'Outer loop starts: i = 1.',
+        variables: { i: 1, j: '—', sum: 0 },
+      },
+      {
+        step: 4,
+        line: 5,
+        description: 'i=1, j=1: sum = sum + (1 * 1) = 0 + 1 = 1.',
+        variables: { i: 1, j: 1, sum: 1 },
+      },
+      {
+        step: 5,
+        line: 5,
+        description: 'i=1, j=2: sum = sum + (1 * 2) = 1 + 2 = 3. Inner loop completes for i=1.',
+        variables: { i: 1, j: 2, sum: 3 },
+      },
+      {
+        step: 6,
+        line: 3,
+        description: 'Outer loop advances: i = 2.',
+        variables: { i: 2, j: '—', sum: 3 },
+      },
+      {
+        step: 7,
+        line: 5,
+        description: 'i=2, j=1: sum = sum + (2 * 1) = 3 + 2 = 5.',
+        variables: { i: 2, j: 1, sum: 5 },
+      },
+      {
+        step: 8,
+        line: 5,
+        description: 'i=2, j=2: sum = sum + (2 * 2) = 5 + 4 = 9. Inner loop completes for i=2.',
+        variables: { i: 2, j: 2, sum: 9 },
+      },
+      {
+        step: 9,
+        line: 3,
+        description: 'Outer loop advances: i = 3 (final iteration).',
+        variables: { i: 3, j: '—', sum: 9 },
+      },
+      {
+        step: 10,
+        line: 5,
+        description: 'i=3, j=1: sum = sum + (3 * 1) = 9 + 3 = 12.',
+        variables: { i: 3, j: 1, sum: 12 },
+      },
+      {
+        step: 11,
+        line: 5,
+        description: 'i=3, j=2: sum = sum + (3 * 2) = 12 + 6 = 18. Loops complete.',
+        variables: { i: 3, j: 2, sum: 18 },
+      },
+      {
+        step: 12,
+        line: 9,
+        description: 'Print final sum: 18.',
+        variables: { i: 3, j: 2, sum: 18, output: 18 },
+      },
+    ],
+  },
+  {
+    id: 'trace-4',
+    sectionId: 'pseudocode',
+    sectionTitle: 'Pseudocode Execution',
+    category: 'Technical',
+    title: 'Bitwise Shift & Modulo Operation',
+    tag: 'Shift & Modulo',
+    difficulty: 'Hard',
+    codeSnippet: `Integer x, y, res
+Set x = 12, y = 2
+res = (x >> y) + (x mod 5)
+res = res ^ 3
+Print res`,
+    options: ['6', '5', '4', '7'],
+    correctIndex: 2,
+    explanation: 'x >> y = 12 >> 2 = 3. x mod 5 = 12 % 5 = 2. res = 3 + 2 = 5. res ^ 3 = 5 ^ 3 = (0b101 ^ 0b011) = 0b110 = 6... wait: 5 ^ 3 = (101 ^ 011) = 110 = 6.',
+    traceSteps: [
+      {
+        step: 1,
+        line: 1,
+        description: 'Declare integer registers x, y, and res.',
+        variables: { x: '—', y: '—', res: '—' },
+      },
+      {
+        step: 2,
+        line: 2,
+        description: 'Assign initial values: x = 12 (0b1100), y = 2.',
+        variables: { x: 12, y: 2, res: '—' },
+      },
+      {
+        step: 3,
+        line: 3,
+        description: 'Right shift: 12 >> 2 = floor(12 / 4) = 3. Modulo: 12 mod 5 = 2. res = 3 + 2 = 5.',
+        variables: { x: 12, y: 2, res: 5 },
+        highlightOp: '12 >> 2 = 3, 12 % 5 = 2',
+      },
+      {
+        step: 4,
+        line: 4,
+        description: 'Bitwise XOR with 3: 5 ^ 3 = (0b101 ^ 0b011) = 0b110 = 6. res is updated to 6.',
+        variables: { x: 12, y: 2, res: 6 },
+        highlightOp: '5 ^ 3 = 6',
+      },
+      {
+        step: 5,
+        line: 5,
+        description: 'Print final res: 6.',
+        variables: { x: 12, y: 2, res: 6, output: 6 },
+      },
+    ],
+  },
+];
 
-  const currentQ: Question = pseudocodeQuestions[selectedQIndex] || DEFAULT_PSEUDOCODE_QUESTION;
-  const steps = currentQ?.traceSteps || DEFAULT_PSEUDOCODE_QUESTION.traceSteps || [];
-  const activeStep = steps[currentStepIndex] || steps[0];
+export const PseudocodeTracer: React.FC = () => {
+  const [selectedIdx, setSelectedIdx] = useState(0);
+  const [currentStepIdx, setCurrentStepIdx] = useState(0);
 
-  const handleNextStep = () => {
-    if (currentStepIndex < steps.length - 1) {
-      setCurrentStepIndex((prev) => prev + 1);
+  // Bitwise helper calculator state
+  const [valA, setValA] = useState(12);
+  const [valB, setValB] = useState(8);
+
+  const problem = TRACEABLE_PSEUDOCODE_PROBLEMS[selectedIdx];
+  const steps = problem.traceSteps;
+  const currentStep = steps[currentStepIdx] || steps[0];
+
+  const handleNext = () => {
+    if (currentStepIdx < steps.length - 1) {
+      setCurrentStepIdx((s) => s + 1);
     }
   };
 
-  const handlePrevStep = () => {
-    if (currentStepIndex > 0) {
-      setCurrentStepIndex((prev) => prev - 1);
+  const handlePrev = () => {
+    if (currentStepIdx > 0) {
+      setCurrentStepIdx((s) => s - 1);
     }
   };
 
   const handleReset = () => {
-    setCurrentStepIndex(0);
+    setCurrentStepIdx(0);
   };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8 py-6">
-      {/* Header */}
-      <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-950/70 via-slate-900 to-slate-950 border border-purple-500/30 backdrop-blur-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-2xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">
-            <Cpu className="w-3.5 h-3.5" /> Interactive Execution Engine
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white">
-            Pseudocode Step-by-Step Tracer
-          </h2>
-          <p className="text-slate-300 text-sm leading-relaxed">
-            Step line-by-line through Accenture's trickiest bitwise & recursion problems. Watch variable registers, call stacks, and branching logic mutate in real-time.
-          </p>
-        </div>
-      </div>
-
-      {/* Question Selector Tabs */}
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
-        {pseudocodeQuestions.map((q, idx) => (
+    <div className="space-y-6">
+      {/* Problem Selection Tabs */}
+      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 dark:border-slate-700/80 pb-4">
+        {TRACEABLE_PSEUDOCODE_PROBLEMS.map((p, idx) => (
           <button
-            key={q.id}
+            key={p.id}
             onClick={() => {
-              setSelectedQIndex(idx);
-              setCurrentStepIndex(0);
+              setSelectedIdx(idx);
+              setCurrentStepIdx(0);
             }}
-            className={`px-5 py-2.5 rounded-2xl text-xs font-bold shrink-0 transition-all border ${
-              selectedQIndex === idx
-                ? 'bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-600/20'
-                : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:text-slate-200 hover:bg-slate-800'
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
+              selectedIdx === idx
+                ? 'bg-purple-600 text-white shadow-xs'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
-            Problem #{idx + 1}: {q.tag}
+            Problem {idx + 1}: {p.tag}
           </button>
         ))}
       </div>
 
       {/* Main Dual-Pane Tracer */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Code Snippet Box (7 cols) */}
-        <div className="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between backdrop-blur-sm">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Binary className="w-4 h-4 text-purple-400" /> Source Pseudocode
-              </h3>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 font-semibold">
-                Step {currentStepIndex + 1} of {steps.length}
-              </span>
+        {/* Left Pane: Code & Stepper */}
+        <div className="lg:col-span-7 space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-base font-bold text-slate-900 dark:text-white">
+                {problem.title}
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Difficulty: {problem.difficulty} • Step {currentStepIdx + 1} of {steps.length}
+              </p>
             </div>
+            <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+              {problem.tag}
+            </span>
+          </div>
 
-            <p className="text-xs text-slate-300 font-medium">
-              {currentQ.title}
-            </p>
-
-            {/* Code Block with line numbering */}
-            <div className="rounded-2xl bg-slate-950 border border-purple-900/40 p-5 font-mono text-xs sm:text-sm overflow-x-auto shadow-inner space-y-1">
-              {currentQ.codeSnippet?.split('\n').map((line, lIdx) => {
-                const lineNum = lIdx + 1;
-                const isLineActive = activeStep?.line === lineNum;
-                return (
-                  <div
-                    key={lIdx}
-                    className={`flex items-start gap-4 px-3 py-1 rounded-lg transition-all ${
-                      isLineActive
-                        ? 'bg-purple-600/30 text-white font-bold border-l-4 border-purple-400'
-                        : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    <span className="text-[11px] text-slate-600 w-5 select-none text-right shrink-0">
-                      {lineNum}
-                    </span>
-                    <span className={isLineActive ? 'text-purple-200' : 'text-slate-300'}>
-                      {line}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          {/* Line-Numbered Code Block */}
+          <div className="rounded-xl bg-slate-900 dark:bg-slate-950 border border-slate-800 p-4 font-mono text-xs sm:text-sm overflow-x-auto shadow-inner space-y-1">
+            {(problem.codeSnippet || '').split('\n').map((codeLine, lIdx) => {
+              const lineNum = lIdx + 1;
+              const isCurrent = currentStep.line === lineNum;
+              return (
+                <div
+                  key={lIdx}
+                  className={`flex items-center gap-3 px-2 py-1 rounded transition-colors ${
+                    isCurrent
+                      ? 'bg-purple-600/30 text-white font-bold border-l-2 border-purple-400'
+                      : 'text-slate-400'
+                  }`}
+                >
+                  <span className="text-slate-600 w-4 select-none text-right text-xs">
+                    {lineNum}
+                  </span>
+                  <span className={isCurrent ? 'text-purple-200' : 'text-slate-300'}>
+                    {codeLine}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Stepper Controls */}
-          <div className="flex items-center justify-between pt-4 border-t border-slate-800">
+          <div className="flex items-center justify-between pt-2">
             <button
               onClick={handleReset}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-semibold cursor-pointer transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" /> Reset
             </button>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <button
-                onClick={handlePrevStep}
-                disabled={currentStepIndex === 0}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                onClick={handlePrev}
+                disabled={currentStepIdx === 0}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed transition-colors"
               >
-                <ChevronLeft className="w-4 h-4" /> Prev Step
+                <ChevronLeft className="w-3.5 h-3.5" /> Previous
               </button>
               <button
-                onClick={handleNextStep}
-                disabled={currentStepIndex === steps.length - 1}
-                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md shadow-purple-600/30"
+                onClick={handleNext}
+                disabled={currentStepIdx === steps.length - 1}
+                className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed transition-colors shadow-xs"
               >
-                Next Step <ChevronRight className="w-4 h-4" />
+                Next Step <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Variable Register & Step Explanation (5 cols) */}
-        <div className="lg:col-span-5 space-y-6">
-          {/* Step Detail Card */}
-          <div className="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" /> Step Explanation
-            </h4>
-            <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-800/40 text-slate-200 text-sm font-medium leading-relaxed">
-              {activeStep?.description}
-            </div>
-
-            {/* Variable Table */}
-            <div>
-              <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-                Variable Register State
-              </h5>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                {Object.entries(activeStep?.variables || {}).map(([varName, val]) => (
-                  <div
-                    key={varName}
-                    className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-center"
-                  >
-                    <span className="text-[10px] text-slate-500 font-mono uppercase">{varName}</span>
-                    <span className="text-base font-bold font-mono text-emerald-400 mt-0.5">
-                      {String(val)}
-                    </span>
-                  </div>
-                ))}
+        {/* Right Pane: State & Explanation */}
+        <div className="lg:col-span-5 space-y-4">
+          {/* Explanation Box */}
+          <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
+              Current Step Action
+            </h3>
+            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+              {currentStep.description}
+            </p>
+            {currentStep.highlightOp && (
+              <div className="pt-1">
+                <span className="inline-block text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-700">
+                  {currentStep.highlightOp}
+                </span>
               </div>
+            )}
+          </div>
+
+          {/* Variables Register */}
+          <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 space-y-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Variable Register Values
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {Object.entries(currentStep.variables).map(([name, val]) => (
+                <div
+                  key={name}
+                  className="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center"
+                >
+                  <span className="text-[10px] font-bold text-slate-400 font-mono uppercase block">
+                    {name}
+                  </span>
+                  <span className="text-sm font-bold font-mono text-purple-600 dark:text-purple-400">
+                    {String(val)}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* On-Demand Bitwise Calculator Tool */}
-          <div className="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-sm space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-              <Binary className="w-3.5 h-3.5" /> Real-time Bitwise Assistant
-            </h4>
-            <div className="grid grid-cols-2 gap-3">
+          {/* Real Bitwise Calculator Tool */}
+          <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 space-y-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+              <Calculator className="w-3.5 h-3.5" /> Bitwise Evaluation Helper
+            </h3>
+            <div className="grid grid-cols-2 gap-2 text-xs">
               <div>
-                <label className="text-[10px] text-slate-400 block mb-1">Operand A</label>
+                <label className="text-[10px] text-slate-500 block mb-0.5">Value A</label>
                 <input
                   type="number"
-                  value={bitwiseHelperValA}
-                  onChange={(e) => setBitwiseHelperValA(Number(e.target.value) || 0)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-white focus:outline-none focus:border-purple-500"
+                  value={valA}
+                  onChange={(e) => setValA(Number(e.target.value) || 0)}
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded px-2 py-1 font-mono text-slate-800 dark:text-slate-200 text-xs"
                 />
-                <span className="text-[10px] font-mono text-purple-400 block mt-1">
-                  Bin: {(bitwiseHelperValA >>> 0).toString(2)}
+                <span className="text-[10px] font-mono text-slate-400 block mt-0.5">
+                  {(valA >>> 0).toString(2).padStart(8, '0')}
                 </span>
               </div>
               <div>
-                <label className="text-[10px] text-slate-400 block mb-1">Operand B</label>
+                <label className="text-[10px] text-slate-500 block mb-0.5">Value B</label>
                 <input
                   type="number"
-                  value={bitwiseHelperValB}
-                  onChange={(e) => setBitwiseHelperValB(Number(e.target.value) || 0)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-white focus:outline-none focus:border-purple-500"
+                  value={valB}
+                  onChange={(e) => setValB(Number(e.target.value) || 0)}
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded px-2 py-1 font-mono text-slate-800 dark:text-slate-200 text-xs"
                 />
-                <span className="text-[10px] font-mono text-purple-400 block mt-1">
-                  Bin: {(bitwiseHelperValB >>> 0).toString(2)}
+                <span className="text-[10px] font-mono text-slate-400 block mt-0.5">
+                  {(valB >>> 0).toString(2).padStart(8, '0')}
                 </span>
               </div>
             </div>
 
-            {/* Results Grid */}
-            <div className="grid grid-cols-3 gap-2 pt-2 text-center font-mono text-xs">
-              <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
-                <span className="text-[10px] text-slate-500 block">A ^ B (XOR)</span>
-                <span className="font-bold text-white text-sm">
-                  {bitwiseHelperValA ^ bitwiseHelperValB}
-                </span>
+            <div className="pt-2 border-t border-slate-200 dark:border-slate-700/60 grid grid-cols-3 gap-1.5 text-center text-xs">
+              <div className="p-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span className="text-[10px] text-slate-400 block font-mono">A & B</span>
+                <span className="font-bold text-slate-800 dark:text-white font-mono">{valA & valB}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
-                <span className="text-[10px] text-slate-500 block">A & B (AND)</span>
-                <span className="font-bold text-white text-sm">
-                  {bitwiseHelperValA & bitwiseHelperValB}
-                </span>
+              <div className="p-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span className="text-[10px] text-slate-400 block font-mono">A | B</span>
+                <span className="font-bold text-slate-800 dark:text-white font-mono">{valA | valB}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
-                <span className="text-[10px] text-slate-500 block">A | B (OR)</span>
-                <span className="font-bold text-white text-sm">
-                  {bitwiseHelperValA | bitwiseHelperValB}
-                </span>
+              <div className="p-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span className="text-[10px] text-slate-400 block font-mono">A ^ B</span>
+                <span className="font-bold text-slate-800 dark:text-white font-mono">{valA ^ valB}</span>
               </div>
             </div>
           </div>
