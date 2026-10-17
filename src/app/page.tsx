@@ -49,6 +49,7 @@ import { CommunicationGuideSimulator } from '../components/CommunicationGuideSim
 import { DiagnosticHub } from '../components/DiagnosticHub';
 import { CustomMockGenerator } from '../components/CustomMockGenerator';
 import { BehavioralSjtSimulator } from '../components/BehavioralSjtSimulator';
+import { GamifiedAssessmentHub } from '../components/GamifiedAssessmentHub';
 import { 
   generateFullMock, 
   generateTechnicalEliminationMock, 
@@ -466,9 +467,23 @@ export default function CoursePortal() {
           </div>
         </div>
 
-        {/* Curated Module Folders & Grid */}
-        <div className="space-y-8">
-          {filteredFolders.map((folder) => {
+        {/* Stage 2 Gamified Assessment Hub (Direct Play Mode - BuildUForward Model) */}
+        {selectedStageFilter === 'stage2' ? (
+          <GamifiedAssessmentHub
+            onPlayGame={(gameId) => {
+              if (gameId === 'quick-fire-math') {
+                setActiveLaunch({ type: 'game_math_order', title: 'Quick-Fire Math Speed Sort' });
+              } else if (gameId === 'memory-maze') {
+                setActiveLaunch({ type: 'game_lock_key', title: 'Memory Maze (The Hidden Path)' });
+              } else {
+                setActiveLaunch({ type: 'game_path_builder', title: 'Path Finder Vector Pipeline' });
+              }
+            }}
+          />
+        ) : (
+          /* Curated Module Folders & Grid */
+          <div className="space-y-8">
+            {filteredFolders.map((folder) => {
             const visibleItems = folder.items.filter(
               (item) => !searchQuery || item.title.toLowerCase().includes(searchQuery.toLowerCase())
             );
@@ -580,6 +595,7 @@ export default function CoursePortal() {
             );
           })}
         </div>
+        )}
       </main>
     </div>
   );
