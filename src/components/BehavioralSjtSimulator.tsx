@@ -143,6 +143,7 @@ export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ 
           total: totalQuestions,
         },
       },
+      kind: 'sjt',
     });
   }, [attemptId, selectedAnswers, timeSpent, currentIndex, totalQuestions]);
 

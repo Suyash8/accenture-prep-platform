@@ -64,10 +64,28 @@ export default function RootLayout({
                     Coding
                   </Link>
                   <Link
+                    href="/sql"
+                    className="px-2.5 py-1.5 rounded-lg hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  >
+                    SQL
+                  </Link>
+                  <Link
+                    href="/frontend"
+                    className="px-2.5 py-1.5 rounded-lg hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors hidden md:inline-block"
+                  >
+                    Frontend
+                  </Link>
+                  <Link
                     href="/mocks"
                     className="px-2.5 py-1.5 rounded-lg hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                   >
                     Tests
+                  </Link>
+                  <Link
+                    href="/analytics"
+                    className="px-2.5 py-1.5 rounded-lg hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  >
+                    Analytics
                   </Link>
                   <Link
                     href="/mistakes"

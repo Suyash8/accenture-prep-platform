@@ -75,6 +75,25 @@ export function sampleQuestions(
 }
 
 /**
+ * Permutes options of a question and updates correctIndex accordingly.
+ */
+export function shuffleQuestionOptions(q: Question, rng: () => number = Math.random): Question {
+  const indices = q.options.map((_, i) => i);
+  // Fisher-Yates shuffle
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  const newOptions = indices.map((idx) => q.options[idx]);
+  const newCorrectIndex = indices.indexOf(q.correctIndex);
+  return {
+    ...q,
+    options: newOptions,
+    correctIndex: newCorrectIndex,
+  };
+}
+
+/**
  * Core mock builder: constructs sections from a blueprint plan.
  * Throws explicit descriptive error if pool has insufficient questions.
  */
@@ -95,7 +114,8 @@ export function buildMock(
       );
     }
 
-    const selected = sampleQuestions(available, section.count, rng);
+    const sampled = sampleQuestions(available, section.count, rng);
+    const selected = sampled.map((q) => shuffleQuestionOptions(q, rng));
     generatedSections.push({
       ...section,
       questions: selected,
@@ -215,7 +235,8 @@ export function generateSectionalDrill(
   }
 
   const rng = createSeededRng(seed);
-  const selected = sampleQuestions(pool, count, rng);
+  const sampled = sampleQuestions(pool, count, rng);
+  const selected = sampled.map((q) => shuffleQuestionOptions(q, rng));
 
   return {
     questions: selected,
@@ -249,7 +270,8 @@ export function generateCustomAdaptiveMock(
 
   const rng = createSeededRng(seed);
   const actualCount = Math.min(count, pool.length);
-  const selected = sampleQuestions(pool, actualCount, rng);
+  const sampled = sampleQuestions(pool, actualCount, rng);
+  const selected = sampled.map((q) => shuffleQuestionOptions(q, rng));
   const duration = Math.max(10, Math.round(selected.length * 1.0)); // 1 min per Q
 
   return {

@@ -8,12 +8,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "13",
+      "9",
       "10",
       "7",
-      "9"
+      "13"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Step 1: 12 + 8 = 20.\nStep 2: 20 & 9 = (0b10100 & 0b1001) = 0. So q = 0.\nStep 3: p = 4 + 0 = 4.\nStep 4: Output p + q + r = 4 + 0 + 5 = 9.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -27,12 +27,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "16",
       "18",
+      "16",
       "20",
       "14"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Step 1: 14 + 11 = 25.\nStep 2: 25 & 5 = (0b11001 & 0b101) = 1. So q = 1.\nStep 3: p = 7 + 1 = 8.\nStep 4: Output p + q + r = 8 + 1 + 7 = 16.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -46,12 +46,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "32",
-      "30",
       "36",
+      "30",
+      "32",
       "43"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Step 1: 16 + 14 = 30.\nStep 2: 30 & 10 = (0b11110 & 0b1010) = 10. So q = 10.\nStep 3: p = 3 + 10 = 13.\nStep 4: Output p + q + r = 13 + 10 + 9 = 32.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -67,10 +67,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "36",
       "33",
-      "29",
-      "27"
+      "27",
+      "29"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Step 1: 18 + 5 = 23.\nStep 2: 23 & 6 = (0b10111 & 0b110) = 6. So q = 6.\nStep 3: p = 6 + 6 = 12.\nStep 4: Output p + q + r = 12 + 6 + 11 = 29.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -84,12 +84,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "35",
+      "31",
       "40",
       "29",
-      "31"
+      "35"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Step 1: 20 + 8 = 28.\nStep 2: 28 & 11 = (0b11100 & 0b1011) = 8. So q = 8.\nStep 3: p = 2 + 8 = 10.\nStep 4: Output p + q + r = 10 + 8 + 13 = 31.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -104,11 +104,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "23",
-      "17",
       "19",
+      "17",
       "25"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Step 1: 10 + 11 = 21.\nStep 2: 21 & 7 = (0b10101 & 0b111) = 5. So q = 5.\nStep 3: p = 5 + 5 = 10.\nStep 4: Output p + q + r = 10 + 5 + 4 = 19.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -141,12 +141,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "12",
+      "16",
       "13",
       "10",
-      "16"
+      "12"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Step 1: 14 + 5 = 19.\nStep 2: 19 & 8 = (0b10011 & 0b1000) = 0. So q = 0.\nStep 3: p = 4 + 0 = 4.\nStep 4: Output p + q + r = 4 + 0 + 8 = 12.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -160,12 +160,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "15",
       "17",
+      "15",
       "21",
       "18"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Step 1: 16 + 8 = 24.\nStep 2: 24 & 4 = (0b11000 & 0b100) = 0. So q = 0.\nStep 3: p = 7 + 0 = 7.\nStep 4: Output p + q + r = 7 + 0 + 10 = 17.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -180,11 +180,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "43",
-      "31",
       "33",
+      "31",
       "37"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Step 1: 18 + 11 = 29.\nStep 2: 29 & 9 = (0b11101 & 0b1001) = 9. So q = 9.\nStep 3: p = 3 + 9 = 12.\nStep 4: Output p + q + r = 12 + 9 + 12 = 33.",
     "difficulty": "Easy",
     "tag": "Bitwise Precedence",
@@ -199,11 +199,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "10",
-      "9",
       "7",
+      "9",
       "13"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Step 1: 20 + 14 = 34.\nStep 2: 34 & 5 = (0b100010 & 0b101) = 0. So q = 0.\nStep 3: p = 6 + 0 = 6.\nStep 4: Output p + q + r = 6 + 0 + 3 = 9.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -219,10 +219,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "38",
       "25",
-      "27",
-      "31"
+      "31",
+      "27"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Step 1: 10 + 5 = 15.\nStep 2: 15 & 10 = (0b1111 & 0b1010) = 10. So q = 10.\nStep 3: p = 2 + 10 = 12.\nStep 4: Output p + q + r = 12 + 10 + 5 = 27.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -256,11 +256,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "38",
-      "32",
+      "28",
       "26",
-      "28"
+      "32"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Step 1: 14 + 11 = 25.\nStep 2: 25 & 11 = (0b11001 & 0b1011) = 9. So q = 9.\nStep 3: p = 1 + 9 = 10.\nStep 4: Output p + q + r = 10 + 9 + 9 = 28.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -276,10 +276,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "34",
       "31",
-      "25",
-      "27"
+      "27",
+      "25"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Step 1: 16 + 14 = 30.\nStep 2: 30 & 7 = (0b11110 & 0b111) = 6. So q = 6.\nStep 3: p = 4 + 6 = 10.\nStep 4: Output p + q + r = 10 + 6 + 11 = 27.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -293,12 +293,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What will be the output of the following pseudocode?",
     "options": [
-      "28",
+      "33",
       "26",
       "32",
-      "33"
+      "28"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Step 1: 18 + 5 = 23.\nStep 2: 23 & 12 = (0b10111 & 0b1100) = 4. So q = 4.\nStep 3: p = 7 + 4 = 11.\nStep 4: Output p + q + r = 11 + 4 + 13 = 28.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -332,11 +332,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "18",
-      "25",
+      "20",
       "24",
-      "20"
+      "25"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Step 1: 10 + 11 = 21.\nStep 2: 21 & 4 = (0b10101 & 0b100) = 4. So q = 4.\nStep 3: p = 6 + 4 = 10.\nStep 4: Output p + q + r = 10 + 4 + 6 = 20.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -370,11 +370,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What will be the output of the following pseudocode?",
     "options": [
       "21",
-      "17",
+      "19",
       "15",
-      "19"
+      "17"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Step 1: 14 + 5 = 19.\nStep 2: 19 & 5 = (0b10011 & 0b101) = 1. So q = 1.\nStep 3: p = 5 + 1 = 6.\nStep 4: Output p + q + r = 6 + 1 + 10 = 17.",
     "difficulty": "Medium",
     "tag": "Bitwise Precedence",
@@ -388,12 +388,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "25",
-      "19",
       "22",
+      "19",
+      "25",
       "17"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Step 1: c = 9 + 3 = 12.\nStep 2: Condition 1: 17 < 19 evaluates to True.\nStep 3: Condition 2: 13 < 12 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 7.\nStep 5: a + b + c = 3 + 7 + 12 = 22.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -407,12 +407,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "25",
       "29",
+      "25",
       "21",
       "20"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Step 1: c = 9 + 4 = 13.\nStep 2: Condition 1: 18 < 20 evaluates to True.\nStep 3: Condition 2: 13 < 13 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 8.\nStep 5: a + b + c = 4 + 8 + 13 = 25.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -426,12 +426,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "33",
-      "38",
       "23",
+      "38",
+      "33",
       "28"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Step 1: c = 9 + 5 = 14.\nStep 2: Condition 1: 19 < 21 evaluates to True.\nStep 3: Condition 2: 13 < 14 evaluates to True.\nStep 4: Inner block executes, updating b.\nStep 5: a + b + c = 5 + 14 + 14 = 33.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -445,12 +445,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "33",
+      "27",
       "39",
       "19",
-      "27"
+      "33"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Step 1: c = 9 + 6 = 15.\nStep 2: Condition 1: 20 < 22 evaluates to True.\nStep 3: Condition 2: 13 < 15 evaluates to True.\nStep 4: Inner block executes, updating b.\nStep 5: a + b + c = 6 + 12 + 15 = 33.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -464,12 +464,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "18",
       "20",
+      "18",
       "22",
       "17"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Step 1: c = 9 + 2 = 11.\nStep 2: Condition 1: 16 < 18 evaluates to True.\nStep 3: Condition 2: 13 < 11 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 7.\nStep 5: a + b + c = 2 + 7 + 11 = 20.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -504,10 +504,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "22",
       "30",
-      "20",
-      "26"
+      "26",
+      "20"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Step 1: c = 9 + 4 = 13.\nStep 2: Condition 1: 18 < 20 evaluates to True.\nStep 3: Condition 2: 13 < 13 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 9.\nStep 5: a + b + c = 4 + 9 + 13 = 26.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -522,11 +522,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
       "25",
-      "30",
+      "19",
       "35",
-      "19"
+      "30"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Step 1: c = 9 + 5 = 14.\nStep 2: Condition 1: 19 < 21 evaluates to True.\nStep 3: Condition 2: 13 < 14 evaluates to True.\nStep 4: Inner block executes, updating b.\nStep 5: a + b + c = 5 + 11 + 14 = 30.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -559,12 +559,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "21",
       "23",
+      "21",
       "19",
       "17"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Step 1: c = 9 + 2 = 11.\nStep 2: Condition 1: 16 < 18 evaluates to True.\nStep 3: Condition 2: 13 < 11 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 8.\nStep 5: a + b + c = 2 + 8 + 11 = 21.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -579,11 +579,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
       "27",
-      "24",
       "21",
+      "24",
       "20"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Step 1: c = 9 + 3 = 12.\nStep 2: Condition 1: 17 < 19 evaluates to True.\nStep 3: Condition 2: 13 < 12 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 9.\nStep 5: a + b + c = 3 + 9 + 12 = 24.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -597,12 +597,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "23",
+      "19",
       "28",
       "27",
-      "19"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Step 1: c = 9 + 4 = 13.\nStep 2: Condition 1: 18 < 20 evaluates to True.\nStep 3: Condition 2: 13 < 13 evaluates to False.\nStep 4: Condition 2 is False, inner branch is skipped (dead code); b remains 6.\nStep 5: a + b + c = 4 + 6 + 13 = 23.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -616,12 +616,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
-      "19",
+      "31",
       "26",
       "36",
-      "31"
+      "19"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Step 1: c = 9 + 5 = 14.\nStep 2: Condition 1: 19 < 21 evaluates to True.\nStep 3: Condition 2: 13 < 14 evaluates to True.\nStep 4: Inner block executes, updating b.\nStep 5: a + b + c = 5 + 12 + 14 = 31.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -636,11 +636,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Analyze the branching conditions and determine the printed result:",
     "options": [
       "29",
-      "41",
       "35",
+      "41",
       "22"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Step 1: c = 9 + 6 = 15.\nStep 2: Condition 1: 20 < 22 evaluates to True.\nStep 3: Condition 2: 13 < 15 evaluates to True.\nStep 4: Inner block executes, updating b.\nStep 5: a + b + c = 6 + 14 + 15 = 35.",
     "difficulty": "Medium",
     "tag": "Branching & Pruning",
@@ -674,11 +674,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What is the final value of total printed by this loop?",
     "options": [
       "7",
-      "9",
+      "12",
       "11",
-      "12"
+      "9"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Function AddOffset adds 2 to the argument.\nOn each of the 3 iterations, AddOffset(1) returns 3.\nTotal = 3 * 3 = 9.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -732,10 +732,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "16",
       "26",
-      "24",
-      "21"
+      "21",
+      "24"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Function AddOffset adds 5 to the argument.\nThe loop passes induction variable i (1 to 3).\nTotal accumulates: 6 + 7 + 8 = 21.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -768,12 +768,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the final value of total printed by this loop?",
     "options": [
-      "35",
-      "27",
       "30",
+      "27",
+      "35",
       "33"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Function AddOffset adds 3 to the argument.\nThe loop passes induction variable i (1 to 5).\nTotal accumulates: 4 + 5 + 6 + 7 + 8 = 30.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -787,12 +787,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the final value of total printed by this loop?",
     "options": [
-      "15",
       "19",
+      "15",
       "18",
       "11"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Function AddOffset adds 4 to the argument.\nOn each of the 3 iterations, AddOffset(1) returns 5.\nTotal = 3 * 5 = 15.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -826,11 +826,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What is the final value of total printed by this loop?",
     "options": [
       "17",
-      "15",
+      "20",
       "13",
-      "20"
+      "15"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Function AddOffset adds 2 to the argument.\nOn each of the 5 iterations, AddOffset(1) returns 3.\nTotal = 5 * 3 = 15.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -844,12 +844,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the final value of total printed by this loop?",
     "options": [
-      "12",
       "15",
+      "12",
       "30",
       "18"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Function AddOffset adds 3 to the argument.\nThe loop passes induction variable i (1 to 3).\nTotal accumulates: 4 + 5 + 6 = 15.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -864,11 +864,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What is the final value of total printed by this loop?",
     "options": [
       "40",
-      "24",
       "20",
+      "24",
       "16"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Function AddOffset adds 4 to the argument.\nOn each of the 4 iterations, AddOffset(1) returns 5.\nTotal = 4 * 5 = 20.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -902,11 +902,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What is the final value of total printed by this loop?",
     "options": [
       "7",
-      "9",
+      "12",
       "11",
-      "12"
+      "9"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Function AddOffset adds 2 to the argument.\nOn each of the 3 iterations, AddOffset(1) returns 3.\nTotal = 3 * 3 = 9.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -920,12 +920,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the final value of total printed by this loop?",
     "options": [
-      "19",
       "22",
+      "19",
       "26",
       "25"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Function AddOffset adds 3 to the argument.\nThe loop passes induction variable i (1 to 4).\nTotal accumulates: 4 + 5 + 6 + 7 = 22.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -940,11 +940,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "What is the final value of total printed by this loop?",
     "options": [
       "21",
-      "30",
+      "25",
       "29",
-      "25"
+      "30"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Function AddOffset adds 4 to the argument.\nOn each of the 5 iterations, AddOffset(1) returns 5.\nTotal = 5 * 5 = 25.",
     "difficulty": "Medium",
     "tag": "Loop Induction",
@@ -960,10 +960,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "77",
       "86",
-      "82",
-      "84"
+      "84",
+      "82"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 29\nc=4: b becomes 52\nc=5: b becomes 77\nFinal result: a + b = 7 + 77 = 84.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1035,11 +1035,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "83",
-      "79",
       "75",
+      "79",
       "74"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 24\nc=4: b becomes 49\nc=5: b becomes 74\nFinal result: a + b = 5 + 74 = 79.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1054,11 +1054,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "86",
-      "92",
+      "84",
       "100",
-      "84"
+      "92"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 34\nc=3: b becomes 64\nc=4: b becomes 86\nFinal result: a + b = 6 + 86 = 92.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1112,10 +1112,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "98",
       "99",
-      "115",
-      "107"
+      "107",
+      "115"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 32\nc=4: b becomes 65\nc=5: b becomes 98\nFinal result: a + b = 9 + 98 = 107.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1148,12 +1148,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "76",
+      "80",
       "75",
       "84",
-      "80"
+      "76"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 25\nc=4: b becomes 50\nc=5: b becomes 75\nFinal result: a + b = 5 + 75 = 80.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1187,11 +1187,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "82",
-      "84",
       "86",
+      "84",
       "77"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 29\nc=4: b becomes 52\nc=5: b becomes 77\nFinal result: a + b = 7 + 77 = 84.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1206,11 +1206,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "83",
-      "91",
+      "87",
       "95",
-      "87"
+      "91"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 35\nc=3: b becomes 59\nc=4: b becomes 83\nFinal result: a + b = 8 + 83 = 91.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1224,12 +1224,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "102",
-      "119",
       "111",
+      "119",
+      "102",
       "103"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 36\nc=4: b becomes 69\nc=5: b becomes 102\nFinal result: a + b = 9 + 102 = 111.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1243,12 +1243,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "68",
       "70",
+      "68",
       "66",
       "64"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 24\nc=3: b becomes 44\nc=4: b becomes 64\nFinal result: a + b = 4 + 64 = 68.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1283,10 +1283,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "96",
       "94",
-      "102",
-      "110"
+      "110",
+      "102"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 36\nc=3: b becomes 66\nc=4: b becomes 96\nFinal result: a + b = 6 + 96 = 102.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1319,12 +1319,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "83",
       "87",
+      "83",
       "79",
       "75"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 27\nc=3: b becomes 51\nc=4: b becomes 75\nFinal result: a + b = 8 + 75 = 83.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1358,11 +1358,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "71",
-      "69",
+      "65",
       "67",
-      "65"
+      "69"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 25\nc=3: b becomes 45\nc=4: b becomes 65\nFinal result: a + b = 4 + 65 = 69.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1376,12 +1376,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "74",
-      "73",
       "78",
+      "73",
+      "74",
       "82"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 27\nc=4: b becomes 48\nc=5: b becomes 73\nFinal result: a + b = 5 + 73 = 78.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1396,11 +1396,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
       "97",
-      "111",
       "103",
+      "111",
       "95"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Step-by-step loop trace:\nc=2: b becomes 37\nc=3: b becomes 67\nc=4: b becomes 97\nFinal result: a + b = 6 + 97 = 103.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1414,12 +1414,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Trace the bitwise loop accumulator and find the output of a + b:",
     "options": [
-      "83",
-      "81",
       "85",
+      "81",
+      "83",
       "76"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Step-by-step loop trace:\nc=3: b becomes 28\nc=4: b becomes 53\nc=5: b becomes 76\nFinal result: a + b = 7 + 76 = 83.",
     "difficulty": "Hard",
     "tag": "Bitwise Loop Accumulator",
@@ -1434,11 +1434,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "63",
-      "59",
+      "61",
       "55",
-      "61"
+      "59"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "1. p << 2 = 9 * 4 = 36.\n2. r = 36 ^ 3 = 39.\n3. r >> 1 = 19.\n4. p & q = 9 & 3 = 1.\n5. s = 19 + 1 = 20.\n6. Output: r + s = 39 + 20 = 59.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1452,12 +1452,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "38",
+      "42",
       "45",
       "46",
-      "42"
+      "38"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "1. p << 3 = 3 * 8 = 24.\n2. r = 24 ^ 4 = 28.\n3. r >> 1 = 14.\n4. p & q = 3 & 4 = 0.\n5. s = 14 + 0 = 14.\n6. Output: r + s = 28 + 14 = 42.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1492,10 +1492,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "33",
       "35",
-      "27",
-      "31"
+      "31",
+      "27"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "1. p << 2 = 5 * 4 = 20.\n2. r = 20 ^ 6 = 18.\n3. r >> 1 = 9.\n4. p & q = 5 & 6 = 4.\n5. s = 9 + 4 = 13.\n6. Output: r + s = 18 + 13 = 31.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1509,12 +1509,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "77",
+      "81",
       "80",
       "73",
-      "81"
+      "77"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "1. p << 3 = 6 * 8 = 48.\n2. r = 48 ^ 2 = 50.\n3. r >> 1 = 25.\n4. p & q = 6 & 2 = 2.\n5. s = 25 + 2 = 27.\n6. Output: r + s = 50 + 27 = 77.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1528,12 +1528,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "26",
       "22",
+      "26",
       "23",
       "18"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "1. p << 1 = 7 * 2 = 14.\n2. r = 14 ^ 3 = 13.\n3. r >> 1 = 6.\n4. p & q = 7 & 3 = 3.\n5. s = 6 + 3 = 9.\n6. Output: r + s = 13 + 9 = 22.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1548,11 +1548,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "50",
-      "56",
+      "54",
       "58",
-      "54"
+      "56"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "1. p << 2 = 8 * 4 = 32.\n2. r = 32 ^ 4 = 36.\n3. r >> 1 = 18.\n4. p & q = 8 & 4 = 0.\n5. s = 18 + 0 = 18.\n6. Output: r + s = 36 + 18 = 54.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1604,12 +1604,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "29",
+      "27",
       "31",
       "23",
-      "27"
+      "29"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "1. p << 2 = 4 * 4 = 16.\n2. r = 16 ^ 2 = 18.\n3. r >> 1 = 9.\n4. p & q = 4 & 2 = 0.\n5. s = 9 + 0 = 9.\n6. Output: r + s = 18 + 9 = 27.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1643,11 +1643,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "17",
-      "16",
       "20",
+      "16",
       "12"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "1. p << 1 = 6 * 2 = 12.\n2. r = 12 ^ 4 = 8.\n3. r >> 1 = 4.\n4. p & q = 6 & 4 = 4.\n5. s = 4 + 4 = 8.\n6. Output: r + s = 8 + 8 = 16.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1662,11 +1662,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "44",
-      "42",
+      "38",
       "46",
-      "38"
+      "42"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "1. p << 2 = 7 * 4 = 28.\n2. r = 28 ^ 5 = 25.\n3. r >> 1 = 12.\n4. p & q = 7 & 5 = 5.\n5. s = 12 + 5 = 17.\n6. Output: r + s = 25 + 17 = 42.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1680,12 +1680,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "108",
+      "105",
       "101",
       "109",
-      "105"
+      "108"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "1. p << 3 = 8 * 8 = 64.\n2. r = 64 ^ 6 = 70.\n3. r >> 1 = 35.\n4. p & q = 8 & 6 = 0.\n5. s = 35 + 0 = 35.\n6. Output: r + s = 70 + 35 = 105.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1700,11 +1700,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "28",
-      "20",
       "24",
+      "20",
       "25"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "1. p << 1 = 9 * 2 = 18.\n2. r = 18 ^ 2 = 16.\n3. r >> 1 = 8.\n4. p & q = 9 & 2 = 0.\n5. s = 8 + 0 = 8.\n6. Output: r + s = 16 + 8 = 24.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1720,10 +1720,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "29",
       "21",
-      "27",
-      "25"
+      "25",
+      "27"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "1. p << 2 = 3 * 4 = 12.\n2. r = 12 ^ 3 = 15.\n3. r >> 1 = 7.\n4. p & q = 3 & 3 = 3.\n5. s = 7 + 3 = 10.\n6. Output: r + s = 15 + 10 = 25.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1739,10 +1739,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "62",
       "61",
-      "58",
-      "54"
+      "54",
+      "58"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "1. p << 3 = 4 * 8 = 32.\n2. r = 32 ^ 4 = 36.\n3. r >> 1 = 18.\n4. p & q = 4 & 4 = 4.\n5. s = 18 + 4 = 22.\n6. Output: r + s = 36 + 22 = 58.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1776,11 +1776,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "53",
-      "47",
+      "51",
       "55",
-      "51"
+      "47"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "1. p << 2 = 6 * 4 = 24.\n2. r = 24 ^ 6 = 30.\n3. r >> 1 = 15.\n4. p & q = 6 & 6 = 6.\n5. s = 15 + 6 = 21.\n6. Output: r + s = 30 + 21 = 51.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1794,12 +1794,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "89",
-      "92",
       "85",
+      "92",
+      "89",
       "93"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "1. p << 3 = 7 * 8 = 56.\n2. r = 56 ^ 2 = 58.\n3. r >> 1 = 29.\n4. p & q = 7 & 2 = 2.\n5. s = 29 + 2 = 31.\n6. Output: r + s = 58 + 31 = 89.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1814,11 +1814,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
       "32",
-      "28",
+      "29",
       "24",
-      "29"
+      "28"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "1. p << 1 = 8 * 2 = 16.\n2. r = 16 ^ 3 = 19.\n3. r >> 1 = 9.\n4. p & q = 8 & 3 = 0.\n5. s = 9 + 0 = 9.\n6. Output: r + s = 19 + 9 = 28.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1851,12 +1851,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Determine the output of the bitwise shift and XOR operations:",
     "options": [
-      "44",
       "40",
+      "44",
       "48",
       "47"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "1. p << 3 = 3 * 8 = 24.\n2. r = 24 ^ 5 = 29.\n3. r >> 1 = 14.\n4. p & q = 3 & 5 = 1.\n5. s = 14 + 1 = 15.\n6. Output: r + s = 29 + 15 = 44.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1872,10 +1872,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "26",
       "29",
-      "21",
-      "25"
+      "25",
+      "21"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "1. p << 1 = 4 * 2 = 8.\n2. r = 8 ^ 6 = 14.\n3. r >> 1 = 7.\n4. p & q = 4 & 6 = 4.\n5. s = 7 + 4 = 11.\n6. Output: r + s = 14 + 11 = 25.",
     "difficulty": "Hard",
     "tag": "Bitwise Shifts & Masks",
@@ -1926,12 +1926,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which function combination overcomes VLOOKUP's limitation of only searching left-to-right?",
     "options": [
-      "INDEX and MATCH",
       "SUMIF and COUNTIF",
+      "INDEX and MATCH",
       "CONCATENATE and FIND",
       "HLOOKUP and OFFSET"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "INDEX & MATCH allows two-way lookups and can easily retrieve values from columns to the left of the lookup column.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -1944,12 +1944,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In MS Excel, what does the formula =COUNTIF(A1:A50, \">50\") return?",
     "options": [
-      "The number of cells in A1:A50 containing numbers greater than 50",
-      "The sum of all values greater than 50",
       "The average of cells exceeding 50",
+      "The sum of all values greater than 50",
+      "The number of cells in A1:A50 containing numbers greater than 50",
       "A TRUE/FALSE boolean array"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "COUNTIF counts the number of cells within a range that meet the given criteria (>50).",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -1962,12 +1962,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What error is returned in Excel when a formula attempts to divide a numeric value by 0 or an empty cell?",
     "options": [
-      "#DIV/0!",
+      "#REF!",
       "#VALUE!",
       "#NULL!",
-      "#REF!"
+      "#DIV/0!"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "#DIV/0! specifically flags division by zero or an unpopulated reference.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -1998,12 +1998,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Excel cell referencing, what does $B$4 represent?",
     "options": [
-      "An absolute reference where both column and row are locked",
       "A relative reference where both column and row shift",
+      "An absolute reference where both column and row are locked",
       "A mixed reference locking only the column",
       "A mixed reference locking only the row"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "$ before a letter locks the column, and $ before a number locks the row. $B$4 is fully absolute.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2016,12 +2016,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "If you drag the formula =A$1 from cell B1 down to cell B5, what will the formula in B5 evaluate to?",
     "options": [
-      "=A$1",
-      "=A$5",
       "=B$1",
+      "=A$5",
+      "=A$1",
       "=E$1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Because row 1 is locked with the dollar sign ($1), dragging vertically down rows does not alter row 1. Column A remains unchanged since movement was vertical.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2034,12 +2034,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which Excel formula correctly returns the length in characters of the text in cell C3?",
     "options": [
-      "=LEN(C3)",
+      "=SIZEOF(C3)",
       "=LENGTH(C3)",
       "=COUNTCHAR(C3)",
-      "=SIZEOF(C3)"
+      "=LEN(C3)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "LEN returns the total number of characters in a string, including spaces.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2070,12 +2070,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What does the formula =TRIM(\"  Accenture  Prep  \") return in Excel?",
     "options": [
-      "\"Accenture Prep\"",
       "\"AccenturePrep\"",
+      "\"Accenture Prep\"",
       "\"  Accenture  Prep  \"",
       "\"ACCENTURE PREP\""
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "TRIM removes all leading and trailing spaces, leaving only single spaces between words.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2088,12 +2088,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which Excel function catches formula errors and provides an alternative fallback result?",
     "options": [
-      "IFERROR",
-      "ISERROR",
       "ERROR.TYPE",
+      "ISERROR",
+      "IFERROR",
       "TRYCATCH"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "=IFERROR(value, value_if_error) evaluates an expression and returns a fallback value if an error (like #N/A, #VALUE!) occurs.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2106,12 +2106,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Excel, what formula calculates the sum of cells in C1:C20 only where values in B1:B20 equal \"East\" and values in A1:A20 equal \"Q1\"?",
     "options": [
-      "=SUMIFS(C1:C20, B1:B20, \"East\", A1:A20, \"Q1\")",
+      "=COUNTIFS(C1:C20, \"East\", \"Q1\")",
       "=SUMIF(C1:C20, \"East\", \"Q1\")",
       "=TOTALIFS(C1:C20, B1:B20=\"East\")",
-      "=COUNTIFS(C1:C20, \"East\", \"Q1\")"
+      "=SUMIFS(C1:C20, B1:B20, \"East\", A1:A20, \"Q1\")"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "SUMIFS takes sum_range first, followed by pairs of criteria_range and criteria.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2142,12 +2142,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the purpose of the Flash Fill feature in Excel (Ctrl + E)?",
     "options": [
-      "Automatically senses patterns and fills data down the column",
       "Fills the entire sheet with yellow highlight",
+      "Automatically senses patterns and fills data down the column",
       "Executes flash VBA macros",
       "Refreshes external database queries"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Flash Fill (Ctrl + E) detects pattern examples provided by the user and automatically splits, combines, or formats data.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2160,12 +2160,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In an Excel table, what does =CONCATENATE(A1, \" \", B1) or =A1 & \" \" & B1 accomplish?",
     "options": [
-      "Combines strings from A1 and B1 with a space between them",
-      "Multiplies numbers in A1 and B1",
       "Compares whether A1 equals B1",
+      "Multiplies numbers in A1 and B1",
+      "Combines strings from A1 and B1 with a space between them",
       "Splits text into multiple columns"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The ampersand (&) operator or CONCATENATE function joins text strings together.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2178,12 +2178,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the keyboard shortcut to select an entire COLUMN in MS Excel?",
     "options": [
-      "Ctrl + Space",
+      "Ctrl + Shift + Down",
       "Shift + Space",
       "Alt + Space",
-      "Ctrl + Shift + Down"
+      "Ctrl + Space"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Ctrl + Space selects the entire current column; Shift + Space selects the entire current row.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2214,12 +2214,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which key is pressed repeatedly in Excel formula edit mode to toggle between relative, absolute, and mixed references?",
     "options": [
-      "F4",
       "F2",
+      "F4",
       "F9",
       "F12"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Pressing F4 cycles through A1 -> $A$1 -> A$1 -> $A1 -> A1.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2232,12 +2232,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What shortcut inserts the current date into an Excel cell instantly?",
     "options": [
-      "Ctrl + ;",
-      "Ctrl + Shift + ;",
       "Alt + Shift + D",
+      "Ctrl + Shift + ;",
+      "Ctrl + ;",
       "Ctrl + D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Ctrl + ; inserts static current date. Ctrl + Shift + ; inserts static current time.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2250,12 +2250,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What keyboard shortcut automatically applies the SUM formula to adjacent cells in Excel?",
     "options": [
-      "Alt + =",
+      "Ctrl + Shift + S",
       "Ctrl + S",
       "Alt + S",
-      "Ctrl + Shift + S"
+      "Alt + ="
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Alt + = invokes AutoSum on adjacent numeric ranges.",
     "difficulty": "Easy",
     "tag": "MS Office PYQ",
@@ -2286,12 +2286,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the shortcut to edit the active cell in Excel without using the mouse?",
     "options": [
-      "F2",
       "F5",
+      "F2",
       "Enter",
       "Spacebar"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "F2 places the insertion point inside the active cell for direct editing.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2304,12 +2304,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What shortcut creates an instant standalone chart on a new sheet from selected data in Excel?",
     "options": [
-      "F11",
-      "F7",
       "Alt + C",
+      "F7",
+      "F11",
       "Ctrl + Shift + C"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Pressing F11 creates an instant chart sheet based on the currently selected range.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2322,12 +2322,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the file extension for a standard reusable Microsoft Word Document Template?",
     "options": [
-      ".dotx",
+      ".docm",
       ".docx",
       ".dotm",
-      ".docm"
+      ".dotx"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": ".dotx is the standard Word template format. (.dotm is macro-enabled).",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2358,12 +2358,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which shortcut centers selected text horizontally in Microsoft Word?",
     "options": [
-      "Ctrl + E",
       "Ctrl + C",
+      "Ctrl + E",
       "Ctrl + J",
       "Alt + C"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Ctrl + E centers text, Ctrl + L left-aligns, Ctrl + R right-aligns, and Ctrl + J justifies.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2376,12 +2376,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What feature in Microsoft Word allows merging a single standard letter with an Excel list of recipient addresses?",
     "options": [
-      "Mail Merge",
-      "Macro Integration",
       "Master Document",
+      "Macro Integration",
+      "Mail Merge",
       "Cross-Reference"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Mail Merge merges a template document with a tabular data source (Excel/Access) to create personalized bulk documents.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2394,12 +2394,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which type of section break in Word starts a new section on the same page without forcing a page transition?",
     "options": [
-      "Continuous",
+      "Odd Page",
       "Next Page",
       "Even Page",
-      "Odd Page"
+      "Continuous"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A 'Continuous' section break creates a new section on the identical page, commonly used to toggle multi-column layouts.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2430,12 +2430,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In PowerPoint, how do you configure bullet points on a slide to appear one by one upon mouse click?",
     "options": [
-      "Set Animation effect option to 'By Paragraph'",
       "Insert individual slides for each bullet",
+      "Set Animation effect option to 'By Paragraph'",
       "Enable Kiosk mode",
       "Use the Slide Sorter transition"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "In PowerPoint animation options, selecting 'By Paragraph' animates each hierarchical bullet line sequentially.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2448,12 +2448,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which show type setting in PowerPoint disables manual speaker navigation and forces full-screen looping at a booth?",
     "options": [
-      "Browsed at a kiosk (full screen)",
-      "Presented by a speaker (full screen)",
       "Browsed by an individual (window)",
+      "Presented by a speaker (full screen)",
+      "Browsed at a kiosk (full screen)",
       "Reading view"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "'Browsed at a kiosk (full screen)' runs automated, unattended presentations where keyboard shortcuts like Esc can be restricted.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2466,12 +2466,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the primary role of the 'Slide Master' in Microsoft PowerPoint?",
     "options": [
-      "Controls global formatting, logos, fonts, and placeholders across all slides",
+      "Compresses embedded video resolutions",
       "Generates speaker presenter notes",
       "Records audio voiceover timings",
-      "Compresses embedded video resolutions"
+      "Controls global formatting, logos, fonts, and placeholders across all slides"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Changes made to the Slide Master automatically propagate to every layout and slide in the deck.",
     "difficulty": "Medium",
     "tag": "MS Office PYQ",
@@ -2502,12 +2502,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E5 >= 75, \"Distinction\", \"Pass\") return if cell E5 contains value 74?",
     "options": [
-      "Pass",
       "Distinction",
+      "Pass",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 74 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2520,12 +2520,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(F6 >= 75, \"Distinction\", \"Pass\") return if cell F6 contains value 75?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 75 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2538,12 +2538,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A7 >= 75, \"Distinction\", \"Pass\") return if cell A7 contains value 76?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 76 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2574,12 +2574,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C9 >= 75, \"Distinction\", \"Pass\") return if cell C9 contains value 78?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 78 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2592,12 +2592,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(D10 >= 75, \"Distinction\", \"Pass\") return if cell D10 contains value 79?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 79 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2610,12 +2610,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E11 >= 75, \"Distinction\", \"Pass\") return if cell E11 contains value 80?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 80 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2646,12 +2646,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A13 >= 75, \"Distinction\", \"Pass\") return if cell A13 contains value 82?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 82 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2664,12 +2664,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(B14 >= 75, \"Distinction\", \"Pass\") return if cell B14 contains value 83?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 83 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2682,12 +2682,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C15 >= 75, \"Distinction\", \"Pass\") return if cell C15 contains value 84?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 84 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2718,12 +2718,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E2 >= 75, \"Distinction\", \"Pass\") return if cell E2 contains value 71?",
     "options": [
-      "Pass",
       "Distinction",
+      "Pass",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 71 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2736,12 +2736,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(F3 >= 75, \"Distinction\", \"Pass\") return if cell F3 contains value 72?",
     "options": [
-      "Pass",
-      "Distinction",
       "#VALUE!",
+      "Distinction",
+      "Pass",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 72 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2754,12 +2754,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A4 >= 75, \"Distinction\", \"Pass\") return if cell A4 contains value 73?",
     "options": [
-      "Pass",
+      "FALSE",
       "Distinction",
       "#VALUE!",
-      "FALSE"
+      "Pass"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 73 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2790,12 +2790,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C6 >= 75, \"Distinction\", \"Pass\") return if cell C6 contains value 75?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 75 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2808,12 +2808,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(D7 >= 75, \"Distinction\", \"Pass\") return if cell D7 contains value 76?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 76 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2826,12 +2826,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E8 >= 75, \"Distinction\", \"Pass\") return if cell E8 contains value 77?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 77 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2862,12 +2862,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A10 >= 75, \"Distinction\", \"Pass\") return if cell A10 contains value 79?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 79 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2880,12 +2880,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(B11 >= 75, \"Distinction\", \"Pass\") return if cell B11 contains value 80?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 80 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2898,12 +2898,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C12 >= 75, \"Distinction\", \"Pass\") return if cell C12 contains value 81?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 81 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2934,12 +2934,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E14 >= 75, \"Distinction\", \"Pass\") return if cell E14 contains value 83?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 83 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2952,12 +2952,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(F15 >= 75, \"Distinction\", \"Pass\") return if cell F15 contains value 84?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 84 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -2970,12 +2970,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A1 >= 75, \"Distinction\", \"Pass\") return if cell A1 contains value 70?",
     "options": [
-      "Pass",
+      "FALSE",
       "Distinction",
       "#VALUE!",
-      "FALSE"
+      "Pass"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 70 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3006,12 +3006,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C3 >= 75, \"Distinction\", \"Pass\") return if cell C3 contains value 72?",
     "options": [
-      "Pass",
       "Distinction",
+      "Pass",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 72 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3024,12 +3024,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(D4 >= 75, \"Distinction\", \"Pass\") return if cell D4 contains value 73?",
     "options": [
-      "Pass",
-      "Distinction",
       "#VALUE!",
+      "Distinction",
+      "Pass",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 73 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3042,12 +3042,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E5 >= 75, \"Distinction\", \"Pass\") return if cell E5 contains value 74?",
     "options": [
-      "Pass",
+      "FALSE",
       "Distinction",
       "#VALUE!",
-      "FALSE"
+      "Pass"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 74 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3078,12 +3078,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A7 >= 75, \"Distinction\", \"Pass\") return if cell A7 contains value 76?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 76 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3096,12 +3096,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(B8 >= 75, \"Distinction\", \"Pass\") return if cell B8 contains value 77?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 77 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3114,12 +3114,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C9 >= 75, \"Distinction\", \"Pass\") return if cell C9 contains value 78?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 78 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3150,12 +3150,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E11 >= 75, \"Distinction\", \"Pass\") return if cell E11 contains value 80?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 80 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3168,12 +3168,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(F12 >= 75, \"Distinction\", \"Pass\") return if cell F12 contains value 81?",
     "options": [
-      "Distinction",
-      "Pass",
       "#VALUE!",
+      "Pass",
+      "Distinction",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 81 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3186,12 +3186,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A13 >= 75, \"Distinction\", \"Pass\") return if cell A13 contains value 82?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 82 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3222,12 +3222,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C15 >= 75, \"Distinction\", \"Pass\") return if cell C15 contains value 84?",
     "options": [
-      "Distinction",
       "Pass",
+      "Distinction",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 84 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3240,12 +3240,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(D1 >= 75, \"Distinction\", \"Pass\") return if cell D1 contains value 70?",
     "options": [
-      "Pass",
-      "Distinction",
       "#VALUE!",
+      "Distinction",
+      "Pass",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 70 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3258,12 +3258,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(E2 >= 75, \"Distinction\", \"Pass\") return if cell E2 contains value 71?",
     "options": [
-      "Pass",
+      "FALSE",
       "Distinction",
       "#VALUE!",
-      "FALSE"
+      "Pass"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 71 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3294,12 +3294,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(A4 >= 75, \"Distinction\", \"Pass\") return if cell A4 contains value 73?",
     "options": [
-      "Pass",
       "Distinction",
+      "Pass",
       "#VALUE!",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The logical test evaluates if the cell value 73 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3312,12 +3312,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(B5 >= 75, \"Distinction\", \"Pass\") return if cell B5 contains value 74?",
     "options": [
-      "Pass",
-      "Distinction",
       "#VALUE!",
+      "Distinction",
+      "Pass",
       "FALSE"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The logical test evaluates if the cell value 74 >= 75. Since this is FALSE, the function outputs Pass.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3330,12 +3330,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Microsoft Excel, what will the formula =IF(C6 >= 75, \"Distinction\", \"Pass\") return if cell C6 contains value 75?",
     "options": [
-      "Distinction",
+      "FALSE",
       "Pass",
       "#VALUE!",
-      "FALSE"
+      "Distinction"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The logical test evaluates if the cell value 75 >= 75. Since this is TRUE, the function outputs Distinction.",
     "difficulty": "Easy",
     "tag": "Excel Logic",
@@ -3366,12 +3366,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the Protocol Data Unit (PDU) at the Data Link Layer (Layer 2) of the OSI model?",
     "options": [
-      "Frame",
       "Packet",
+      "Frame",
       "Segment",
       "Bit"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Physical = Bits, Data Link = Frames, Network = Packets, Transport = Segments, Application = Data.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3384,12 +3384,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which OSI layer handles encryption, data compression, and character code translation (e.g., ASCII to EBCDIC)?",
     "options": [
-      "Presentation Layer (Layer 6)",
-      "Application Layer (Layer 7)",
       "Session Layer (Layer 5)",
+      "Application Layer (Layer 7)",
+      "Presentation Layer (Layer 6)",
       "Transport Layer (Layer 4)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The Presentation layer standardizes data format syntax and performs encryption/decryption and compression.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3402,12 +3402,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "At which OSI layer do IP routers operate to forward packets across disparate networks?",
     "options": [
-      "Network Layer (Layer 3)",
+      "Physical Layer (Layer 1)",
       "Data Link Layer (Layer 2)",
       "Transport Layer (Layer 4)",
-      "Physical Layer (Layer 1)"
+      "Network Layer (Layer 3)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Routers inspect Layer 3 IP headers and use routing tables to forward packets across subnet boundaries.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3438,12 +3438,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which protocol automatically assigns dynamic IP addresses, default gateways, and subnet masks to LAN clients?",
     "options": [
-      "DHCP (Dynamic Host Configuration Protocol)",
       "DNS",
+      "DHCP (Dynamic Host Configuration Protocol)",
       "ARP",
       "SNMP"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "DHCP assigns temporary IP configurations using the DORA (Discover, Offer, Request, Acknowledge) process.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3456,12 +3456,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the purpose of the 3-Way Handshake in TCP connection establishment?",
     "options": [
-      "Synchronize sequence numbers (SYN, SYN-ACK, ACK) and allocate buffers",
-      "Encrypt payload packets using RSA",
       "Discover neighbor MAC addresses",
+      "Encrypt payload packets using RSA",
+      "Synchronize sequence numbers (SYN, SYN-ACK, ACK) and allocate buffers",
       "Authenticate user credentials"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TCP 3-way handshake exchanges initial sequence numbers (ISN) and confirms bidirectional connectivity before data transfer.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3474,12 +3474,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which protocol translates a known Layer 3 IP address into a physical Layer 2 MAC address?",
     "options": [
-      "ARP (Address Resolution Protocol)",
+      "NAT",
       "RARP",
       "ICMP",
-      "NAT"
+      "ARP (Address Resolution Protocol)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "ARP broadcasts an IP inquiry on the local network to obtain the hardware MAC address of the destination host.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3510,12 +3510,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In which network topology does the failure of a single central hub/switch disconnect all nodes from communicating with each other?",
     "options": [
-      "Star Topology",
       "Mesh Topology",
+      "Star Topology",
       "Bus Topology",
       "Ring Topology"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Star topology relies on a central networking device. If the central switch fails, all inter-node communication collapses.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3528,12 +3528,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What happens in a Bus topology if the primary backbone coaxial cable suffers a physical cut or termination break?",
     "options": [
-      "The entire network collapses due to signal reflection and loss of continuity",
-      "Only the immediate neighboring computer is disconnected",
       "Traffic automatically reroutes around the break",
+      "Only the immediate neighboring computer is disconnected",
+      "The entire network collapses due to signal reflection and loss of continuity",
       "The network converts into a ring topology"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A break in a bus backbone destroys bus termination, causing signal reflections that take down communication across the entire segment.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3546,12 +3546,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the fundamental difference between a network Hub and a network Switch?",
     "options": [
-      "A Hub broadcasts incoming frames to all ports; a Switch forwards frames only to the specific destination MAC port",
+      "A Hub encrypts traffic; a Switch does not",
       "A Hub operates at Layer 3; a Switch operates at Layer 1",
       "A Hub creates separate collision domains; a Switch creates one large collision domain",
-      "A Hub encrypts traffic; a Switch does not"
+      "A Hub broadcasts incoming frames to all ports; a Switch forwards frames only to the specific destination MAC port"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Hubs are multiport repeaters (Layer 1, single collision domain). Switches learn MAC addresses and isolate each port into its own collision domain.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3582,12 +3582,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which type of firewall inspects traffic up through the Application layer, intercepting and proxying requests between client and server?",
     "options": [
-      "Proxy / Application-Level Gateway Firewall",
       "Packet Filtering Firewall",
+      "Proxy / Application-Level Gateway Firewall",
       "Circuit-Level Gateway",
       "Stateless NAT Gateway"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Proxy firewalls inspect application payloads (HTTP, FTP, DNS) directly, terminating connections and acting as intermediaries.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3600,12 +3600,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In an attack scenario where an adversary dictates the exact intermediate routers a packet must traverse across the Internet, what is this known as?",
     "options": [
-      "Source Routing Attack",
-      "SYN Flood Attack",
       "Smurf Attack",
+      "SYN Flood Attack",
+      "Source Routing Attack",
       "Buffer Overflow Attack"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Source routing allows the sender to specify packet paths in the IP header, enabling attackers to bypass security perimeters.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3618,12 +3618,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What security vulnerability occurs when an application includes untrusted input inside a database query string without parameterized binding?",
     "options": [
-      "SQL Injection (SQLi)",
+      "Man-in-the-Middle (MITM)",
       "Cross-Site Scripting (XSS)",
       "Cross-Site Request Forgery (CSRF)",
-      "Man-in-the-Middle (MITM)"
+      "SQL Injection (SQLi)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "SQL Injection allows malicious input to alter the structure of backend SQL statements.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3654,12 +3654,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which cloud storage class offers virtually unlimited capacity, REST API access, and automatic elastic scaling without managing file systems?",
     "options": [
-      "Object Storage (e.g., AWS S3, Azure Blob)",
       "Block Storage (e.g., AWS EBS)",
+      "Object Storage (e.g., AWS S3, Azure Blob)",
       "Network File System (NFS)",
       "Local NVMe Instance Store"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Object storage stores data as discrete objects with metadata and unique identifiers, scaling elastically without provisioned file trees.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3672,12 +3672,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "A company maintains sensitive banking transactions on an internal private data center while bursting public compute tasks to AWS. What cloud deployment model is this?",
     "options": [
-      "Hybrid Cloud",
-      "Public Cloud",
       "Community Cloud",
+      "Public Cloud",
+      "Hybrid Cloud",
       "Private Cloud"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Hybrid Cloud bridges on-premises private infrastructure with third-party public cloud environments.",
     "difficulty": "Medium",
     "tag": "Network & Cloud",
@@ -3690,12 +3690,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3726,12 +3726,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3744,12 +3744,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3762,12 +3762,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3798,12 +3798,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3816,12 +3816,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3834,12 +3834,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3870,12 +3870,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3888,12 +3888,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3906,12 +3906,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3942,12 +3942,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3960,12 +3960,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -3978,12 +3978,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4014,12 +4014,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4032,12 +4032,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4050,12 +4050,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4086,12 +4086,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4104,12 +4104,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4122,12 +4122,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4158,12 +4158,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4176,12 +4176,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4194,12 +4194,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4230,12 +4230,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4248,12 +4248,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4266,12 +4266,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4302,12 +4302,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4320,12 +4320,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4338,12 +4338,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4374,12 +4374,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4392,12 +4392,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4410,12 +4410,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4446,12 +4446,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4464,12 +4464,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4482,12 +4482,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4518,12 +4518,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4536,12 +4536,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4554,12 +4554,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4590,12 +4590,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4608,12 +4608,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4626,12 +4626,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4662,12 +4662,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the FTP network service?",
     "options": [
-      "21",
       "31",
+      "21",
       "62",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for FTP is 21.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4680,12 +4680,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SSH network service?",
     "options": [
-      "22",
-      "32",
       "64",
+      "32",
+      "22",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for SSH is 22.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4698,12 +4698,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the Telnet network service?",
     "options": [
-      "23",
+      "8080",
       "33",
       "66",
-      "8080"
+      "23"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for Telnet is 23.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4734,12 +4734,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the SMTP network service?",
     "options": [
-      "25",
       "35",
+      "25",
       "70",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "By networking standard, the default port for SMTP is 25.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4752,12 +4752,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the RDP network service?",
     "options": [
-      "3389",
-      "3399",
       "798",
+      "3399",
+      "3389",
       "8080"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "By networking standard, the default port for RDP is 3389.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4770,12 +4770,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which standard TCP/UDP port number is officially allocated by IANA for the HTTPS network service?",
     "options": [
-      "443",
+      "8080",
       "453",
       "906",
-      "8080"
+      "443"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "By networking standard, the default port for HTTPS is 443.",
     "difficulty": "Easy",
     "tag": "Port Lookup",
@@ -4806,12 +4806,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Statements: No plastic is biodegradable. All leaves are biodegradable.\nConclusions:\nI. No plastic is a leaf.\nII. No leaf is plastic.",
     "options": [
-      "Both I and II follow",
       "Only conclusion I follows",
+      "Both I and II follow",
       "Only conclusion II follows",
       "Neither follows"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Since the set of plastic and the set of biodegradable things are completely disjoint, and leaves are fully inside biodegradable, leaves and plastic cannot have any intersection.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4824,12 +4824,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Statements: Some laptops are tablets. Some tablets are phones.\nConclusions:\nI. Some laptops are phones.\nII. No laptop is a phone.",
     "options": [
-      "Either conclusion I or II follows",
-      "Only I follows",
       "Only II follows",
+      "Only I follows",
+      "Either conclusion I or II follows",
       "Neither follows"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Since laptops and phones have no direct relationship, 'Some laptops are phones' and 'No laptop is a phone' form a complementary pair (I-type and E-type), leading to an 'Either... or' relationship.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4842,12 +4842,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Statement: The company CEO announced: 'To improve employee wellness, all team members are encouraged to utilize the corporate gymnasium during lunch hours.'\nAssumptions:\nI. Most employees want to stay physically fit.\nII. Adequate gym facilities are available to accommodate employees.",
     "options": [
-      "Both assumptions I and II are implicit",
+      "Neither is implicit",
       "Only assumption I is implicit",
       "Only assumption II is implicit",
-      "Neither is implicit"
+      "Both assumptions I and II are implicit"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "When encouraging employees to use a facility, leadership assumes both that employees have an interest in fitness and that the facility exists in sufficient capacity.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4878,12 +4878,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Point A is 10 meters North of Point B. Point C is 10 meters East of Point B. In which direction is Point A situated relative to Point C?",
     "options": [
-      "North-West",
       "North-East",
+      "North-West",
       "South-West",
       "South-East"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "From C (at origin), B is 10m West, and A is 10m North of B. Thus, A is located North and West of C (North-West).",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4896,12 +4896,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A person walks 6 km North, takes a 90-degree right turn and walks 8 km East. What is the shortest straight-line distance from the starting position?",
     "options": [
-      "10 km",
-      "14 km",
       "12 km",
+      "14 km",
+      "10 km",
       "7 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras theorem: d = sqrt(6^2 + 8^2) = sqrt(36 + 64) = sqrt(100) = 10 km.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4914,12 +4914,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Pointing to a photograph, Rohit says: 'She is the only daughter of my father's only son.' How is Rohit related to the girl in the photograph?",
     "options": [
-      "Father",
+      "Grandfather",
       "Uncle",
       "Brother",
-      "Grandfather"
+      "Father"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Rohit's father's only son is Rohit himself. The girl is his only daughter, making Rohit her father.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4950,12 +4950,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "In a certain code language, if 'NEXUS' is written as 'PGZWW', how will 'CLOUD' be encoded under the same rule (+2 shift)?",
     "options": [
-      "ENQWF",
       "DKPVE",
+      "ENQWF",
       "EMPVF",
       "FNQXG"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Each letter is shifted forward by 2 positions: C(+2)->E, L(+2)->N, O(+2)->Q, U(+2)->W, D(+2)->F => ENQWF.",
     "difficulty": "Medium",
     "tag": "Critical Reasoning",
@@ -4966,14 +4966,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
+      "14 km",
+      "14 km",
       "10 km",
-      "14 km",
-      "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -4984,14 +4984,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
+      "3 km",
       "21 km",
       "19 km",
-      "3 km"
+      "15 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5002,7 +5002,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
       "20 km",
       "28 km",
@@ -5020,14 +5020,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
       "35 km",
+      "25 km",
       "29 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5038,14 +5038,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
-      "7 km",
       "9 km",
+      "7 km",
+      "5 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5056,14 +5056,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
+      "2 km",
       "14 km",
       "14 km",
-      "2 km"
+      "10 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5074,7 +5074,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
       "15 km",
       "21 km",
@@ -5092,14 +5092,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
       "28 km",
+      "20 km",
       "24 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5110,14 +5110,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
-      "35 km",
       "29 km",
+      "35 km",
+      "25 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5128,14 +5128,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
+      "1 km",
       "7 km",
       "9 km",
-      "1 km"
+      "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5146,7 +5146,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
       "10 km",
       "14 km",
@@ -5164,14 +5164,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
       "21 km",
+      "15 km",
       "19 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5182,14 +5182,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
-      "28 km",
       "24 km",
+      "28 km",
+      "20 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5200,14 +5200,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
+      "5 km",
       "35 km",
       "29 km",
-      "5 km"
+      "25 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5218,7 +5218,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
       "5 km",
       "7 km",
@@ -5236,14 +5236,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
       "14 km",
+      "10 km",
       "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5254,14 +5254,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
-      "21 km",
       "19 km",
+      "21 km",
+      "15 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5272,14 +5272,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
+      "4 km",
       "28 km",
       "24 km",
-      "4 km"
+      "20 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5290,7 +5290,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
       "25 km",
       "35 km",
@@ -5308,14 +5308,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
       "7 km",
+      "5 km",
       "9 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5326,14 +5326,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
+      "14 km",
+      "14 km",
       "10 km",
-      "14 km",
-      "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5344,14 +5344,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
+      "3 km",
       "21 km",
       "19 km",
-      "3 km"
+      "15 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5362,7 +5362,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
       "20 km",
       "28 km",
@@ -5380,14 +5380,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
       "35 km",
+      "25 km",
       "29 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5398,14 +5398,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
-      "7 km",
       "9 km",
+      "7 km",
+      "5 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5416,14 +5416,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
+      "2 km",
       "14 km",
       "14 km",
-      "2 km"
+      "10 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5434,7 +5434,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
       "15 km",
       "21 km",
@@ -5452,14 +5452,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
       "28 km",
+      "20 km",
       "24 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5470,14 +5470,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
-      "35 km",
       "29 km",
+      "35 km",
+      "25 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5488,14 +5488,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
+      "1 km",
       "7 km",
       "9 km",
-      "1 km"
+      "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5506,7 +5506,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
       "10 km",
       "14 km",
@@ -5524,14 +5524,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
       "21 km",
+      "15 km",
       "19 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5542,14 +5542,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
-      "28 km",
       "24 km",
+      "28 km",
+      "20 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5560,14 +5560,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
+      "5 km",
       "35 km",
       "29 km",
-      "5 km"
+      "25 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5578,7 +5578,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
       "5 km",
       "7 km",
@@ -5596,14 +5596,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
       "14 km",
+      "10 km",
       "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5614,14 +5614,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
-      "21 km",
       "19 km",
+      "21 km",
+      "15 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5632,14 +5632,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
+      "4 km",
       "28 km",
       "24 km",
-      "4 km"
+      "20 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5650,7 +5650,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
       "25 km",
       "35 km",
@@ -5668,14 +5668,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
       "7 km",
+      "5 km",
       "9 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5686,14 +5686,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
+      "14 km",
+      "14 km",
       "10 km",
-      "14 km",
-      "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5704,14 +5704,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
+      "3 km",
       "21 km",
       "19 km",
-      "3 km"
+      "15 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5722,7 +5722,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
       "20 km",
       "28 km",
@@ -5740,14 +5740,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
       "35 km",
+      "25 km",
       "29 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5758,14 +5758,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
-      "7 km",
       "9 km",
+      "7 km",
+      "5 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5776,14 +5776,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
+      "2 km",
       "14 km",
       "14 km",
-      "2 km"
+      "10 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5794,7 +5794,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
       "15 km",
       "21 km",
@@ -5812,14 +5812,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
       "28 km",
+      "20 km",
       "24 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5830,14 +5830,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
-      "35 km",
       "29 km",
+      "35 km",
+      "25 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5848,14 +5848,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
+      "1 km",
       "7 km",
       "9 km",
-      "1 km"
+      "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5866,7 +5866,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
       "10 km",
       "14 km",
@@ -5884,14 +5884,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
       "21 km",
+      "15 km",
       "19 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5902,14 +5902,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
-      "28 km",
       "24 km",
+      "28 km",
+      "20 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5920,14 +5920,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
+      "5 km",
       "35 km",
       "29 km",
-      "5 km"
+      "25 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5938,7 +5938,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
       "5 km",
       "7 km",
@@ -5956,14 +5956,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
       "14 km",
+      "10 km",
       "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5974,14 +5974,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
-      "21 km",
       "19 km",
+      "21 km",
+      "15 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -5992,14 +5992,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
+      "4 km",
       "28 km",
       "24 km",
-      "4 km"
+      "20 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6010,7 +6010,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
       "25 km",
       "35 km",
@@ -6028,14 +6028,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
       "7 km",
+      "5 km",
       "9 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6046,14 +6046,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
+      "14 km",
+      "14 km",
       "10 km",
-      "14 km",
-      "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6064,14 +6064,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
+      "3 km",
       "21 km",
       "19 km",
-      "3 km"
+      "15 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6082,7 +6082,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
       "20 km",
       "28 km",
@@ -6100,14 +6100,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
       "35 km",
+      "25 km",
       "29 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6118,14 +6118,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
-      "7 km",
       "9 km",
+      "7 km",
+      "5 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6136,14 +6136,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
+      "2 km",
       "14 km",
       "14 km",
-      "2 km"
+      "10 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6154,7 +6154,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
       "15 km",
       "21 km",
@@ -6172,14 +6172,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
       "28 km",
+      "20 km",
       "24 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6190,14 +6190,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
-      "35 km",
       "29 km",
+      "35 km",
+      "25 km",
       "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6208,14 +6208,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
+      "1 km",
       "7 km",
       "9 km",
-      "1 km"
+      "5 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6226,7 +6226,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
       "10 km",
       "14 km",
@@ -6244,14 +6244,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
       "21 km",
+      "15 km",
       "19 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6262,14 +6262,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
-      "28 km",
       "24 km",
+      "28 km",
+      "20 km",
       "4 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6280,14 +6280,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
-      "25 km",
+      "5 km",
       "35 km",
       "29 km",
-      "5 km"
+      "25 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(15^2 + 20^2) = sqrt(225 + 400) = 25 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6298,7 +6298,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
       "5 km",
       "7 km",
@@ -6316,14 +6316,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 6 km South, turns 90\u00b0 East and travels 8 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 6 km South, turns 90° East and travels 8 km. What is the displacement from the starting point?",
     "options": [
-      "10 km",
       "14 km",
+      "10 km",
       "14 km",
       "2 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(6^2 + 8^2) = sqrt(36 + 64) = 10 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6334,14 +6334,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 9 km South, turns 90\u00b0 East and travels 12 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 9 km South, turns 90° East and travels 12 km. What is the displacement from the starting point?",
     "options": [
-      "15 km",
-      "21 km",
       "19 km",
+      "21 km",
+      "15 km",
       "3 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Using Pythagoras: sqrt(9^2 + 12^2) = sqrt(81 + 144) = 15 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6352,14 +6352,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 12 km South, turns 90\u00b0 East and travels 16 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 12 km South, turns 90° East and travels 16 km. What is the displacement from the starting point?",
     "options": [
-      "20 km",
+      "4 km",
       "28 km",
       "24 km",
-      "4 km"
+      "20 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Using Pythagoras: sqrt(12^2 + 16^2) = sqrt(144 + 256) = 20 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6370,7 +6370,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 15 km South, turns 90\u00b0 East and travels 20 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 15 km South, turns 90° East and travels 20 km. What is the displacement from the starting point?",
     "options": [
       "25 km",
       "35 km",
@@ -6388,14 +6388,14 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "critical",
     "sectionTitle": "Critical Reasoning & Problem Solving",
     "category": "Cognitive",
-    "title": "An engineer travels 3 km South, turns 90\u00b0 East and travels 4 km. What is the displacement from the starting point?",
+    "title": "An engineer travels 3 km South, turns 90° East and travels 4 km. What is the displacement from the starting point?",
     "options": [
-      "5 km",
       "7 km",
+      "5 km",
       "9 km",
       "1 km"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Using Pythagoras: sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5 km.",
     "difficulty": "Easy",
     "tag": "Direction Displacement",
@@ -6408,12 +6408,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Find the next number in the series: 4, 9, 19, 39, 79, ?",
     "options": [
-      "159",
-      "149",
       "169",
+      "149",
+      "159",
       "158"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "The pattern is: x * 2 + 1. (4*2+1=9, 9*2+1=19, 19*2+1=39, 39*2+1=79, 79*2+1 = 159).",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
@@ -6426,12 +6426,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Find the missing number in the sequence: 2, 6, 12, 20, 30, 42, ?",
     "options": [
-      "56",
+      "60",
       "54",
       "58",
-      "60"
+      "56"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The differences are consecutive even integers: +4, +6, +8, +10, +12, +14. 42 + 14 = 56 (also n*(n+1): 7*8=56).",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
@@ -6462,12 +6462,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Find the next letter in the series: B, E, I, N, T, ?",
     "options": [
-      "A",
       "Z",
+      "A",
       "Y",
       "B"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Letter gaps increase: B(+3)->E, E(+4)->I, I(+5)->N, N(+6)->T, T(+7)->A (wrapping 26 letters).",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
@@ -6480,12 +6480,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Which of the following numbers does NOT belong to the set (Odd one out): 27, 64, 125, 216, 343, 512, 729, 1000?",
     "options": [
-      "None of the above (all are perfect cubes)",
-      "216",
       "343",
+      "216",
+      "None of the above (all are perfect cubes)",
       "729"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "All items listed are perfect cubes: 3^3, 4^3, 5^3, 6^3, 7^3, 8^3, 9^3, 10^3.",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
@@ -6498,12 +6498,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "In a visual matrix: Row 1 has [Circle, Square, Triangle]. Row 2 has [Square, Triangle, Circle]. What shape completes Row 3 [Triangle, Circle, ?] to satisfy Latin Square symmetry?",
     "options": [
-      "Square",
+      "Pentagon",
       "Hexagon",
       "Circle",
-      "Pentagon"
+      "Square"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Each row and column in a Latin square must contain each of the 3 distinct shapes exactly once. The missing element is Square.",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
@@ -6514,7 +6514,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "abstract",
     "sectionTitle": "Abstract Reasoning",
     "category": "Cognitive",
-    "title": "A pointer starts pointing North and rotates 45\u00b0 clockwise, then 90\u00b0 counter-clockwise, then 135\u00b0 clockwise. Where does it end up pointing?",
+    "title": "A pointer starts pointing North and rotates 45° clockwise, then 90° counter-clockwise, then 135° clockwise. Where does it end up pointing?",
     "options": [
       "South-East",
       "East",
@@ -6522,7 +6522,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "North-East"
     ],
     "correctIndex": 0,
-    "explanation": "Net rotation = +45 - 90 + 135 = +90 degrees clockwise. 90\u00b0 clockwise from North is East. (Correction: +45 - 90 + 135 = +90 => East).",
+    "explanation": "Net rotation = +45 - 90 + 135 = +90 degrees clockwise. 90° clockwise from North is East. (Correction: +45 - 90 + 135 = +90 => East).",
     "difficulty": "Medium",
     "tag": "Series & Patterns",
     "slotYear": "2025-2026"
@@ -6534,12 +6534,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 15, 25, 40, ?",
     "options": [
-      "60",
       "62",
+      "60",
       "56",
       "65"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 40 + 20 = 60.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6552,12 +6552,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 11, 17, 29, 47, ?",
     "options": [
-      "71",
-      "73",
       "67",
+      "73",
+      "71",
       "77"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 47 + 24 = 71.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6570,12 +6570,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 9, 23, 44, ?",
     "options": [
-      "72",
+      "79",
       "74",
       "68",
-      "79"
+      "72"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 44 + 28 = 72.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6606,12 +6606,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 7, 13, 22, ?",
     "options": [
-      "34",
       "36",
+      "34",
       "30",
       "37"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 22 + 12 = 34.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6624,12 +6624,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 5, 9, 17, 29, ?",
     "options": [
-      "45",
-      "47",
       "41",
+      "47",
+      "45",
       "49"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 29 + 16 = 45.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6642,12 +6642,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 11, 21, 36, ?",
     "options": [
-      "56",
+      "61",
       "58",
       "52",
-      "61"
+      "56"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 36 + 20 = 56.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6678,12 +6678,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 15, 29, 50, ?",
     "options": [
-      "78",
       "80",
+      "78",
       "74",
       "85"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 50 + 28 = 78.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6696,12 +6696,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 9, 17, 33, 57, ?",
     "options": [
-      "89",
-      "91",
       "85",
+      "91",
+      "89",
       "97"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 57 + 32 = 89.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6714,12 +6714,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 13, 19, 28, ?",
     "options": [
-      "40",
+      "43",
       "42",
       "36",
-      "43"
+      "40"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 28 + 12 = 40.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6750,12 +6750,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 7, 17, 32, ?",
     "options": [
-      "52",
       "54",
+      "52",
       "48",
       "57"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 32 + 20 = 52.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6768,12 +6768,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 3, 9, 21, 39, ?",
     "options": [
-      "63",
-      "65",
       "59",
+      "65",
+      "63",
       "69"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 39 + 24 = 63.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6786,12 +6786,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 11, 25, 46, ?",
     "options": [
-      "74",
+      "81",
       "76",
       "70",
-      "81"
+      "74"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 46 + 28 = 74.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6822,12 +6822,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 9, 15, 24, ?",
     "options": [
-      "36",
       "38",
+      "36",
       "32",
       "39"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 24 + 12 = 36.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6840,12 +6840,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 7, 11, 19, 31, ?",
     "options": [
-      "47",
-      "49",
       "43",
+      "49",
+      "47",
       "51"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 31 + 16 = 47.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6858,12 +6858,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 13, 23, 38, ?",
     "options": [
-      "58",
+      "63",
       "60",
       "54",
-      "63"
+      "58"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 38 + 20 = 58.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6894,12 +6894,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 17, 31, 52, ?",
     "options": [
-      "80",
       "82",
+      "80",
       "76",
       "87"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 52 + 28 = 80.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6912,12 +6912,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 11, 19, 35, 59, ?",
     "options": [
-      "91",
-      "93",
       "87",
+      "93",
+      "91",
       "99"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 59 + 32 = 91.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6930,12 +6930,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 5, 11, 20, ?",
     "options": [
-      "32",
+      "35",
       "34",
       "28",
-      "35"
+      "32"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 20 + 12 = 32.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6966,12 +6966,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 9, 19, 34, ?",
     "options": [
-      "54",
       "56",
+      "54",
       "50",
       "59"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 34 + 20 = 54.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -6984,12 +6984,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 5, 11, 23, 41, ?",
     "options": [
-      "65",
-      "67",
       "61",
+      "67",
+      "65",
       "71"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 41 + 24 = 65.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7002,12 +7002,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 13, 27, 48, ?",
     "options": [
-      "76",
+      "83",
       "78",
       "72",
-      "83"
+      "76"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 48 + 28 = 76.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7038,12 +7038,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 11, 17, 26, ?",
     "options": [
-      "38",
       "40",
+      "38",
       "34",
       "41"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 26 + 12 = 38.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7056,12 +7056,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 9, 13, 21, 33, ?",
     "options": [
-      "49",
-      "51",
       "45",
+      "51",
+      "49",
       "53"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 33 + 16 = 49.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7074,12 +7074,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 15, 25, 40, ?",
     "options": [
-      "60",
+      "65",
       "62",
       "56",
-      "65"
+      "60"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 40 + 20 = 60.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7110,12 +7110,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 9, 23, 44, ?",
     "options": [
-      "72",
       "74",
+      "72",
       "68",
       "79"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 44 + 28 = 72.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7128,12 +7128,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 3, 11, 27, 51, ?",
     "options": [
-      "83",
-      "85",
       "79",
+      "85",
+      "83",
       "91"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 51 + 32 = 83.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7146,12 +7146,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 7, 13, 22, ?",
     "options": [
-      "34",
+      "37",
       "36",
       "30",
-      "37"
+      "34"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 22 + 12 = 34.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7182,12 +7182,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 11, 21, 36, ?",
     "options": [
-      "56",
       "58",
+      "56",
       "52",
       "61"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 36 + 20 = 56.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7200,12 +7200,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 7, 13, 25, 43, ?",
     "options": [
-      "67",
-      "69",
       "63",
+      "69",
+      "67",
       "73"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 43 + 24 = 67.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7218,12 +7218,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 15, 29, 50, ?",
     "options": [
-      "78",
+      "85",
       "80",
       "74",
-      "85"
+      "78"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 50 + 28 = 78.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7254,12 +7254,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 13, 19, 28, ?",
     "options": [
-      "40",
       "42",
+      "40",
       "36",
       "43"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 28 + 12 = 40.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7272,12 +7272,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 11, 15, 23, 35, ?",
     "options": [
-      "51",
-      "53",
       "47",
+      "53",
+      "51",
       "55"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 35 + 16 = 51.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7290,12 +7290,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 7, 17, 32, ?",
     "options": [
-      "52",
+      "57",
       "54",
       "48",
-      "57"
+      "52"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 32 + 20 = 52.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7326,12 +7326,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 11, 25, 46, ?",
     "options": [
-      "74",
       "76",
+      "74",
       "70",
       "81"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 46 + 28 = 74.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7344,12 +7344,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 5, 13, 29, 53, ?",
     "options": [
-      "85",
-      "87",
       "81",
+      "87",
+      "85",
       "93"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 53 + 32 = 85.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7362,12 +7362,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 9, 15, 24, ?",
     "options": [
-      "36",
+      "39",
       "38",
       "32",
-      "39"
+      "36"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 24 + 12 = 36.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7398,12 +7398,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 13, 23, 38, ?",
     "options": [
-      "58",
       "60",
+      "58",
       "54",
       "63"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 38 + 20 = 58.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7416,12 +7416,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 9, 15, 27, 45, ?",
     "options": [
-      "69",
-      "71",
       "65",
+      "71",
+      "69",
       "75"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 45 + 24 = 69.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7434,12 +7434,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 17, 31, 52, ?",
     "options": [
-      "80",
+      "87",
       "82",
       "76",
-      "87"
+      "80"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 52 + 28 = 80.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7470,12 +7470,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 5, 11, 20, ?",
     "options": [
-      "32",
       "34",
+      "32",
       "28",
       "35"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 20 + 12 = 32.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7488,12 +7488,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 3, 7, 15, 27, ?",
     "options": [
-      "43",
-      "45",
       "39",
+      "45",
+      "43",
       "47"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 27 + 16 = 43.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7506,12 +7506,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 9, 19, 34, ?",
     "options": [
-      "54",
+      "59",
       "56",
       "50",
-      "59"
+      "54"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 34 + 20 = 54.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7542,12 +7542,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 13, 27, 48, ?",
     "options": [
-      "76",
       "78",
+      "76",
       "72",
       "83"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 48 + 28 = 76.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7560,12 +7560,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 7, 15, 31, 55, ?",
     "options": [
-      "87",
-      "89",
       "83",
+      "89",
+      "87",
       "95"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 55 + 32 = 87.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7578,12 +7578,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 11, 17, 26, ?",
     "options": [
-      "38",
+      "41",
       "40",
       "34",
-      "41"
+      "38"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 26 + 12 = 38.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7614,12 +7614,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 15, 25, 40, ?",
     "options": [
-      "60",
       "62",
+      "60",
       "56",
       "65"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 40 + 20 = 60.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7632,12 +7632,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 11, 17, 29, 47, ?",
     "options": [
-      "71",
-      "73",
       "67",
+      "73",
+      "71",
       "77"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 6: +6, +12, +18, +24. Next is 47 + 24 = 71.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7650,12 +7650,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 9, 23, 44, ?",
     "options": [
-      "72",
+      "79",
       "74",
       "68",
-      "79"
+      "72"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 44 + 28 = 72.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7686,12 +7686,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 4, 7, 13, 22, ?",
     "options": [
-      "34",
       "36",
+      "34",
       "30",
       "37"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 22 + 12 = 34.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7704,12 +7704,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 5, 9, 17, 29, ?",
     "options": [
-      "45",
-      "47",
       "41",
+      "47",
+      "45",
       "49"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 4: +4, +8, +12, +16. Next is 29 + 16 = 45.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7722,12 +7722,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 6, 11, 21, 36, ?",
     "options": [
-      "56",
+      "61",
       "58",
       "52",
-      "61"
+      "56"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 36 + 20 = 56.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7758,12 +7758,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 8, 15, 29, 50, ?",
     "options": [
-      "78",
       "80",
+      "78",
       "74",
       "85"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 7: +7, +14, +21, +28. Next is 50 + 28 = 78.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7776,12 +7776,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 9, 17, 33, 57, ?",
     "options": [
-      "89",
-      "91",
       "85",
+      "91",
+      "89",
       "97"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Differences increase by multiples of 8: +8, +16, +24, +32. Next is 57 + 32 = 89.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7794,12 +7794,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 10, 13, 19, 28, ?",
     "options": [
-      "40",
+      "43",
       "42",
       "36",
-      "43"
+      "40"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Differences increase by multiples of 3: +3, +6, +9, +12. Next is 28 + 12 = 40.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7830,12 +7830,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Complete the pattern: 2, 7, 17, 32, ?",
     "options": [
-      "52",
       "54",
+      "52",
       "48",
       "57"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Differences increase by multiples of 5: +5, +10, +15, +20. Next is 32 + 20 = 52.",
     "difficulty": "Easy",
     "tag": "Numeric Series",
@@ -7848,12 +7848,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the part of the sentence with an error: 'Neither the team lead (A) nor the developers (B) was able to resolve (C) the latency issue (D).'",
     "options": [
-      "Part (C): 'was able to resolve' should be 'were able to resolve'",
-      "Part (A): 'Neither the team lead'",
       "Part (B): 'nor the developers'",
+      "Part (A): 'Neither the team lead'",
+      "Part (C): 'was able to resolve' should be 'were able to resolve'",
       "No error"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "When subjects are joined by 'neither... nor', the verb agrees in number with the nearest subject. Since 'developers' is plural, the plural verb 'were' is required.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7866,12 +7866,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Select the correct preposition: 'The engineering team found it difficult to cope ______ the sudden increase in cloud workload.'",
     "options": [
-      "with",
+      "against",
       "up with",
       "on",
-      "against"
+      "with"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The idiom is 'cope with' (to endure or manage). 'Cope up with' is a common colloquial error.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7902,12 +7902,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Choose the word that is most nearly SIMILAR in meaning (Synonym) to PRAGMATIC:",
     "options": [
-      "Practical",
       "Idealistic",
+      "Practical",
       "Theoretical",
       "Hesitant"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Pragmatic means dealing with things sensibly and realistically based on practical considerations.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7920,12 +7920,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Choose the correct passive voice: 'The software architects designed the distributed payment gateway.'",
     "options": [
-      "The distributed payment gateway was designed by the software architects.",
-      "The distributed payment gateway had been designed by software architects.",
       "The distributed payment gateway is being designed.",
+      "The distributed payment gateway had been designed by software architects.",
+      "The distributed payment gateway was designed by the software architects.",
       "The software architects were designed by the gateway."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Simple past active ('designed') converts to 'was designed' + by agent in passive voice.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7938,12 +7938,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Select the correct indirect speech conversion: She said, 'I have completed the system integration test.'",
     "options": [
-      "She said that she had completed the system integration test.",
+      "She asked if the test was completed.",
       "She said that she has completed the test.",
       "She said that she is completing the test.",
-      "She asked if the test was completed."
+      "She said that she had completed the system integration test."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Present perfect ('have completed') backshifts to past perfect ('had completed') in reported speech.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7974,12 +7974,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Select the grammatically correct sentence:",
     "options": [
-      "One of the servers that were installed yesterday crashed.",
       "One of the server that was installed yesterday crashed.",
+      "One of the servers that were installed yesterday crashed.",
       "One of the servers that was installed yesterday crashed.",
       "One of the servers who was installed yesterday crashed."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "In 'one of the [plural noun] that [plural verb]', the relative pronoun 'that' refers to 'servers' (plural), so 'were' is grammatically correct.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -7992,12 +7992,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Fill in the blank with the appropriate word: 'The CEO's explanation was so ______ that nobody understood the actual corporate strategy.'",
     "options": [
-      "ambiguous",
-      "lucid",
       "transparent",
+      "lucid",
+      "ambiguous",
       "candid"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Ambiguous means unclear, open to multiple interpretations, or obscure.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -8010,12 +8010,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Choose the correct sentence improvement for the underlined part: 'He is looking forward to *meet* the new engineering director.'",
     "options": [
-      "meeting",
+      "No improvement needed",
       "have met",
       "met",
-      "No improvement needed"
+      "meeting"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The phrase 'look forward to' requires a gerund (verb + -ing): 'looking forward to meeting'.",
     "difficulty": "Medium",
     "tag": "Grammar & Verbal",
@@ -8046,12 +8046,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8064,12 +8064,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8082,12 +8082,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8118,12 +8118,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8136,12 +8136,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8154,12 +8154,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8190,12 +8190,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8208,12 +8208,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8226,12 +8226,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8262,12 +8262,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8280,12 +8280,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8298,12 +8298,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8334,12 +8334,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8352,12 +8352,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8370,12 +8370,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8406,12 +8406,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8424,12 +8424,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8442,12 +8442,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8478,12 +8478,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8496,12 +8496,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8514,12 +8514,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8550,12 +8550,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8568,12 +8568,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8586,12 +8586,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8622,12 +8622,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8640,12 +8640,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8658,12 +8658,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8694,12 +8694,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8712,12 +8712,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8730,12 +8730,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8766,12 +8766,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8784,12 +8784,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8802,12 +8802,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8838,12 +8838,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8856,12 +8856,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8874,12 +8874,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8910,12 +8910,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8928,12 +8928,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8946,12 +8946,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -8982,12 +8982,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9000,12 +9000,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9018,12 +9018,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9054,12 +9054,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9072,12 +9072,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9090,12 +9090,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9126,12 +9126,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9144,12 +9144,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9162,12 +9162,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9198,12 +9198,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9216,12 +9216,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9234,12 +9234,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9270,12 +9270,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
       "Honest",
+      "Deceitful",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9288,12 +9288,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: TENACIOUS",
     "options": [
-      "Persistent",
-      "Weak-willed",
       "Irrelevant",
+      "Weak-willed",
+      "Persistent",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "TENACIOUS means: Holding firm to an idea or task with persistence. Its synonym is Persistent.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9306,12 +9306,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
+      "Complicated",
       "Credible",
       "Irrelevant",
-      "Complicated"
+      "Implausible"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9342,12 +9342,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
       "Tough",
+      "Fragile",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9360,12 +9360,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: EPHEMERAL",
     "options": [
-      "Transient",
-      "Permanent",
       "Irrelevant",
+      "Permanent",
+      "Transient",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "EPHEMERAL means: Lasting for a very short time; fleeting. Its synonym is Transient.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9378,12 +9378,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: CANDID",
     "options": [
-      "Deceitful",
+      "Complicated",
       "Honest",
       "Irrelevant",
-      "Complicated"
+      "Deceitful"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "CANDID means: Truthful, straightforward, and frank. Its antonym is Deceitful.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9414,12 +9414,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: PLAUSIBLE",
     "options": [
-      "Implausible",
       "Credible",
+      "Implausible",
       "Irrelevant",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "PLAUSIBLE means: Seeming reasonable or probable. Its antonym is Implausible.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9432,12 +9432,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the SYNONYM of the word: REDUNDANT",
     "options": [
-      "Excess",
-      "Essential",
       "Irrelevant",
+      "Essential",
+      "Excess",
       "Complicated"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "REDUNDANT means: No longer needed or useful; superfluous. Its synonym is Excess.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9450,12 +9450,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Identify the ANTONYM of the word: RESILIENT",
     "options": [
-      "Fragile",
+      "Complicated",
       "Tough",
       "Irrelevant",
-      "Complicated"
+      "Fragile"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "RESILIENT means: Able to recover quickly from difficulties. Its antonym is Fragile.",
     "difficulty": "Easy",
     "tag": "Placement Vocabulary",
@@ -9468,13 +9468,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 27 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "10.3 days",
+      "8.3 days",
       "6.8 days",
       "6.0 days",
-      "8.3 days"
+      "10.3 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 \u2248 8.3 days.",
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 ≈ 8.3 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9487,12 +9487,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 34 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "7.0 days",
-      "11.9 days",
       "9.9 days",
+      "11.9 days",
       "8.4 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 \u2248 9.9 days.",
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 ≈ 9.9 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9506,11 +9506,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "10.0 days",
       "8.0 days",
-      "13.5 days",
-      "11.5 days"
+      "11.5 days",
+      "13.5 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 \u2248 11.5 days.",
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 ≈ 11.5 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9524,11 +9524,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "9.5 days",
       "13.0 days",
-      "11.0 days",
-      "9.0 days"
+      "9.0 days",
+      "11.0 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 \u2248 11.0 days.",
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 ≈ 11.0 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9540,13 +9540,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 20 days, while Worker B takes 35 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "11.2 days",
+      "12.7 days",
       "14.7 days",
       "10.0 days",
-      "12.7 days"
+      "11.2 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 \u2248 12.7 days.",
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 ≈ 12.7 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9559,12 +9559,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 10 days, while Worker B takes 30 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "6.0 days",
-      "5.0 days",
+      "7.5 days",
       "9.5 days",
-      "7.5 days"
+      "5.0 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 \u2248 7.5 days.",
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 ≈ 7.5 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9582,7 +9582,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "6.0 days"
     ],
     "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 \u2248 9.1 days.",
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 ≈ 9.1 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9596,11 +9596,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "7.3 days",
       "7.0 days",
-      "8.8 days",
-      "10.8 days"
+      "10.8 days",
+      "8.8 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 \u2248 8.8 days.",
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 ≈ 8.8 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9618,7 +9618,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "8.0 days"
     ],
     "correctIndex": 0,
-    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/31.\nCombined 1-day work = 1/16 + 1/31 = (16+31)/(16*31).\nTotal days = (16 * 31) / (16 + 31) = 496 / 47 \u2248 10.6 days.",
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/31.\nCombined 1-day work = 1/16 + 1/31 = (16+31)/(16*31).\nTotal days = (16 * 31) / (16 + 31) = 496 / 47 ≈ 10.6 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9631,12 +9631,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 18 days, while Worker B takes 38 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "14.2 days",
-      "9.0 days",
       "12.2 days",
+      "9.0 days",
       "10.7 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/38.\nCombined 1-day work = 1/18 + 1/38 = (18+38)/(18*38).\nTotal days = (18 * 38) / (18 + 38) = 684 / 56 \u2248 12.2 days.",
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/38.\nCombined 1-day work = 1/18 + 1/38 = (18+38)/(18*38).\nTotal days = (18 * 38) / (18 + 38) = 684 / 56 ≈ 12.2 days.",
     "difficulty": "Easy",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9650,11 +9650,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "15.8 days",
       "12.3 days",
-      "10.0 days",
-      "13.8 days"
+      "13.8 days",
+      "10.0 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/45.\nCombined 1-day work = 1/20 + 1/45 = (20+45)/(20*45).\nTotal days = (20 * 45) / (20 + 45) = 900 / 65 \u2248 13.8 days.",
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/45.\nCombined 1-day work = 1/20 + 1/45 = (20+45)/(20*45).\nTotal days = (20 * 45) / (20 + 45) = 900 / 65 ≈ 13.8 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9672,7 +9672,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "6.7 days"
     ],
     "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/20.\nCombined 1-day work = 1/10 + 1/20 = (10+20)/(10*20).\nTotal days = (10 * 20) / (10 + 20) = 200 / 30 \u2248 6.7 days.",
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/20.\nCombined 1-day work = 1/10 + 1/20 = (10+20)/(10*20).\nTotal days = (10 * 20) / (10 + 20) = 200 / 30 ≈ 6.7 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9684,13 +9684,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 12 days, while Worker B takes 27 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "6.0 days",
-      "6.8 days",
       "8.3 days",
+      "6.8 days",
+      "6.0 days",
       "10.3 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 \u2248 8.3 days.",
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/27.\nCombined 1-day work = 1/12 + 1/27 = (12+27)/(12*27).\nTotal days = (12 * 27) / (12 + 27) = 324 / 39 ≈ 8.3 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9703,12 +9703,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 34 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "11.9 days",
-      "7.0 days",
+      "9.9 days",
       "8.4 days",
-      "9.9 days"
+      "7.0 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 \u2248 9.9 days.",
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/34.\nCombined 1-day work = 1/14 + 1/34 = (14+34)/(14*34).\nTotal days = (14 * 34) / (14 + 34) = 476 / 48 ≈ 9.9 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9720,13 +9720,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 16 days, while Worker B takes 41 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "11.5 days",
-      "10.0 days",
       "8.0 days",
+      "10.0 days",
+      "11.5 days",
       "13.5 days"
     ],
-    "correctIndex": 0,
-    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 \u2248 11.5 days.",
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/16.\nWorker B's 1-day work = 1/41.\nCombined 1-day work = 1/16 + 1/41 = (16+41)/(16*41).\nTotal days = (16 * 41) / (16 + 41) = 656 / 57 ≈ 11.5 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9739,12 +9739,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 18 days, while Worker B takes 28 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "9.0 days",
-      "11.0 days",
+      "9.5 days",
       "13.0 days",
-      "9.5 days"
+      "11.0 days"
     ],
-    "correctIndex": 1,
-    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 \u2248 11.0 days.",
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/18.\nWorker B's 1-day work = 1/28.\nCombined 1-day work = 1/18 + 1/28 = (18+28)/(18*28).\nTotal days = (18 * 28) / (18 + 28) = 504 / 46 ≈ 11.0 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9756,13 +9756,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 20 days, while Worker B takes 35 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "11.2 days",
+      "12.7 days",
       "10.0 days",
       "14.7 days",
-      "12.7 days"
+      "11.2 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 \u2248 12.7 days.",
+    "correctIndex": 0,
+    "explanation": "Worker A's 1-day work = 1/20.\nWorker B's 1-day work = 1/35.\nCombined 1-day work = 1/20 + 1/35 = (20+35)/(20*35).\nTotal days = (20 * 35) / (20 + 35) = 700 / 55 ≈ 12.7 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9775,12 +9775,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Worker A can complete a software deployment in 10 days, while Worker B takes 30 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
       "6.0 days",
-      "5.0 days",
       "7.5 days",
+      "5.0 days",
       "9.5 days"
     ],
-    "correctIndex": 2,
-    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 \u2248 7.5 days.",
+    "correctIndex": 1,
+    "explanation": "Worker A's 1-day work = 1/10.\nWorker B's 1-day work = 1/30.\nCombined 1-day work = 1/10 + 1/30 = (10+30)/(10*30).\nTotal days = (10 * 30) / (10 + 30) = 300 / 40 ≈ 7.5 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9794,11 +9794,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "6.0 days",
       "11.1 days",
-      "7.6 days",
-      "9.1 days"
+      "9.1 days",
+      "7.6 days"
     ],
-    "correctIndex": 3,
-    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 \u2248 9.1 days.",
+    "correctIndex": 2,
+    "explanation": "Worker A's 1-day work = 1/12.\nWorker B's 1-day work = 1/37.\nCombined 1-day work = 1/12 + 1/37 = (12+37)/(12*37).\nTotal days = (12 * 37) / (12 + 37) = 444 / 49 ≈ 9.1 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9810,13 +9810,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Worker A can complete a software deployment in 14 days, while Worker B takes 24 days to complete the identical task. Working together, how many days will they take to complete the deployment?",
     "options": [
-      "8.8 days",
+      "7.0 days",
       "7.3 days",
       "10.8 days",
-      "7.0 days"
+      "8.8 days"
     ],
-    "correctIndex": 0,
-    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 \u2248 8.8 days.",
+    "correctIndex": 3,
+    "explanation": "Worker A's 1-day work = 1/14.\nWorker B's 1-day work = 1/24.\nCombined 1-day work = 1/14 + 1/24 = (14+24)/(14*24).\nTotal days = (14 * 24) / (14 + 24) = 336 / 38 ≈ 8.8 days.",
     "difficulty": "Medium",
     "tag": "Time & Work",
     "slotYear": "2025-2026"
@@ -9834,7 +9834,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "3.2 hours"
     ],
     "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 \u2248 2.0 hours.",
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 ≈ 2.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9846,13 +9846,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 80 km/h respectively. After how many hours will they meet?",
     "options": [
-      "2.14 hours",
       "5.0 hours",
+      "2.14 hours",
       "1.34 hours",
       "3.34 hours"
     ],
-    "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 \u2248 2.14 hours.",
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 ≈ 2.14 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9866,11 +9866,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "3.97 hours",
       "5.14 hours",
-      "1.97 hours",
-      "2.77 hours"
+      "2.77 hours",
+      "1.97 hours"
     ],
-    "correctIndex": 3,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 360 / 130 \u2248 2.77 hours.",
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 360 / 130 ≈ 2.77 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9884,11 +9884,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "3.02 hours",
       "10.5 hours",
-      "3.82 hours",
-      "5.02 hours"
+      "5.02 hours",
+      "3.82 hours"
     ],
-    "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 \u2248 3.82 hours.",
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 ≈ 3.82 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9900,13 +9900,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 80 km/h respectively. After how many hours will they meet?",
     "options": [
-      "0.58 hours",
       "1.38 hours",
+      "0.58 hours",
       "2.58 hours",
       "3.6 hours"
     ],
-    "correctIndex": 1,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 ≈ 1.38 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9919,12 +9919,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 60 km/h respectively. After how many hours will they meet?",
     "options": [
       "3.2 hours",
-      "4.0 hours",
       "2.0 hours",
+      "4.0 hours",
       "1.2 hours"
     ],
-    "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 \u2248 2.0 hours.",
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 240 / 120 ≈ 2.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9938,11 +9938,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "4.29 hours",
       "1.34 hours",
-      "3.34 hours",
-      "2.14 hours"
+      "2.14 hours",
+      "3.34 hours"
     ],
-    "correctIndex": 3,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 \u2248 2.14 hours.",
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 300 / 140 ≈ 2.14 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9956,11 +9956,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "4.2 hours",
       "9.0 hours",
-      "3.0 hours",
-      "2.2 hours"
+      "2.2 hours",
+      "3.0 hours"
     ],
-    "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9972,13 +9972,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 60 km/h respectively. After how many hours will they meet?",
     "options": [
-      "8.4 hours",
-      "5.02 hours",
       "3.82 hours",
+      "5.02 hours",
+      "8.4 hours",
       "3.02 hours"
     ],
-    "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 60 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 \u2248 3.82 hours.",
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 60 = 110 km/h.\nTime to meet = Distance / Relative Speed = 420 / 110 ≈ 3.82 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -9990,13 +9990,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 180 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 70 km/h respectively. After how many hours will they meet?",
     "options": [
-      "1.38 hours",
       "2.58 hours",
+      "1.38 hours",
       "0.58 hours",
       "3.0 hours"
     ],
-    "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 70 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 70 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 ≈ 1.38 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10009,12 +10009,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Two trains 240 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 80 km/h respectively. After how many hours will they meet?",
     "options": [
       "0.8 hours",
-      "1.6 hours",
       "3.43 hours",
+      "1.6 hours",
       "2.8 hours"
     ],
-    "correctIndex": 1,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 80 = 150 km/h.\nTime to meet = Distance / Relative Speed = 240 / 150 \u2248 1.6 hours.",
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 80 = 150 km/h.\nTime to meet = Distance / Relative Speed = 240 / 150 ≈ 1.6 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10026,13 +10026,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 40 km/h and 60 km/h respectively. After how many hours will they meet?",
     "options": [
-      "3.0 hours",
+      "4.2 hours",
       "7.5 hours",
       "2.2 hours",
-      "4.2 hours"
+      "3.0 hours"
     ],
-    "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 60 = 100 km/h.\nTime to meet = Distance / Relative Speed = 300 / 100 \u2248 3.0 hours.",
+    "correctIndex": 3,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 60 = 100 km/h.\nTime to meet = Distance / Relative Speed = 300 / 100 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10050,7 +10050,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "7.2 hours"
     ],
     "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 70 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10063,12 +10063,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 80 km/h respectively. After how many hours will they meet?",
     "options": [
       "4.2 hours",
-      "7.0 hours",
       "3.0 hours",
+      "7.0 hours",
       "2.2 hours"
     ],
-    "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 \u2248 3.0 hours.",
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 80 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10086,7 +10086,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "2.57 hours"
     ],
     "correctIndex": 2,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 \u2248 1.38 hours.",
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 60 = 130 km/h.\nTime to meet = Distance / Relative Speed = 180 / 130 ≈ 1.38 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10104,7 +10104,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "2.18 hours"
     ],
     "correctIndex": 3,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 240 / 110 \u2248 2.18 hours.",
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 70 = 110 km/h.\nTime to meet = Distance / Relative Speed = 240 / 110 ≈ 2.18 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10116,13 +10116,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 300 km apart start simultaneously traveling toward each other on parallel tracks at 50 km/h and 80 km/h respectively. After how many hours will they meet?",
     "options": [
-      "3.51 hours",
       "2.31 hours",
+      "3.51 hours",
       "1.51 hours",
       "6.0 hours"
     ],
-    "correctIndex": 1,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 300 / 130 \u2248 2.31 hours.",
+    "correctIndex": 0,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 50 + 80 = 130 km/h.\nTime to meet = Distance / Relative Speed = 300 / 130 ≈ 2.31 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10134,13 +10134,13 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "Two trains 360 km apart start simultaneously traveling toward each other on parallel tracks at 60 km/h and 60 km/h respectively. After how many hours will they meet?",
     "options": [
-      "3.0 hours",
       "2.2 hours",
+      "3.0 hours",
       "4.2 hours",
       "6.0 hours"
     ],
-    "correctIndex": 0,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 \u2248 3.0 hours.",
+    "correctIndex": 1,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 60 + 60 = 120 km/h.\nTime to meet = Distance / Relative Speed = 360 / 120 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10153,12 +10153,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "Two trains 420 km apart start simultaneously traveling toward each other on parallel tracks at 70 km/h and 70 km/h respectively. After how many hours will they meet?",
     "options": [
       "4.2 hours",
-      "3.0 hours",
       "6.0 hours",
+      "3.0 hours",
       "2.2 hours"
     ],
-    "correctIndex": 1,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 \u2248 3.0 hours.",
+    "correctIndex": 2,
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 70 + 70 = 140 km/h.\nTime to meet = Distance / Relative Speed = 420 / 140 ≈ 3.0 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10176,7 +10176,7 @@ export const ACCENTURE_QUESTIONS: Question[] = [
       "1.5 hours"
     ],
     "correctIndex": 3,
-    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 180 / 120 \u2248 1.5 hours.",
+    "explanation": "Since they travel in opposite directions toward each other, relative speed = Speed 1 + Speed 2 = 40 + 80 = 120 km/h.\nTime to meet = Distance / Relative Speed = 180 / 120 ≈ 1.5 hours.",
     "difficulty": "Medium",
     "tag": "Speed Distance Time",
     "slotYear": "2025-2026"
@@ -10186,15 +10186,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "title": "A merchant purchases an item for ₹500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
     "options": [
-      "\u20b9595",
-      "\u20b9598",
-      "\u20b9638",
-      "\u20b9698"
+      "₹638",
+      "₹598",
+      "₹595",
+      "₹698"
     ],
-    "correctIndex": 2,
-    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9575.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 575 / 0.90 = \u20b9638.",
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = ₹500.\nRequired Selling Price (SP) = CP * (1 + 15/100) = ₹575.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 575 / 0.90 = ₹638.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10204,15 +10204,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "title": "A merchant purchases an item for ₹600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
     "options": [
-      "\u20b9860",
-      "\u20b9760",
-      "\u20b9800",
-      "\u20b9740"
+      "₹860",
+      "₹800",
+      "₹760",
+      "₹740"
     ],
-    "correctIndex": 2,
-    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9720.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 720 / 0.90 = \u20b9800.",
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = ₹600.\nRequired Selling Price (SP) = CP * (1 + 20/100) = ₹720.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 720 / 0.90 = ₹800.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10222,15 +10222,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "title": "A merchant purchases an item for ₹700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
     "options": [
-      "\u20b9895",
-      "\u20b9932",
-      "\u20b91032",
-      "\u20b9972"
+      "₹895",
+      "₹932",
+      "₹972",
+      "₹1032"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9875.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 875 / 0.90 = \u20b9972.",
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = ₹700.\nRequired Selling Price (SP) = CP * (1 + 25/100) = ₹875.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 875 / 0.90 = ₹972.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10240,15 +10240,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "title": "A merchant purchases an item for ₹800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
     "options": [
-      "\u20b91060",
-      "\u20b91155",
-      "\u20b91215",
-      "\u20b91115"
+      "₹1060",
+      "₹1115",
+      "₹1215",
+      "₹1155"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b91040.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1040 / 0.90 = \u20b91155.",
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = ₹800.\nRequired Selling Price (SP) = CP * (1 + 30/100) = ₹1040.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1040 / 0.90 = ₹1155.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10258,15 +10258,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "title": "A merchant purchases an item for ₹900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
     "options": [
-      "\u20b91060",
-      "\u20b91100",
-      "\u20b91010",
-      "\u20b91160"
+      "₹1100",
+      "₹1060",
+      "₹1010",
+      "₹1160"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9990.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 990 / 0.90 = \u20b91100.",
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = ₹900.\nRequired Selling Price (SP) = CP * (1 + 10/100) = ₹990.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 990 / 0.90 = ₹1100.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10276,15 +10276,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "title": "A merchant purchases an item for ₹1000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
     "options": [
-      "\u20b91337",
-      "\u20b91277",
-      "\u20b91170",
-      "\u20b91237"
+      "₹1337",
+      "₹1277",
+      "₹1170",
+      "₹1237"
     ],
     "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b91150.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1150 / 0.90 = \u20b91277.",
+    "explanation": "Cost Price (CP) = ₹1000.\nRequired Selling Price (SP) = CP * (1 + 15/100) = ₹1150.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1150 / 0.90 = ₹1277.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10294,15 +10294,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "title": "A merchant purchases an item for ₹1100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
     "options": [
-      "\u20b91340",
-      "\u20b91426",
-      "\u20b91526",
-      "\u20b91466"
+      "₹1340",
+      "₹1426",
+      "₹1466",
+      "₹1526"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b91320.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1320 / 0.90 = \u20b91466.",
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = ₹1100.\nRequired Selling Price (SP) = CP * (1 + 20/100) = ₹1320.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1320 / 0.90 = ₹1466.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10312,15 +10312,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "title": "A merchant purchases an item for ₹400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
     "options": [
-      "\u20b9515",
-      "\u20b9615",
-      "\u20b9555",
-      "\u20b9520"
+      "₹515",
+      "₹615",
+      "₹520",
+      "₹555"
     ],
-    "correctIndex": 2,
-    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9500.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 500 / 0.90 = \u20b9555.",
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = ₹400.\nRequired Selling Price (SP) = CP * (1 + 25/100) = ₹500.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 500 / 0.90 = ₹555.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10330,15 +10330,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "title": "A merchant purchases an item for ₹500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
     "options": [
-      "\u20b9670",
-      "\u20b9722",
-      "\u20b9682",
-      "\u20b9782"
+      "₹722",
+      "₹670",
+      "₹682",
+      "₹782"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9650.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 650 / 0.90 = \u20b9722.",
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = ₹500.\nRequired Selling Price (SP) = CP * (1 + 30/100) = ₹650.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 650 / 0.90 = ₹722.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10348,15 +10348,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "title": "A merchant purchases an item for ₹600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
     "options": [
-      "\u20b9693",
-      "\u20b9793",
-      "\u20b9680",
-      "\u20b9733"
+      "₹693",
+      "₹733",
+      "₹680",
+      "₹793"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9660.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 660 / 0.90 = \u20b9733.",
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = ₹600.\nRequired Selling Price (SP) = CP * (1 + 10/100) = ₹660.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 660 / 0.90 = ₹733.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10366,15 +10366,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "title": "A merchant purchases an item for ₹700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
     "options": [
-      "\u20b9824",
-      "\u20b9853",
-      "\u20b9953",
-      "\u20b9893"
+      "₹824",
+      "₹853",
+      "₹893",
+      "₹953"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9804.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 804 / 0.90 = \u20b9893.",
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = ₹700.\nRequired Selling Price (SP) = CP * (1 + 15/100) = ₹804.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 804 / 0.90 = ₹893.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10384,15 +10384,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "title": "A merchant purchases an item for ₹800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
     "options": [
-      "\u20b91026",
-      "\u20b9980",
-      "\u20b91126",
-      "\u20b91066"
+      "₹1026",
+      "₹980",
+      "₹1126",
+      "₹1066"
     ],
     "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9960.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 960 / 0.90 = \u20b91066.",
+    "explanation": "Cost Price (CP) = ₹800.\nRequired Selling Price (SP) = CP * (1 + 20/100) = ₹960.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 960 / 0.90 = ₹1066.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10402,15 +10402,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "title": "A merchant purchases an item for ₹900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
     "options": [
-      "\u20b91250",
-      "\u20b91145",
-      "\u20b91310",
-      "\u20b91210"
+      "₹1250",
+      "₹1145",
+      "₹1310",
+      "₹1210"
     ],
     "correctIndex": 0,
-    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b91125.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1125 / 0.90 = \u20b91250.",
+    "explanation": "Cost Price (CP) = ₹900.\nRequired Selling Price (SP) = CP * (1 + 25/100) = ₹1125.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1125 / 0.90 = ₹1250.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10420,15 +10420,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "title": "A merchant purchases an item for ₹1000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
     "options": [
-      "\u20b91444",
-      "\u20b91504",
-      "\u20b91320",
-      "\u20b91404"
+      "₹1504",
+      "₹1444",
+      "₹1320",
+      "₹1404"
     ],
-    "correctIndex": 0,
-    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b91300.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1300 / 0.90 = \u20b91444.",
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = ₹1000.\nRequired Selling Price (SP) = CP * (1 + 30/100) = ₹1300.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1300 / 0.90 = ₹1444.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10438,15 +10438,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "title": "A merchant purchases an item for ₹1100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
     "options": [
-      "\u20b91230",
-      "\u20b91344",
-      "\u20b91404",
-      "\u20b91304"
+      "₹1230",
+      "₹1404",
+      "₹1344",
+      "₹1304"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b91210.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1210 / 0.90 = \u20b91344.",
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = ₹1100.\nRequired Selling Price (SP) = CP * (1 + 10/100) = ₹1210.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1210 / 0.90 = ₹1344.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10456,15 +10456,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "title": "A merchant purchases an item for ₹400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
     "options": [
-      "\u20b9510",
-      "\u20b9479",
-      "\u20b9470",
-      "\u20b9570"
+      "₹570",
+      "₹479",
+      "₹470",
+      "₹510"
     ],
-    "correctIndex": 0,
-    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b9459.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 459 / 0.90 = \u20b9510.",
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = ₹400.\nRequired Selling Price (SP) = CP * (1 + 15/100) = ₹459.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 459 / 0.90 = ₹510.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10474,15 +10474,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "title": "A merchant purchases an item for ₹500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
     "options": [
-      "\u20b9666",
-      "\u20b9626",
-      "\u20b9726",
-      "\u20b9620"
+      "₹666",
+      "₹626",
+      "₹726",
+      "₹620"
     ],
     "correctIndex": 0,
-    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b9600.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 600 / 0.90 = \u20b9666.",
+    "explanation": "Cost Price (CP) = ₹500.\nRequired Selling Price (SP) = CP * (1 + 20/100) = ₹600.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 600 / 0.90 = ₹666.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10492,15 +10492,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "title": "A merchant purchases an item for ₹600. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
     "options": [
-      "\u20b9793",
-      "\u20b9893",
-      "\u20b9770",
-      "\u20b9833"
+      "₹793",
+      "₹833",
+      "₹770",
+      "₹893"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9600.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b9750.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 750 / 0.90 = \u20b9833.",
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = ₹600.\nRequired Selling Price (SP) = CP * (1 + 25/100) = ₹750.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 750 / 0.90 = ₹833.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10510,15 +10510,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "title": "A merchant purchases an item for ₹700. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
     "options": [
-      "\u20b91071",
-      "\u20b9930",
-      "\u20b9971",
-      "\u20b91011"
+      "₹1071",
+      "₹930",
+      "₹1011",
+      "₹971"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9700.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9910.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 910 / 0.90 = \u20b91011.",
+    "correctIndex": 2,
+    "explanation": "Cost Price (CP) = ₹700.\nRequired Selling Price (SP) = CP * (1 + 30/100) = ₹910.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 910 / 0.90 = ₹1011.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10528,15 +10528,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "title": "A merchant purchases an item for ₹800. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
     "options": [
-      "\u20b9900",
-      "\u20b9977",
-      "\u20b91037",
-      "\u20b9937"
+      "₹900",
+      "₹937",
+      "₹1037",
+      "₹977"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b9800.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9880.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 880 / 0.90 = \u20b9977.",
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = ₹800.\nRequired Selling Price (SP) = CP * (1 + 10/100) = ₹880.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 880 / 0.90 = ₹977.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10546,15 +10546,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
+    "title": "A merchant purchases an item for ₹900. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 15%?",
     "options": [
-      "\u20b91110",
-      "\u20b91210",
-      "\u20b91055",
-      "\u20b91150"
+      "₹1150",
+      "₹1210",
+      "₹1055",
+      "₹1110"
     ],
-    "correctIndex": 3,
-    "explanation": "Cost Price (CP) = \u20b9900.\nRequired Selling Price (SP) = CP * (1 + 15/100) = \u20b91035.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1035 / 0.90 = \u20b91150.",
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = ₹900.\nRequired Selling Price (SP) = CP * (1 + 15/100) = ₹1035.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1035 / 0.90 = ₹1150.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10564,15 +10564,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
+    "title": "A merchant purchases an item for ₹1000. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 20%?",
     "options": [
-      "\u20b91220",
-      "\u20b91393",
-      "\u20b91333",
-      "\u20b91293"
+      "₹1220",
+      "₹1333",
+      "₹1393",
+      "₹1293"
     ],
-    "correctIndex": 2,
-    "explanation": "Cost Price (CP) = \u20b91000.\nRequired Selling Price (SP) = CP * (1 + 20/100) = \u20b91200.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1200 / 0.90 = \u20b91333.",
+    "correctIndex": 1,
+    "explanation": "Cost Price (CP) = ₹1000.\nRequired Selling Price (SP) = CP * (1 + 20/100) = ₹1200.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1200 / 0.90 = ₹1333.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10582,15 +10582,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b91100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
+    "title": "A merchant purchases an item for ₹1100. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 25%?",
     "options": [
-      "\u20b91487",
-      "\u20b91395",
-      "\u20b91527",
-      "\u20b91587"
+      "₹1487",
+      "₹1395",
+      "₹1527",
+      "₹1587"
     ],
     "correctIndex": 2,
-    "explanation": "Cost Price (CP) = \u20b91100.\nRequired Selling Price (SP) = CP * (1 + 25/100) = \u20b91375.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1375 / 0.90 = \u20b91527.",
+    "explanation": "Cost Price (CP) = ₹1100.\nRequired Selling Price (SP) = CP * (1 + 25/100) = ₹1375.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 1375 / 0.90 = ₹1527.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10600,15 +10600,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
+    "title": "A merchant purchases an item for ₹400. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 30%?",
     "options": [
-      "\u20b9577",
-      "\u20b9537",
-      "\u20b9540",
-      "\u20b9637"
+      "₹637",
+      "₹537",
+      "₹540",
+      "₹577"
     ],
-    "correctIndex": 0,
-    "explanation": "Cost Price (CP) = \u20b9400.\nRequired Selling Price (SP) = CP * (1 + 30/100) = \u20b9520.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 520 / 0.90 = \u20b9577.",
+    "correctIndex": 3,
+    "explanation": "Cost Price (CP) = ₹400.\nRequired Selling Price (SP) = CP * (1 + 30/100) = ₹520.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 520 / 0.90 = ₹577.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10618,15 +10618,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "A merchant purchases an item for \u20b9500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
+    "title": "A merchant purchases an item for ₹500. At what Marked Price should he list the item so that after allowing a 10% discount to customers, he still earns a profit of 10%?",
     "options": [
-      "\u20b9570",
-      "\u20b9611",
-      "\u20b9671",
-      "\u20b9571"
+      "₹611",
+      "₹570",
+      "₹671",
+      "₹571"
     ],
-    "correctIndex": 1,
-    "explanation": "Cost Price (CP) = \u20b9500.\nRequired Selling Price (SP) = CP * (1 + 10/100) = \u20b9550.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 550 / 0.90 = \u20b9611.",
+    "correctIndex": 0,
+    "explanation": "Cost Price (CP) = ₹500.\nRequired Selling Price (SP) = CP * (1 + 10/100) = ₹550.\nDiscount = 10%, so SP = MP * 0.90.\nMarked Price (MP) = 550 / 0.90 = ₹611.",
     "difficulty": "Medium",
     "tag": "Profit & Loss",
     "slotYear": "2025-2026"
@@ -10636,15 +10636,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 7% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹6000 at an annual rate of 7% for 2 years?",
     "options": [
-      "\u20b944.1",
-      "\u20b944.4",
-      "\u20b929.4",
-      "\u20b914.7"
+      "₹44.1",
+      "₹29.4",
+      "₹44.4",
+      "₹14.7"
     ],
-    "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = \u20b929.4.",
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = ₹29.4.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10654,15 +10654,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 9% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹7000 at an annual rate of 9% for 2 years?",
     "options": [
-      "\u20b971.7",
-      "\u20b985.05",
-      "\u20b956.7",
-      "\u20b928.35"
+      "₹71.7",
+      "₹85.05",
+      "₹56.7",
+      "₹28.35"
     ],
     "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = \u20b956.7.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = ₹56.7.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10672,15 +10672,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 11% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹8000 at an annual rate of 11% for 2 years?",
     "options": [
-      "\u20b948.4",
-      "\u20b9111.8",
-      "\u20b9145.2",
-      "\u20b996.8"
+      "₹48.4",
+      "₹111.8",
+      "₹145.2",
+      "₹96.8"
     ],
     "correctIndex": 3,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = \u20b996.8.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = ₹96.8.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10690,15 +10690,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 5% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹9000 at an annual rate of 5% for 2 years?",
     "options": [
-      "\u20b922.5",
-      "\u20b911.25",
-      "\u20b937.5",
-      "\u20b933.75"
+      "₹22.5",
+      "₹11.25",
+      "₹37.5",
+      "₹33.75"
     ],
     "correctIndex": 0,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = \u20b922.5.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = ₹22.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10708,15 +10708,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 7% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹10000 at an annual rate of 7% for 2 years?",
     "options": [
-      "\u20b964.0",
-      "\u20b949.0",
-      "\u20b973.5",
-      "\u20b924.5"
+      "₹64.0",
+      "₹49.0",
+      "₹73.5",
+      "₹24.5"
     ],
     "correctIndex": 1,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = \u20b949.0.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = ₹49.0.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10726,15 +10726,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 9% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹5000 at an annual rate of 9% for 2 years?",
     "options": [
-      "\u20b960.75",
-      "\u20b955.5",
-      "\u20b920.25",
-      "\u20b940.5"
+      "₹60.75",
+      "₹55.5",
+      "₹40.5",
+      "₹20.25"
     ],
-    "correctIndex": 3,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = \u20b940.5.",
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = ₹40.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10744,15 +10744,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 11% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹6000 at an annual rate of 11% for 2 years?",
     "options": [
-      "\u20b987.6",
-      "\u20b936.3",
-      "\u20b972.6",
-      "\u20b9108.9"
+      "₹87.6",
+      "₹36.3",
+      "₹108.9",
+      "₹72.6"
     ],
-    "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = \u20b972.6.",
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = ₹72.6.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10762,15 +10762,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 5% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹7000 at an annual rate of 5% for 2 years?",
     "options": [
-      "\u20b926.25",
-      "\u20b98.75",
-      "\u20b917.5",
-      "\u20b932.5"
+      "₹17.5",
+      "₹8.75",
+      "₹26.25",
+      "₹32.5"
     ],
-    "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = \u20b917.5.",
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = ₹17.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10780,15 +10780,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 7% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹8000 at an annual rate of 7% for 2 years?",
     "options": [
-      "\u20b958.8",
-      "\u20b939.2",
-      "\u20b919.6",
-      "\u20b954.2"
+      "₹58.8",
+      "₹39.2",
+      "₹19.6",
+      "₹54.2"
     ],
     "correctIndex": 1,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (7/100)^2 = 8000 * 0.004900000000000001 = \u20b939.2.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (7/100)^2 = 8000 * 0.004900000000000001 = ₹39.2.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10798,15 +10798,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 9% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹9000 at an annual rate of 9% for 2 years?",
     "options": [
-      "\u20b936.45",
-      "\u20b972.9",
-      "\u20b987.9",
-      "\u20b9109.35"
+      "₹36.45",
+      "₹87.9",
+      "₹72.9",
+      "₹109.35"
     ],
-    "correctIndex": 1,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (9/100)^2 = 9000 * 0.0081 = \u20b972.9.",
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (9/100)^2 = 9000 * 0.0081 = ₹72.9.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10816,15 +10816,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 11% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹10000 at an annual rate of 11% for 2 years?",
     "options": [
-      "\u20b9181.5",
-      "\u20b960.5",
-      "\u20b9136.0",
-      "\u20b9121.0"
+      "₹181.5",
+      "₹60.5",
+      "₹136.0",
+      "₹121.0"
     ],
     "correctIndex": 3,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (11/100)^2 = 10000 * 0.0121 = \u20b9121.0.",
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (11/100)^2 = 10000 * 0.0121 = ₹121.0.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10834,15 +10834,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 5% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹5000 at an annual rate of 5% for 2 years?",
     "options": [
-      "\u20b927.5",
-      "\u20b96.25",
-      "\u20b918.75",
-      "\u20b912.5"
+      "₹12.5",
+      "₹6.25",
+      "₹18.75",
+      "₹27.5"
     ],
-    "correctIndex": 3,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (5/100)^2 = 5000 * 0.0025000000000000005 = \u20b912.5.",
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (5/100)^2 = 5000 * 0.0025000000000000005 = ₹12.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10852,15 +10852,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 7% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹6000 at an annual rate of 7% for 2 years?",
     "options": [
-      "\u20b944.4",
-      "\u20b944.1",
-      "\u20b914.7",
-      "\u20b929.4"
+      "₹44.4",
+      "₹29.4",
+      "₹14.7",
+      "₹44.1"
     ],
-    "correctIndex": 3,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = \u20b929.4.",
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (7/100)^2 = 6000 * 0.004900000000000001 = ₹29.4.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10870,15 +10870,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 9% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹7000 at an annual rate of 9% for 2 years?",
     "options": [
-      "\u20b956.7",
-      "\u20b985.05",
-      "\u20b971.7",
-      "\u20b928.35"
+      "₹71.7",
+      "₹85.05",
+      "₹56.7",
+      "₹28.35"
     ],
-    "correctIndex": 0,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = \u20b956.7.",
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (9/100)^2 = 7000 * 0.0081 = ₹56.7.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10888,15 +10888,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b98000 at an annual rate of 11% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹8000 at an annual rate of 11% for 2 years?",
     "options": [
-      "\u20b9145.2",
-      "\u20b996.8",
-      "\u20b948.4",
-      "\u20b9111.8"
+      "₹145.2",
+      "₹111.8",
+      "₹48.4",
+      "₹96.8"
     ],
-    "correctIndex": 1,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = \u20b996.8.",
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 8000 * (11/100)^2 = 8000 * 0.0121 = ₹96.8.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10906,15 +10906,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b99000 at an annual rate of 5% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹9000 at an annual rate of 5% for 2 years?",
     "options": [
-      "\u20b933.75",
-      "\u20b922.5",
-      "\u20b911.25",
-      "\u20b937.5"
+      "₹22.5",
+      "₹33.75",
+      "₹11.25",
+      "₹37.5"
     ],
-    "correctIndex": 1,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = \u20b922.5.",
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 9000 * (5/100)^2 = 9000 * 0.0025000000000000005 = ₹22.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10924,15 +10924,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b910000 at an annual rate of 7% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹10000 at an annual rate of 7% for 2 years?",
     "options": [
-      "\u20b949.0",
-      "\u20b973.5",
-      "\u20b964.0",
-      "\u20b924.5"
+      "₹73.5",
+      "₹49.0",
+      "₹64.0",
+      "₹24.5"
     ],
-    "correctIndex": 0,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = \u20b949.0.",
+    "correctIndex": 1,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 10000 * (7/100)^2 = 10000 * 0.004900000000000001 = ₹49.0.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10942,15 +10942,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b95000 at an annual rate of 9% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹5000 at an annual rate of 9% for 2 years?",
     "options": [
-      "\u20b940.5",
-      "\u20b920.25",
-      "\u20b955.5",
-      "\u20b960.75"
+      "₹55.5",
+      "₹20.25",
+      "₹40.5",
+      "₹60.75"
     ],
-    "correctIndex": 0,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = \u20b940.5.",
+    "correctIndex": 2,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 5000 * (9/100)^2 = 5000 * 0.0081 = ₹40.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10960,15 +10960,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b96000 at an annual rate of 11% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹6000 at an annual rate of 11% for 2 years?",
     "options": [
-      "\u20b9108.9",
-      "\u20b936.3",
-      "\u20b972.6",
-      "\u20b987.6"
+      "₹108.9",
+      "₹36.3",
+      "₹87.6",
+      "₹72.6"
     ],
-    "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = \u20b972.6.",
+    "correctIndex": 3,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 6000 * (11/100)^2 = 6000 * 0.0121 = ₹72.6.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10978,15 +10978,15 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "sectionId": "quantitative",
     "sectionTitle": "Quantitative Aptitude & Numerical Ability",
     "category": "Cognitive",
-    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of \u20b97000 at an annual rate of 5% for 2 years?",
+    "title": "What is the difference between the Compound Interest (compounded annually) and Simple Interest on a principal of ₹7000 at an annual rate of 5% for 2 years?",
     "options": [
-      "\u20b98.75",
-      "\u20b926.25",
-      "\u20b917.5",
-      "\u20b932.5"
+      "₹17.5",
+      "₹26.25",
+      "₹8.75",
+      "₹32.5"
     ],
-    "correctIndex": 2,
-    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = \u20b917.5.",
+    "correctIndex": 0,
+    "explanation": "The standard formula for the difference between CI and SI for 2 years is:\nDiff = P * (R / 100)^2\nDiff = 7000 * (5/100)^2 = 7000 * 0.0025000000000000005 = ₹17.5.",
     "difficulty": "Medium",
     "tag": "Interest Calculations",
     "slotYear": "2025-2026"
@@ -10999,11 +10999,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "220",
-      "400",
       "200",
+      "400",
       "185"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 20 * 10 = 200.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11017,11 +11017,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "545",
-      "525",
       "510",
+      "525",
       "1050"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 35 * 15 = 525.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11052,12 +11052,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "200",
-      "85",
       "100",
+      "85",
+      "200",
       "120"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 10 * 10 = 100.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11089,11 +11089,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "420",
-      "210",
       "195",
+      "210",
       "230"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 35 * 6 = 210.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11124,12 +11124,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "300",
-      "170",
       "150",
+      "170",
+      "300",
       "135"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 10 * 15 = 150.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11142,12 +11142,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "120",
       "105",
+      "120",
       "240",
       "140"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 20 * 6 = 120.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11160,12 +11160,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "350",
-      "700",
       "335",
+      "700",
+      "350",
       "370"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 35 * 10 = 350.",
     "difficulty": "Medium",
     "tag": "Permutation & Combination",
@@ -11179,11 +11179,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "825",
-      "840",
+      "1680",
       "860",
-      "1680"
+      "840"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 56 * 15 = 840.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11196,12 +11196,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "45",
+      "60",
       "120",
       "80",
-      "60"
+      "45"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 10 * 6 = 60.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11215,11 +11215,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 6 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "220",
-      "400",
+      "200",
       "185",
-      "200"
+      "400"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Ways to select 3 engineers from 6 = C(6, 3) = 20.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 20 * 10 = 200.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11268,12 +11268,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "200",
-      "120",
       "100",
+      "120",
+      "200",
       "85"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 10 * 10 = 100.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11305,11 +11305,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 7 engineers and 4 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "230",
-      "210",
       "420",
+      "210",
       "195"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Ways to select 3 engineers from 7 = C(7, 3) = 35.\nWays to select 2 analysts from 4 = C(4, 2) = 6.\nTotal distinct ways = 35 * 6 = 210.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11323,11 +11323,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 8 engineers and 5 analysts. In how many distinct ways can the committee be selected?",
     "options": [
       "545",
-      "560",
+      "580",
       "1120",
-      "580"
+      "560"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Ways to select 3 engineers from 8 = C(8, 3) = 56.\nWays to select 2 analysts from 5 = C(5, 2) = 10.\nTotal distinct ways = 56 * 10 = 560.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11340,12 +11340,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "A project committee consisting of 3 engineers and 2 analysts is to be formed from a group of 5 engineers and 6 analysts. In how many distinct ways can the committee be selected?",
     "options": [
-      "170",
+      "150",
       "300",
       "135",
-      "150"
+      "170"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Ways to select 3 engineers from 5 = C(5, 3) = 10.\nWays to select 2 analysts from 6 = C(6, 2) = 15.\nTotal distinct ways = 10 * 15 = 150.",
     "difficulty": "Hard",
     "tag": "Permutation & Combination",
@@ -11395,11 +11395,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
     "options": [
       "60",
-      "72",
+      "87",
       "78",
-      "87"
+      "72"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11412,12 +11412,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "The HCF of two numbers is 30 and their LCM is 180. If one of the numbers is 60, what is the other number?",
     "options": [
-      "105",
+      "90",
       "96",
       "78",
-      "90"
+      "105"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11431,11 +11431,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "The HCF of two numbers is 6 and their LCM is 36. If one of the numbers is 12, what is the other number?",
     "options": [
       "24",
-      "33",
       "18",
+      "33",
       "6"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11466,12 +11466,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "The HCF of two numbers is 18 and their LCM is 108. If one of the numbers is 36, what is the other number?",
     "options": [
-      "54",
+      "60",
       "69",
       "42",
-      "60"
+      "54"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (18 * 108) / 36 = 54.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11484,12 +11484,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
     "options": [
-      "78",
       "72",
+      "78",
       "60",
       "87"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11503,11 +11503,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "The HCF of two numbers is 30 and their LCM is 180. If one of the numbers is 60, what is the other number?",
     "options": [
       "96",
-      "78",
+      "90",
       "105",
-      "90"
+      "78"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11522,10 +11522,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "6",
       "33",
-      "24",
-      "18"
+      "18",
+      "24"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11540,10 +11540,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "42",
       "24",
-      "36",
-      "51"
+      "51",
+      "36"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (12 * 72) / 24 = 36.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11556,12 +11556,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Cognitive",
     "title": "The HCF of two numbers is 18 and their LCM is 108. If one of the numbers is 36, what is the other number?",
     "options": [
-      "69",
       "54",
+      "69",
       "60",
       "42"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (18 * 108) / 36 = 54.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11575,11 +11575,11 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "title": "The HCF of two numbers is 24 and their LCM is 144. If one of the numbers is 48, what is the other number?",
     "options": [
       "78",
-      "87",
       "72",
+      "87",
       "60"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (24 * 144) / 48 = 72.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11594,10 +11594,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "105",
       "78",
-      "96",
-      "90"
+      "90",
+      "96"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (30 * 180) / 60 = 90.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11612,10 +11612,10 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "options": [
       "33",
       "6",
-      "18",
-      "24"
+      "24",
+      "18"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Formula: Product of two numbers = HCF * LCM.\nOther number = (HCF * LCM) / Given Number = (6 * 36) / 12 = 18.",
     "difficulty": "Easy",
     "tag": "Number Systems",
@@ -11646,12 +11646,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which sorting algorithm has a guaranteed worst-case time complexity of O(n log n) while maintaining stable sort order?",
     "options": [
-      "Merge Sort",
       "Quick Sort",
+      "Merge Sort",
       "Heap Sort",
       "Selection Sort"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Merge Sort guarantees O(n log n) in all cases (worst, best, average) and is stable because it preserves the relative order of equal elements.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11664,12 +11664,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the average time complexity to search, insert, and delete an element in a Hash Table with a uniform hash function?",
     "options": [
-      "O(1)",
-      "O(log n)",
       "O(n)",
+      "O(log n)",
+      "O(1)",
       "O(n log n)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "With a well-distributed hash function and low load factor, hash table operations execute in average O(1) constant time.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11682,12 +11682,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which data structure is inherently used to implement Breadth-First Search (BFS) traversal of a graph?",
     "options": [
-      "Queue (FIFO)",
+      "Hash Map",
       "Stack (LIFO)",
       "Binary Heap",
-      "Hash Map"
+      "Queue (FIFO)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "BFS explores vertices level by level, necessitating a FIFO Queue to process vertices in the exact order discovered.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11718,12 +11718,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In a complete binary tree with N nodes, what is the height of the tree?",
     "options": [
-      "Floor(log2(N))",
       "O(N)",
+      "Floor(log2(N))",
       "O(N^2)",
       "O(1)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A complete binary tree has maximum nodes per level, keeping the height logarithmically bounded at floor(log2(N)).",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11736,12 +11736,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which data structure is most appropriate for evaluating arithmetic expressions in Postfix (Reverse Polish) notation?",
     "options": [
-      "Stack",
-      "Queue",
       "Binary Search Tree",
+      "Queue",
+      "Stack",
       "Linked List"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Postfix evaluation pushes operands onto a Stack and pops the top two operands whenever an operator is encountered.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11754,12 +11754,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What is the time complexity to find the minimum element in a standard Min-Heap?",
     "options": [
-      "O(1)",
+      "O(n log n)",
       "O(log n)",
       "O(n)",
-      "O(n log n)"
+      "O(1)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "The minimum element in a Min-Heap is always maintained at the root node (index 0), retrievable in O(1) time.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11790,12 +11790,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which data structure does a CPU call stack utilize to handle nested function invocations and recursion?",
     "options": [
-      "Stack (LIFO)",
       "Queue (FIFO)",
+      "Stack (LIFO)",
       "Priority Queue",
       "Circular Buffer"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Function calls push stack frames (local variables, return address) onto the runtime call stack, popping them in reverse order of invocation (LIFO).",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11808,12 +11808,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In Java and C++, what type of polymorphism is achieved through method overloading?",
     "options": [
-      "Compile-Time / Static Polymorphism",
-      "Runtime / Dynamic Polymorphism",
       "Ad-hoc Encapsulation",
+      "Runtime / Dynamic Polymorphism",
+      "Compile-Time / Static Polymorphism",
       "Coercive Inheritance"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Method overloading resolves method signatures at compile time based on parameter types and counts, making it static/compile-time polymorphism.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11826,12 +11826,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What type of polymorphism is achieved when a subclass overrides a virtual method defined in its superclass?",
     "options": [
-      "Runtime / Dynamic Polymorphism",
+      "Static Binding",
       "Compile-Time Polymorphism",
       "Macro Expansion",
-      "Static Binding"
+      "Runtime / Dynamic Polymorphism"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Method overriding resolves method execution at runtime via dynamic dispatch (virtual method table / vtable).",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11862,12 +11862,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What issue arises in multiple inheritance when a class inherits from two classes that both inherit from a common base class?",
     "options": [
-      "The Diamond Problem",
       "The Dangling Pointer Problem",
+      "The Diamond Problem",
       "The Starvation Anomaly",
       "The Deadlock Cycle"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "The Diamond Problem creates ambiguity regarding which copy of the base class's methods and fields the grandchild class should inherit.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11880,12 +11880,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Can a private method in a parent class be overridden by a child subclass in Java?",
     "options": [
-      "No, private methods are not inherited and cannot be overridden",
-      "Yes, by using the @Override annotation",
       "Yes, if the subclass is in the same package",
+      "Yes, by using the @Override annotation",
+      "No, private methods are not inherited and cannot be overridden",
       "Yes, if declared final"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Private methods are bound strictly to their defining class and are invisible to subclasses; attempting to redefine them simply creates an unrelated new method.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11898,12 +11898,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What are the 4 necessary conditions required simultaneously for a Deadlock to occur in an Operating System?",
     "options": [
-      "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait",
+      "Context Switch, Interrupt, Trap, System Call",
       "Paging, Segmentation, Swapping, Thrashing",
       "Starvation, Priority Inversion, Aging, Round Robin",
-      "Context Switch, Interrupt, Trap, System Call"
+      "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Coffman's 4 conditions for deadlock are: Mutual Exclusion, Hold & Wait, No Preemption, and Circular Wait. Breaking any one condition prevents deadlock.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11934,12 +11934,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What information must be preserved in the Process Control Block (PCB) during a CPU context switch?",
     "options": [
-      "Program Counter (PC), CPU registers, and process state",
       "Entire hard drive partition",
+      "Program Counter (PC), CPU registers, and process state",
       "External network switch MAC table",
       "RAM motherboard firmware"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "Context switching saves CPU registers, Program Counter, stack pointers, and state into the PCB so the process can resume seamlessly later.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11952,12 +11952,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "Which CPU scheduling algorithm gives each process a fixed slice of CPU time (time quantum) in cyclic order?",
     "options": [
-      "Round Robin (RR)",
-      "First-Come First-Served (FCFS)",
       "Shortest Job First (SJF)",
+      "First-Come First-Served (FCFS)",
+      "Round Robin (RR)",
       "Multilevel Feedback Queue"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Round Robin assigns a uniform time quantum to each ready process in a FIFO circular queue, ensuring fairness and preventing starvation.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -11970,12 +11970,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What does the 'A' in ACID properties of database transactions represent?",
     "options": [
-      "Atomicity (all operations succeed or entire transaction rolls back)",
+      "Abstraction",
       "Availability",
       "Authentication",
-      "Abstraction"
+      "Atomicity (all operations succeed or entire transaction rolls back)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Atomicity guarantees that a transaction is treated as a single indivisible unit: either all statements execute, or none take effect.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -12006,12 +12006,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What type of index in a relational database physically dictates the storage order of table rows on disk?",
     "options": [
-      "Clustered Index",
       "Non-Clustered Index",
+      "Clustered Index",
       "Bitmap Index",
       "Full-Text Index"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Clustered Index sorts and stores the actual table data rows in order based on the key values (only one clustered index per table).",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -12024,12 +12024,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "What concurrency anomaly occurs when Transaction 1 updates a row without committing, Transaction 2 reads it, and Transaction 1 subsequently rolls back?",
     "options": [
-      "Dirty Read",
-      "Lost Update",
       "Non-Repeatable Read",
+      "Lost Update",
+      "Dirty Read",
       "Phantom Read"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Dirty Read occurs when a transaction reads uncommitted data written by another concurrent transaction that later aborts.",
     "difficulty": "Medium",
     "tag": "Core CS & DSA",
@@ -12042,12 +12042,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12078,12 +12078,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12096,12 +12096,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12114,12 +12114,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12150,12 +12150,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12168,12 +12168,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12186,12 +12186,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12222,12 +12222,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12240,12 +12240,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12258,12 +12258,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12294,12 +12294,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12312,12 +12312,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12330,12 +12330,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12366,12 +12366,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12384,12 +12384,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12402,12 +12402,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12438,12 +12438,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12456,12 +12456,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12474,12 +12474,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12510,12 +12510,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12528,12 +12528,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12546,12 +12546,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12582,12 +12582,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12600,12 +12600,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12618,12 +12618,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12654,12 +12654,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12672,12 +12672,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12690,12 +12690,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12726,12 +12726,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12744,12 +12744,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12762,12 +12762,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12798,12 +12798,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12816,12 +12816,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12834,12 +12834,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12870,12 +12870,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12888,12 +12888,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12906,12 +12906,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12942,12 +12942,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12960,12 +12960,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -12978,12 +12978,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13014,12 +13014,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13032,12 +13032,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13050,12 +13050,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13086,12 +13086,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13104,12 +13104,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13122,12 +13122,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13158,12 +13158,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13176,12 +13176,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13194,12 +13194,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13230,12 +13230,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13248,12 +13248,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13266,12 +13266,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13302,12 +13302,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13320,12 +13320,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13338,12 +13338,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13374,12 +13374,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Array?",
     "options": [
-      "Contiguous Memory with O(1) random access",
       "Non-deterministic hashing",
+      "Contiguous Memory with O(1) random access",
       "Random pointer traversal",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "A Array is fundamentally characterized by Contiguous Memory, offering O(1) random access.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13392,12 +13392,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Linked List?",
     "options": [
-      "Dynamic Pointer Chains with O(1) head insertion",
-      "Non-deterministic hashing",
       "Random pointer traversal",
+      "Non-deterministic hashing",
+      "Dynamic Pointer Chains with O(1) head insertion",
       "O(n^2) search overhead"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "A Linked List is fundamentally characterized by Dynamic Pointer Chains, offering O(1) head insertion.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",
@@ -13410,12 +13410,12 @@ export const ACCENTURE_QUESTIONS: Question[] = [
     "category": "Technical",
     "title": "In data structures, what is the defining characteristic of a Stack?",
     "options": [
-      "LIFO with O(1) push/pop",
+      "O(n^2) search overhead",
       "Non-deterministic hashing",
       "Random pointer traversal",
-      "O(n^2) search overhead"
+      "LIFO with O(1) push/pop"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "A Stack is fundamentally characterized by LIFO, offering O(1) push/pop.",
     "difficulty": "Easy",
     "tag": "Data Structures Basics",

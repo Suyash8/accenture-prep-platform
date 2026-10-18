@@ -55,4 +55,20 @@ describe('Mock Generator Engine', () => {
       generateSectionalDrill('ms_office', 9999, 'Big Office Drill', 10)
     ).toThrowError(/requested 9999 questions but section "ms_office" only contains/);
   });
+
+  it('generates mocks with balanced answer distributions across options A, B, C, D', () => {
+    const mock = buildMock(FULL_MOCK_PLAN, ACCENTURE_QUESTIONS, 'distribution_test_seed');
+    const counts: Record<number, number> = { 0: 0, 1: 0, 2: 0, 3: 0 };
+    mock.questions.forEach((q) => {
+      counts[q.correctIndex] = (counts[q.correctIndex] || 0) + 1;
+    });
+
+    const total = mock.questions.length;
+    // Each option should be reasonably balanced (between 15% and 35%)
+    for (let i = 0; i < 4; i++) {
+      const pct = (counts[i] / total) * 100;
+      expect(pct).toBeGreaterThanOrEqual(15);
+      expect(pct).toBeLessThanOrEqual(35);
+    }
+  });
 });

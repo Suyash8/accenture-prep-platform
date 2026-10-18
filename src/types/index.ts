@@ -108,4 +108,6 @@ export interface ExamAttemptRecord {
   cognitiveScore: number;
   technicalScore: number;
   sectionScores: Record<string, { correct: number; total: number }>;
+  kind?: 'exam' | 'sjt' | 'drill';
 }
+

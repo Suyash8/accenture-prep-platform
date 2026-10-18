@@ -135,11 +135,19 @@ function calculateScore(spoken: string, target: string, keywords: string[], dura
   const spokenWords = cleanSpoken.split(/\s+/).filter(Boolean);
   const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
 
-  // Detect filler sounds
-  const fillers = ['um', 'uh', 'ah', 'er', 'like', 'you know'];
+  // Detect filler words and multi-word filler phrases
+  const singleFillers = new Set(['um', 'uh', 'ah', 'er', 'like', 'actually', 'basically']);
+  const phraseFillers = ['you know', 'i mean', 'sort of', 'kind of'];
   let fillerCount = 0;
   for (const w of spokenWords) {
-    if (fillers.includes(w)) fillerCount++;
+    if (singleFillers.has(w)) fillerCount++;
+  }
+  for (const pf of phraseFillers) {
+    let pos = 0;
+    while ((pos = cleanSpoken.indexOf(pf, pos)) !== -1) {
+      fillerCount++;
+      pos += pf.length;
+    }
   }
 
   // WPM
@@ -155,13 +163,34 @@ function calculateScore(spoken: string, target: string, keywords: string[], dura
   }
   const keywordScore = keywords.length > 0 ? Math.round((matchedKeywords / keywords.length) * 100) : 100;
 
-  // Word match similarity (Jaccard / intersection over union)
-  const spokenSet = new Set(spokenWords);
-  let targetMatches = 0;
-  for (const tw of targetWords) {
-    if (spokenSet.has(tw)) targetMatches++;
+  // Normalized Levenshtein word-sequence distance for sentence accuracy
+  const m = targetWords.length;
+  const n = spokenWords.length;
+  let accuracyScore = 0;
+
+  if (m === 0) {
+    accuracyScore = n === 0 ? 100 : 0;
+  } else if (n === 0) {
+    accuracyScore = 0;
+  } else {
+    // DP matrix
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        if (targetWords[i - 1] === spokenWords[j - 1]) {
+          dp[i][j] = dp[i - 1][j - 1];
+        } else {
+          dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+        }
+      }
+    }
+    const editDist = dp[m][n];
+    const maxLen = Math.max(m, n);
+    accuracyScore = Math.max(0, Math.round((1 - editDist / maxLen) * 100));
   }
-  const accuracyScore = targetWords.length > 0 ? Math.round((targetMatches / targetWords.length) * 100) : 0;
 
   // Composite practice score (penalizes excess fillers and extreme pacing)
   let pacingPenalty = 0;

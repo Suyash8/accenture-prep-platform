@@ -165,7 +165,6 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
       if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
       wallTimeoutRef.current = setTimeout(() => setHitWall(null), 800);
       setPlayerPos(levelConfig.startPos);
-      setCollectedKeys(new Set());
       setAttempts((a) => a + 1);
       return;
     }
@@ -178,7 +177,6 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
       if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
       wallTimeoutRef.current = setTimeout(() => setHitWall(null), 800);
       setPlayerPos(levelConfig.startPos);
-      setCollectedKeys(new Set());
       setAttempts((a) => a + 1);
       return;
     }
@@ -204,14 +202,45 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
     }
   }, [gameState, playerPos, levelConfig, collectedKeys, timeLeft, attempts]);
 
+  // Bind keyboard Arrow keys for maze navigation
+  useEffect(() => {
+    if (gameState !== 'playing') return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const [pr, pc] = playerPos;
+      let targetR = pr;
+      let targetC = pc;
+
+      if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
+        targetR = pr - 1;
+      } else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+        targetR = pr + 1;
+      } else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+        targetC = pc - 1;
+      } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+        targetC = pc + 1;
+      } else {
+        return;
+      }
+
+      if (targetR >= 0 && targetR < levelConfig.gridSize && targetC >= 0 && targetC < levelConfig.gridSize) {
+        e.preventDefault();
+        handleStep(targetR, targetC);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameState, playerPos, levelConfig.gridSize, handleStep]);
+
   const requiredKeysCount = levelConfig.keyPositions.length;
   const keysLabel = requiredKeysCount === 1 ? '1 KEY' : `${requiredKeysCount} KEYS`;
 
   const dpadDirections = [
-    { dr: -1, dc: 0, pos: 'top', icon: ChevronUp, offset: '-top-9 left-1/2 -translate-x-1/2' },
-    { dr: 1, dc: 0, pos: 'bottom', icon: ChevronDown, offset: '-bottom-9 left-1/2 -translate-x-1/2' },
-    { dr: 0, dc: -1, pos: 'left', icon: ChevronLeft, offset: '-left-9 top-1/2 -translate-y-1/2' },
-    { dr: 0, dc: 1, pos: 'right', icon: ChevronRight, offset: '-right-9 top-1/2 -translate-y-1/2' },
+    { dr: -1, dc: 0, pos: 'top', icon: ChevronUp, offset: '-top-12 left-1/2 -translate-x-1/2' },
+    { dr: 1, dc: 0, pos: 'bottom', icon: ChevronDown, offset: '-bottom-12 left-1/2 -translate-x-1/2' },
+    { dr: 0, dc: -1, pos: 'left', icon: ChevronLeft, offset: '-left-12 top-1/2 -translate-y-1/2' },
+    { dr: 0, dc: 1, pos: 'right', icon: ChevronRight, offset: '-right-12 top-1/2 -translate-y-1/2' },
   ];
 
   const cellSize = levelConfig.gridSize >= 5 ? 'minmax(58px, 11vmin)' : levelConfig.gridSize >= 4 ? 'minmax(72px, 15vmin)' : 'minmax(100px, 22vmin)';
@@ -431,13 +460,14 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
                                 <button
                                   key={d.pos}
                                   type="button"
+                                  aria-label={`Move ${d.pos}`}
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     handleStep(targetR, targetC);
                                   }}
-                                  className={`absolute z-10 flex size-8 items-center justify-center rounded-md border border-slate-400 dark:border-slate-600 bg-slate-800 dark:bg-slate-700 text-slate-200 shadow-md transition-colors hover:bg-slate-700 dark:hover:bg-slate-600 hover:text-white cursor-pointer ${d.offset}`}
+                                  className={`absolute z-10 flex size-11 items-center justify-center rounded-md border border-slate-400 dark:border-slate-600 bg-slate-800 dark:bg-slate-700 text-slate-200 shadow-md transition-colors hover:bg-slate-700 dark:hover:bg-slate-600 hover:text-white cursor-pointer ${d.offset}`}
                                 >
-                                  <Icon className="size-5 stroke-[2.5]" />
+                                  <Icon className="size-6 stroke-[2.5]" />
                                 </button>
                               );
                             })}

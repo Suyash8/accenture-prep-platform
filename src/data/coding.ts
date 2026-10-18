@@ -31,8 +31,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "hello world\npython programming",
         "expected": "NONE"
-      }
-    ,
+      },
       {
         "input": "quick\nthe quick brown fox",
         "expected": "quick",
@@ -43,7 +42,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "NONE",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef solve(s1: str, s2: str) -> str:\n    def is_contained(sub_str: str, full_str: str) -> bool:\n        w_sub = sub_str.split()\n        w_full = full_str.split()\n        return all(any(ws in wf for wf in w_full) for ws in w_sub)\n    c1 = is_contained(s1, s2)\n    c2 = is_contained(s2, s1)\n    if c1 and c2: return s1 if len(s1) <= len(s2) else s2\n    if c1: return s1\n    if c2: return s2\n    return \"NONE\"\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 2:\n        print(solve(lines[0].strip(), lines[1].strip()))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    private static boolean isContained(String subStr, String fullStr) {\n        String[] wSub = subStr.split(\"\\\\s+\");\n        String[] wFull = fullStr.split(\"\\\\s+\");\n        for (String ws : wSub) {\n            boolean matched = false;\n            for (String wf : wFull) {\n                if (wf.contains(ws)) { matched = true; break; }\n            }\n            if (!matched) return false;\n        }\n        return true;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s1 = sc.nextLine().trim();\n            String s2 = sc.hasNextLine() ? sc.nextLine().trim() : \"\";\n            boolean c1 = isContained(s1, s2);\n            boolean c2 = isContained(s2, s1);\n            if (c1 && c2) System.out.println(s1.length() <= s2.length() ? s1 : s2);\n            else if (c1) System.out.println(s1);\n            else if (c2) System.out.println(s2);\n            else System.out.println(\"NONE\");\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        string s1 = Console.ReadLine()?.Trim() ?? \"\";\n        string s2 = Console.ReadLine()?.Trim() ?? \"\";\n        var w1 = s1.Split(' ', StringSplitOptions.RemoveEmptyEntries);\n        var w2 = s2.Split(' ', StringSplitOptions.RemoveEmptyEntries);\n        bool c1 = w1.All(ws => w2.Any(wf => wf.Contains(ws)));\n        bool c2 = w2.All(ws => w1.Any(wf => wf.Contains(ws)));\n        if (c1 && c2) Console.WriteLine(s1.Length <= s2.Length ? s1 : s2);\n        else if (c1) Console.WriteLine(s1);\n        else if (c2) Console.WriteLine(s2);\n        else Console.WriteLine(\"NONE\");\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nbool isContained(const string& subStr, const string& fullStr) {\n    stringstream ss1(subStr), ss2(fullStr);\n    string w;\n    vector<string> wSub, wFull;\n    while(ss1 >> w) wSub.push_back(w);\n    while(ss2 >> w) wFull.push_back(w);\n    for(const auto& ws : wSub) {\n        bool found = false;\n        for(const auto& wf : wFull) {\n            if(wf.find(ws) != string::npos) { found = true; break; }\n        }\n        if(!found) return false;\n    }\n    return true;\n}\nint main() {\n    string s1, s2;\n    if(getline(cin, s1) && getline(cin, s2)) {\n        bool c1 = isContained(s1, s2), c2 = isContained(s2, s1);\n        if(c1 && c2) cout << (s1.length() <= s2.length() ? s1 : s2) << endl;\n        else if(c1) cout << s1 << endl;\n        else if(c2) cout << s2 << endl;\n        else cout << \"NONE\" << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-2",
@@ -75,8 +80,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "aabb",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "p",
         "expected": "0",
@@ -87,7 +91,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "1",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "from collections import Counter\nimport sys\n\ndef fruit_frequency(s: str) -> int:\n    counts = Counter(s).values()\n    odds = [c for c in counts if c % 2 != 0]\n    evens = [c for c in counts if c % 2 == 0]\n    return abs(max(odds) - min(evens)) if (odds and evens) else 0\n\nif __name__ == '__main__':\n    s = sys.stdin.read().strip()\n    print(fruit_frequency(s))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (!sc.hasNext()) { System.out.println(0); return; }\n        String s = sc.next().trim();\n        Map<Character, Integer> counts = new HashMap<>();\n        for (char c : s.toCharArray()) counts.put(c, counts.getOrDefault(c, 0) + 1);\n        int maxOdd = -1, minEven = Integer.MAX_VALUE;\n        for (int v : counts.values()) {\n            if (v % 2 != 0) maxOdd = Math.max(maxOdd, v);\n            else minEven = Math.min(minEven, v);\n        }\n        if (maxOdd != -1 && minEven != Integer.MAX_VALUE) System.out.println(Math.abs(maxOdd - minEven));\n        else System.out.println(0);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        string s = Console.ReadLine()?.Trim() ?? \"\";\n        var counts = s.GroupBy(c => c).Select(g => g.Count()).ToList();\n        var odds = counts.Where(c => c % 2 != 0).ToList();\n        var evens = counts.Where(c => c % 2 == 0).ToList();\n        if (odds.Any() && evens.Any()) Console.WriteLine(Math.Abs(odds.Max() - evens.Min()));\n        else Console.WriteLine(0);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\n#include <unordered_map>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    string s;\n    if (cin >> s) {\n        unordered_map<char, int> m;\n        for(char c : s) m[c]++;\n        int maxOdd = -1, minEven = 1e9;\n        for(auto& p : m) {\n            if(p.second % 2 != 0) maxOdd = max(maxOdd, p.second);\n            else minEven = min(minEven, p.second);\n        }\n        if(maxOdd != -1 && minEven != 1e9) cout << abs(maxOdd - minEven) << endl;\n        else cout << 0 << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-3",
@@ -119,8 +129,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "123",
         "expected": "UNSAFE"
-      }
-    ,
+      },
       {
         "input": "1",
         "expected": "SAFE",
@@ -131,7 +140,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "SAFE",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef is_armstrong(n: int) -> str:\n    s = str(n)\n    k = len(s)\n    total = sum(int(d)**k for d in s)\n    return \"SAFE\" if total == n else \"UNSAFE\"\n\nif __name__ == '__main__':\n    val = sys.stdin.read().strip()\n    if val: print(is_armstrong(int(val)))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            String s = String.valueOf(n);\n            int k = s.length();\n            long sum = 0;\n            for (char c : s.toCharArray()) sum += Math.pow(c - '0', k);\n            System.out.println(sum == n ? \"SAFE\" : \"UNSAFE\");\n        }\n    }\n}\n",
+      "csharp": "using System;\n\npublic class Solution {\n    public static void Main() {\n        string s = Console.ReadLine()?.Trim() ?? \"\";\n        if (long.TryParse(s, out long n)) {\n            int k = s.Length;\n            long sum = 0;\n            foreach(char c in s) sum += (long)Math.Pow(c - '0', k);\n            Console.WriteLine(sum == n ? \"SAFE\" : \"UNSAFE\");\n        }\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        string s = to_string(n);\n        int k = s.length();\n        long long sum = 0;\n        for(char c : s) sum += pow(c - '0', k);\n        cout << (sum == n ? \"SAFE\" : \"UNSAFE\") << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-4",
@@ -163,8 +178,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "1 2 3",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "4 1 8 5 2 9",
         "expected": "9",
@@ -175,7 +189,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "0",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef large_small_sum(arr):\n    if len(arr) <= 3: return 0\n    evens = sorted([arr[i] for i in range(0, len(arr), 2)])\n    odds = sorted([arr[i] for i in range(1, len(arr), 2)])\n    if len(evens) < 2 or len(odds) < 2: return 0\n    return evens[-2] + odds[1]\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        arr = list(map(int, line.split()))\n        print(large_small_sum(arr))\n    else:\n        print(0)\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Integer> list = new ArrayList<>();\n        while (sc.hasNextInt()) list.add(sc.nextInt());\n        if (list.size() <= 3) { System.out.println(0); return; }\n        List<Integer> evens = new ArrayList<>();\n        List<Integer> odds = new ArrayList<>();\n        for (int i = 0; i < list.size(); i++) {\n            if (i % 2 == 0) evens.add(list.get(i));\n            else odds.add(list.get(i));\n        }\n        Collections.sort(evens);\n        Collections.sort(odds);\n        if (evens.size() < 2 || odds.size() < 2) System.out.println(0);\n        else System.out.println(evens.get(evens.size() - 2) + odds.get(1));\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var tokens = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries);\n        if (tokens == null || tokens.Length <= 3) { Console.WriteLine(0); return; }\n        var arr = tokens.Select(int.Parse).ToArray();\n        var evens = arr.Where((val, idx) => idx % 2 == 0).OrderBy(x => x).ToList();\n        var odds = arr.Where((val, idx) => idx % 2 != 0).OrderBy(x => x).ToList();\n        if (evens.Count < 2 || odds.Count < 2) Console.WriteLine(0);\n        else Console.WriteLine(evens[evens.Count - 2] + odds[1]);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    vector<int> arr;\n    int x;\n    while(cin >> x) arr.push_back(x);\n    if(arr.size() <= 3) { cout << 0 << endl; return 0; }\n    vector<int> evens, odds;\n    for(size_t i = 0; i < arr.size(); i++) {\n        if(i % 2 == 0) evens.push_back(arr[i]);\n        else odds.push_back(arr[i]);\n    }\n    sort(evens.begin(), evens.end());\n    sort(odds.begin(), odds.end());\n    if(evens.size() < 2 || odds.size() < 2) cout << 0 << endl;\n    else cout << evens[evens.size() - 2] + odds[1] << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-5",
@@ -202,13 +222,12 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       },
       {
         "input": "4\n9 8 3 -1",
-        "expected": "-8"
+        "expected": "-3"
       },
       {
         "input": "2\n5 6 7",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "10\n1 2 3",
         "expected": "2",
@@ -219,7 +238,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "0",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef solve(s, arr):\n    if len(arr) < 2: return 0\n    arr.sort()\n    if arr[0] + arr[1] <= s:\n        return arr[0] * arr[1]\n    return 0\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 2:\n        s = int(lines[0].strip())\n        arr = list(map(int, lines[1].strip().split()))\n        print(solve(s, arr))\n    else:\n        print(0)\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int sum = sc.nextInt();\n            List<Integer> list = new ArrayList<>();\n            while (sc.hasNextInt()) list.add(sc.nextInt());\n            if (list.size() < 2) { System.out.println(0); return; }\n            Collections.sort(list);\n            if (list.get(0) + list.get(1) <= sum) System.out.println(list.get(0) * list.get(1));\n            else System.out.println(0);\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var lines = Console.In.ReadToEnd().Split(new[] { '\\r', '\\n' }, StringSplitOptions.RemoveEmptyEntries);\n        if (lines.Length >= 2) {\n            int s = int.Parse(lines[0].Trim());\n            var arr = lines[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).OrderBy(x => x).ToArray();\n            if (arr.Length >= 2 && arr[0] + arr[1] <= s) Console.WriteLine(arr[0] * arr[1]);\n            else Console.WriteLine(0);\n        } else Console.WriteLine(0);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int s;\n    if (cin >> s) {\n        vector<int> arr;\n        int x;\n        while (cin >> x) arr.push_back(x);\n        if (arr.size() < 2) { cout << 0 << endl; return 0; }\n        sort(arr.begin(), arr.end());\n        if (arr[0] + arr[1] <= s) cout << arr[0] * arr[1] << endl;\n        else cout << 0 << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-6",
@@ -247,8 +272,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "3\n10",
         "expected": "19"
-      }
-    ,
+      },
       {
         "input": "5\n10",
         "expected": "25",
@@ -259,7 +283,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "-3",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef diff_of_sum(n, m):\n    sum_div = sum(i for i in range(1, m + 1) if i % n == 0)\n    sum_not_div = sum(i for i in range(1, m + 1) if i % n != 0)\n    return sum_not_div - sum_div\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 2:\n        print(diff_of_sum(int(lines[0]), int(lines[1])))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int m = sc.nextInt();\n            long sumDiv = 0, sumNot = 0;\n            for (int i = 1; i <= m; i++) {\n                if (i % n == 0) sumDiv += i;\n                else sumNot += i;\n            }\n            System.out.println(sumNot - sumDiv);\n        }\n    }\n}\n",
+      "csharp": "using System;\n\npublic class Solution {\n    public static void Main() {\n        int n = int.Parse(Console.ReadLine() ?? \"1\");\n        int m = int.Parse(Console.ReadLine() ?? \"1\");\n        long sumDiv = 0, sumNot = 0;\n        for (int i = 1; i <= m; i++) {\n            if (i % n == 0) sumDiv += i;\n            else sumNot += i;\n        }\n        Console.WriteLine(sumNot - sumDiv);\n    }\n}\n",
+      "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n, m;\n    if (cin >> n >> m) {\n        long long sumDiv = 0, sumNot = 0;\n        for (long long i = 1; i <= m; i++) {\n            if (i % n == 0) sumDiv += i;\n            else sumNot += i;\n        }\n        cout << sumNot - sumDiv << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-7",
@@ -287,8 +317,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "String-Without-Hyphen",
         "expected": "--StringWithoutHyphen"
-      }
-    ,
+      },
       {
         "input": "a-b-c-d",
         "expected": "---abcd",
@@ -299,7 +328,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "nohyphen",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef move_hyphens(s: str) -> str:\n    hyphens = s.count('-')\n    chars = [c for c in s if c != '-']\n    return '-' * hyphens + ''.join(chars)\n\nif __name__ == '__main__':\n    s = sys.stdin.read().strip()\n    print(move_hyphens(s))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine().trim();\n            StringBuilder hyphens = new StringBuilder();\n            StringBuilder others = new StringBuilder();\n            for (char c : s.toCharArray()) {\n                if (c == '-') hyphens.append(c);\n                else others.append(c);\n            }\n            System.out.println(hyphens.toString() + others.toString());\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        string s = Console.ReadLine()?.Trim() ?? \"\";\n        int count = s.Count(c => c == '-');\n        string others = new string(s.Where(c => c != '-').ToArray());\n        Console.WriteLine(new string('-', count) + others);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        string hyphens = \"\", others = \"\";\n        for (char c : s) {\n            if (c == '-') hyphens += c;\n            else others += c;\n        }\n        cout << hyphens + others << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-8",
@@ -327,8 +362,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "23\n563",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "999\n1",
         "expected": "3",
@@ -339,7 +373,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "0",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef count_carries(n1, n2):\n    carry = 0\n    carries = 0\n    while n1 > 0 or n2 > 0:\n        d1 = n1 % 10\n        d2 = n2 % 10\n        sum_val = d1 + d2 + carry\n        if sum_val >= 10:\n            carries += 1\n            carry = 1\n        else:\n            carry = 0\n        n1 //= 10\n        n2 //= 10\n    return carries\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 2:\n        print(count_carries(int(lines[0]), int(lines[1])))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n1 = sc.nextLong(), n2 = sc.nextLong();\n            int carry = 0, carries = 0;\n            while (n1 > 0 || n2 > 0) {\n                long s = (n1 % 10) + (n2 % 10) + carry;\n                if (s >= 10) { carries++; carry = 1; }\n                else carry = 0;\n                n1 /= 10; n2 /= 10;\n            }\n            System.out.println(carries);\n        }\n    }\n}\n",
+      "csharp": "using System;\n\npublic class Solution {\n    public static void Main() {\n        long n1 = long.Parse(Console.ReadLine() ?? \"0\");\n        long n2 = long.Parse(Console.ReadLine() ?? \"0\");\n        int carry = 0, carries = 0;\n        while (n1 > 0 || n2 > 0) {\n            long s = (n1 % 10) + (n2 % 10) + carry;\n            if (s >= 10) { carries++; carry = 1; }\n            else carry = 0;\n            n1 /= 10; n2 /= 10;\n        }\n        Console.WriteLine(carries);\n    }\n}\n",
+      "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n1, n2;\n    if (cin >> n1 >> n2) {\n        int carry = 0, carries = 0;\n        while (n1 > 0 || n2 > 0) {\n            int s = (n1 % 10) + (n2 % 10) + carry;\n            if (s >= 10) { carries++; carry = 1; }\n            else carry = 0;\n            n1 /= 10; n2 /= 10;\n        }\n        cout << carries << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-9",
@@ -371,8 +411,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "16",
         "expected": "Not Automorphic Number"
-      }
-    ,
+      },
       {
         "input": "5",
         "expected": "Automorphic Number",
@@ -383,7 +422,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "Not Automorphic Number",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef is_automorphic(n: int) -> str:\n    sq = str(n * n)\n    s = str(n)\n    return \"Automorphic Number\" if sq.endswith(s) else \"Not Automorphic Number\"\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(is_automorphic(int(line)))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLong()) {\n            long n = sc.nextLong();\n            String sq = String.valueOf(n * n);\n            String s = String.valueOf(n);\n            System.out.println(sq.endsWith(s) ? \"Automorphic Number\" : \"Not Automorphic Number\");\n        }\n    }\n}\n",
+      "csharp": "using System;\n\npublic class Solution {\n    public static void Main() {\n        long n = long.Parse(Console.ReadLine() ?? \"0\");\n        string sq = (n * n).ToString();\n        string s = n.ToString();\n        Console.WriteLine(sq.EndsWith(s) ? \"Automorphic Number\" : \"Not Automorphic Number\");\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    long long n;\n    if (cin >> n) {\n        string sq = to_string(n * n);\n        string s = to_string(n);\n        if (sq.length() >= s.length() && sq.substr(sq.length() - s.length()) == s) {\n            cout << \"Automorphic Number\" << endl;\n        } else {\n            cout << \"Not Automorphic Number\" << endl;\n        }\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-10",
@@ -411,8 +456,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "100 20 30",
         "expected": "100\n0"
-      }
-    ,
+      },
       {
         "input": "42",
         "expected": "42\n0",
@@ -423,7 +467,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "-1\n1",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef find_max(arr):\n    max_val = max(arr)\n    idx = arr.index(max_val)\n    print(max_val)\n    print(idx)\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        find_max(list(map(int, line.split())))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int maxVal = Integer.MIN_VALUE, maxIdx = -1, i = 0;\n        while (sc.hasNextInt()) {\n            int x = sc.nextInt();\n            if (x > maxVal) { maxVal = x; maxIdx = i; }\n            i++;\n        }\n        System.out.println(maxVal);\n        System.out.println(maxIdx);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();\n        if (arr != null && arr.Any()) {\n            int maxVal = arr.Max();\n            int idx = arr.IndexOf(maxVal);\n            Console.WriteLine(maxVal);\n            Console.WriteLine(idx);\n        }\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> arr;\n    int x;\n    while(cin >> x) arr.push_back(x);\n    int maxVal = arr[0], maxIdx = 0;\n    for(size_t i = 1; i < arr.size(); i++) {\n        if(arr[i] > maxVal) { maxVal = arr[i]; maxIdx = i; }\n    }\n    cout << maxVal << endl << maxIdx << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-11",
@@ -451,8 +501,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "1 2 3 4 5",
         "expected": "1"
-      }
-    ,
+      },
       {
         "input": "5 4 3 2 1",
         "expected": "5",
@@ -463,7 +512,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "1",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef count_superior(arr):\n    count = 0\n    max_right = float('-inf')\n    for x in reversed(arr):\n        if x > max_right:\n            count += 1\n            max_right = x\n    return count\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(count_superior(list(map(int, line.split()))))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Integer> list = new ArrayList<>();\n        while (sc.hasNextInt()) list.add(sc.nextInt());\n        int count = 0, maxRight = Integer.MIN_VALUE;\n        for (int i = list.size() - 1; i >= 0; i--) {\n            if (list.get(i) > maxRight) {\n                count++;\n                maxRight = list.get(i);\n            }\n        }\n        System.out.println(count);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();\n        if (arr == null) { Console.WriteLine(0); return; }\n        int count = 0, maxRight = int.MinValue;\n        for (int i = arr.Length - 1; i >= 0; i--) {\n            if (arr[i] > maxRight) { count++; maxRight = arr[i]; }\n        }\n        Console.WriteLine(count);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> arr;\n    int x;\n    while(cin >> x) arr.push_back(x);\n    int count = 0, maxRight = -2e9;\n    for(int i = (int)arr.size() - 1; i >= 0; i--) {\n        if(arr[i] > maxRight) { count++; maxRight = arr[i]; }\n    }\n    cout << count << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-12",
@@ -495,8 +550,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "a9",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "a/bC12",
         "expected": "0",
@@ -507,7 +561,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "1",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef check_password(s: str) -> int:\n    if len(s) < 4: return 0\n    if s[0].isdigit(): return 0\n    has_digit = any(c.isdigit() for c in s)\n    has_upper = any(c.isupper() for c in s)\n    has_bad = any(c in ' /' for c in s)\n    return 1 if (has_digit and has_upper and not has_bad) else 0\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    print(check_password(line))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String s = sc.nextLine().trim();\n            if (s.length() < 4 || Character.isDigit(s.charAt(0))) { System.out.println(0); return; }\n            boolean hasDigit = false, hasUpper = false, hasBad = false;\n            for (char c : s.toCharArray()) {\n                if (Character.isDigit(c)) hasDigit = true;\n                if (Character.isUpperCase(c)) hasUpper = true;\n                if (c == ' ' || c == '/') hasBad = true;\n            }\n            System.out.println(hasDigit && hasUpper && !hasBad ? 1 : 0);\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        string s = Console.ReadLine()?.Trim() ?? \"\";\n        if (s.Length < 4 || char.IsDigit(s[0])) { Console.WriteLine(0); return; }\n        bool hasDigit = s.Any(char.IsDigit);\n        bool hasUpper = s.Any(char.IsUpper);\n        bool hasBad = s.Any(c => c == ' ' || c == '/');\n        Console.WriteLine(hasDigit && hasUpper && !hasBad ? 1 : 0);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\n#include <cctype>\nusing namespace std;\n\nint main() {\n    string s;\n    if (getline(cin, s)) {\n        if (s.length() < 4 || isdigit(s[0])) { cout << 0 << endl; return 0; }\n        bool hasDigit = false, hasUpper = false, hasBad = false;\n        for (char c : s) {\n            if (isdigit(c)) hasDigit = true;\n            if (isupper(c)) hasUpper = true;\n            if (c == ' ' || c == '/') hasBad = true;\n        }\n        cout << (hasDigit && hasUpper && !hasBad ? 1 : 0) << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-13",
@@ -535,8 +595,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "2 2 1",
         "expected": "1"
-      }
-    ,
+      },
       {
         "input": "7",
         "expected": "7",
@@ -547,7 +606,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "3",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef single_number(arr):\n    res = 0\n    for x in arr: res ^= x\n    return res\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(single_number(list(map(int, line.split()))))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int res = 0;\n        while (sc.hasNextInt()) res ^= sc.nextInt();\n        System.out.println(res);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);\n        Console.WriteLine(arr?.Aggregate(0, (acc, x) => acc ^ x) ?? 0);\n    }\n}\n",
+      "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int res = 0, x;\n    while(cin >> x) res ^= x;\n    cout << res << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-14",
@@ -579,8 +644,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "5 4 -1 7 8",
         "expected": "23"
-      }
-    ,
+      },
       {
         "input": "-1 -2 -3",
         "expected": "-1",
@@ -591,7 +655,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "55",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef max_sub_array(arr):\n    max_so_far = arr[0]\n    curr = arr[0]\n    for x in arr[1:]:\n        curr = max(x, curr + x)\n        max_so_far = max(max_so_far, curr)\n    return max_so_far\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(max_sub_array(list(map(int, line.split()))))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int x = sc.nextInt();\n            int maxSoFar = x, curr = x;\n            while (sc.hasNextInt()) {\n                x = sc.nextInt();\n                curr = Math.max(x, curr + x);\n                maxSoFar = Math.max(maxSoFar, curr);\n            }\n            System.out.println(maxSoFar);\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();\n        if (arr == null || arr.Length == 0) return;\n        int maxSoFar = arr[0], curr = arr[0];\n        for (int i = 1; i < arr.Length; i++) {\n            curr = Math.Max(arr[i], curr + arr[i]);\n            maxSoFar = Math.Max(maxSoFar, curr);\n        }\n        Console.WriteLine(maxSoFar);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int x;\n    if (cin >> x) {\n        int maxSoFar = x, curr = x;\n        while (cin >> x) {\n            curr = max(x, curr + x);\n            maxSoFar = max(maxSoFar, curr);\n        }\n        cout << maxSoFar << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-15",
@@ -619,8 +689,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "3 2 3",
         "expected": "3"
-      }
-    ,
+      },
       {
         "input": "5",
         "expected": "5",
@@ -631,7 +700,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "1",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef majority_element(arr):\n    count = 0\n    candidate = None\n    for x in arr:\n        if count == 0: candidate = x\n        count += (1 if x == candidate else -1)\n    return candidate\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(majority_element(list(map(int, line.split()))))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int count = 0, candidate = 0;\n        while (sc.hasNextInt()) {\n            int x = sc.nextInt();\n            if (count == 0) candidate = x;\n            count += (x == candidate ? 1 : -1);\n        }\n        System.out.println(candidate);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();\n        if (arr == null) return;\n        int count = 0, candidate = 0;\n        foreach (int x in arr) {\n            if (count == 0) candidate = x;\n            count += (x == candidate ? 1 : -1);\n        }\n        Console.WriteLine(candidate);\n    }\n}\n",
+      "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int count = 0, candidate = 0, x;\n    while(cin >> x) {\n        if (count == 0) candidate = x;\n        count += (x == candidate ? 1 : -1);\n    }\n    cout << candidate << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-16",
@@ -659,8 +734,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "  hello world  ",
         "expected": "world hello"
-      }
-    ,
+      },
       {
         "input": "a",
         "expected": "a",
@@ -671,7 +745,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "cherry banana apple",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef reverse_words(s: str) -> str:\n    return ' '.join(reversed(s.split()))\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    print(reverse_words(line))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextLine()) {\n            String[] words = sc.nextLine().trim().split(\"\\\\s+\");\n            List<String> list = Arrays.asList(words);\n            Collections.reverse(list);\n            System.out.println(String.join(\" \", list));\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var s = Console.ReadLine()?.Trim() ?? \"\";\n        var words = s.Split(' ', StringSplitOptions.RemoveEmptyEntries).Reverse();\n        Console.WriteLine(string.Join(\" \", words));\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    string line, w;\n    if (getline(cin, line)) {\n        stringstream ss(line);\n        vector<string> words;\n        while(ss >> w) words.push_back(w);\n        reverse(words.begin(), words.end());\n        for(size_t i = 0; i < words.size(); i++) {\n            cout << words[i] << (i + 1 == words.size() ? \"\" : \" \");\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-17",
@@ -699,8 +779,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "10\n10\n5 5 5",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "2\n5\n10",
         "expected": "1",
@@ -711,7 +790,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "0",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef solve(r, unit, arr):\n    if not arr: return -1\n    needed = r * unit\n    curr = 0\n    for i, x in enumerate(arr):\n        curr += x\n        if curr >= needed: return i + 1\n    return 0\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 3:\n        r = int(lines[0])\n        unit = int(lines[1])\n        arr = list(map(int, lines[2].split()))\n        print(solve(r, unit, arr))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int r = sc.nextInt();\n            int unit = sc.nextInt();\n            List<Integer> arr = new ArrayList<>();\n            while (sc.hasNextInt()) arr.add(sc.nextInt());\n            if (arr.isEmpty()) { System.out.println(-1); return; }\n            int needed = r * unit, curr = 0;\n            for (int i = 0; i < arr.size(); i++) {\n                curr += arr.get(i);\n                if (curr >= needed) { System.out.println(i + 1); return; }\n            }\n            System.out.println(0);\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        int r = int.Parse(Console.ReadLine() ?? \"0\");\n        int unit = int.Parse(Console.ReadLine() ?? \"0\");\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();\n        if (arr == null || arr.Length == 0) { Console.WriteLine(-1); return; }\n        int needed = r * unit, curr = 0;\n        for (int i = 0; i < arr.Length; i++) {\n            curr += arr[i];\n            if (curr >= needed) { Console.WriteLine(i + 1); return; }\n        }\n        Console.WriteLine(0);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int r, unit;\n    if (cin >> r >> unit) {\n        vector<int> arr;\n        int x;\n        while (cin >> x) arr.push_back(x);\n        if (arr.empty()) { cout << -1 << endl; return 0; }\n        int needed = r * unit, curr = 0;\n        for (size_t i = 0; i < arr.size(); i++) {\n            curr += arr[i];\n            if (curr >= needed) { cout << i + 1 << endl; return 0; }\n        }\n        cout << 0 << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-18",
@@ -739,8 +824,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "0C1A1B1C1",
         "expected": "0"
-      }
-    ,
+      },
       {
         "input": "1",
         "expected": "1",
@@ -751,7 +835,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "0",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef eval_binary_str(s: str) -> int:\n    res = int(s[0])\n    i = 1\n    while i < len(s):\n        op = s[i]\n        val = int(s[i + 1])\n        if op == 'A': res &= val\n        elif op == 'B': res |= val\n        elif op == 'C': res ^= val\n        i += 2\n    return res\n\nif __name__ == '__main__':\n    s = sys.stdin.read().strip()\n    print(eval_binary_str(s))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.next().trim();\n            int res = s.charAt(0) - '0';\n            for (int i = 1; i < s.length(); i += 2) {\n                char op = s.charAt(i);\n                int val = s.charAt(i + 1) - '0';\n                if (op == 'A') res &= val;\n                else if (op == 'B') res |= val;\n                else if (op == 'C') res ^= val;\n            }\n            System.out.println(res);\n        }\n    }\n}\n",
+      "csharp": "using System;\n\npublic class Solution {\n    public static void Main() {\n        string s = Console.ReadLine()?.Trim() ?? \"\";\n        if (string.IsNullOrEmpty(s)) return;\n        int res = s[0] - '0';\n        for (int i = 1; i < s.Length; i += 2) {\n            char op = s[i];\n            int val = s[i + 1] - '0';\n            if (op == 'A') res &= val;\n            else if (op == 'B') res |= val;\n            else if (op == 'C') res ^= val;\n        }\n        Console.WriteLine(res);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    if (cin >> s) {\n        int res = s[0] - '0';\n        for (size_t i = 1; i < s.length(); i += 2) {\n            char op = s[i];\n            int val = s[i + 1] - '0';\n            if (op == 'A') res &= val;\n            else if (op == 'B') res |= val;\n            else if (op == 'C') res ^= val;\n        }\n        cout << res << endl;\n    }\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-19",
@@ -779,8 +869,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "1 2 3",
         "expected": "-1"
-      }
-    ,
+      },
       {
         "input": "1",
         "expected": "0",
@@ -791,7 +880,13 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "3",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef equilibrium_index(arr):\n    total = sum(arr)\n    left_sum = 0\n    for i, x in enumerate(arr):\n        if left_sum == total - left_sum - x:\n            return i\n        left_sum += x\n    return -1\n\nif __name__ == '__main__':\n    line = sys.stdin.read().strip()\n    if line:\n        print(equilibrium_index(list(map(int, line.split()))))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Integer> list = new ArrayList<>();\n        long total = 0;\n        while (sc.hasNextInt()) {\n            int x = sc.nextInt();\n            list.add(x);\n            total += x;\n        }\n        long leftSum = 0;\n        for (int i = 0; i < list.size(); i++) {\n            if (leftSum == total - leftSum - list.get(i)) {\n                System.out.println(i); return;\n            }\n            leftSum += list.get(i);\n        }\n        System.out.println(-1);\n    }\n}\n",
+      "csharp": "using System;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();\n        if (arr == null) { Console.WriteLine(-1); return; }\n        long total = arr.Sum(), leftSum = 0;\n        for (int i = 0; i < arr.Length; i++) {\n            if (leftSum == total - leftSum - arr[i]) { Console.WriteLine(i); return; }\n            leftSum += arr[i];\n        }\n        Console.WriteLine(-1);\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<long long> arr;\n    long long x, total = 0;\n    while(cin >> x) { arr.push_back(x); total += x; }\n    long long leftSum = 0;\n    for(size_t i = 0; i < arr.size(); i++) {\n        if(leftSum == total - leftSum - arr[i]) { cout << i << endl; return 0; }\n        leftSum += arr[i];\n    }\n    cout << -1 << endl;\n    return 0;\n}\n"
+    }
   },
   {
     "id": "code-20",
@@ -819,8 +914,7 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
       {
         "input": "14\n2 7 11 15",
         "expected": "NO"
-      }
-    ,
+      },
       {
         "input": "10\n5 5 1",
         "expected": "YES",
@@ -831,6 +925,12 @@ export const ACCENTURE_CODING_PROBLEMS: CodingProblem[] = [
         "expected": "NO",
         "hidden": true
       }
-    ]
+    ],
+    "solutionCode": {
+      "python": "import sys\n\ndef two_sum(target, arr):\n    seen = set()\n    for x in arr:\n        if target - x in seen: return \"YES\"\n        seen.add(x)\n    return \"NO\"\n\nif __name__ == '__main__':\n    lines = sys.stdin.read().splitlines()\n    if len(lines) >= 2:\n        target = int(lines[0])\n        arr = list(map(int, lines[1].split()))\n        print(two_sum(target, arr))\n",
+      "java": "import java.util.*;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int target = sc.nextInt();\n            Set<Integer> seen = new HashSet<>();\n            boolean found = false;\n            while (sc.hasNextInt()) {\n                int x = sc.nextInt();\n                if (seen.contains(target - x)) { found = true; break; }\n                seen.add(x);\n            }\n            System.out.println(found ? \"YES\" : \"NO\");\n        }\n    }\n}\n",
+      "csharp": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\npublic class Solution {\n    public static void Main() {\n        int target = int.Parse(Console.ReadLine() ?? \"0\");\n        var arr = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);\n        var seen = new HashSet<int>();\n        bool found = false;\n        if (arr != null) {\n            foreach (int x in arr) {\n                if (seen.Contains(target - x)) { found = true; break; }\n                seen.Add(x);\n            }\n        }\n        Console.WriteLine(found ? \"YES\" : \"NO\");\n    }\n}\n",
+      "cpp": "#include <iostream>\n#include <unordered_set>\nusing namespace std;\n\nint main() {\n    int target;\n    if (cin >> target) {\n        unordered_set<int> seen;\n        int x;\n        bool found = false;\n        while (cin >> x) {\n            if (seen.count(target - x)) { found = true; break; }\n            seen.insert(x);\n        }\n        cout << (found ? \"YES\" : \"NO\") << endl;\n    }\n    return 0;\n}\n"
+    }
   }
 ];

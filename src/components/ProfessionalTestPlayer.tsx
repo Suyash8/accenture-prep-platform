@@ -59,31 +59,16 @@ export const ProfessionalTestPlayer: React.FC<ProfessionalTestPlayerProps> = ({
       });
     }
 
-    // Default: Group contiguous questions by sectionTitle
-    const groups: { idx: number; id: string; title: string; startIdx: number; endIdx: number; minutes: number }[] = [];
-    questions.forEach((q, i) => {
-      const prev = groups[groups.length - 1];
-      if (!prev || prev.title !== q.sectionTitle) {
-        groups.push({
-          idx: groups.length,
-          id: q.sectionId,
-          title: q.sectionTitle,
-          startIdx: i,
-          endIdx: i,
-          minutes: 15,
-        });
-      } else {
-        prev.endIdx = i;
-      }
-    });
-
-    // Pro-rate durationMinutes across groups if customSections wasn't passed
-    const totalGroupMinutes = groups.length * 15;
-    return groups.map((g) => ({
-      ...g,
-      minutes: Math.max(1, Math.round((g.minutes / totalGroupMinutes) * durationMinutes)),
-    }));
-  }, [customSections, questions, durationMinutes]);
+    // Single unified section for ad-hoc tests, drills, and mistake re-tests
+    return [{
+      idx: 0,
+      id: 'general',
+      title: testTitle,
+      startIdx: 0,
+      endIdx: Math.max(0, questions.length - 1),
+      minutes: durationMinutes,
+    }];
+  }, [customSections, questions.length, durationMinutes, testTitle]);
 
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [lockedSections, setLockedSections] = useState<boolean[]>(() =>
@@ -223,6 +208,18 @@ export const ProfessionalTestPlayer: React.FC<ProfessionalTestPlayerProps> = ({
     }
   };
 
+  const handleRetakeExam = React.useCallback(() => {
+    setSelectedAnswers({});
+    setMarkedForReview({});
+    setVisitedQuestions({ [questions[0]?.id]: true });
+    setTimeRemaining(durationMinutes * 60);
+    setCurrentIndex(0);
+    setCurrentSectionIndex(0);
+    setLockedSections(new Array(activeSections.length).fill(false));
+    setSectionTimeRemaining((activeSections[0]?.minutes || durationMinutes) * 60);
+    setIsSubmitted(false);
+  }, [questions, durationMinutes, activeSections]);
+
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-[#f8fafc] text-slate-800 p-6">
@@ -231,14 +228,7 @@ export const ProfessionalTestPlayer: React.FC<ProfessionalTestPlayerProps> = ({
           selectedAnswers={selectedAnswers}
           timeSpentSeconds={durationMinutes * 60 - timeRemaining}
           testTitle={testTitle}
-          onRetake={() => {
-            setSelectedAnswers({});
-            setMarkedForReview({});
-            setVisitedQuestions({ [questions[0]?.id]: true });
-            setTimeRemaining(durationMinutes * 60);
-            setCurrentIndex(0);
-            setIsSubmitted(false);
-          }}
+          onRetake={handleRetakeExam}
           onGoHome={onExit}
         />
       </div>

@@ -6,6 +6,7 @@ import {
   generatePathPuzzle,
   validatePath,
   buildBlock,
+  createSeededRng,
   Block,
   PathPuzzle,
 } from '@/lib/games/pathFinder';
@@ -40,12 +41,13 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
   const [shake, setShake] = useState(false);
 
   const handleRegeneratePuzzle = useCallback((size: number) => {
-    const newPuz = generatePathPuzzle(size);
+    const seed = Math.floor(Math.random() * 1000000000);
+    const newPuz = generatePathPuzzle(size, createSeededRng(seed));
     setPuzzle(newPuz);
     setBlocks(newPuz.blocks);
     setSelectedBlockId(newPuz.blocks[0]?.id || 'block_0_0');
     setMoves(0);
-    setTimeLeft(240);
+    setTimeLeft(newPuz.timeLimit || 240);
     setPathHighlight([]);
     setShake(false);
   }, []);

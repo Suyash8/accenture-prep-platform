@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { 
   CheckCircle2, 
   XCircle, 
@@ -38,6 +38,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
     if (typeof window === 'undefined') return [];
     return getBookmarks();
   });
+  const recordedRef = useRef(false);
 
   let correctCount = 0;
   let wrongCount = 0;
@@ -66,12 +67,8 @@ export const TestResults: React.FC<TestResultsProps> = ({
       sectionPerformance[q.sectionTitle].correct += 1;
       if (q.category === 'Cognitive') cognitiveCorrect += 1;
       if (q.category === 'Technical') technicalCorrect += 1;
-      // Record correct answer (increments streak, resolves after 2 consecutive correct)
-      recordResult(q.id, q.sectionId, true);
     } else {
       wrongCount += 1;
-      // Record incorrect answer (increments misses, resets streak, marks unresolved)
-      recordResult(q.id, q.sectionId, false);
     }
   });
 
@@ -80,13 +77,23 @@ export const TestResults: React.FC<TestResultsProps> = ({
   const minutes = Math.floor(timeSpentSeconds / 60);
   const seconds = timeSpentSeconds % 60;
   
-  // Cutoffs: Accenture requires >=60% in Cognitive AND Technical
+  // Cutoffs: Estimated ~65th percentile benchmark
   const cogPass = cognitiveTotal === 0 || (cognitiveCorrect / cognitiveTotal) >= 0.6;
   const techPass = technicalTotal === 0 || (technicalCorrect / technicalTotal) >= 0.6;
   const isPass = cogPass && techPass && scorePercent >= 65;
 
-  // Save attempt to historical records
+  // Save attempt and record question results strictly once on mount
   useEffect(() => {
+    if (recordedRef.current) return;
+    recordedRef.current = true;
+
+    questions.forEach((q) => {
+      const chosen = selectedAnswers[q.id];
+      if (chosen !== undefined) {
+        recordResult(q.id, q.sectionId, chosen === q.correctIndex);
+      }
+    });
+
     saveExamAttempt({
       id: `attempt-${Date.now()}`,
       timestamp: Date.now(),
@@ -99,6 +106,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
       cognitiveScore: cognitiveCorrect,
       technicalScore: technicalCorrect,
       sectionScores: sectionPerformance,
+      kind: 'exam',
     });
   }, []);
 
@@ -114,15 +122,15 @@ export const TestResults: React.FC<TestResultsProps> = ({
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
           <div className="space-y-3 text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-white/90">
-              <Award className="w-3.5 h-3.5" /> Accenture 2026 Evaluation Matrix
+              <Award className="w-3.5 h-3.5" /> Candidate Readiness Benchmark (Estimated ~65th Percentile Target)
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-white">
-              {isPass ? '🎉 Cleared Accenture Cutoffs!' : '⚠️ Cutoff Threshold Not Met'}
+              {isPass ? '🎉 Cleared Candidate Readiness Benchmark!' : '⚠️ Target Readiness Threshold Not Met'}
             </h1>
             <p className="text-slate-300 text-sm max-w-lg">
               {isPass 
-                ? 'Both Cognitive & Technical sectional cutoffs cleared. You would be automatically routed to Round 2 (Coding) in the live drive.'
-                : 'Accenture imposes individual cutoffs on Cognitive and Technical sections. Failed questions have been automatically logged into your Error Notebook.'}
+                ? 'Both Cognitive & Technical sectional targets met. Your performance matches top-cohort qualifying profiles.'
+                : 'Accenture recruitment evaluation requires balanced performance across Cognitive and Technical sections. Failed questions have been logged into your Error Notebook.'}
             </p>
           </div>
 

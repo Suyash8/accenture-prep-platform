@@ -18,7 +18,7 @@ interface PerformanceAnalyticsProps {
 }
 
 export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBack, onOpenMistakes }) => {
-  const [attempts] = useState<ExamAttemptRecord[]>(() => {
+  const [allAttempts] = useState<ExamAttemptRecord[]>(() => {
     if (typeof window === 'undefined') return [];
     return getExamAttempts();
   });
@@ -28,15 +28,19 @@ export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBa
     return Object.keys(mistakes).length;
   });
 
-  const totalAttempts = attempts.length;
-  const passedCount = attempts.filter((a) => a.isPassed).length;
+  // Filter cognitive/technical exam attempts so SJT doesn't distort benchmarks
+  const examAttempts = allAttempts.filter((a) => a.kind !== 'sjt');
+  const sjtAttempts = allAttempts.filter((a) => a.kind === 'sjt');
+
+  const totalAttempts = examAttempts.length;
+  const passedCount = examAttempts.filter((a) => a.isPassed).length;
   const avgScore = totalAttempts > 0 
-    ? Math.round(attempts.reduce((acc, a) => acc + a.percent, 0) / totalAttempts) 
+    ? Math.round(examAttempts.reduce((acc, a) => acc + a.percent, 0) / totalAttempts) 
     : 0;
 
-  // Aggregate sectional mastery
+  // Aggregate sectional mastery strictly from exam attempts
   const sectionAggregates: Record<string, { correct: number; total: number }> = {};
-  attempts.forEach((att) => {
+  examAttempts.forEach((att) => {
     Object.entries(att.sectionScores || {}).forEach(([sec, data]) => {
       if (!sectionAggregates[sec]) {
         sectionAggregates[sec] = { correct: 0, total: 0 };
@@ -46,7 +50,7 @@ export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBa
     });
   });
 
-  // Calculate Accenture Readiness Score (0 to 100)
+  // Calculate Accenture Readiness Score (0 to 100) based on actual cognitive/technical tests
   const readinessScore = Math.min(
     100,
     Math.round(
@@ -165,13 +169,13 @@ export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBa
           <Clock className="w-5 h-5 text-purple-400" /> Recent Exam History Log
         </h3>
 
-        {attempts.length === 0 ? (
+        {allAttempts.length === 0 ? (
           <p className="text-slate-500 text-xs py-4 text-center">
             No mock tests recorded yet. Launch a full 90-minute simulation to start tracking.
           </p>
         ) : (
           <div className="divide-y divide-slate-800/80">
-            {attempts.map((att) => {
+            {allAttempts.map((att) => {
               const dateStr = new Date(att.timestamp).toLocaleDateString(undefined, {
                 month: 'short',
                 day: 'numeric',
@@ -185,13 +189,19 @@ export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBa
                   <div>
                     <h4 className="text-sm font-bold text-white flex items-center gap-2">
                       {att.title}
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                        att.isPassed 
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' 
-                          : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
-                      }`}>
-                        {att.isPassed ? 'Cutoff Cleared' : 'Cutoff Missed'}
-                      </span>
+                      {att.kind === 'sjt' ? (
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                          Behavioral SJT
+                        </span>
+                      ) : (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                          att.isPassed 
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' 
+                            : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+                        }`}>
+                          {att.isPassed ? 'Cutoff Cleared' : 'Cutoff Missed'}
+                        </span>
+                      )}
                     </h4>
                     <span className="text-[11px] text-slate-500 mt-0.5 block flex items-center gap-2">
                       <Calendar className="w-3 h-3" /> {dateStr} • Duration: {mins} mins

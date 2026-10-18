@@ -24,25 +24,43 @@ export default function MocksPage() {
 
   const mockFolder = ACCENTURE_CURRICULUM.find((f) => f.id === 'full-mocks');
 
+  const DRILL_SECTION_MAP: Record<string, { sectionId: string; count: number; minutes: number }> = {
+    'sec-pseudo': { sectionId: 'pseudocode', count: 20, minutes: 25 },
+    'sec-net': { sectionId: 'networking_cloud', count: 15, minutes: 20 },
+    'sec-english': { sectionId: 'english', count: 15, minutes: 20 },
+    'sec-quant': { sectionId: 'quantitative', count: 20, minutes: 25 },
+    'sec-critical': { sectionId: 'critical', count: 20, minutes: 20 },
+    'sec-abstract': { sectionId: 'abstract', count: 15, minutes: 15 },
+    'sec-core': { sectionId: 'core_cs_dsa', count: 15, minutes: 15 },
+    'sec-office': { sectionId: 'ms_office', count: 15, minutes: 15 },
+  };
+
   const startTest = (id: string, title: string, duration?: number) => {
     let testData;
-    if (id === 'mock-1' || id === 'mock-2' || id === 'mock-pyq-2025') {
-      testData = generateFullMock(title);
+    if (DRILL_SECTION_MAP[id]) {
+      const cfg = DRILL_SECTION_MAP[id];
+      testData = generateSectionalDrill(cfg.sectionId, cfg.count, title, duration || cfg.minutes, `${id}-${Date.now()}`);
+    } else if (id === 'mock-1') {
+      testData = generateFullMock(title, 'accenture-national-mock-1');
+    } else if (id === 'mock-2') {
+      testData = generateFullMock(title, 'accenture-national-mock-2');
+    } else if (id === 'mock-pyq-2025') {
+      testData = generateFullMock(title, 'accenture-pyq-2025-slot');
     } else if (id === 'mock-technical-elimination') {
-      testData = generateTechnicalEliminationMock(title);
+      testData = generateTechnicalEliminationMock(title, 'accenture-tech-elimination-seed');
     } else {
-      testData = {
-        title,
-        questions: sampleQuestions(ACCENTURE_QUESTIONS, 30),
-        durationMinutes: duration || 45,
-      };
+      testData = generateFullMock(title, `${id}-${Date.now()}`);
     }
+
+    const sections = 'mock' in testData && testData.mock && typeof testData.mock === 'object' && 'sections' in testData.mock
+      ? (testData.mock as { sections: { id: string; title: string; count: number; minutes: number }[] }).sections
+      : undefined;
 
     setActiveTest({
       title: testData.title,
       questions: testData.questions,
       durationMinutes: testData.durationMinutes,
-      sections: 'mock' in testData ? testData.mock.sections : undefined,
+      sections,
     });
   };
 
