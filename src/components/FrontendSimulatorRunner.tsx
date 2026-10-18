@@ -29,68 +29,58 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
-    setHtmlCode(currentSim.initialHtml);
-    setCssCode(currentSim.initialCss);
-    setJsCode(currentSim.initialJs);
+  const handleSelectSim = (idx: number) => {
+    setSelectedIdx(idx);
+    const sim = FRONTEND_SIMULATORS[idx];
+    setHtmlCode(sim.initialHtml);
+    setCssCode(sim.initialCss);
+    setJsCode(sim.initialJs);
     setTestResults(null);
-  }, [selectedIdx, currentSim]);
-
-  // Render into headless sandbox iframe
-  const renderPreview = () => {
-    if (!iframeRef.current) return;
-    const doc = iframeRef.current.contentDocument || iframeRef.current.contentWindow?.document;
-    if (!doc) return;
-
-    const fullContent = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 12px; }
-            ${cssCode}
-          </style>
-        </head>
-        <body>
-          ${htmlCode}
-          <script>
-            try {
-              ${jsCode}
-            } catch(e) {
-              console.error(e);
-            }
-
-            window.addEventListener('message', function(e) {
-              if (e.data && e.data.type === 'EXECUTE_TEST_CHECKS') {
-                var checks = e.data.checks || [];
-                var results = checks.map(function(tc) {
-                  try {
-                    var fn = new Function('doc', 'return (' + tc.testFnString + ')(doc)');
-                    var pass = Boolean(fn(document));
-                    return { name: tc.name, pass: pass, description: tc.description };
-                  } catch(err) {
-                    return { name: tc.name, pass: false, description: tc.description + ' (Error: ' + err.message + ')' };
-                  }
-                });
-                window.parent.postMessage({ type: 'TEST_CHECKS_RESPONSE', results: results }, '*');
-              }
-            });
-          </script>
-        </body>
-      </html>
-    `;
-    doc.open();
-    doc.write(fullContent);
-    doc.close();
   };
 
-  useEffect(() => {
-    renderPreview();
-  }, [htmlCode, cssCode, jsCode]);
+  const previewContent = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 12px; }
+          ${cssCode}
+        </style>
+      </head>
+      <body>
+        ${htmlCode}
+        <script>
+          try {
+            ${jsCode}
+          } catch(e) {
+            console.error(e);
+          }
+
+          window.addEventListener('message', function(e) {
+            if (e.data && e.data.type === 'EXECUTE_TEST_CHECKS') {
+              var checks = e.data.checks || [];
+              var results = checks.map(function(tc) {
+                try {
+                  var fn = new Function('doc', 'return (' + tc.testFnString + ')(doc)');
+                  var pass = Boolean(fn(document));
+                  return { name: tc.name, pass: pass, description: tc.description };
+                } catch(err) {
+                  return { name: tc.name, pass: false, description: tc.description + ' (Error: ' + err.message + ')' };
+                }
+              });
+              window.parent.postMessage({ type: 'TEST_CHECKS_RESPONSE', results: results }, '*');
+            }
+          });
+        </script>
+      </body>
+    </html>
+  `;
 
   useEffect(() => {
     const handleMessage = (e: MessageEvent) => {
+      // Only accept messages from the preview iframe window
+      if (iframeRef.current && e.source !== iframeRef.current.contentWindow) return;
       if (e.data && e.data.type === 'TEST_CHECKS_RESPONSE' && Array.isArray(e.data.results)) {
         setTestResults(e.data.results);
       }
@@ -100,13 +90,10 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
   }, []);
 
   const handleRunTests = () => {
-    renderPreview();
-    setTimeout(() => {
-      iframeRef.current?.contentWindow?.postMessage(
-        { type: 'EXECUTE_TEST_CHECKS', checks: currentSim.testChecks },
-        '*'
-      );
-    }, 250);
+    iframeRef.current?.contentWindow?.postMessage(
+      { type: 'EXECUTE_TEST_CHECKS', checks: currentSim.testChecks },
+      '*'
+    );
   };
 
   const handleReset = () => {
@@ -114,7 +101,6 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
     setCssCode(currentSim.initialCss);
     setJsCode(currentSim.initialJs);
     setTestResults(null);
-    renderPreview();
   };
 
   return (
@@ -165,7 +151,7 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
           {FRONTEND_SIMULATORS.map((sim, idx) => (
             <button
               key={sim.id}
-              onClick={() => setSelectedIdx(idx)}
+              onClick={() => handleSelectSim(idx)}
               className={`w-full text-left p-3 rounded-xl text-xs font-semibold transition-all ${
                 selectedIdx === idx
                   ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/40 shadow-xs'
@@ -247,9 +233,10 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
             <div className="border border-slate-700 rounded-xl overflow-hidden bg-white h-56 shadow-inner">
               <iframe
                 ref={iframeRef}
-                title="Sandbox Preview"
+                title="Frontend Sandbox Runner"
                 className="w-full h-full border-none"
-                sandbox="allow-scripts allow-same-origin"
+                sandbox="allow-scripts"
+                srcDoc={previewContent}
               />
             </div>
           </div>
@@ -283,7 +270,7 @@ export const FrontendSimulatorRunner: React.FC<{ onBack: () => void }> = ({ onBa
               </div>
             ) : (
               <div className="p-6 rounded-xl border border-dashed border-slate-800 text-center text-xs text-slate-500">
-                Click <strong>"Run Test Assertions"</strong> to evaluate DOM & styles.
+                Click <strong>&quot;Run Test Assertions&quot;</strong> to evaluate DOM &amp; styles.
               </div>
             )}
           </div>

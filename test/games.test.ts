@@ -8,8 +8,7 @@ import {
 } from '../src/lib/games/mathOrder';
 import { 
   generateMazeLevel, 
-  isMazeSolvable, 
-  canReach 
+  isMazeSolvable 
 } from '../src/lib/games/memoryMaze';
 import { 
   generatePathPuzzle, 

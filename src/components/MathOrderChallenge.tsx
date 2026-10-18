@@ -73,23 +73,27 @@ const INITIAL_FALLBACK_QUESTION: MathQuestion = {
 
 export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [questionCount] = useState(25);
-  // Initial fallback questions for deterministic SSR prerendering
-  const [questions, setQuestions] = useState<MathQuestion[]>([INITIAL_FALLBACK_QUESTION]);
+  const [questions, setQuestions] = useState<MathQuestion[]>(() => {
+    return Array.from({ length: 25 }, (_, i) => generateMathQuestion(i + 1));
+  });
 
   const [currentIdx, setCurrentIdx] = useState(0);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
   const [timeLeft, setTimeLeft] = useState(15);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
-  const [state, setState] = useState<'ready' | 'playing' | 'feedback' | 'finished'>('ready');
+  const [state, setState] = useState<'ready' | 'playing' | 'feedback' | 'finished'>('playing');
   const [feedbackType, setFeedbackType] = useState<'correct' | 'wrong' | null>(null);
 
   // Position variation index for the current question
   const [layoutVariant, setLayoutVariant] = useState(0);
 
   const stateRef = useRef(state);
-  stateRef.current = state;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    stateRef.current = state;
+  }, [state]);
 
   const regenerateQuestions = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -104,11 +108,6 @@ export const MathOrderChallenge: React.FC<{ onBack: () => void }> = ({ onBack })
     setLayoutVariant(Math.floor(Math.random() * BUBBLE_LAYOUT_VARIATIONS.length));
     setState('playing');
   }, [questionCount]);
-
-  // Generate randomized questions on mount (client-only)
-  useEffect(() => {
-    regenerateQuestions();
-  }, [regenerateQuestions]);
 
   const currentQ = questions[currentIdx] || questions[0];
 

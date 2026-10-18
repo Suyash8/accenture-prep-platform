@@ -26,34 +26,14 @@ const INSTRUCTION_SLIDES = [
 export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [matrixSize, setMatrixSize] = useState<number>(3); // 3 (9x9), 4 (12x12), 5 (15x15)
 
-  // Deterministic fallback puzzle for SSR prerendering
-  const [puzzle, setPuzzle] = useState<PathPuzzle>({
-    id: 'puzzle_3x3_initial',
-    gridSize: 9,
-    blocksCount: 3,
-    blocks: [
-      buildBlock(0, 0, 'straight', 0, 0),
-      buildBlock(0, 1, 'straight', 0, 0),
-      buildBlock(0, 2, 'straight', 0, 0),
-      buildBlock(1, 0, 'straight', 0, 0),
-      buildBlock(1, 1, 'straight', 0, 0),
-      buildBlock(1, 2, 'straight', 0, 0),
-      buildBlock(2, 0, 'straight', 0, 0),
-      buildBlock(2, 1, 'straight', 0, 0),
-      buildBlock(2, 2, 'straight', 0, 0),
-    ],
-    solutionState: {},
-    startCell: { row: 1, col: 0 },
-    endCell: { row: 1, col: 8 },
-    timeLimit: 240,
-    minMoves: 12,
-  });
+  // Initial puzzle created lazily
+  const [puzzle, setPuzzle] = useState<PathPuzzle>(() => generatePathPuzzle(3));
 
   const [gameState, setGameState] = useState<'instructions' | 'playing' | 'results'>('instructions');
   const [instructionSlide, setInstructionSlide] = useState(0);
 
-  const [blocks, setBlocks] = useState<Block[]>(puzzle.blocks);
-  const [selectedBlockId, setSelectedBlockId] = useState<string | null>('block_0_0');
+  const [blocks, setBlocks] = useState<Block[]>(() => puzzle.blocks);
+  const [selectedBlockId, setSelectedBlockId] = useState<string | null>(() => puzzle.blocks[0]?.id || 'block_0_0');
   const [moves, setMoves] = useState(0);
   const [timeLeft, setTimeLeft] = useState(240);
   const [pathHighlight, setPathHighlight] = useState<{ row: number; col: number }[]>([]);
@@ -69,11 +49,6 @@ export const GridPathBuilderGame: React.FC<{ onBack: () => void }> = ({ onBack }
     setPathHighlight([]);
     setShake(false);
   }, []);
-
-  // Client-side initial randomization
-  useEffect(() => {
-    handleRegeneratePuzzle(3);
-  }, [handleRegeneratePuzzle]);
 
   const handleSwitchMatrix = (size: number) => {
     setMatrixSize(size);

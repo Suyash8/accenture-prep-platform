@@ -5,15 +5,12 @@ import {
   Database, 
   Play, 
   CheckCircle2, 
-  ArrowLeft, 
   Table, 
-  HelpCircle,
   Copy,
   Check,
-  RotateCcw,
   Code
 } from 'lucide-react';
-import { ACCENTURE_SQL_PROBLEMS, SqlProblem } from '../data/sqlProblems';
+import { ACCENTURE_SQL_PROBLEMS } from '../data/sqlProblems';
 
 export const SqlPracticeRunner: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -242,7 +239,7 @@ export const SqlPracticeRunner: React.FC<{ onBack: () => void }> = ({ onBack }) 
               </div>
             ) : (
               <div className="p-6 rounded-xl border border-dashed border-slate-800 text-center text-xs text-slate-500">
-                Click <strong>"Execute SQL"</strong> to run query against simulated engine.
+                Click <strong>&quot;Execute SQL&quot;</strong> to run query against simulated engine.
               </div>
             )}
           </div>

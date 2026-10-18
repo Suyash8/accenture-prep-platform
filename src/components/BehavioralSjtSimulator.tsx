@@ -42,36 +42,39 @@ interface BehavioralSjtSimulatorProps {
 }
 
 export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ onBack }) => {
-  const [attemptId, setAttemptId] = useState<string>('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number>>({});
+  const [initialState] = useState(() => {
+    if (typeof window === 'undefined') {
+      return { attemptId: 'sjt_init', answers: {}, currentIndex: 0, timeSpent: 0 };
+    }
+    const saved = getSjtState();
+    if (saved && saved.answers && !saved.completed) {
+      const elapsed = Math.floor((Date.now() - saved.startedAt) / 1000);
+      return {
+        attemptId: saved.attemptId,
+        answers: saved.answers,
+        currentIndex: saved.lastActiveIndex ?? 0,
+        timeSpent: elapsed > 0 ? elapsed : 0,
+      };
+    }
+    const newId = `sjt_${Date.now()}`;
+    saveSjtState({
+      attemptId: newId,
+      answers: {},
+      startedAt: Date.now(),
+      lastActiveIndex: 0,
+      completed: false,
+    });
+    return { attemptId: newId, answers: {}, currentIndex: 0, timeSpent: 0 };
+  });
+
+  const [attemptId, setAttemptId] = useState<string>(initialState.attemptId);
+  const [currentIndex, setCurrentIndex] = useState(initialState.currentIndex);
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number>>(initialState.answers);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showIncompleteWarning, setShowIncompleteWarning] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<'All' | Competency>('All');
   const [sortLowestFirst, setSortLowestFirst] = useState(false);
-  const [timeSpent, setTimeSpent] = useState(0);
-
-  // Load active session from versioned storage
-  useEffect(() => {
-    const saved = getSjtState();
-    if (saved && saved.answers && !saved.completed) {
-      setAttemptId(saved.attemptId);
-      setSelectedAnswers(saved.answers);
-      setCurrentIndex(saved.lastActiveIndex ?? 0);
-      const elapsed = Math.floor((Date.now() - saved.startedAt) / 1000);
-      setTimeSpent(elapsed > 0 ? elapsed : 0);
-    } else {
-      const newId = `sjt_${Date.now()}`;
-      setAttemptId(newId);
-      saveSjtState({
-        attemptId: newId,
-        answers: {},
-        startedAt: Date.now(),
-        lastActiveIndex: 0,
-        completed: false,
-      });
-    }
-  }, []);
+  const [timeSpent, setTimeSpent] = useState(initialState.timeSpent);
 
   // Timer ticker
   useEffect(() => {
@@ -92,7 +95,7 @@ export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ 
     return seededShuffle(currentQ.options, `${attemptId}:${currentQ.id}`);
   }, [currentQ, attemptId]);
 
-  const handleSelectOption = (score: number) => {
+  const handleSelectOption = useCallback((score: number) => {
     const updated = {
       ...selectedAnswers,
       [currentQ.id]: score,
@@ -105,34 +108,9 @@ export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ 
       lastActiveIndex: currentIndex,
       completed: false,
     });
-  };
+  }, [selectedAnswers, currentQ.id, attemptId, timeSpent, currentIndex]);
 
-  const handleNext = () => {
-    if (currentIndex < totalQuestions - 1) {
-      const nextIdx = currentIndex + 1;
-      setCurrentIndex(nextIdx);
-      saveSjtState({
-        attemptId,
-        answers: selectedAnswers,
-        startedAt: Date.now() - timeSpent * 1000,
-        lastActiveIndex: nextIdx,
-        completed: false,
-      });
-    } else {
-      checkFinish();
-    }
-  };
-
-  const checkFinish = () => {
-    const answeredCount = Object.keys(selectedAnswers).length;
-    if (answeredCount < totalQuestions) {
-      setShowIncompleteWarning(true);
-    } else {
-      finalizeAssessment();
-    }
-  };
-
-  const finalizeAssessment = () => {
+  const finalizeAssessment = useCallback(() => {
     setIsCompleted(true);
     setShowIncompleteWarning(false);
     saveSjtState({
@@ -166,7 +144,32 @@ export const BehavioralSjtSimulator: React.FC<BehavioralSjtSimulatorProps> = ({ 
         },
       },
     });
-  };
+  }, [attemptId, selectedAnswers, timeSpent, currentIndex, totalQuestions]);
+
+  const checkFinish = useCallback(() => {
+    const answeredCount = Object.keys(selectedAnswers).length;
+    if (answeredCount < totalQuestions) {
+      setShowIncompleteWarning(true);
+    } else {
+      finalizeAssessment();
+    }
+  }, [selectedAnswers, totalQuestions, finalizeAssessment]);
+
+  const handleNext = useCallback(() => {
+    if (currentIndex < totalQuestions - 1) {
+      const nextIdx = currentIndex + 1;
+      setCurrentIndex(nextIdx);
+      saveSjtState({
+        attemptId,
+        answers: selectedAnswers,
+        startedAt: Date.now() - timeSpent * 1000,
+        lastActiveIndex: nextIdx,
+        completed: false,
+      });
+    } else {
+      checkFinish();
+    }
+  }, [currentIndex, totalQuestions, attemptId, selectedAnswers, timeSpent, checkFinish]);
 
   const handleRestart = () => {
     clearSjtState();

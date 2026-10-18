@@ -2,8 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { 
   buildMock, 
   generateSectionalDrill, 
-  FULL_MOCK_PLAN, 
-  createSeededRng 
+  FULL_MOCK_PLAN 
 } from '../src/lib/mockGenerator';
 import { ACCENTURE_QUESTIONS } from '../src/data/questions';
 

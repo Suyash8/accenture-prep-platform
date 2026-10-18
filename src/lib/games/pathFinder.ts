@@ -260,41 +260,167 @@ export function validatePath(
   return { success: false, path };
 }
 
+const TRANSITIONS: Record<string, { shape: ShapeType; rot: number; flip: number }[]> = {
+  'left->right': [
+    { shape: 'straight', rot: 0, flip: 0 },
+    { shape: 'straight', rot: 2, flip: 1 },
+    { shape: 'tshape', rot: 0, flip: 0 },
+    { shape: 'cross', rot: 0, flip: 0 },
+  ],
+  'left->bottom': [
+    { shape: 'lshape', rot: 0, flip: 0 },
+    { shape: 'cross', rot: 3, flip: 1 },
+  ],
+  'left->top': [
+    { shape: 'lshape', rot: 2, flip: 1 },
+    { shape: 'cross', rot: 3, flip: 0 },
+  ],
+  'top->bottom': [
+    { shape: 'straight', rot: 1, flip: 0 },
+    { shape: 'straight', rot: 3, flip: 1 },
+    { shape: 'tshape', rot: 1, flip: 0 },
+    { shape: 'cross', rot: 1, flip: 0 },
+  ],
+  'top->right': [
+    { shape: 'cross', rot: 0, flip: 0 },
+  ],
+  'bottom->top': [
+    { shape: 'straight', rot: 1, flip: 1 },
+    { shape: 'straight', rot: 3, flip: 0 },
+    { shape: 'tshape', rot: 1, flip: 1 },
+    { shape: 'cross', rot: 1, flip: 1 },
+  ],
+  'bottom->right': [
+    { shape: 'cross', rot: 2, flip: 1 },
+  ],
+};
+
+export function createSeededRng(seed: number): () => number {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
 /**
- * Procedural generation with guaranteed solvability
+ * Procedural generation with guaranteed solvability across matrix blocks
  */
 export function generatePathPuzzle(
   blocksCount: number = 3,
-  rng: () => number = Math.random
+  rng?: () => number
 ): PathPuzzle {
-  // Center row block for start and end
-  const pathRow = Math.floor(blocksCount / 2);
-  const startCell = { row: pathRow * 3 + 1, col: 0 };
-  const endCell = { row: pathRow * 3 + 1, col: blocksCount * 3 - 1 };
+  const actualRng = rng || createSeededRng(blocksCount * 99991 + 104729);
+  let walk: {
+    path: { r: number; c: number; entry: string; exit?: string }[];
+    startRow: number;
+    endRow: number;
+  } | null = null;
+
+  for (let attempt = 0; attempt < 100; attempt++) {
+    let r = Math.floor(actualRng() * blocksCount);
+    let c = 0;
+    const path: { r: number; c: number; entry: string; exit?: string }[] = [{ r, c, entry: 'left' }];
+    const visited = new Set<string>([`${r},${c}`]);
+    let ok = true;
+
+    while (c < blocksCount - 1) {
+      const moves: { dr: number; dc: number; exit: string; nextEntry: string }[] = [];
+      if (!visited.has(`${r},${c + 1}`)) {
+        moves.push({ dr: 0, dc: 1, exit: 'right', nextEntry: 'left' });
+      }
+      if (r + 1 < blocksCount && !visited.has(`${r + 1},${c}`)) {
+        moves.push({ dr: 1, dc: 0, exit: 'bottom', nextEntry: 'top' });
+      }
+      if (r - 1 >= 0 && !visited.has(`${r - 1},${c}`)) {
+        moves.push({ dr: -1, dc: 0, exit: 'top', nextEntry: 'bottom' });
+      }
+
+      const validMoves = moves.filter((m) => {
+        const transKey = `${path[path.length - 1].entry}->${m.exit}`;
+        return Boolean(TRANSITIONS[transKey]);
+      });
+
+      if (validMoves.length === 0) {
+        ok = false;
+        break;
+      }
+
+      const move = validMoves[Math.floor(actualRng() * validMoves.length)];
+      path[path.length - 1].exit = move.exit;
+      r += move.dr;
+      c += move.dc;
+      visited.add(`${r},${c}`);
+      path.push({ r, c, entry: move.nextEntry });
+    }
+
+    if (!ok) continue;
+
+    const last = path[path.length - 1];
+    last.exit = 'right';
+    if (!TRANSITIONS[`${last.entry}->right`]) continue;
+
+    walk = { path, startRow: path[0].r, endRow: path[path.length - 1].r };
+    break;
+  }
+
+  // Fallback straight path if search attempts fail
+  if (!walk) {
+    const pRow = Math.floor(blocksCount / 2);
+    walk = {
+      path: Array.from({ length: blocksCount }, (_, c) => ({
+        r: pRow,
+        c,
+        entry: 'left',
+        exit: 'right',
+      })),
+      startRow: pRow,
+      endRow: pRow,
+    };
+  }
+
+  const startCell = { row: walk.startRow * 3 + 1, col: 0 };
+  const endCell = { row: walk.endRow * 3 + 1, col: blocksCount * 3 - 1 };
 
   const solutionState: Record<string, { rotate: number; flip: number }> = {};
+  const blockMap = new Map<string, { shape: ShapeType; solRotate: number; solFlip: number }>();
+
+  for (const step of walk.path) {
+    const transKey = `${step.entry}->${step.exit}`;
+    const options = TRANSITIONS[transKey] || TRANSITIONS['left->right'];
+    const chosen = options[Math.floor(actualRng() * options.length)];
+    solutionState[`${step.r},${step.c}`] = { rotate: chosen.rot, flip: chosen.flip };
+    blockMap.set(`${step.r},${step.c}`, {
+      shape: chosen.shape,
+      solRotate: chosen.rot,
+      solFlip: chosen.flip,
+    });
+  }
+
   const blocks: Block[] = [];
+  const ALL_SHAPES: ShapeType[] = ['straight', 'lshape', 'tshape', 'cross'];
 
   for (let r = 0; r < blocksCount; r++) {
     for (let c = 0; c < blocksCount; c++) {
-      const isPath = r === pathRow;
-      const shape: ShapeType = isPath ? 'straight' : 'lshape';
+      const key = `${r},${c}`;
+      const onPath = blockMap.get(key);
+      const shape = onPath ? onPath.shape : ALL_SHAPES[Math.floor(actualRng() * ALL_SHAPES.length)];
 
-      // On path row, rotate = 0, flip = 0 connects straight through center row from left to right!
-      const solRotate = 0;
-      const solFlip = 0;
-      solutionState[`${r},${c}`] = { rotate: solRotate, flip: solFlip };
+      if (!onPath) {
+        solutionState[key] = { rotate: 0, flip: 0 };
+      }
 
       // Scramble starting orientation
-      const scrambledRotate = Math.floor(rng() * 4);
-      const scrambledFlip = Math.floor(rng() * 2);
+      const scrambledRotate = Math.floor(actualRng() * 4);
+      const scrambledFlip = Math.floor(actualRng() * 2);
 
       blocks.push(buildBlock(r, c, shape, scrambledRotate, scrambledFlip));
     }
   }
 
   return {
-    id: `puzzle_${blocksCount}x${blocksCount}_${Date.now()}`,
+    id: `puzzle_${blocksCount}x${blocksCount}_seed${Math.floor(actualRng() * 100000)}`,
     gridSize: blocksCount * 3,
     blocksCount,
     blocks,
@@ -302,7 +428,7 @@ export function generatePathPuzzle(
     startCell,
     endCell,
     timeLimit: 240,
-    minMoves: blocksCount * 3,
+    minMoves: walk.path.length * 2,
   };
 }
 

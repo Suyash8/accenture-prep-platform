@@ -3,6 +3,7 @@ import { spawn, ChildProcessWithoutNullStreams } from 'node:child_process';
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
+import { ACCENTURE_CODING_PROBLEMS } from '@/data/coding';
 
 const MAX_OUTPUT_BYTES = 65536; // 64 KB
 const MAX_INPUT_BYTES = 65536;  // 64 KB
@@ -32,18 +33,36 @@ function runSpawn(
     let stdout = '';
     let stderr = '';
 
+    const SAFE_EXEC_ENV: NodeJS.ProcessEnv = {
+      NODE_ENV: 'production' as const,
+      PATH: process.env.PATH || '/usr/bin:/bin:/usr/local/bin',
+      LANG: 'en_US.UTF-8',
+      LC_ALL: 'en_US.UTF-8',
+      HOME: cwd,
+      TMPDIR: cwd,
+    };
+
     const proc = spawn(cmd, args, {
       cwd,
-      env: { ...process.env, LANG: 'en_US.UTF-8' },
+      env: SAFE_EXEC_ENV,
       stdio: 'pipe',
+      detached: true,
     }) as ChildProcessWithoutNullStreams;
 
     const timer = setTimeout(() => {
       timedOut = true;
       try {
-        proc.kill('SIGKILL');
+        if (proc.pid) {
+          process.kill(-proc.pid, 'SIGKILL');
+        } else {
+          proc.kill('SIGKILL');
+        }
       } catch {
-        // Process might already be dead
+        try {
+          proc.kill('SIGKILL');
+        } catch {
+          // Process might already be dead
+        }
       }
     }, timeoutMs);
 
@@ -166,7 +185,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { language, code, testCases } = body;
+    const { language, code, problemId, testCases: providedTestCases } = body;
 
     if (!code || typeof code !== 'string' || !language) {
       return NextResponse.json({ error: 'Valid code and language are required' }, { status: 400 });
@@ -177,6 +196,18 @@ export async function POST(req: NextRequest) {
         { error: 'C# compilation runtime is not available on this server. Please choose Python, Java, or C++.' },
         { status: 501 }
       );
+    }
+
+    // Server-side test case lookup to protect hidden test cases
+    let effectiveTestCases: { input: string; expected: string; hidden?: boolean }[] = [];
+    if (problemId) {
+      const problem = ACCENTURE_CODING_PROBLEMS.find((p) => p.id === problemId);
+      if (problem) {
+        effectiveTestCases = problem.testCases;
+      }
+    }
+    if (effectiveTestCases.length === 0) {
+      effectiveTestCases = Array.isArray(providedTestCases) ? providedTestCases : [];
     }
 
     const langDef = LANGS[language];
@@ -213,7 +244,7 @@ export async function POST(req: NextRequest) {
           success: false,
           allPassed: false,
           compilationError: true,
-          results: (testCases || []).map((tc: { input: string; expected: string; hidden?: boolean }) => ({
+          results: effectiveTestCases.map((tc: { input: string; expected: string; hidden?: boolean }) => ({
             input: tc.hidden ? '[Hidden Test Case]' : tc.input,
             expected: tc.hidden ? '[Hidden]' : tc.expected,
             actual: 'Compilation Failed',
@@ -235,14 +266,14 @@ export async function POST(req: NextRequest) {
     let hiddenPassed = 0;
     let hiddenTotal = 0;
 
-    for (const tc of testCases || []) {
+    for (const tc of effectiveTestCases) {
       const isHidden = Boolean(tc.hidden);
       if (isHidden) hiddenTotal++;
       else sampleTotal++;
 
       const runRes = await runSpawn(runConfig.cmd, runConfig.args, tc.input || '', EXEC_TIMEOUT_MS, tmpDir);
 
-      let actualOutput = runRes.stdout;
+      const actualOutput = runRes.stdout;
       const expectedNormalized = normalize(String(tc.expected ?? ''));
       const actualNormalized = normalize(actualOutput);
 

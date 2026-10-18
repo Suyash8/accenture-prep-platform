@@ -15,7 +15,7 @@ import {
   Bookmark
 } from 'lucide-react';
 import { Question } from '../types';
-import { recordResult, resolveMistake, saveExamAttempt, toggleBookmark, getBookmarks } from '../lib/storage';
+import { recordResult, saveExamAttempt, toggleBookmark, getBookmarks } from '../lib/storage';
 
 interface TestResultsProps {
   questions: Question[];
@@ -34,11 +34,10 @@ export const TestResults: React.FC<TestResultsProps> = ({
   onRetake,
   onGoHome,
 }) => {
-  const [bookmarks, setBookmarks] = useState<string[]>([]);
-
-  useEffect(() => {
-    setBookmarks(getBookmarks());
-  }, []);
+  const [bookmarks, setBookmarks] = useState<string[]>(() => {
+    if (typeof window === 'undefined') return [];
+    return getBookmarks();
+  });
 
   let correctCount = 0;
   let wrongCount = 0;

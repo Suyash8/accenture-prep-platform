@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   Mic, 
   MicOff,
@@ -181,29 +181,59 @@ function calculateScore(spoken: string, target: string, keywords: string[], dura
   };
 }
 
+interface SpeechRecognitionEvent {
+  results: {
+    length: number;
+    [index: number]: {
+      [index: number]: {
+        transcript: string;
+      };
+    };
+  };
+}
+
+interface SpeechRecognitionInstance {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onerror: (() => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+}
+
+interface SpeechRecognitionConstructor {
+  new (): SpeechRecognitionInstance;
+}
+
+interface WindowWithSpeech extends Window {
+  SpeechRecognition?: SpeechRecognitionConstructor;
+  webkitSpeechRecognition?: SpeechRecognitionConstructor;
+}
+
 export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [activeModuleId, setActiveModuleId] = useState(MODULES[0].id);
   const [activePromptIdx, setActivePromptIdx] = useState(0);
   const [recordingState, setRecordingState] = useState<'idle' | 'recording' | 'scored'>('idle');
   const [transcript, setTranscript] = useState('');
   const [textFallbackInput, setTextFallbackInput] = useState('');
-  const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(true);
+  const [isSpeechRecognitionSupported] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    const win = window as WindowWithSpeech;
+    return Boolean(win.SpeechRecognition || win.webkitSpeechRecognition);
+  });
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [audioPlayedCount, setAudioPlayedCount] = useState(0);
   const [scoreResult, setScoreResult] = useState<ScoreBreakdown | null>(null);
   const [recordTimer, setRecordTimer] = useState(0);
 
-  const recognitionRef = useRef<any>(null);
+  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const activeModule = MODULES.find((m) => m.id === activeModuleId) || MODULES[0];
   const activePrompt = activeModule.promptExamples[activePromptIdx] || activeModule.promptExamples[0];
-
-  // Feature detection on mount
-  useEffect(() => {
-    const SpeechRec = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    setIsSpeechRecognitionSupported(Boolean(SpeechRec));
-  }, []);
 
   const handlePlayAudio = () => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
@@ -234,7 +264,8 @@ export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ 
       setRecordTimer((t) => t + 1);
     }, 1000);
 
-    const SpeechRec = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const win = window as WindowWithSpeech;
+    const SpeechRec = win.SpeechRecognition || win.webkitSpeechRecognition;
     if (SpeechRec) {
       try {
         const recognition = new SpeechRec();
@@ -242,7 +273,7 @@ export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ 
         recognition.interimResults = true;
         recognition.lang = 'en-US';
 
-        recognition.onresult = (event: any) => {
+        recognition.onresult = (event: SpeechRecognitionEvent) => {
           let full = '';
           for (let i = 0; i < event.results.length; i++) {
             full += event.results[i][0].transcript + ' ';
@@ -262,7 +293,7 @@ export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ 
     }
   };
 
-  const stopRecording = () => {
+  const stopRecording = useCallback(() => {
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (recognitionRef.current) {
       try {
@@ -279,7 +310,14 @@ export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ 
     setRecordingState('scored');
 
     // Persist attempt
-    const history = load<any[]>('communication_attempts', []);
+    interface CommAttemptRecord {
+      timestamp: number;
+      moduleId: string;
+      promptTitle: string;
+      score: number;
+      transcript: string;
+    }
+    const history = load<CommAttemptRecord[]>('communication_attempts', []);
     history.unshift({
       timestamp: Date.now(),
       moduleId: activeModule.id,
@@ -288,7 +326,7 @@ export const CommunicationGuideSimulator: React.FC<{ onBack: () => void }> = ({ 
       transcript: finalSpoken,
     });
     save('communication_attempts', history.slice(0, 20));
-  };
+  }, [recordTimer, transcript, textFallbackInput, activePrompt, activeModule]);
 
   const handleReset = () => {
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);

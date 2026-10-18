@@ -45,15 +45,15 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
   const [isRunning, setIsRunning] = useState(false);
   const [activeTab, setActiveTab] = useState<'description' | 'testcases'>('description');
   const [testResults, setTestResults] = useState<TestCaseResult[] | null>(null);
-  const [timeRemainingSeconds, setTimeRemainingSeconds] = useState(45 * 60);
+  const [timeRemainingSeconds, setTimeRemainingSeconds] = useState(() => {
+    if (typeof window === 'undefined') return 45 * 60;
+    const session = getCodingSession();
+    const elapsed = Math.floor((Date.now() - session.startedAt) / 1000);
+    return Math.max(0, session.durationSeconds - elapsed);
+  });
 
   // Shared Stage 4 45-minute countdown session
   useEffect(() => {
-    const session = getCodingSession();
-    const elapsed = Math.floor((Date.now() - session.startedAt) / 1000);
-    const remaining = Math.max(0, session.durationSeconds - elapsed);
-    setTimeRemainingSeconds(remaining);
-
     const interval = setInterval(() => {
       setTimeRemainingSeconds((prev) => Math.max(0, prev - 1));
     }, 1000);
@@ -93,7 +93,8 @@ export const CodingRunner: React.FC<CodingRunnerProps> = ({ problem, onBack }) =
         body: JSON.stringify({
           language,
           code: userCode,
-          testCases: problem.testCases,
+          problemId: problem.id,
+          testCases: problem.testCases?.filter((tc) => !tc.hidden),
         }),
       });
 

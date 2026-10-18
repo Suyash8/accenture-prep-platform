@@ -175,7 +175,7 @@ export const getMistakes = (): Record<string, UserMistake> => {
   return compat;
 };
 
-export const saveMistake = (questionId: string, selectedOption: number = 0, sectionId: string = 'general'): void => {
+export const saveMistake = (questionId: string, _selectedOption: number = 0, sectionId: string = 'general'): void => {
   recordResult(questionId, sectionId, false);
 };
 

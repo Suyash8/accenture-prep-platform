@@ -89,44 +89,54 @@ export function evaluateExpressionRational(expr: string): Rational {
   return makeRational(BigInt(0), BigInt(1));
 }
 
-export function generateMathQuestion(id: number, rng: () => number = Math.random): MathOrderQuestion {
+export function createSeededRng(seed: number): () => number {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+export function generateMathQuestion(id: number, rng?: () => number): MathOrderQuestion {
+  const actualRng = rng || createSeededRng(id * 104729 + 7919);
   const operations: (() => { expr: string; val: Rational })[] = [
     // Simple Addition / Subtraction
     () => {
-      const a = Math.floor(rng() * 15) + 2;
-      const b = Math.floor(rng() * 12) + 1;
-      if (rng() > 0.5) {
+      const a = Math.floor(actualRng() * 15) + 2;
+      const b = Math.floor(actualRng() * 12) + 1;
+      if (actualRng() > 0.5) {
         return { expr: `${a}+${b}`, val: makeRational(a + b) };
       }
       return { expr: `${a + b}-${b}`, val: makeRational(a) };
     },
     // Multiplication
     () => {
-      const a = Math.floor(rng() * 9) + 2;
-      const b = Math.floor(rng() * 8) + 2;
+      const a = Math.floor(actualRng() * 9) + 2;
+      const b = Math.floor(actualRng() * 8) + 2;
       return { expr: `${a}×${b}`, val: makeRational(a * b) };
     },
     // Exact integer division
     () => {
-      const divisor = Math.floor(rng() * 8) + 2;
-      const quotient = Math.floor(rng() * 12) + 2;
+      const divisor = Math.floor(actualRng() * 8) + 2;
+      const quotient = Math.floor(actualRng() * 12) + 2;
       return { expr: `${divisor * quotient}÷${divisor}`, val: makeRational(quotient) };
     },
     // Fraction division (exact cross-multiplied value)
     () => {
-      const num = Math.floor(rng() * 19) + 3;
-      const den = Math.floor(rng() * 6) + 2;
+      const num = Math.floor(actualRng() * 19) + 3;
+      const den = Math.floor(actualRng() * 6) + 2;
       return { expr: `${num}÷${den}`, val: makeRational(num, den) };
     },
     // Exponent
     () => {
-      const base = Math.floor(rng() * 4) + 2; // 2, 3, 4, 5
-      const exp = base <= 3 ? Math.floor(rng() * 2) + 2 : 2; // 2^2, 2^3, 3^2, 3^3, etc.
+      const base = Math.floor(actualRng() * 4) + 2; // 2, 3, 4, 5
+      const exp = base <= 3 ? Math.floor(actualRng() * 2) + 2 : 2; // 2^2, 2^3, 3^2, 3^3, etc.
       return { expr: `${base}^${exp}`, val: makeRational(Math.pow(base, exp)) };
     },
     // Single number
     () => {
-      const n = Math.floor(rng() * 30) + 2;
+      const n = Math.floor(actualRng() * 30) + 2;
       return { expr: `${n}`, val: makeRational(n) };
     },
   ];
@@ -137,7 +147,7 @@ export function generateMathQuestion(id: number, rng: () => number = Math.random
   let safetyAttempts = 0;
   while (expressions.length < 3 && safetyAttempts < 100) {
     safetyAttempts++;
-    const op = operations[Math.floor(rng() * operations.length)];
+    const op = operations[Math.floor(actualRng() * operations.length)];
     const { expr, val } = op();
 
     // Guarantee that no two bubbles share identical numerical values

@@ -29,7 +29,12 @@ interface MistakeTrackerProps {
 }
 
 export const MistakeTracker: React.FC<MistakeTrackerProps> = ({ onBack, onPracticeMistakes }) => {
-  const [mistakesMap, setMistakesMap] = useState<Record<string, MistakeRecord>>({});
+  const [mistakesMap, setMistakesMap] = useState<Record<string, MistakeRecord>>(() => {
+    if (typeof window === 'undefined') return {};
+    const validIds = new Set(ACCENTURE_QUESTIONS.map((q) => q.id));
+    pruneMistakes(validIds);
+    return getMistakeRecords();
+  });
   const [activeTab, setActiveTab] = useState<'unresolved' | 'resolved' | 'all'>('unresolved');
   const [selectedSection, setSelectedSection] = useState<string>('all');
 
@@ -43,10 +48,6 @@ export const MistakeTracker: React.FC<MistakeTrackerProps> = ({ onBack, onPracti
     pruneMistakes(validIds);
     setMistakesMap(getMistakeRecords());
   };
-
-  useEffect(() => {
-    refreshMistakes();
-  }, []);
 
   const handleToggleResolve = (qId: string, currentResolved: boolean) => {
     if (currentResolved) {

@@ -79,16 +79,26 @@ export function isMazeSolvable(level: MazeLevelConfig): boolean {
   return true;
 }
 
+export function createSeededRng(seed: number): () => number {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
 export function generateMazeLevel(
   gridSize: number,
   keyCountOrRng?: number | (() => number),
   maybeRng?: () => number
 ): MazeLevelConfig {
-  let keyCount = gridSize === 3 ? 1 : gridSize === 4 ? 2 : 3;
-  let rng: () => number = Math.random;
+  // Spec limits key count to 1-2 keys (even on 5x5)
+  let keyCount = gridSize === 3 ? 1 : 2;
+  let rng: () => number = createSeededRng(gridSize * 7919 + 104729);
 
   if (typeof keyCountOrRng === 'number') {
-    keyCount = keyCountOrRng;
+    keyCount = Math.min(2, Math.max(1, keyCountOrRng));
     if (typeof maybeRng === 'function') {
       rng = maybeRng;
     }
@@ -154,8 +164,12 @@ export function generateMazeLevel(
     }
   }
 
-  // Shuffle candidate walls with rng
-  const shuffledWalls = [...candidateWalls].sort(() => 0.5 - rng());
+  // Fisher-Yates uniform shuffle
+  const shuffledWalls = [...candidateWalls];
+  for (let i = shuffledWalls.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [shuffledWalls[i], shuffledWalls[j]] = [shuffledWalls[j], shuffledWalls[i]];
+  }
   const selectedWalls: Wall[] = [];
 
   for (const wall of shuffledWalls) {

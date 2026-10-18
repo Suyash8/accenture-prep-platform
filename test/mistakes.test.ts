@@ -2,8 +2,6 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { 
   recordResult, 
   getMistakeRecords, 
-  resolveMistakeManually, 
-  unresolveMistake, 
   pruneMistakes 
 } from '../src/lib/storage';
 

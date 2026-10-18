@@ -2,16 +2,11 @@
 
 import React, { useState } from 'react';
 import { 
-  Play, 
   RotateCcw, 
   ChevronRight, 
   ChevronLeft, 
-  Binary, 
-  Calculator,
-  CheckCircle2,
-  Code
+  Calculator
 } from 'lucide-react';
-import { ACCENTURE_QUESTIONS } from '../data/questions';
 import { Question, TraceStep } from '../types';
 
 // Curated authentic Accenture pseudocode problems with full line-by-line trace steps
@@ -233,8 +228,8 @@ res = (x >> y) + (x mod 5)
 res = res ^ 3
 Print res`,
     options: ['6', '5', '4', '7'],
-    correctIndex: 2,
-    explanation: 'x >> y = 12 >> 2 = 3. x mod 5 = 12 % 5 = 2. res = 3 + 2 = 5. res ^ 3 = 5 ^ 3 = (0b101 ^ 0b011) = 0b110 = 6... wait: 5 ^ 3 = (101 ^ 011) = 110 = 6.',
+    correctIndex: 0,
+    explanation: 'x >> y = 12 >> 2 = 3. x mod 5 = 12 % 5 = 2. res = 3 + 2 = 5. Then res ^ 3 = 5 ^ 3 = (0b101 ^ 0b011) = 0b110 = 6.',
     traceSteps: [
       {
         step: 1,

@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { 
   BarChart2, 
   TrendingUp, 
-  CheckCircle2, 
-  XCircle, 
   Clock, 
-  Award, 
   ArrowLeft,
   Calendar,
-  AlertTriangle,
-  RotateCcw
+  AlertTriangle
 } from 'lucide-react';
 import { getExamAttempts, getMistakes } from '../lib/storage';
 import { ExamAttemptRecord } from '../types';
@@ -22,14 +18,15 @@ interface PerformanceAnalyticsProps {
 }
 
 export const PerformanceAnalytics: React.FC<PerformanceAnalyticsProps> = ({ onBack, onOpenMistakes }) => {
-  const [attempts, setAttempts] = useState<ExamAttemptRecord[]>([]);
-  const [mistakeCount, setMistakeCount] = useState(0);
-
-  useEffect(() => {
-    setAttempts(getExamAttempts());
+  const [attempts] = useState<ExamAttemptRecord[]>(() => {
+    if (typeof window === 'undefined') return [];
+    return getExamAttempts();
+  });
+  const [mistakeCount] = useState(() => {
+    if (typeof window === 'undefined') return 0;
     const mistakes = getMistakes();
-    setMistakeCount(Object.keys(mistakes).length);
-  }, []);
+    return Object.keys(mistakes).length;
+  });
 
   const totalAttempts = attempts.length;
   const passedCount = attempts.filter((a) => a.isPassed).length;

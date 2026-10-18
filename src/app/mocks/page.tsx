@@ -19,6 +19,7 @@ export default function MocksPage() {
     title: string;
     questions: Question[];
     durationMinutes: number;
+    sections?: { id: string; title: string; count: number; minutes: number }[];
   } | null>(null);
 
   const mockFolder = ACCENTURE_CURRICULUM.find((f) => f.id === 'full-mocks');
@@ -41,6 +42,7 @@ export default function MocksPage() {
       title: testData.title,
       questions: testData.questions,
       durationMinutes: testData.durationMinutes,
+      sections: 'mock' in testData ? testData.mock.sections : undefined,
     });
   };
 
@@ -50,6 +52,7 @@ export default function MocksPage() {
         questions={activeTest.questions}
         testTitle={activeTest.title}
         durationMinutes={activeTest.durationMinutes}
+        sections={activeTest.sections}
         onExit={() => setActiveTest(null)}
       />
     );

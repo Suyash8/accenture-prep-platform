@@ -88,22 +88,13 @@ function CircularTimer({ seconds, totalSeconds, onExpire }: { seconds: number; t
 export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [variant, setVariant] = useState<'3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1'>('3x3-1');
 
-  // Deterministic fallback maze definition for SSR prerendering
-  const [levelConfig, setLevelConfig] = useState<MazeLevelConfig>({
-    gridSize: 3,
-    startPos: [0, 0],
-    doorPos: [2, 2],
-    keyPositions: [[0, 2]],
-    walls: [
-      [0, 1, 1, 1],
-      [1, 1, 2, 1],
-    ],
-  });
+  // Lazily generated initial maze
+  const [levelConfig, setLevelConfig] = useState<MazeLevelConfig>(() => generateMazeLevel(3, 1));
 
   const [gameState, setGameState] = useState<'instructions' | 'playing' | 'finished'>('instructions');
   const [instructionSlide, setInstructionSlide] = useState(0);
 
-  const [playerPos, setPlayerPos] = useState<[number, number]>([0, 0]);
+  const [playerPos, setPlayerPos] = useState<[number, number]>(() => levelConfig.startPos);
   const [collectedKeys, setCollectedKeys] = useState<Set<string>>(new Set());
   const [attempts, setAttempts] = useState(0);
   const [timeLeft, setTimeLeft] = useState(240);
@@ -112,6 +103,12 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
   const [timeTaken, setTimeTaken] = useState(0);
 
   const wallTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
+    };
+  }, []);
 
   const regenerateMaze = useCallback((size: number, keys: number, toPlaying: boolean = false) => {
     if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
@@ -126,14 +123,6 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
     setTimeTaken(0);
     setGameState(toPlaying ? 'playing' : 'instructions');
   }, []);
-
-  // Client-side initial randomization
-  useEffect(() => {
-    regenerateMaze(3, 1, false);
-    return () => {
-      if (wallTimeoutRef.current) clearTimeout(wallTimeoutRef.current);
-    };
-  }, [regenerateMaze]);
 
   const handleVariantSwitch = (v: '3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1') => {
     setVariant(v);
@@ -252,7 +241,7 @@ export const LockKeyMemoryGame: React.FC<{ onBack: () => void }> = ({ onBack }) 
               <button
                 key={v.id}
                 type="button"
-                onClick={() => handleVariantSwitch(v.id as any)}
+                onClick={() => handleVariantSwitch(v.id as '3x3-1' | '3x3-2' | '4x4-1' | '4x4-2' | '5x5-1')}
                 className={`rounded-full border px-4 py-1.5 text-xs font-bold transition-all cursor-pointer ${
                   isActive
                     ? 'border-slate-900 dark:border-purple-500 bg-slate-900 dark:bg-purple-600 text-white shadow-xs'
